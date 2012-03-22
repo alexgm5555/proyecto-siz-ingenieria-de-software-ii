@@ -87,7 +87,7 @@ body {
                     
                 
                 
-                  <td width="70" height="64"><div align="center"><img src="images/perro1.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td width="70" height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td width="189"><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Tipo de Animal:
                       <label> </label>
@@ -116,7 +116,7 @@ body {
                     </div></td>
                     
                 
-                  <td height="64"><div align="center"><img src="images/perro1.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Ciudad de origen
                         <label> </label>
@@ -129,20 +129,9 @@ body {
                     </div></td>
                     
                 </tr>
-                <tr>
-                  <td height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Foto de de la mascota perdida
-                        <label> </label>
-                      </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input type="file" name="fileField" id="fileField" />
-                      <br/>
-                    </div></td>
+                
                     
-                  <td height="72"><div align="center"><img src="images/perro1.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td height="72"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Rasgo mas importante:
                         <label> </label>
