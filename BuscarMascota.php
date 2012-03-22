@@ -81,7 +81,7 @@ body {
                       <label><br/>
                       </label>
                       <label for="Raza2"></label>
-                      <input name="contrasena2" type="password" maxlength="16" tabindex="2" />
+                      <input name="Codigo" type="Text" maxlength="16" tabindex="2" />
                       <br/>
                     </div></td>
                     
@@ -111,7 +111,7 @@ body {
                       <label><br/>
                       </label>
                       <label for="Raza2"></label>
-                      <input name="contrasena2" type="password" maxlength="16" tabindex="2" />
+                      <input name="Raza" type="Text" maxlength="16" tabindex="2" />
                       <br/>
                     </div></td>
                     
@@ -124,7 +124,7 @@ body {
                       <label><br/>
                       </label>
                       <label for="Raza2"></label>
-                      <input name="contrasena2" type="password" maxlength="16" tabindex="2" />
+                      <input name="CiudadAnimal" type="Text" maxlength="16" tabindex="2" />
                       <br/>
                     </div></td>
                     
@@ -139,7 +139,7 @@ body {
                       <label><br/>
                       </label>
                       <label for="Raza2"></label>
-                      <input name="contrasena3" type="password" maxlength="16" tabindex="2" />
+                      <input name="Rasgo" type="Text" maxlength="16" tabindex="2" />
 <br/>
                     </div></td>
                 </tr>
