@@ -103,7 +103,7 @@ body {
                     </div></td>
                 </tr>
                 <tr>
-                  <td height="64"><div align="center"><img src="images/gato.gif" alt="usuario" width="70" height="70" /></div></td>
+                  <td height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Raza
                       <label> </label>
@@ -116,7 +116,7 @@ body {
                     </div></td>
                     
                 
-                  <td height="64"><div align="center"><img src="images/perro2.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td height="64"><div align="center"><img src="images/perro1.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Ciudad de origen
                         <label> </label>
@@ -130,7 +130,7 @@ body {
                     
                 </tr>
                 <tr>
-                  <td height="72"><div align="center"><img src="images/gato5.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Foto de de la mascota perdida
                         <label> </label>
@@ -142,7 +142,7 @@ body {
                       <br/>
                     </div></td>
                     
-                  <td height="72"><div align="center"><img src="images/gato6.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td height="72"><div align="center"><img src="images/perro1.jpg" alt="usuario" width="70" height="70" /></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><span class="Estilo14">Rasgo mas importante:
                         <label> </label>
