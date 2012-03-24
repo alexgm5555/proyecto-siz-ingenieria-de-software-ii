@@ -44,6 +44,7 @@ body {
 .Estilo19 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-style: normal;
+	color: rgb(0,102,204);
 }
 -->
 </style></head>
