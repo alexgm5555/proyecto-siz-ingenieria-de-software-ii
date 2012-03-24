@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Zoonosis - Login</title>
+<title>Zoonosis - Eliminación de mascota</title>
 <script language="javascript">
 
 function validarh(e) 
@@ -57,7 +57,7 @@ body {
   </tr>
   <tr>
     <td height="90" colspan="2"><div align="center">
-      <p align="center" class="Estilo3 Estilo19"><strong>Zoonosis</strong></p>
+      <p align="center" class="Estilo3 Estilo19"><strong>Centro de Zoonosis</strong></p>
     </div></td>
   </tr>
   <tr>
