@@ -57,7 +57,7 @@ body {
   </tr>
   <tr>
     <td height="90" colspan="2"><div align="center">
-      <p align="center" class="Estilo3 Estilo19"><strong>Centro de Zoonosis</strong></p>
+      <p align="center" class="Estilo3 Estilo19"><strong>Eliminar Mascota</strong></p>
     </div></td>
   </tr>
   <tr>
