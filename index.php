@@ -29,6 +29,17 @@ function validarn(e)
 </script>
 
 <style type="text/css">
+<style type="text/css">
+body,td,th {
+	font-size: xx-small;
+}
+body {
+	background-image: url(images/Bello%20Verde_1200.jpg);
+	background-repeat: no-repeat;
+}
+a {
+	font-size: 9px;
+}
 <!--
 body,td,th {
 	/* [disabled]color: #000; */
@@ -51,12 +62,15 @@ body {
 -->
 </style></head>
 
-<body>
-<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
+<body bgproperties="fixed">
+<br/><br/><table width="796" border="0" align="center"    bgcolor="" >
   
   <tr>
     <td width="790" height="139" colspan="2"><div align="center"><div>
-      <div align="right"><a href="login.php" title="Iniciar Sesión" target="_self">Iniciar Sesión</a></div>
+      <div align="right">
+        <p><a href="login.php" title="Iniciar Sesión" target="_self">Iniciar Sesión</a></p>
+        <p><a href="FormularioRegistro.php">Usuario no registrado</a></p>
+      </div>
     </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
   <tr>
