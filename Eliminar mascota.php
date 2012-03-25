@@ -84,11 +84,11 @@ body,td,th {
         </form></td>
       </tr>
   </table>
-      <table width="200" height="178">
+      <table width="200" height="178" align="right">
         <tr>
           <th scope="col"><form id="form3" name="form3" method="post" action="">
             <label for="button"></label>
-            <input name="button" type="submit" id="button" value="Buscar" />
+            <input name="button" type="submit" class="Estilo14" id="button" value="Buscar" />
           </form></th>
         </tr>
         <tr>
@@ -97,7 +97,12 @@ body,td,th {
             <input type="submit" name="button2" id="button2" value="Eliminar" />
           </form></th>
         </tr>
-    </table></td>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
   </tr>
 </table>
 </body>
