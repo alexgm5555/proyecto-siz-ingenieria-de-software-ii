@@ -55,10 +55,10 @@ body,td,th {
 </style></head>
 
 <body>
-<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
+<br/><br/><table width="828" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
   
   <tr>
-    <td width="790" height="139" colspan="2"><div align="center">
+    <td width="822" height="139" colspan="2"><div align="center">
         <div align="right"><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
   <tr>
@@ -67,10 +67,10 @@ body,td,th {
     </div></td>
   </tr>
   <tr>
-    <td height="251" colspan="2"><table width="284" height="178" border="0" align="left">
+    <td height="251" colspan="2"><table width="252" height="178" border="0" align="left">
       <tr>
         <th width="67" scope="col"><img src="images/usuarioo.jpg" width="50" height="52" alt="Usuario" /></th>
-        <th width="207" align="center" valign="middle" scope="col"><form id="form1" name="form1" method="post" action="">
+        <th width="175" align="center" valign="middle" scope="col"><form id="form1" name="form1" method="post" action="">
           <label>Usuario
             <input type="text" name="textfield" id="textfield" />
           </label>
@@ -84,17 +84,15 @@ body,td,th {
         </form></td>
       </tr>
   </table>
-      <table width="200" height="178">
+      <table width="448" height="89" border="0" align="right">
         <tr>
           <th scope="col"><form id="form3" name="form3" method="post" action="">
-            <label for="button"></label>
-            <input name="button" type="submit" id="button" value="Buscar" />
+            <label>
+              <input name="Buscar" type="submit" class="Estilo19" id="Buscar" value="Buscar" />
+            </label>
           </form></th>
-        </tr>
-        <tr>
-          <th scope="row"><form id="form4" name="form4" method="post" action="">
-            
-            <input type="submit" name="button2" id="button2" value="Eliminar" />
+          <th scope="col"><form id="form4" name="form4" method="post" action="">
+            <input name="button" type="submit" class="Estilo19" id="button" value="Eliminar" />
           </form></th>
         </tr>
     </table></td>
