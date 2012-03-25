@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Zoonosis - Eliminación de mascota</title>
-<script language="javascript">
+<script language="JavaScript" type="text/javascript">
 
 function validarh(e) 
 {
@@ -63,7 +63,16 @@ body {
     </div></td>
   </tr>
   <tr>
-    <td height="251" colspan="2">&nbsp;</td>
+    <td height="251" colspan="2"><table width="284" height="178" border="1" align="left">
+      <tr>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      <tr>
+        <th scope="row">&nbsp;</th>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
   </tr>
 </table>
 </body>
