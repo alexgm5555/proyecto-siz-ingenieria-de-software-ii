@@ -63,7 +63,10 @@ body,td,th {
   
   <tr>
     <td width="822" colspan="2"><div align="center">
-        <div align="right"><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
+        <div align="right">
+          <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p>
+          <p><a href="MenuUsuarioParticular.php">Menu de Usuario</a></p>
+        </div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
   <tr>
     <td colspan="2"><div align="center">
