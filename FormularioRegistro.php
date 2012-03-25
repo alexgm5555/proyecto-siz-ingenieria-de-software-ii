@@ -4,7 +4,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Zoonosis - Formulario de Registro</title>
-
 <script language="javascript">
 
 function validarh(e) 
@@ -29,8 +28,17 @@ function validarn(e)
 //
 
 </script>
-
 <style type="text/css">
+body,td,th {
+	font-size: xx-small;
+}
+body {
+	background-image: url(images/Bello%20Verde_1200.jpg);
+	background-repeat: no-repeat;
+}
+a {
+	font-size: 9px;
+}
 <!--
 body,td,th {
 	/* [disabled]color: #000; */
@@ -52,70 +60,162 @@ body {
 }
 -->
 </style>
-
 </head>
 
 <body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-    <br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
-    <tr>
-    <td width="790" height="139" colspan="2"><div align="center"><div>
-      <div align="right"></div>
-    </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
+<body bgproperties="fixed" >
+<br/><br/>
+  
+  <tr>
+    <td width="790" height="139" colspan="2"><div align="center">
+    <div align="right"><a href="index.php" title="Registro de Usuarios" target="_self">Cerrar Sesión</a></div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
-    <tr>
-    <td height="90" colspan="2"><div align="center">
-      <p class="Estilo3 Estilo19">Registro de Usuarios </p>
-      <p class="Estilo3">Zoonosis</p>
+  <tr>
+    <td height="76" colspan="2"><div align="center">
+      <p class="Estilo3 Estilo19">Registro de Usuarios</p>
+      <p class="Estilo3 Estilo19">Zoonosis</p>
     </div></td>
   </tr>
-    <tr>
-    <td height="251" colspan="2"><form id="form1" name="form1" method="post" action="validar.php">
-        <table width="389" border="0" align="center" >
+  <tr>
+  <td height="251" colspan="2"><form action="validar.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+        <table width="717" height="391" border="0" align="center" >
           <tr>
-             <form action="ResolverFormulario.php" method="get">
-                <p>Nombres
-                    <input type="text" name="nombre" width="100px" id="nombre" /><br />
-                </p>
-            <p>Apellidos
-                <input type="text" name="apellido" width="100px" id="apellido" />
-                <br />
-                <label for="documento"><br />
-                CC</label>
-                <input name="documento" type="text" id="documento" />
-                <label for="correo"><br />
-                 <br />
-                 Correo Electronico</label>
-                <input type="text" name="correo" id="correo" />
-            </p>
-            <p>
-                <label for="ciudad">Ciudad</label>
-                <input type="text" name="ciudad" id="ciudad" />
-            </p>
-            <p>
-                <label for="celu">Celular</label>
-                <input type="text" name="celu" id="celu" />
-                <label for="user"><br />
-            <br />
-                Nombre de Usuario</label>
-                <input type="text" name="user" id="user" />
-                <label for="password"><br />
-            <br />
-                Contraseña</label>
-            <input type="text" name="password" id="password" />
-            </p>
-            <p>
-            <input type="submit" value="Registrarse" />
-            </p>
-                            
+            <td width="647" height="226"><fieldset>
+              <legend class="Estilo18">Registro de Usuarios<br/>
+              </legend>
+              <table width="576" height="185" border="0" align="center" bgcolor="">
+              <tr>
+                <td width="70" height="72"><div align="center">
+                  <table width="576" height="185" border="0" align="center" bgcolor="">
+                    <tr>
+                      <td width="70" height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
+                      <td width="189"><span class="Estilo14"> </span>
+                        <div align="left" ><span class="Estilo14">Nombres:
+                          <label> </label>
+                          </span>
+                          <label><br/>
+                          </label>
+                          <label for="TipoAnimal2"></label>
+                          <input type="text" name="Nombres" id="Nombres" />
+                          <br/>
+                        </div></td>
+                      <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td><span class="Estilo14"> </span>
+                    <div align="left" ><span class="Estilo14">Apellidos:
+                        <label> </label>
+                      </span>
+                      <label><br/>
+                      </label>
+                      <label for="Raza2"></label>
+                      <input name="Apellidos" type="Text" maxlength="16" tabindex="2" id="Apellidos" />
+                      <br/>
+                    </div></td>
+                    </tr>
+                    <tr>
+                      <td width="70" height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
+                      <td width="189"><span class="Estilo14"> </span>
+                        <div align="left" ><span class="Estilo14">C.C.:
+                            <label> </label>
+                          </span>
+                          <label><br/>
+                          </label>
+                          <label for="TipoAnimal2"></label>
+                          <input type="text" name="CC" id="CC" />
+                          <br/>
+                        </div></td>
+                      <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td><span class="Estilo14"> </span>
+                    <div align="left" ><span class="Estilo14">Correo Electronico:
+                        <label> </label>
+                      </span>
+                      <label><br/>
+                      </label>
+                      <label for="Raza2"></label>
+                      <input name="CorreoElectronicol" type="Text" maxlength="16" tabindex="2" id="CorreoElectronicol" />
+                      <br/>
+                    </div></td>
+                    </tr>
+                    <tr>
+                      <td width="70" height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
+                      <td width="189"><span class="Estilo14"> </span>
+                        <div align="left" ><span class="Estilo14">Ciudad:
+                            <label> </label>
+                          </span>
+                          <label><br/>
+                          </label>
+                          <label for="TipoAnimal2"></label>
+                          <input type="text" name="Ciudad" id="Ciudad" />
+                          <br/>
+                        </div></td>
+                      <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td><span class="Estilo14"> </span>
+                    <div align="left" ><span class="Estilo14">No Celular:
+                        <label> </label>
+                      </span>
+                      <label><br/>
+                      </label>
+                      <label for="Raza2"></label>
+                      <input name="Celular" type="Text" maxlength="16" tabindex="2" id="Celular" />
+                      <br/>
+                    </div></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td width="70" height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
+                      <td width="189"><span class="Estilo14"> </span>
+                        <div align="left" ><span class="Estilo14">Nombre de Usuario:
+                            <label> </label>
+                          </span>
+                          <label><br/>
+                          </label>
+                          <label for="TipoAnimal2"></label>
+                          <input type="text" name="NombreUsuario" id="NombreUsuario" />
+                          <br/>
+                        </div></td>
+                      <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td><span class="Estilo14"> </span>
+                    <div align="left" ><span class="Estilo14">Contraseña:
+                        <label> </label>
+                      </span>
+                      <label><br/>
+                      </label>
+                      <label for="Raza2"></label>
+                      <input name="Contarseña" type="Text" maxlength="16" tabindex="2" id="Contarseña" />
+                      <br/>
+                    </div></td>
+                    </tr>
+                    <tr>
+                    <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
+                  <td><span class="Estilo14"> </span>
+                    <div align="left" ><span class="Estilo14">Confirmar Contraseña:
+                        <label> </label>
+                      </span>
+                      <label><br/>
+                      </label>
+                      <label for="Raza2"></label>
+                      <input name="ConfContraseña" type="Text" maxlength="16" tabindex="2" id="ConfContraseña" />
+                      <br/>
+                    </div></td>
+                    </tr>
+                      <td height="21" colspan="5"><label></label>
+                        <div align="center">
+                          <label>
+                            <input name="Generar registro" type="submit" class="Estilo14" id="Generar registro" value="Generar Registro" />
+                          </label>
+                        </div></td>
+                    </tr>
+                  </table>
+                </div></td>
+              </tr>
+              </table>
+              <br/>
+            </fieldset></td>
           </tr>
         </table>
         <br/>
-    </form></td>
-  </tr>
-</table>  
-    
-  <?php 
+          <?php 
   
   //Este bloque de PHP permitira que las variables Pais y Ciudad puedan interactua dinamicamente
   //con la desicion del usuario y la Base de Datos
@@ -144,7 +244,12 @@ conexion($conexion);
 		echo ("No ha sido posible establecer la conexion");}
 ?>
 
-</form>
+    </form></td>
+  </tr>
+
+
+</body>
+</html>
 
 </body>
 </html>
