@@ -44,7 +44,7 @@ body {
 .Estilo19 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-style: normal;
-	color: rgb(0,153,0);
+	color: rgb(51,51,51);
 	text-transform: none;
 	border-top-color: rgb(255,255,255);
 	border-right-color: rgb(255,255,255);
@@ -52,7 +52,7 @@ body {
 	border-left-color: rgb(255,255,255);
 }
 body,td,th {
-	color: rgb(0,153,0);
+	color: rgb(51,51,51);
 	font-size: 18px;
 }
 -->
@@ -136,7 +136,7 @@ body,td,th {
         </tr>
         <tr>
           <th scope="col">Foto</th>
-          <th scope="col"><img src="images/gato4.jpg" alt="" width="80" height="74" align="middle" /></th>
+          <th scope="col"><img src="images/perro1.jpg" alt="" width="97" height="73" align="middle" /></th>
         </tr>
         <tr>
           <th scope="col">Edad</th>
