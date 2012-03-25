@@ -44,11 +44,11 @@ body {
 .Estilo19 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-style: normal;
-	color: rgb(0,102,0);
+	color: rgb(0,153,0);
 	text-transform: none;
 }
 body,td,th {
-	color: rgb(0,102,0);
+	color: rgb(0,153,0);
 	font-size: 18px;
 }
 -->
@@ -83,6 +83,20 @@ body,td,th {
           <input type="text" name="textfield2" id="textfield2" />
         </form></td>
       </tr>
+  </table>
+      <table width="200" height="178">
+        <tr>
+          <th scope="col"><form id="form3" name="form3" method="post" action="">
+            <label for="button"></label>
+            <input name="button" type="submit" id="button" value="Buscar" />
+          </form></th>
+        </tr>
+        <tr>
+          <th scope="row"><form id="form4" name="form4" method="post" action="">
+            
+            <input type="submit" name="button2" id="button2" value="Eliminar" />
+          </form></th>
+        </tr>
     </table></td>
   </tr>
 </table>
