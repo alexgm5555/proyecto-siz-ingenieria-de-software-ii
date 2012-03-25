@@ -160,7 +160,7 @@ body,td,th {
         <label for="button3"></label>
         <input name="button3" type="submit" class="Estilo19" id="button3" value="Eliminar Todos los registros" />
       </form>
-    <p>h</p></td>
+    <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p></td>
   </tr>
 </table>
 </body>
