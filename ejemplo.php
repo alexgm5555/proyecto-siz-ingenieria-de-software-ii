@@ -65,8 +65,12 @@ body {
   <tr>
     <td height="251" colspan="2"><table width="284" height="178" border="1" align="left">
       <tr>
-        <th scope="col">&nbsp;</th>
-        <th scope="col">&nbsp;</th>
+        <th scope="col"><img src="images/usuarioo.jpg" width="70" height="70" alt="Usuario" /></th>
+        <th scope="col"><form id="form1" name="form1" method="post" action="">
+          <label>Usuario
+            <input type="text" name="textfield" id="textfield" />
+          </label>
+        </form></th>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
