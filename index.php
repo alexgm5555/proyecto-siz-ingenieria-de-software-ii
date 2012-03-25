@@ -59,6 +59,9 @@ body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-style: italic;
 }
+.Estilo18 a strong {
+	font-family: Georgia, Times New Roman, Times, serif;
+}
 -->
 </style></head>
 
@@ -68,8 +71,8 @@ body {
   <tr>
     <td width="790" height="139" colspan="2"><div align="center"><div>
       <div align="right">
-        <p><a href="login.php" title="Iniciar Sesión" target="_self">Iniciar Sesión</a></p>
-        <p><a href="FormularioRegistro.php">Usuario no registrado</a></p>
+        <p><a href="login.php" title="Iniciar Sesión" target="_self" class="Estilo19"><strong>Iniciar Sesión</strong></a></p>
+        <p class="Estilo18"><a href="FormularioRegistro.php"><strong><em>Usuario no registrado</em></strong></a></p>
       </div>
     </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
