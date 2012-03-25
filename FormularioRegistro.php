@@ -66,8 +66,8 @@ body {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <body bgproperties="fixed" >
-<br/><br/>
-  
+
+  <br/><br/><table width="796" border="0" align="center"    bgcolor="" >
   <tr>
     <td width="790" height="139" colspan="2"><div align="center">
     <div align="right"><a href="index.php" title="Registro de Usuarios" target="_self">Cerrar Sesión</a></div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
@@ -247,7 +247,7 @@ conexion($conexion);
     </form></td>
   </tr>
 
-
+</table>
 </body>
 </html>
 
