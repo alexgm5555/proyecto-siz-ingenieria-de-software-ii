@@ -49,6 +49,7 @@ body {
 }
 body,td,th {
 	color: rgb(0,102,0);
+	font-size: 18px;
 }
 -->
 </style></head>
