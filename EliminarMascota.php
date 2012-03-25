@@ -46,6 +46,10 @@ body {
 	font-style: normal;
 	color: rgb(0,153,0);
 	text-transform: none;
+	border-top-color: rgb(255,255,255);
+	border-right-color: rgb(255,255,255);
+	border-bottom-color: rgb(255,255,255);
+	border-left-color: rgb(255,255,255);
 }
 body,td,th {
 	color: rgb(0,153,0);
@@ -72,6 +76,7 @@ body,td,th {
         <th width="67" scope="col"><img src="images/usuarioo.jpg" width="50" height="52" alt="Usuario" /></th>
         <th width="175" align="center" valign="middle" scope="col"><form id="form1" name="form1" method="post" action="">
           <label>Usuario
+            <br />
             <input type="text" name="textfield" id="textfield" />
           </label>
         </form></th>
@@ -83,16 +88,48 @@ body,td,th {
           <input type="text" name="textfield2" id="textfield2" />
         </form></td>
       </tr>
-  </table>
-      <table width="448" height="89" border="0" align="right">
+</table>
+      <table width="448" height="314" border="0" align="right">
         <tr>
-          <th scope="col"><form id="form3" name="form3" method="post" action="">
+          <th width="100" height="50" scope="col"><form id="form3" name="form3" method="post" action="">
             <label>
               <input name="Buscar" type="submit" class="Estilo19" id="Buscar" value="Buscar" />
             </label>
           </form></th>
-          <th scope="col"><form id="form4" name="form4" method="post" action="">
+          <th width="100" scope="col"><form id="form4" name="form4" method="post" action="">
             <input name="button" type="submit" class="Estilo19" id="button" value="Eliminar" />
+          </form></th>
+        </tr>
+        <tr>
+          <th height="50" scope="col">Nombre</th>
+          <th scope="col"><form id="form5" name="form5" method="post" action="">
+            <label for="textfield3"></label>
+            <input type="text" name="textfield3" id="textfield3" />
+          </form></th>
+        </tr>
+        <tr>
+          <th height="50" scope="col">Raza</th>
+          <th scope="col"><form id="form6" name="form6" method="post" action="">
+            <label for="textfield4"></label>
+            <input type="text" name="textfield4" id="textfield4" />
+          </form></th>
+        </tr>
+        <tr>
+          <th height="50" scope="col">Foto</th>
+          <th scope="col"><img src="images/gato4.jpg" alt="" width="80" height="74" align="middle" /></th>
+        </tr>
+        <tr>
+          <th height="50" scope="col">Edad</th>
+          <th scope="col"><form id="form7" name="form7" method="post" action="">
+            <label for="textfield5"></label>
+            <input type="text" name="textfield5" id="textfield5" />
+          </form></th>
+        </tr>
+        <tr>
+          <th height="50" scope="col">Disponible</th>
+          <th scope="col"><form id="form8" name="form8" method="post" action="">
+            <label for="textfield6"></label>
+            <input type="text" name="textfield6" id="textfield6" />
           </form></th>
         </tr>
     </table></td>
