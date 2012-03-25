@@ -59,80 +59,108 @@ body,td,th {
 </style></head>
 
 <body>
-<br/><br/><table width="828" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
+<br/><br/><table width="828" height="468" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
   
   <tr>
-    <td width="822" height="139" colspan="2"><div align="center">
+    <td width="822" colspan="2"><div align="center">
         <div align="right"><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
   <tr>
-    <td height="90" colspan="2"><div align="center">
+    <td colspan="2"><div align="center">
       <p align="center" class="Estilo3 Estilo19"><strong>Eliminar Mascota</strong></p>
     </div></td>
   </tr>
   <tr>
-    <td height="251" colspan="2"><table width="252" height="178" border="0" align="left">
+    <td colspan="2"><table width="396" border="0" align="right">
       <tr>
-        <th width="67" scope="col"><img src="images/usuarioo.jpg" width="50" height="52" alt="Usuario" /></th>
-        <th width="175" align="center" valign="middle" scope="col"><form id="form1" name="form1" method="post" action="">
-          <label>Usuario
-            <br />
-            <input type="text" name="textfield" id="textfield" />
-          </label>
+        <th width="212" scope="col"><form id="form" name="form3" method="post" action="">
+        </form></th>
+        <th width="226" scope="col"><form id="form2" name="form4" method="post" action="">
+          <input name="button2" type="submit" class="Estilo19" id="button2" value="Eliminar" />
         </form></th>
       </tr>
       <tr>
-        <th scope="row"><img src="images/Codigo.jpg" width="50" height="48" alt="Codigo" /></th>
-        <td align="center" valign="middle"><form id="form2" name="form2" method="post" action="">
-          <label for="textfield2"><strong> Código</strong></label>
-          <input type="text" name="textfield2" id="textfield2" />
-        </form></td>
+        <th scope="col">Nombre</th>
+        <th scope="col"><form id="form9" name="form5" method="post" action="">
+          <label for="textfield3"></label>
+          <input type="text" name="textfield" id="textfield3" />
+        </form></th>
       </tr>
-</table>
-      <table width="448" height="314" border="0" align="right">
+      <tr>
+        <th scope="col">Raza</th>
+        <th scope="col"><form id="form10" name="form6" method="post" action="">
+          <label for="textfield4"></label>
+          <input type="text" name="textfield" id="textfield4" />
+        </form></th>
+      </tr>
+      <tr>
+        <th scope="col">Foto</th>
+        <th scope="col"><img src="images/gato4.jpg" alt="" width="80" height="74" align="middle" /></th>
+      </tr>
+      <tr>
+        <th scope="col">Edad</th>
+        <th scope="col"><form id="form11" name="form7" method="post" action="">
+          <label for="textfield5"></label>
+          <input type="text" name="textfield" id="textfield5" />
+        </form></th>
+      </tr>
+      <tr>
+        <th scope="col">Disponible</th>
+        <th scope="col"><form id="form12" name="form8" method="post" action="">
+          <label for="textfield6"></label>
+          <input type="text" name="textfield" id="textfield6" />
+        </form></th>
+      </tr>
+    </table>
+      <table width="396" border="0" align="right">
         <tr>
-          <th width="100" height="50" scope="col"><form id="form3" name="form3" method="post" action="">
-            <label>
-              <input name="Buscar" type="submit" class="Estilo19" id="Buscar" value="Buscar" />
-            </label>
+          <th width="212" scope="col"><form id="form3" name="form3" method="post" action="">
           </form></th>
-          <th width="100" scope="col"><form id="form4" name="form4" method="post" action="">
+          <th width="226" scope="col"><form id="form4" name="form4" method="post" action="">
             <input name="button" type="submit" class="Estilo19" id="button" value="Eliminar" />
           </form></th>
         </tr>
         <tr>
-          <th height="50" scope="col">Nombre</th>
+          <th scope="col">Nombre</th>
           <th scope="col"><form id="form5" name="form5" method="post" action="">
             <label for="textfield3"></label>
             <input type="text" name="textfield3" id="textfield3" />
           </form></th>
         </tr>
         <tr>
-          <th height="50" scope="col">Raza</th>
+          <th scope="col">Raza</th>
           <th scope="col"><form id="form6" name="form6" method="post" action="">
             <label for="textfield4"></label>
             <input type="text" name="textfield4" id="textfield4" />
           </form></th>
         </tr>
         <tr>
-          <th height="50" scope="col">Foto</th>
+          <th scope="col">Foto</th>
           <th scope="col"><img src="images/gato4.jpg" alt="" width="80" height="74" align="middle" /></th>
         </tr>
         <tr>
-          <th height="50" scope="col">Edad</th>
+          <th scope="col">Edad</th>
           <th scope="col"><form id="form7" name="form7" method="post" action="">
             <label for="textfield5"></label>
             <input type="text" name="textfield5" id="textfield5" />
           </form></th>
         </tr>
         <tr>
-          <th height="50" scope="col">Disponible</th>
+          <th scope="col">Disponible</th>
           <th scope="col"><form id="form8" name="form8" method="post" action="">
             <label for="textfield6"></label>
             <input type="text" name="textfield6" id="textfield6" />
           </form></th>
         </tr>
     </table></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" valign="middle"><p>&nbsp;</p>
+      <form id="form1" name="form1" method="post" action="">
+        <label for="button3"></label>
+        <input name="button3" type="submit" class="Estilo19" id="button3" value="Eliminar Todos los registros" />
+      </form>
+    <p>&nbsp;</p></td>
   </tr>
 </table>
 </body>
