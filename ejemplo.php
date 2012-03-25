@@ -47,6 +47,9 @@ body {
 	color: rgb(0,102,0);
 	text-transform: none;
 }
+body,td,th {
+	color: rgb(0,102,0);
+}
 -->
 </style></head>
 
@@ -63,18 +66,21 @@ body {
     </div></td>
   </tr>
   <tr>
-    <td height="251" colspan="2"><table width="284" height="178" border="1" align="left">
+    <td height="251" colspan="2"><table width="284" height="178" border="0" align="left">
       <tr>
-        <th scope="col"><img src="images/usuarioo.jpg" width="70" height="70" alt="Usuario" /></th>
-        <th scope="col"><form id="form1" name="form1" method="post" action="">
+        <th width="67" scope="col"><img src="images/usuarioo.jpg" width="50" height="52" alt="Usuario" /></th>
+        <th width="207" align="center" valign="middle" scope="col"><form id="form1" name="form1" method="post" action="">
           <label>Usuario
             <input type="text" name="textfield" id="textfield" />
           </label>
         </form></th>
       </tr>
       <tr>
-        <th scope="row">&nbsp;</th>
-        <td>&nbsp;</td>
+        <th scope="row"><img src="images/Codigo.jpg" width="50" height="48" alt="Codigo" /></th>
+        <td align="center" valign="middle"><form id="form2" name="form2" method="post" action="">
+          <label for="textfield2"><strong> Código</strong></label>
+          <input type="text" name="textfield2" id="textfield2" />
+        </form></td>
       </tr>
     </table></td>
   </tr>
