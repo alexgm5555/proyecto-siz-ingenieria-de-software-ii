@@ -66,7 +66,7 @@ body,td,th {
         <div align="right">
           <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p>
           <p><a href="MenuUsuarioParticular.php">Menu de Usuario</a></p>
-        </div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="98" height="77" align="middle"/></div></td>
+        </div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="71" height="55" align="middle"/></div></td>
   </tr>
   <tr>
     <td colspan="2"><div align="center">
@@ -74,11 +74,11 @@ body,td,th {
     </div></td>
   </tr>
   <tr>
-    <td colspan="2"><table width="396" border="0" align="right">
+    <td colspan="2"><table width="372" border="0" align="right">
       <tr>
-        <th width="212" scope="col"><form id="form" name="form3" method="post" action="">
+        <th width="180" scope="col"><form id="form" name="form3" method="post" action="">
         </form></th>
-        <th width="226" scope="col"><form id="form2" name="form4" method="post" action="">
+        <th width="182" scope="col"><form id="form2" name="form4" method="post" action="">
           <input name="button2" type="submit" class="Estilo19" id="button2" value="Eliminar" />
         </form></th>
       </tr>
@@ -98,7 +98,7 @@ body,td,th {
       </tr>
       <tr>
         <th scope="col">Foto</th>
-        <th scope="col"><img src="images/gato4.jpg" alt="" width="80" height="74" align="middle" /></th>
+        <th scope="col"><img src="images/gato4.jpg" alt="" width="75" height="70" align="middle" /></th>
       </tr>
       <tr>
         <th scope="col">Edad</th>
@@ -108,18 +108,18 @@ body,td,th {
         </form></th>
       </tr>
       <tr>
-        <th scope="col">Disponible</th>
+        <th height="24" scope="col">Disponible</th>
         <th scope="col"><form id="form12" name="form8" method="post" action="">
           <label for="textfield6"></label>
           <input type="text" name="textfield" id="textfield6" />
         </form></th>
       </tr>
     </table>
-      <table width="396" border="0" align="right">
+      <table width="380" border="0" align="left">
         <tr>
-          <th width="212" scope="col"><form id="form3" name="form3" method="post" action="">
+          <th width="180" scope="col"><form id="form3" name="form3" method="post" action="">
           </form></th>
-          <th width="226" scope="col"><form id="form4" name="form4" method="post" action="">
+          <th width="190" scope="col"><form id="form4" name="form4" method="post" action="">
             <input name="button" type="submit" class="Estilo19" id="button" value="Eliminar" />
           </form></th>
         </tr>
@@ -138,8 +138,8 @@ body,td,th {
           </form></th>
         </tr>
         <tr>
-          <th scope="col">Foto</th>
-          <th scope="col"><img src="images/perro1.jpg" alt="" width="97" height="73" align="middle" /></th>
+          <th height="73" scope="col">Foto</th>
+          <th scope="col"><img src="images/perro1.jpg" alt="" width="92" height="67" align="middle" /></th>
         </tr>
         <tr>
           <th scope="col">Edad</th>
