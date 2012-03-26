@@ -59,10 +59,10 @@ body,td,th {
 </style></head>
 
 <body>
-<br/><br/><table width="828" height="468" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
+<br/><br/><table width="799" height="468" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
   
   <tr>
-    <td width="822" colspan="2"><div align="center">
+    <td width="793" colspan="2"><div align="center">
         <div align="right">
           <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a>        </p>
         </div>
