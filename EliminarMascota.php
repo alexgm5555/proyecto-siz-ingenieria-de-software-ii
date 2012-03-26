@@ -59,14 +59,14 @@ body,td,th {
 </style></head>
 
 <body>
-<br/><br/><table width="804" height="468" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
+<br/><br/><table width="804" height="481" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" >
   
   <tr>
     <td width="798" colspan="2"><div align="center">
         <div align="right">
           <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p>
           <p><a href="MenuUsuarioParticular.php">Menu de Usuario</a></p>
-        </div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
+        </div><img src="images/website_correction_256.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="98" height="77" align="middle"/></div></td>
   </tr>
   <tr>
     <td colspan="2"><div align="center">
@@ -158,8 +158,7 @@ body,td,th {
     </table></td>
   </tr>
   <tr>
-    <td colspan="2" align="center" valign="middle"><p>&nbsp;</p>
-      <form id="form1" name="form1" method="post" action="">
+    <td height="65" colspan="2" align="center" valign="middle"><form id="form1" name="form1" method="post" action="">
         <label for="button3"></label>
         <input name="button3" type="submit" class="Estilo19" id="button3" value="Eliminar Todos los registros" />
       </form>
