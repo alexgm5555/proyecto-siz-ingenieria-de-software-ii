@@ -56,16 +56,24 @@ body {
   
   <tr>
     <td width="790" height="139" colspan="2"><div align="center">
-        <div align="right"><a href="index.php" title="Iniciar Sesiï¿½n" target="_self">Volver a home</a></div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
+        <div align="right"><a href="index.php" title="Iniciar Sesión" target="_self">Volver a home</a></div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
   <tr>
     <td height="90" colspan="2"><div align="center">
-      <p class="Estilo3 Estilo19">Inicio de Sesi&oacute;n</p>
-      <p class="Estilo3 Estilo19">Zoonosis</p>
+      <p class="Estilo3 Estilo19">Inicio de Sesi&oacute;n<br />Zoonosis
+      </p>
+      <p>
+      <?php
+	  if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 1){
+	  		echo "Usuario y/o Contraseña inválidos.";
+	  }
+	  ?>
+       </p>
+      
     </div></td>
   </tr>
   <tr>
-    <td height="251" colspan="2"><form id="form1" name="form1" method="post" action="validar.php">
+    <td height="251" colspan="2"><form id="form1" name="form1" method="post" action="loginApp.php">
         <table width="389" border="0" align="center" >
           <tr>
             <td width="383" height="226"><fieldset>
