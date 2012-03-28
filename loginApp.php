@@ -1,16 +1,54 @@
 <?php
-include ("conexionMySQL.php");
-$conexion = Conectarse();
-$usuario=$_POST['usuario'];
-$contrasena=$_POST['contrasena'];
-$consulta2 = "SELECT * from persona where usuario='$usuario' and contrasena='$contrasena'";
-$resultado2 = mysql_query($consulta2, $conexion) or die(mysql_error());
-$numfilas2 = mysql_num_rows($resultado2);
-if($numfilas2 !=0){
-	echo "La validacion del usuario se hizo satisfactoriamente. <br>Por favor quien este encargado de la pagina que se enlaza con login satisfactorio en bombas!! <br>la necesito para ponerla en el header y asi configurar la sesion ... :)";
-	//header ('location:BuscarMascota.php'); 
+
+
+ini_set('display_errors', 'Off');
+ini_set('display_startup_errors', 'Off');
+error_reporting(0);
+
+$username = $_POST['usuario'];
+$password = $_POST['contrasena'];
+$sesion_login = true;
+
+function Conectarse()
+{
+   if (!($link=mysql_connect("localhost","root","root")))
+   {
+      echo "Error conectando a la base de datos.";
+      exit();
+   }
+   if (!mysql_select_db("persona",$link))
+   {
+      echo "Error seleccionand la base de datos.";
+      exit();
+   }
+   return $link;
 }
-else{
-	header ('location:login.php?LoginMesagge=1'); 
-}
+
+$con = Conectarse();
+$query = "SELECT * FROM usuario WHERE usuario ='".$username."' AND contrasena = '".$password."'";
+$q = mysql_query($query,$con);
+$s= "SELECT tipo FROM usuario WHERE usuario='".$username."'";
+$t = mysql_query($s,$con);
+try{
+
+
+if(mysql_result($q,0))
+{$result = mysql_result($q, 0);
+//echo $result;
+	if(mysql_result($t, 0)==3){
+		header ('location:MenuAdministrador.php'); 
+		}
+	if(mysql_result($t, 0)==2){
+		header ('location:MenuEmpleado.php'); 
+		}
+	if(mysql_result($t, 0)==1){
+		header ('location:MenuUsuarioParticular.php'); 
+		}		
+	//echo mysql_result($t, 0);;
+}else
+    echo header ('location:login.php?LoginMesagge=1'); 
+}catch(Exception $error){}
+mysql_close($con);
+
 ?>
+
