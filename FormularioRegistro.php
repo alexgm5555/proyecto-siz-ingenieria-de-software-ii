@@ -67,7 +67,7 @@ body {
 
 <body bgproperties="fixed" >
 
-  <br/><br/><table width="796" border="0" align="center"    bgcolor="" >
+<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" > 
   <tr>
     <td width="790" height="139" colspan="2"><div align="center">
     <div align="right"><a href="index.php" title="Registro de Usuarios" target="_self">Cerrar Sesión</a></div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>

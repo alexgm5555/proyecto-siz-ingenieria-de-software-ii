@@ -76,8 +76,8 @@ body,td,th {
   <tr>
     <td colspan="2" align="center"><table width="200" border="0">
       <tr>
-        <th scope="col"><img src="images/usuarioo.jpg" width="70" height="70" />Administraci&oacute;n Usuario</th>
-        <th scope="col"><img src="images/usuarioo.jpg" width="70" height="70" />Administraci&oacute;n Personal</th>
+        <th scope="col"><a href="AdministracionUsuarios.php"><img src="images/usuarioo.jpg" width="70" height="70" /></a>Administraci&oacute;n Usuario</th>
+        <th scope="col"><a href="AdministracionEmpleados.php"><img src="images/usuarioo.jpg" width="70" height="70" /></a>Administraci&oacute;n Personal</th>
       </tr>
       <tr>
         <th scope="row"><img src="images/zoonoses-image.jpg" width="70" height="71" />Administraci&oacute;n Animales</th>

@@ -64,7 +64,8 @@ body,td,th {
   <tr>
     <td width="793" colspan="2"><div align="center">
         <div align="right">
-          <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a>        </p>
+          <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p>
+          <p><a href="MenuAdministrador.php">Menu Admin</a> </p>
         </div>
     </div></td>
   </tr>
