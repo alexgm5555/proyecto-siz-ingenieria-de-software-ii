@@ -222,7 +222,7 @@ body {
   
 $conexion = true;
 
-conexion($conexion);
+Conectarse($conexion);
 
 	if($conexion){
 
