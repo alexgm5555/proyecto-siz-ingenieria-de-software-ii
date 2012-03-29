@@ -62,13 +62,12 @@ body {
 </style></head>
 
 <body bgproperties="fixed">
-
- <br/><br/><table width="796" border="0" align="center"    bgcolor="" > 
+<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" > 
   <tr>
     <td width="790" height="139" colspan="2"><div align="center">
         <div align="right">
           <p><a href="index.php" title="Buscar Mascota" target="_self">Cerrar Sesión</a></p>
-          <p><a href="MenuUsuarioParticular.php">Menu de Usuario</a></p>
+          <p><a href="MenuUsuarioParticular.php">Menu Usuario</a></p>
         </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
   </tr>
   <tr>

@@ -69,7 +69,11 @@ body {
 
 <body bgproperties="fixed">
 
- <br/><br/><table width="796" border="0" align="center"    bgcolor="" > 
+
+  <br/><br/>
+</div>
+<table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF"> 
+  <tr>
   <tr>
     <td width="790" height="139" colspan="2"><div align="center">
         <div align="right"><a href="index.php" title="Buscar Mascota" target="_self" class="Estilo19">Cerrar Sesión</a></div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
@@ -92,13 +96,13 @@ body {
                     
                 
                 
-                  <td width="136" height="64"><div align="center"><a href="RegistrarMascota.php"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></a></div></td>
-                  <td width="312"><h1 class="Estilo15"> <a href="RegistrarMascota.php" class="Estilo15">Registrar Mascota</a></h1></td>
+                  <td width="136" height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></a></div></td>
+                  <td width="312"><h1 class="Estilo15"> Registrar Mascota</a></h1></td>
                 </tr>
                
                 
                     
-                  <td height="72"><div align="center"><a href="EliminarMascota.php"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></a></div></td>
+                  <td height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></a></div></td>
                   <td><span class="Estilo14"> </span>
                     <div align="left" ><a href="EliminarMascota.php" class="Estilo15">Eliminar Registro de Mascota</a><br/>
                     </div></td>

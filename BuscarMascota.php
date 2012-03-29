@@ -62,7 +62,7 @@ body {
 </style></head>
 
 <body bgproperties="fixed">
-<br/><br/><table width="785" border="0" align="center" "   bgcolor="" >
+<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" > 
   
   <tr>
     <td width="790" height="139" colspan="2"><div align="center">
