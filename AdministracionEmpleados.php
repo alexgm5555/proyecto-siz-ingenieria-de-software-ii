@@ -64,7 +64,8 @@ body,td,th {
   <tr>
     <td width="793" colspan="2"><div align="center">
         <div align="right">
-          <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a>        </p>
+          <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p>
+          <p><a href="MenuAdministrador.php">Menu Admin</a><a href="AdministracionEmpleados.php"></a> </p>
         </div>
     </div></td>
   </tr>
@@ -77,7 +78,7 @@ body,td,th {
     <td colspan="2" align="center"><table width="200" border="0">
       <tr>
         <th scope="col"><img src="http://www.vectorizados.com/muestras/arquitecto-con-casco-amarillo.jpg" alt="Empleado" width="70" height="70"/>Crear Empleado</th>
-        <th scope="col"><p><img src="http://www.vectorizados.com/muestras/arquitecto-con-casco-amarillo.jpg" alt="Empleado" width="70" height="70"/>Buscar Empleado</p></th>
+        <th scope="col"><p><a href="BuscarEmpleadosModElim.php"><img src="http://www.vectorizados.com/muestras/arquitecto-con-casco-amarillo.jpg" alt="Empleado" width="70" height="70"/></a>Buscar Empleado</p></th>
       </tr>
     </table></td>
   </tr>
