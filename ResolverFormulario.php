@@ -23,7 +23,7 @@ $CelularUsuario = $_GET['celu'];
 $NombredeUsuario = $_GET['user'];
 $ContraseñadeUsuario = $_GET['password'];
 
-conexion($conexion);
+Conectarse($conexion);
 
 	if($conexion){
 		
