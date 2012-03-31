@@ -79,7 +79,7 @@ body {
     </div></td>
   </tr>
   <tr>
-  <td height="251" colspan="2"><form action="validar.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <td height="251" colspan="2"><form action="FormularioRegistroApp.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
         <table width="717" height="391" border="0" align="center" >
           <tr>
             <td width="647" height="226"><fieldset>
