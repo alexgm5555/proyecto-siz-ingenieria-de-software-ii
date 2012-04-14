@@ -52,7 +52,7 @@ else{
 				<div id="content">
 				
 					<div id="box1">
-						<h2>Bienvenid@ a Zoonisis <?php echo $_SESSION['usuario'];?></h2>
+						<h2><?php echo $_SESSION['usuario'];?>-- Estadísticas</h2>
 						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />
 						<p>
 							En Zoonisis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si quieres se parte de Zoonosis Colombia regístrate y forma parte de nuestra comunidad.</p>
