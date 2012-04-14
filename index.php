@@ -26,10 +26,10 @@ error_reporting("E_PARSE");
 <div id="nav">
 			  <ul>
 						<li class="first active">
-							<a href="#">Inicio</a>
+							<a href="index.php">Inicio</a>
 						</li>
 						<li>
-							<a href="#">Registro</a>
+							<a href="FormularioRegistro.php">Registro</a>
 						</li>
 						<li>
 							<a href="#">Acerca de</a>
