@@ -89,12 +89,58 @@ else{
 </div>
                           </div>
 <div class="AccordionPanel">
-<div class="AccordionPanelTab">Modificar una Sede</div>
-                            <div class="AccordionPanelContent">Contenido 2</div>
+<div class="AccordionPanelTab">
+  <div align="left">Modificar una Sede</div>
+</div>
+                            <div class="AccordionPanelContent">
+                              <p align="center">Por favor seleccione la sede que desea modificar:</p>
+                              <form id="form2" method="post" action="">
+                                <p align="center">
+                                  <label for="select"></label>
+                                  Sede a Modificar:
+                                  <select name="select" id="select">
+                                    <option>Sede 1</option>
+                                    <option>Sede 2</option>
+                                    <option>Sede 3</option>
+                                  </select>
+                                </p>
+                                <div align="center">
+                                  <table width="100" border="0">
+                                    <tr>
+                                      <td><input type="submit" name="login2" value="Seleccionar Sede" class="inputButton" /></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p align="center">&nbsp;</p>
+                              </form>
+<p>&nbsp;</p>
+</div>
                           </div>
                           <div class="AccordionPanel">
                             <div class="AccordionPanelTab">Eliminar una Sede</div>
-                            <div class="AccordionPanelContent">Contenido 3</div>
+                            <div class="AccordionPanelContent">
+                              <p align="center">Por favor seleccione la sede que desea eliminar:</p>
+                              <form id="form3" method="post" action="">
+                                <p align="center">
+                                  <label for="select"></label>
+                                  Sede a Modificar:
+                                  <select name="select2" id="select">
+                                    <option>Sede 1</option>
+                                    <option>Sede 2</option>
+                                    <option>Sede 3</option>
+                                  </select>
+                                </p>
+                                <div align="center">
+                                  <table width="100" border="0">
+                                    <tr>
+                                      <td><input type="submit" name="login3" value="Eliminar Sede" class="inputButton" /></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p align="center">&nbsp;</p>
+                              </form>
+                              <p></p>
+                            </div>
                           </div>
 					  </div>
 					</div>
