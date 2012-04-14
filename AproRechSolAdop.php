@@ -53,14 +53,78 @@ else{
 				
 					<div id="box1">
 						<h2>Aprobar / Rechazar Solicitud de Adopción</h2>
-						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás Aprobar o Rechazar solicitudes de Adopción realizadas a Zoonosis.
-					
+						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás Aprobar o Rechazar solicitudes de Adopción realizadas a Zoonosis.</p>
+						<p>&nbsp;</p>
 					</div><div id="box2">
-						<h2>En Zoonisis ellos son nuestros amigos</h2>
-						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
-					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
-					
-					<br class="clear" />
+						<div align="center">
+						  <table width="600" border="0">
+						    <tr>
+						      <td><div align="center">Solicitud</div></td>
+						      <td><div align="center">Descripción</div></td>
+						      <td><div align="center">Decisión</div></td>
+					        </tr>
+						    <tr>
+						      <td>006265</td>
+						      <td>Quiero adoptar al pajarito de Alex</td>
+						      <td><table width="200" border="0">
+						        <tr>
+						          <td><label>
+						            <input type="radio" name="RadioGroup1" value="opción" id="RadioGroup1_0" />
+						            Aceptar</label></td>
+					            </tr>
+						        <tr>
+						          <td><label>
+						            <input type="radio" name="RadioGroup1" value="opción" id="RadioGroup1_1" />
+						            Rechazar</label></td>
+					            </tr>
+					          </table></td>
+					        </tr>
+						    <tr>
+						      <td>006266</td>
+						      <td>Quiero adoptar al perrito de Duván</td>
+						      <td><table width="200">
+						        <tr>
+						          <td><label>
+						            <input type="radio" name="RadioGroup2" value="opción" id="RadioGroup1_2" />
+						            Aceptar</label></td>
+					            </tr>
+						        <tr>
+						          <td><label>
+						            <input type="radio" name="RadioGroup2" value="opción" id="RadioGroup1_3" />
+						            Rechazar</label></td>
+					            </tr>
+					          </table></td>
+					        </tr>
+						    <tr>
+						      <td>006267</td>
+						      <td>Quiero adoptar al gatico de Jeisson</td>
+						      <td><table width="200">
+						        <tr>
+						          <td><label>
+						            <input type="radio" name="RadioGroup3" value="opción" id="RadioGroup1_4" />
+						            Aceptar</label></td>
+					            </tr>
+						        <tr>
+						          <td><label>
+						            <input type="radio" name="RadioGroup3" value="opción" id="RadioGroup1_5" />
+						            Rechazar</label></td>
+					            </tr>
+					          </table></td>
+					        </tr>
+						    <tr>
+						      <td colspan="3"><div align="center">
+						        <table width="100" border="0">
+						          <tr>
+						            <td><input type="submit" name="login3" value="Guardar" class="inputButton" /></td>
+					              </tr>
+					            </table>
+					          </div></td>
+					        </tr>
+					      </table>
+					  </div>
+						<h2><br class="clear" />
+				</h2>
+					</div>
 				</div>
 				<div id="sidebar">
 					<h3>
