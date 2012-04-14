@@ -67,7 +67,7 @@ error_reporting("E_PARSE");
 						try {
 							$bandera=0;  
 							if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 1){
-	  							echo "<br><font color='red'>Usuario y/o Contraseña inválidos.</font>";
+	  							echo "<br><img src='images/Advertencia.png' alt='' width='40' height='38' /><font color='red'> Usuario 						                                      y/o Contraseña inválidos.</font>";
 								$bandera=1;								
 								}
 							if ($bandera == 0){
@@ -83,7 +83,7 @@ error_reporting("E_PARSE");
 	  ?>
                     </h3>
 					<div class="form">
-						<form action="#" method="post" id="login"></form>
+						<form action="loginApp.php" method="post" id="formularioregistro">
 <p>
 							<label for="username" class="login">Usuario</label> <input type="text" name="username" id="username" value="Usuario" class="inputBox" />
 						</p>
@@ -91,11 +91,11 @@ error_reporting("E_PARSE");
 							<label for="password" class="login">Contraseña</label> <input type="password" name="password" id="password" value="password" class="inputBox" />
 						</p>
 <p>
-							<span><input type="checkbox" name="remember" /> 
-							&nbsp;Recordarme</span> 
-							<input type="button" name="login" value="Login" class="inputButton" />
+		  <span><input type="checkbox" name="remember" /> 
+		  &nbsp;Recordarme</span> 
+							<input type="submit" name="login" value="Login" class="inputButton" /></form>
 						</p>
-					</div>
+				  </div>
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">
 						<li class="first">
@@ -109,7 +109,7 @@ error_reporting("E_PARSE");
 						</li>
 					</ul>
 				  <p>&nbsp;</p>
-                </div>
+            </div>
 				<br class="clear" />
 			</div>
 		</div>
