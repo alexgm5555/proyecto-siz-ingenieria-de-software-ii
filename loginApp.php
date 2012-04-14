@@ -11,6 +11,6 @@ if($numfilas2 !=0){
         header ('location:MenuAdministrador.php'); 
 }
 else{
-        header ('location:login.php?LoginMesagge=1'); 
+        header ('location:index.php?LoginMesagge=1'); 
 }
 ?>
