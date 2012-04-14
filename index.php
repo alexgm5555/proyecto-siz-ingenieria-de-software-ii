@@ -67,7 +67,7 @@ error_reporting("E_PARSE");
 						try {
 							$bandera=0;  
 							if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 1){
-	  							echo "<br>Usuario y/o Contraseña inválidos.";
+	  							echo "<br><font color='red'>Usuario y/o Contraseña inválidos.</font>";
 								$bandera=1;								
 								}
 							if ($bandera == 0){
