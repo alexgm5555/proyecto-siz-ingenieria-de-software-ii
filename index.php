@@ -85,10 +85,10 @@ error_reporting("E_PARSE");
 					<div class="form">
 						<form action="loginApp.php" method="post" id="formularioregistro">
 <p>
-							<label for="username" class="login">Usuario</label> <input type="text" name="username" id="username" value="Usuario" class="inputBox" />
+				<label for="usuario" class="login">Usuario</label> <input type="text" name="usuario" id="usuario" value="Usuario" class="inputBox" />
 						</p>
 <p>
-							<label for="password" class="login">Contraseña</label> <input type="password" name="password" id="password" value="password" class="inputBox" />
+				<label for="contrasena" class="login">Contraseña</label> <input type="password" name="contrasena" id="contrasena" value="password" class="inputBox" />
 						</p>
 <p>
 		  <span><input type="checkbox" name="remember" /> 
