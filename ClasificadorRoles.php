@@ -39,7 +39,7 @@ else{
 						<li class="first active"><a href="#">Inicio</a></li>			
 						<li><a href="#">Acerca de</a></li>
                        	<li class="last"><a href="#">Contacto</a></li>
-						<li class="last"><a href="#">Cerrar Sesión</a></li>							
+						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
 					</ul>
                     
               <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>

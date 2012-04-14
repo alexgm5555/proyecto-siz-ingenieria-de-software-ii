@@ -66,29 +66,40 @@ error_reporting("E_PARSE");
                     <?php		
 						try {
 							$bandera=0;  
-							if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 1){
-	  							echo " 
+							$mensaje = $_GET['LoginMesagge']; 
+							switch ($mensaje) {
+								case 0:
+									echo "Iniciar Sesión";
+									break;
+								case 1:
+									echo " 
 								<table width='auto' border='0'>
   									  <tr>
 										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
 										<td align='center'><font color='red' size='5px'>Usuario y/o Contraseña inválidos.</font></td>
 									  </tr>
-									</table>";																	
-								$bandera=1;								
-								}
-							if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 2){
-	  							echo " 
+									</table>";	
+									break;
+								case 2:
+									echo " 
 								<table width='auto' border='0'>
   									  <tr>
 										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
 										<td align='center'><font color='red' size='5px'>Acceso Restringido. Por favor inicie sesión.</font></td>
 									  </tr>
 									</table>";
-								$bandera=1;								
-								}	
-							if ($bandera == 0){
-								echo "Iniciar Sesión";	
-							}
+									break;
+								case 3:	
+									echo "
+									<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>Tu Sesión ha finalizado correctamente.</font></td>
+									  </tr>
+									</table>";
+									break;
+							}				
+							
 							}  
 						catch (Exception $e)  
 						{  
