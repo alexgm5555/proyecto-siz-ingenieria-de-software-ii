@@ -1,6 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-error_reporting("E_PARSE");
+//error_reporting("E_PARSE");
+//Validamos si la sesión ya fue creada:
+session_start();
+if ( isset( $_SESSION['usuario'])) {
+
+//Permite continuar en la página
+}
+else{	
+	header ('location:index.php?LoginMesagge=2'); 
+	} 
+
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -24,22 +34,16 @@ error_reporting("E_PARSE");
 					<h1> Zoonosis</h1>
 				</div>
 <div id="nav">
-			  <ul>
-						<li class="first active">
-							<a href="#">Inicio</a>
-						</li>
-						<li>
-							<a href="#">Registro</a>
-						</li>
-						<li>
-							<a href="#">Acerca de</a>
-						</li>
-						<li class="last">
-							<a href="#">Contacto</a>
-						</li>
+			  		
+                    <ul>
+						<li class="first active"><a href="#">Inicio</a></li>			
+						<li><a href="#">Acerca de</a></li>
+                       	<li class="last"><a href="#">Contacto</a></li>
+						<li class="last"><a href="#">Cerrar Sesión</a></li>							
 					</ul>
-					<br class="clear" />
-				</div>
+                    
+              <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
+</div>
 			</div>
 			<div id="banner">
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
@@ -48,7 +52,7 @@ error_reporting("E_PARSE");
 				<div id="content">
 				
 					<div id="box1">
-						<h2>Bienvenid@ a Zoonisis</h2>
+						<h2>Bienvenid@ a Zoonisis <?php echo $_SESSION['usuario'];?></h2>
 						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />
 						<p>
 							En Zoonisis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si quieres se parte de Zoonosis Colombia regístrate y forma parte de nuestra comunidad.</p>
@@ -63,55 +67,21 @@ error_reporting("E_PARSE");
 				</div>
 				<div id="sidebar">
 					<h3>
-                    <?php		
-						try {
-							$bandera=0;  
-							if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 1){
-	  							echo " 
-								<table width='auto' border='0'>
-  									  <tr>
-										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='red' size='5px'>Usuario y/o Contraseña inválidos.</font></td>
-									  </tr>
-									</table>";																	
-								$bandera=1;								
-								}
-							if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 2){
-	  							echo " 
-								<table width='auto' border='0'>
-  									  <tr>
-										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='red' size='5px'>Acceso Restringido. Por favor inicie sesión.</font></td>
-									  </tr>
-									</table>";
-								$bandera=1;								
-								}	
-							if ($bandera == 0){
-								echo "Iniciar Sesión";	
-							}
-							}  
-						catch (Exception $e)  
-						{  
-    						echo "Sucedió un error PHP.";
-						}
-	  
-	  
-	  ?>
-                    </h3>
+                    
+                  </h3>
 					<div class="form">
-						<form action="loginApp.php" method="post" id="formularioregistro">
-<p>
-				<label for="usuario" class="login">Usuario</label> <input type="text" name="usuario" id="usuario" value="Usuario" class="inputBox" />
-						</p>
-<p>
-				<label for="contrasena" class="login">Contraseña</label> <input type="password" name="contrasena" id="contrasena" value="password" class="inputBox" />
-						</p>
-<p>
-		  <span><input type="checkbox" name="remember" /> 
-		  &nbsp;Recordarme</span> 
-							<input type="submit" name="login" value="Login" class="inputButton" /></form>
-						</p>
-				  </div>
+					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
+                      <ol>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                        <li>Módulo</li>
+                      </ol>
+                  </div>
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">
 						<li class="first">
