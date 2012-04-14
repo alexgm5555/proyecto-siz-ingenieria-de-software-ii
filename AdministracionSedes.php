@@ -26,7 +26,9 @@ else{
 		<title>Zoonisis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
-	</head>
+    <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+	<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+</head>
 	<body>
 		<div id="outer">
 			<div id="header">
@@ -52,14 +54,25 @@ else{
 				<div id="content">
 				
 					<div id="box1">
-						<h2>Bienvenid@ a Zoonisis <?php echo $_SESSION['usuario'];?></h2>
-						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar las estadísticas generales del Sistema de Información Zoonisis.
-					</div>
+						<h2>Administración de Sedes</h2>
+						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
 					
 					<div id="box2">
-						<h2>En Zoonisis ellos son nuestros amigos</h2>
-						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
-					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
+						<div id="Accordion1" class="Accordion" tabindex="0">
+<div class="AccordionPanel">
+<div class="AccordionPanelTab">Crear una Sede</div>
+                            <div class="AccordionPanelContent">Contenido 1</div>
+                          </div>
+<div class="AccordionPanel">
+<div class="AccordionPanelTab">Modificar una Sede</div>
+                            <div class="AccordionPanelContent">Contenido 2</div>
+                          </div>
+                          <div class="AccordionPanel">
+                            <div class="AccordionPanelTab">Eliminar una Sede</div>
+                            <div class="AccordionPanelContent">Contenido 3</div>
+                          </div>
+					  </div>
+					</div>
 					
 					<br class="clear" />
 				</div>
@@ -76,7 +89,7 @@ else{
                         <li>Módulo</li>
                         <li>Módulo</li>
                         <li>Módulo</li>
-                        <li><a href="AdministracionSedes.php">Administración de Sedes</a></li>
+                        <li>Administración de Sedes</li>
                         <li><a href="Estadisticas.php">Estadísticas</a></li>
                       </ol>
                   </div>
@@ -101,5 +114,8 @@ else{
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonisis Team
 			<br />© 2012.</div>
+    <script type="text/javascript">
+var Accordion1 = new Spry.Widget.Accordion("Accordion1");
+        </script>
 </body>
 </html>
