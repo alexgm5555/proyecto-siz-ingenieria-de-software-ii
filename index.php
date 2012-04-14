@@ -85,7 +85,7 @@ error_reporting("E_PARSE");
 								<table width='auto' border='0'>
   									  <tr>
 										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='red' size='5px'>Acceso Restringido. Por favor inicie sesión.</font></td>
+										<td align='center'><font color='red' size='5px'>Acceso Restringido. Por favor inicia sesión.</font></td>
 									  </tr>
 									</table>";
 									break;
@@ -93,7 +93,7 @@ error_reporting("E_PARSE");
 									echo "
 									<table width='auto' border='0'>
   									  <tr>
-										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
 										<td align='center'><font color='green' size='5px'>Tu Sesión ha finalizado correctamente.</font></td>
 									  </tr>
 									</table>";
