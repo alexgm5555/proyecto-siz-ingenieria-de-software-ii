@@ -65,7 +65,7 @@ body {
       <p>
       <?php
 	  if($_GET['LoginMesagge'] != null and $_GET['LoginMesagge'] == 1){
-	  		echo "Usuario y/o Contraseï¿½a invï¿½lidos.";
+	  		echo "Usuario y/o Contraseñaa inválidos.";
 	  }
 	  ?>
        </p>
