@@ -7,8 +7,10 @@ $consulta2 = "SELECT * from usuarios where UserName='$usuario' and Password='$co
 $resultado2 = mysql_query($consulta2, $conexion) or die(mysql_error());
 $numfilas2 = mysql_num_rows($resultado2);
 if($numfilas2 !=0){
-        //echo "La validacion del usuario se hizo satisfactoriamente. <br>Por favor quien este encargado de la pagina que se enlaza con login satisfactorio en bombas!! <br>la necesito para ponerla en el header y asi configurar la sesion ... :)";
-        header ('location:MenuAdministrador.php'); 
+        session_start(); 
+		$_SESSION['usuario'] = $usuario;
+		
+        header ('location:ClasificadorRoles.php'); 
 }
 else{
         header ('location:index.php?LoginMesagge=1'); 
