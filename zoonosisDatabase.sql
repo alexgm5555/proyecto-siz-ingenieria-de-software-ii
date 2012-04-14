@@ -138,7 +138,7 @@ CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Animal` (
   `Tamaño` VARCHAR(45) NOT NULL ,
   `Edad` VARCHAR(45) NOT NULL ,
   `Peso` VARCHAR(45) NOT NULL ,
-  `Foto` LONGBLOB NULL ,
+  `Foto` VARCHAR(255) NULL ,
   `TipoImagen` VARCHAR(255) NULL ,
   `Habilidad` TEXT NULL ,
   PRIMARY KEY (`idAnimal`) ,
