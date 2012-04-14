@@ -61,7 +61,32 @@ else{
 						<div id="Accordion1" class="Accordion" tabindex="0">
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">Crear una Sede</div>
-                            <div class="AccordionPanelContent">Contenido 1</div>
+                            <div class="AccordionPanelContent">
+                              <div align="center">
+                                <p>Por favor ingrese la información de la Nueva Sede:</p>
+                                <form id="form1" method="post" action="">
+                                <table width="600" border="0">
+                                <tr>
+                                  <td>Nombre de la Nueva Sede:</td>
+                                  <td><label for="textfield"></label>
+                                  <input name="textfield" type="text" id="textfield" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Descripción de la Nueva Sede</td>
+                                  <td><textarea name="textfield2" id="textfield2"></textarea></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" ><div align="center">
+                                    <input type="submit" name="login" value="Crear Sede" class="inputButton" />
+                                  </div></td>
+                                  </tr>
+                              </table>
+                                
+                                </form>
+                                <p>&nbsp;</p>
+                                
+                              </div>
+</div>
                           </div>
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">Modificar una Sede</div>
