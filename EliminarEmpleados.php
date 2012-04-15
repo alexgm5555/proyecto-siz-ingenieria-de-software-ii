@@ -84,7 +84,6 @@ body,td,th {
 </form>
 <p> Aqui deberian Salir los Resultados</p>
     <form id="form3" name="form3" method="post" action="">
-      <input type="submit" name="Eliminiar" id="Eliminiar" value="Modificar" />
       <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
     </form>
     <p>&nbsp;</p></td>
