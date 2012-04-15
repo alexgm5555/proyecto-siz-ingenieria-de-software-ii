@@ -75,10 +75,11 @@ body,td,th {
     </div></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><table width="200" border="0">
+    <td colspan="2" align="center"><table width="314" border="0">
       <tr>
-        <th scope="col"><img src="images/usuarioo.jpg" width="70" height="70" />Crear Usuario</th>
-        <th scope="col"><p><a href="BuscarUsuariosModElim.php"><img src="images/usuarioo.jpg" width="70" height="70" /></a>Buscar Usuario</p></th>
+        <th width="100" scope="col"><img src="images/usuarioo.jpg" width="70" height="70" />Crear Usuario</th>
+        <th width="100" scope="col"><p><a href="EliminarUsuarios.php"><img src="images/usuarioo.jpg" width="70" height="70" /></a>Eliminar Empleado</p></th>
+        <th width="100" scope="col"><a href="ModificarUsuarios.php"><img src="images/usuarioo.jpg" alt="" width="70" height="70" /></a>Modificar Empleado</th>
       </tr>
     </table></td>
   </tr>
