@@ -65,7 +65,7 @@ body,td,th {
     <td width="793" colspan="2"><div align="center">
         <div align="right">
           <p><a href="index.php" title="Iniciar Sesi?n" target="_self">Volver a home</a></p>
-          <p><a href="MenuAdministrador.php">Menu Admin</a><a href="AdministracionEmpleados.php"></a> </p>
+          <p><a href="MenuAdministrador.php">Menu Admin</a> </p>
         </div>
     </div></td>
   </tr>
@@ -75,13 +75,18 @@ body,td,th {
     </div></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><table width="314" border="0">
-      <tr>
-        <th width="100" scope="col"><img src="http://www.vectorizados.com/muestras/arquitecto-con-casco-amarillo.jpg" alt="Empleado" width="70" height="70"/>Crear Empleado</th>
-        <th width="100" scope="col"><p><a href="EliminarEmpleados.php"><img src="http://www.vectorizados.com/muestras/arquitecto-con-casco-amarillo.jpg" alt="Empleado" width="70" height="70"/></a>Eliminar Empleado</p></th>
-        <th width="100" scope="col"><a href="ModificarEmpleados.php"><img src="http://www.vectorizados.com/muestras/arquitecto-con-casco-amarillo.jpg" alt="Empleado" width="70" height="70"/></a>Modificar Empleado</th>
-      </tr>
-    </table></td>
+    <td colspan="2" align="center"><form id="form2" name="form2" method="post" action="">
+      <p>
+        <label for="Busqueda"></label>
+        <input type="text" name="Busqueda" id="Busqueda" />
+        <input type="submit" name="Modificar" id="Modificar" value="Buscar" />
+      </p>
+</form>
+<p> Aqui deberian Salir los Resultados</p>
+    <form id="form3" name="form3" method="post" action="">
+      <input type="submit" name="Modificar" id="Modificar" value="Modificar" />
+    </form>
+    <p>&nbsp;</p></td>
   </tr>
   <tr>
     <td colspan="2" align="center" valign="middle"><p>&nbsp;</p>
