@@ -65,7 +65,7 @@ foreach ($array as $v) {
 		/*hacer un select de el idAnimal para guardar la imagen con ese nombre y de ese modo evitar que la bd no encuentre las imagenes*/
 		$destino= "images/".$array[$i];/*le adiciona el nombre de la carpeta al nombre de la imagen*/
 		copy($array[$ruta],$destino);/*codigo para copiar el archivo temporal al destino que tiene especifico*/
-		$query = ("insert into animal values ('','Zoonosis','0','$array[$tipo]','Perdido','','$array[$sexo]','$array[$raza]','$array[$color]','$array[$tamano]','$array[$edad]','$array[$peso]','$array[$i]','','')");/*inserta los valores en la BD*/
+		$query = ("insert into animal values ('','Zoonosis','0','$array[$tipo]','Perdido','','$array[$sexo]','$array[$raza]','$array[$color]','$array[$tamano]','$array[$edad]','$array[$peso]','$destino','','')");/*inserta los valores en la BD*/
 		mysql_query($query);
                 echo "quedo registrado el animal",$array[$i];
 	}
