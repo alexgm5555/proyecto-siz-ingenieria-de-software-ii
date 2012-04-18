@@ -55,8 +55,33 @@ else{
 				
 					<div id="box1">
 						<h2>Administración de Sedes</h2>
-						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
-					
+						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</p>
+					  <p>&nbsp;</p>
+					</div>
+			<?php
+			try {
+							
+							$mensaje = $_GET['Message']; 
+							switch ($mensaje) {								
+								case 1:
+									echo "<div id='box1'> 
+								<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>Sede creada satisfactoriamente</font></td>
+									  </tr>
+									</table></div>";	
+									break;
+							}				
+							
+							}  
+						catch (Exception $e)  
+						{  
+    						echo "Sucedió un error inesperado.".$e->getMessage();
+				}			
+			
+                
+			?>	
 					<div id="box2">
 						<div id="Accordion1" class="Accordion" tabindex="0">
 <div class="AccordionPanel">
