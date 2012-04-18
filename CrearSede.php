@@ -3,11 +3,11 @@ include ("conexionMySQL.php");
 $conexion = Conectarse();
 
 //Variables capturadas del formulario
-$nombreSede = $_GET['nombreSede'];
-$ciudadSede = $_GET['ciudadSede'];
-$direccionSede = $_GET['direccionSede'];
-$telefonoSede = $_GET['telefonoSede'];
-$emailSEde = $_GET['emailSEde'];
+$nombreSede = $_POST['nombreSede'];
+$ciudadSede = $_POST['ciudadSede'];
+$direccionSede = $_POST['direccionSede'];
+$telefonoSede = $_POST['telefonoSede'];
+$emailSEde = $_POST['emailSEde'];
 
 try{
 	$consulta = "INSERT INTO SEDES (Nombre, Ciudad, Direccion, Telefono, Email) VALUES('$nombreSede', '$ciudadSede', '$direccionSede', 		    '$telefonoSede', '$emailSEde')";
