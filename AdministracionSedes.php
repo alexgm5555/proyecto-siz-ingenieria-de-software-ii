@@ -67,8 +67,8 @@ else{
 									echo "<div id='box1'> 
 								<table width='auto' border='0'>
   									  <tr>
-										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'>Sede creada satisfactoriamente</font></td>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Sede creada satisfactoriamente</font></td>
 									  </tr>
 									</table></div>";	
 									break;
