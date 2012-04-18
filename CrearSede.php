@@ -4,19 +4,17 @@ $conexion = Conectarse();
 
 //Variables capturadas del formulario
 $nombreSede = $_GET['nombreSede'];
+$ciudadSede = $_GET['ciudadSede'];
+$direccionSede = $_GET['direccionSede'];
+$telefonoSede = $_GET['telefonoSede'];
+$emailSEde = $_GET['emailSEde'];
 
-
-
-$consulta2 = "SELECT * from usuarios where UserName='$usuario' and Password='$contrasena'";
-$resultado2 = mysql_query($consulta2, $conexion) or die(mysql_error());
-$numfilas2 = mysql_num_rows($resultado2);
-if($numfilas2 !=0){
-        session_start(); 
-		$_SESSION['usuario'] = $usuario;
-		
-        header ('location:ClasificadorRoles.php'); 
-}
-else{
-        header ('location:index.php?LoginMesagge=1'); 
-}
+try{
+	$consulta = "INSERT INTO SEDES (Nombre, Ciudad, Direccion, Telefono, Email) VALUES('$nombreSede', '$ciudadSede', '$direccionSede', 		    '$telefonoSede', '$emailSEde')";
+	$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+	header ('location:AdministracionSedes.php?Message=1'); 
+	}
+catch(Exception $e){
+	Echo "Sucedió un error inesperado.".$e->getMessage();
+	}     
 ?>
