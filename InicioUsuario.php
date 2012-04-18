@@ -29,6 +29,8 @@ else{
 	}
 -->
 </style>
+<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -59,46 +61,76 @@ else{
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
 			</div>
 			<div id="main">
-				<div id="content">
+			  <div id="content">
 				
 					<div id="box1">
-						<h2>Administración de Sedes</h2>
-						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
+						<h2>Pagina de Inicio</h2>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
 					
-					<div id="box2"> <?php
+				<div id="box2" align="center"> 
+<div id="Accordion1" class="Accordion" tabindex="0">
+					    <div class="AccordionPanel">
+					      <div class="AccordionPanelTab">Mascotas perdidas en tu ciudad</div>
+					    </div>
+					    <div class="AccordionPanel">
+					      <table width="60%" height="110" border="0">
+					        
+				          </table>
+                          
+					      <p align="center">
+				            				              <?php
 mysql_connect("localhost","root","");
 mysql_select_db("Zoonosis");
 $re=mysql_query("select * from animal");
 
-	?><div style class="contenedor">
-                                  <table width="100%" border="5">
-                                  
-                                  <?php
+	?><table width="70%" border="1" ><?php
                                     while($f=mysql_fetch_array($re)){
 									?>
-
-                                    <tr>
-                                      <th  scope="col">Imagen<br> <?php
-	echo'<img src="'.$f['Foto'].'"width="60" heigth="60"/>';
+<tr>
+                <th scope="col">
+                  <table width="100%" height="120" border="0">
+			                        
+			                        <tr>
+			                          <th width="18%"  align="center"  scope="col"border=""><?php
+	echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
 ?></th>
-                                      <th scope="col"> Nombre<?php
+			                          <th width="8%"  scope="col"border="" >&nbsp;</th>
+			                          <th width="37%" align="left" scope="col"> <p>Codigo:
+			                            <?php
 	echo $f['idAnimal'];
 ?>
-                                        <input type="hidden" name="idanimal" id="idanimal" $idanimal=$f['idanimal']/>
-                                      </th>
-<th scope="col" action="EliminarMascota.php"><input type="submit" name="modificar animal" id="modificar animal" value="Modificar" /></th>
-<th scope="col"><input type="submit" name="VerSolicitudes" id="VerSolicitudes" value="Ver Solicitudes" /></th>
-<th scope="col"><a href="EliminarMascota.php">
-  <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
-</a></th>
-                                    </tr>
-                                    <?php
+			                            <br />
+			                            Nombre:
+			                            <?php
+	echo $f['Nombre'];
+?>
+			                            <br />
+			                            Sexo:
+			                            <?php
+	echo $f['Sexo'];
+?>
+			                          </p></th>
+			                          <th width="37%" align="center" scope="col"><a href="EliminarMascota.php">
+		                              <input name="Adoptar" type="submit" id="Adoptar" value="Adoptar" />
+			                            </a><a href="EliminarMascota.php"> </a></th>
+		                            </tr>
+			                        
+                  </table>
+                  <?php
 									}
+									
 									?>
-                                  </table></div></div>
+                  </tr>
+			              </table>
+				            </form>
+				          <p></p>
+</div>
+			          </div>
+				      </div>
+			    
 					
 					<br class="clear" />
-				</div>
+			  </div>
 				<div id="sidebar">
 					<h3>
                     
@@ -106,14 +138,10 @@ $re=mysql_query("select * from animal");
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Administración de Sedes</li>
-                        <li><a href="Estadisticas.php">Estadísticas</a></li>
+                        <li>Registrar Mascotas</li>
+                        <li>Buscar Mascotas</li>
+                        <li>Administrar Animales Registrados</li>
+                        <li>Consultar Adopciones</li>
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
@@ -132,10 +160,13 @@ $re=mysql_query("select * from animal");
             </div>
 				<br class="clear" />
 			</div>
-		</div>
+</div>
 <div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonisis Team
 		<br />© 2012.</div>
+<script type="text/javascript">
+var Accordion1 = new Spry.Widget.Accordion("Accordion1");
+</script>
 </body>
 </html>
