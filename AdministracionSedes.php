@@ -55,8 +55,33 @@ else{
 				
 					<div id="box1">
 						<h2>Administración de Sedes</h2>
-						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
-					
+						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</p>
+					  <p>&nbsp;</p>
+					</div>
+			<?php
+			try {
+							
+							$mensaje = $_GET['Message']; 
+							switch ($mensaje) {								
+								case 1:
+									echo "<div id='box1'> 
+								<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Sede creada satisfactoriamente</font></td>
+									  </tr>
+									</table></div>";	
+									break;
+							}				
+							
+							}  
+						catch (Exception $e)  
+						{  
+    						echo "Sucedió un error inesperado.".$e->getMessage();
+				}			
+			
+                
+			?>	
 					<div id="box2">
 						<div id="Accordion1" class="Accordion" tabindex="0">
 <div class="AccordionPanel">
@@ -64,16 +89,28 @@ else{
                             <div class="AccordionPanelContent">
                               <div align="center">
                                 <p>Por favor ingrese la información de la Nueva Sede:</p>
-                                <form id="form1" method="post" action="">
+                                <form id="form1" method="post" action="CrearSede.php">
                                 <table width="600" border="0">
                                 <tr>
-                                  <td>Nombre de la Nueva Sede:</td>
-                                  <td><label for="textfield"></label>
-                                  <input name="textfield" type="text" id="textfield" size="45px" /></td>
+                                  <td>Nombre:</td>
+                                  <td><label for="nombreSede"></label>
+                                  <input name="nombreSede" type="text" id="nombreSede" size="45px" /></td>
                                 </tr>
                                 <tr>
-                                  <td>Descripción de la Nueva Sede</td>
-                                  <td><textarea name="textfield2" id="textfield2"></textarea></td>
+                                  <td>Ciudad:</td>
+                                  <td><input name="ciudadSede" type="text" id="ciudadSede" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Dirección:</td>
+                                  <td><input name="direccionSede" type="text" id="direccionSede" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Teléfono:</td>
+                                  <td><input name="telefonoSede" type="text" id="telefonoSede" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>E-mail:</td>
+                                  <td><input name="emailSEde" type="text" id="emailSEde" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
