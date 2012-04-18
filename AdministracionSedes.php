@@ -67,13 +67,25 @@ else{
                                 <form id="form1" method="post" action="">
                                 <table width="600" border="0">
                                 <tr>
-                                  <td>Nombre de la Nueva Sede:</td>
-                                  <td><label for="textfield"></label>
-                                  <input name="textfield" type="text" id="textfield" size="45px" /></td>
+                                  <td>Nombre:</td>
+                                  <td><label for="nuevaSede"></label>
+                                  <input name="nuevaSede" type="text" id="nuevaSede" size="45px" /></td>
                                 </tr>
                                 <tr>
-                                  <td>Descripción de la Nueva Sede</td>
-                                  <td><textarea name="textfield2" id="textfield2"></textarea></td>
+                                  <td>Ciudad:</td>
+                                  <td><input name="nuevaSede2" type="text" id="nuevaSede3" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Dirección:</td>
+                                  <td><input name="nuevaSede3" type="text" id="nuevaSede4" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Teléfono:</td>
+                                  <td><input name="nuevaSede4" type="text" id="nuevaSede2" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>E-mail:</td>
+                                  <td><input name="nuevaSede5" type="text" id="nuevaSede5" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
