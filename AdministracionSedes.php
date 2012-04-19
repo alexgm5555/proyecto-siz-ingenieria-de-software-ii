@@ -160,7 +160,7 @@ else{
                               <form id="form3" method="post" action="">
                                 <p align="center">
                                   <label for="select"></label>
-                                  Sede a Modificar:
+                                  Sede a Eliminar:
                                   <select name="select2" id="select">
                                     <option>Sede 1</option>
                                     <option>Sede 2</option>
