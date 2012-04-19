@@ -8,6 +8,13 @@ if ( !isset( $_SESSION['usuario'])) {
 header ('location:index.php?LoginMesagge=2'); 
 }
 
+//Se hace la consulta de las sedes
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$consulta = "SELECT idSedes, Nombre FROM SEDES";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas = mysql_num_rows($resultado);
+
 
 ?>
 <!--
@@ -159,10 +166,15 @@ header ('location:index.php?LoginMesagge=2');
                                 <p align="center">
                                   <label for="select"></label>
                                   Sede a Eliminar:
-                                  <select name="select2" id="select">
-                                    <option>Sede 1</option>
-                                    <option>Sede 2</option>
-                                    <option>Sede 3</option>
+                                  <select name="select2" id="select">                                    
+                                  <?PHP
+								  if ($numfilas > 0) {  
+         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
+           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
+         							}
+      							  }
+								  ?>
+                                    
                                   </select>
                                 </p>
                                 <div align="center">
