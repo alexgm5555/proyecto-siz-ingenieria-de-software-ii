@@ -88,40 +88,39 @@ $re=mysql_query("select * from animal");
 									?>
 <tr>
                 <th scope="col">
-                  <table width="100%" height="120" border="0">
-			                        
-			                        <tr>
-			                          <th width="18%"  align="center"  scope="col"border=""><?php
+                  <form action="" method="get" target="_top">
+                    <table width="100%" height="120" border="0">
+                      <tr>
+                        <th  align="center"  scope="col"border=""><?php
 	echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
 ?></th>
-			                          <th width="8%"  scope="col"border="" >&nbsp;</th>
-			                          <th width="37%" align="left" scope="col"> <p>Codigo:
-			                            <?php
+                        <th  scope="col"border="" >&nbsp;</th>
+                        <th align="left" scope="col"> <p>Codigo:
+                          <?php
 	echo $f['idAnimal'];
 ?>
-			                            <br />
-			                            Nombre:
-			                            <?php
+                          <br />
+                          Nombre:
+                          <?php
 	echo $f['Nombre'];
 ?>
-			                            <br />
-			                            Sexo:
-			                            <?php
+                          <br />
+                          Sexo:
+                          <?php
 	echo $f['Sexo'];
 ?>
-			                          </p></th>
-			                          <th width="37%" align="center" scope="col"><a href="EliminarMascota.php">
-		                              <input name="Adoptar" type="submit" id="Adoptar" value="Adoptar" />
-			                            </a><a href="EliminarMascota.php"> </a></th>
-		                            </tr>
-			                        
-                  </table>
-                  <?php
+                        </p></th>
+                        <th align="center" scope="col"><a href="EliminarMascota.php">
+                          <input name="Adoptar" type="submit" id="Adoptar" value="Adoptar" />
+                        </a><a href="EliminarMascota.php"> </a></th>
+                      </tr>
+                    </table>
+                    <?php
 									}
 									
 									?>
-                  </tr>
-			              </table>
+                  </form></tr>
+			              </table></form>
 				            </form>
 				          <p></p>
 </div>
