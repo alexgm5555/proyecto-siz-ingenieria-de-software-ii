@@ -145,12 +145,15 @@ $numfilas = mysql_num_rows($resultado);
 </div>
                             <div class="AccordionPanelContent">
                               <p align="center">Por favor seleccione la sede que desea modificar:</p>
-                              <form id="form2" method="post" action="">
+                              <form id="form2" method="post" action="ModificarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
                                   Sede a Modificar:
                                   <select name="select" id="select">
                                     <?PHP
+									//////////////////////////////////////
+									/////CODIGO DE MODIFICAR SEDE AQUÍ////
+									//////////////////////////////////////
 								  if ($numfilas > 0) {  
          							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
            								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
