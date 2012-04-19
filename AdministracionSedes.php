@@ -3,13 +3,11 @@
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
-if ( isset( $_SESSION['usuario'])) {
+if ( !isset( $_SESSION['usuario'])) {
 
-//Permite continuar en la página
+header ('location:index.php?LoginMesagge=2'); 
 }
-else{	
-	header ('location:index.php?LoginMesagge=2'); 
-	} 
+
 
 ?>
 <!--
