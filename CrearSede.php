@@ -1,4 +1,9 @@
 <?php
+//Se valida si el usuario ha iniciado sesión
+session_start();
+if ( !isset( $_SESSION['usuario'])) {
+header ('location:index.php?LoginMesagge=2'); 
+}
 include ("conexionMySQL.php");
 $conexion = Conectarse();
 
