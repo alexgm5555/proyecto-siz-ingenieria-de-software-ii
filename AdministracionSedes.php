@@ -150,9 +150,13 @@ $numfilas = mysql_num_rows($resultado);
                                   <label for="select"></label>
                                   Sede a Modificar:
                                   <select name="select" id="select">
-                                    <option>Sede 1</option>
-                                    <option>Sede 2</option>
-                                    <option>Sede 3</option>
+                                    <?PHP
+								  if ($numfilas > 0) {  
+         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
+           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
+         							}
+      							  }
+								  ?>    
                                   </select>
                                 </p>
                                 <div align="center">
@@ -176,14 +180,16 @@ $numfilas = mysql_num_rows($resultado);
                                   <label for="select"></label>
                                   Sede a Eliminar:
                                   <select name="sedeEliminar" id="sedeEliminar">                                    
-                                  <?PHP
+                                  <?php
+								  //Se reinicia el vector de la consulta para volverlo a recorrer
+								  mysql_data_seek($resultado, 0);
+								  //
 								  if ($numfilas > 0) {  
          							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
            								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
          							}
       							  }
-								  ?>
-                                    
+								  ?>                                    
                                   </select>
                                 </p>
                                 <div align="center">
