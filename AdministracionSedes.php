@@ -77,6 +77,15 @@ $numfilas = mysql_num_rows($resultado);
 									  </tr>
 									</table></div>";	
 									break;
+								case 2:
+									echo "<div id='box1'> 
+								<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Sede eliminada satisfactoriamente</font></td>
+									  </tr>
+									</table></div>";	
+									break;	
 							}				
 							
 							}  
@@ -162,11 +171,11 @@ $numfilas = mysql_num_rows($resultado);
                             <div class="AccordionPanelTab">Eliminar una Sede</div>
                             <div class="AccordionPanelContent">
                               <p align="center">Por favor seleccione la sede que desea eliminar:</p>
-                              <form id="form3" method="post" action="">
+                              <form id="form3" method="post" action="EliminarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
                                   Sede a Eliminar:
-                                  <select name="select2" id="select">                                    
+                                  <select name="sedeEliminar" id="sedeEliminar">                                    
                                   <?PHP
 								  if ($numfilas > 0) {  
          							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
