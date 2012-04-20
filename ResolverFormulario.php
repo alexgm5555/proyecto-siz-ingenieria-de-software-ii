@@ -14,20 +14,23 @@
 //al usuario en FormularioRegistro.php
 
 $conexion = true;
-$NombreUsuario = $_GET['nombre'];
-$ApellidoUsuario = $_GET['apellido'];
-$DocumentoUsuario = $_GET['documento'];
-$CorreoUsuario = $_GET['correo'];
-$PaisUsuario = $_GET['Pais'];
-$CelularUsuario = $_GET['celu'];
-$NombredeUsuario = $_GET['user'];
-$ContraseñadeUsuario = $_GET['password'];
+$NombreUsuario = $_POST['NombresUsuario'];
+$ApellidoUsuario = $_POST['ApellidosUsuario'];
+$DocumentoUsuario = $_POST['DocumentoUsuario'];
+$CiudadUsuario = $_POST['CiudadUsuario'];
+$CorreoUsuario = $_POST['emailUsuario'];
+$TelefonoUsuario = $_POST['telefonoUsuario'];
+$CelularUsuario = $_POST['CelularUsuario'];
+$NombredeUsuario = $_POST['UserName'];
+$ContraseñadeUsuario = $_POST['Password'];
+$ConfContraseñadeUsuario = $_POST['confPassword'];
 
 Conectarse($conexion);
 
 	if($conexion){
 		
-		$query = ("insert into prueba.usuarios(CC, Nombres, Apellidos, Correo_Electronico, Pais, Celular, Nombre_de_Usuario, Contrasena) values ('$DocumentoUsuario' , '$NombreUsuario' , '$ApellidoUsuario' , '$CorreoUsuario' , '$PaisUsuario' , '$CelularUsuario' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
+		$query = ("insert into zoonosis.usuarios(Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
+                        values ( '$NombreUsuario', '$ApellidoUsuario', $DocumentoUsuario, '$CiudadUsuario' , '$CorreoUsuario' , '$TelefonoUsuario',  '$CelularUsuario' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
 		mysql_query($query);
 		
 		header ('location:index.php'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php
