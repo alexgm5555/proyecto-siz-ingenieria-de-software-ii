@@ -67,7 +67,7 @@ CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Usuarios` (
   `Telefono_Cel` VARCHAR(45) NULL ,
   `UserName` VARCHAR(45) NOT NULL ,
   `Password` VARCHAR(45) NOT NULL ,
-  `Sede Laboral` VARCHAR(45) NULL DEFAULT 'Particular' ,
+  `SedeLaboral` VARCHAR(45) NULL ,
   UNIQUE INDEX `User_UNIQUE` (`UserName` ASC) ,
   UNIQUE INDEX `Cedula_UNIQUE` (`Cedula` ASC) ,
   UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) ,
@@ -75,7 +75,7 @@ CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Usuarios` (
   UNIQUE INDEX `idUsuarioParticulares_UNIQUE` (`idUsuarioParticulares` ASC) ,
   PRIMARY KEY (`idUsuarioParticulares`) ,
   INDEX `FK_Tipo_Usuario` (`TipoUsuario` ASC) ,
-  INDEX `FK_Sede_Laboral` (`Sede Laboral` ASC) ,
+  INDEX `FK_Sede_Laboral` (`SedeLaboral` ASC) ,
   CONSTRAINT `FK_Ciudades`
     FOREIGN KEY (`Ciudad` )
     REFERENCES `Zoonosis`.`Ciudades` (`Nombre_Ciudad` )
@@ -87,7 +87,7 @@ CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Usuarios` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `FK_Sede_Laboral`
-    FOREIGN KEY (`Sede Laboral` )
+    FOREIGN KEY (`SedeLaboral` )
     REFERENCES `Zoonosis`.`Sedes` (`Nombre` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -390,8 +390,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `Zoonosis`;
-INSERT INTO `Zoonosis`.`Usuarios` (`idUsuarioParticulares`, `TipoUsuario`, `Nombres`, `Apellidos`, `Cedula`, `Ciudad`, `Email`, `Telefono_Fij`, `Telefono_Cel`, `UserName`, `Password`, `Sede Laboral`) VALUES (NULL, 'Administrador', 'Administrador', 'Administrador', 0, 'Bogotá', 'administrador@gmail.com', '0000000', '0000000000', 'MasterAdministrator', 'AdministratorZoonosis', 'Sede Principal');
-INSERT INTO `Zoonosis`.`Usuarios` (`idUsuarioParticulares`, `TipoUsuario`, `Nombres`, `Apellidos`, `Cedula`, `Ciudad`, `Email`, `Telefono_Fij`, `Telefono_Cel`, `UserName`, `Password`, `Sede Laboral`) VALUES (NULL, 'Administrador', 'Administrador', 'Administrador', 0, 'Bogotá', 'administrador@gmail.com', '0000000', '0000000000', 'Admin', 'siz', 'Sede Principal');
+INSERT INTO `Zoonosis`.`Usuarios` (`idUsuarioParticulares`, `TipoUsuario`, `Nombres`, `Apellidos`, `Cedula`, `Ciudad`, `Email`, `Telefono_Fij`, `Telefono_Cel`, `UserName`, `Password`, `SedeLaboral`) VALUES (NULL, 'Administrador', 'Administrador', 'Administrador', 0, 'Bogotá', 'administrador@gmail.com', '0000000', '0000000000', 'MasterAdministrator', 'AdministratorZoonosis', 'Sede Principal');
 
 COMMIT;
 
