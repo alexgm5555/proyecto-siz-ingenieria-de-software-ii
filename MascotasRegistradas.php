@@ -145,8 +145,9 @@ echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li>Registrar Mascotas</li>
-                        <li>Buscar Mascotas</li>
+                        <li><a href="InicioUsuario.php">Pagina Inicio</a></li>
+                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
+                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
                         <li>Administrar Animales Registrados</li>
                       </ol>
                   </div>
