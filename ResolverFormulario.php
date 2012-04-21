@@ -29,7 +29,7 @@ Conectarse($conexion);
 
 	if($conexion){
 		
-            if(ContraseñadeUsuario === ConfContraseñadeUsuario){
+            if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
 		$query = ("insert into zoonosis.usuarios(Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
                         values ( '$NombreUsuario', '$ApellidoUsuario', $DocumentoUsuario, '$CiudadUsuario' , '$CorreoUsuario' , '$TelefonoUsuario',  '$CelularUsuario' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
 		mysql_query($query)or die(mysql_error()); 
