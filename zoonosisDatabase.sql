@@ -218,7 +218,6 @@ CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Seguimiento_Usuarios` (
   `idBitacora_Seguimiento` INT NOT NULL AUTO_INCREMENT ,
   `Fecha` DATETIME NOT NULL ,
   `Tipo_de_Operacion` VARCHAR(45) NOT NULL ,
-  `Tabla` VARCHAR(45) NOT NULL ,
   `Tipo_de_Usuario` VARCHAR(45) NOT NULL ,
   `Nombre_de_Usuario` VARCHAR(45) NOT NULL ,
   `Descripcion_de_Operacion` VARCHAR(200) NOT NULL ,
@@ -253,8 +252,8 @@ USE `Zoonosis`$$
 
 create trigger registro_usuario before insert on Usuarios
 for each row
-insert into Seguimiento_Usuarios (Fecha, Tipo_de_Usuario, Nombre_de_Usuario, Tipo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), new.TipoUsuario, new.UserName, "Insert", "Un nuevo usuario se ha registrado en el sistema");
+insert into Seguimiento_Usuarios (Fecha, Tipo_de_Operacion, Tipo_de_Usuario, Nombre_de_Usuario, Descripcion_de_Operacion) 
+values (now(), "Insert", new.TipoUsuario, new.UserName, "Un nuevo usuario se ha registrado en el sistema");
 
 $$
 
@@ -266,13 +265,13 @@ USE `Zoonosis`;
 DELIMITER $$
 
 USE `Zoonosis`$$
-DROP TRIGGER IF EXISTS `Zoonosis`.`registro_usuario` $$
+DROP TRIGGER IF EXISTS `Zoonosis`.`borrado_usuario` $$
 USE `Zoonosis`$$
 
 create trigger borrado_usuario after delete on Usuarios
 for each row
-insert into Seguimiento_Usuarios (Fecha, Tipo_de_Usuario, Nombre_de_Usuario, Tipo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), old.TipoUsuario, old.UserName, "Delete", "Este Usuario ha sido eliminado del sistema");
+insert into Seguimiento_Usuarios (Fecha, Tipo_de_Operacion, Tipo_de_Usuario, Nombre_de_Usuario, Descripcion_de_Operacion) 
+values (now(), "Delete", old.TipoUsuario, old.UserName, "Este Usuario ha sido eliminado del sistema");
 
 $$
 
@@ -284,13 +283,13 @@ USE `Zoonosis`;
 DELIMITER $$
 
 USE `Zoonosis`$$
-DROP TRIGGER IF EXISTS `Zoonosis`.`registro_usuario` $$
+DROP TRIGGER IF EXISTS `Zoonosis`.`modificado_usuario` $$
 USE `Zoonosis`$$
 
 create trigger modificado_usuario after update on Usuarios
 for each row
-insert into Seguimiento_Usuarios (Fecha, Tipo_de_Usuario, Nombre_de_Usuario, Tipo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), old.TipoUsuario, old.UserName, "Update", "Los datos de este usuario han sido modificados");
+insert into Seguimiento_Usuarios (Fecha, Tipo_de_Operacion, Tipo_de_Usuario, Nombre_de_Usuario, Descripcion_de_Operacion) 
+values (now(), "Update", old.TipoUsuario, old.UserName, "Los datos de este usuario han sido modificados");
 
 $$
 
@@ -302,7 +301,7 @@ USE `Zoonosis`;
 DELIMITER $$
 
 USE `Zoonosis`$$
-DROP TRIGGER IF EXISTS `Zoonosis`.`registro_usuario` $$
+DROP TRIGGER IF EXISTS `Zoonosis`.`registro_animal` $$
 USE `Zoonosis`$$
 
 create trigger registro_animal before insert on Animal
@@ -320,7 +319,7 @@ USE `Zoonosis`;
 DELIMITER $$
 
 USE `Zoonosis`$$
-DROP TRIGGER IF EXISTS `Zoonosis`.`registro_usuario` $$
+DROP TRIGGER IF EXISTS `Zoonosis`.`borrado_animal` $$
 USE `Zoonosis`$$
 
 create trigger borrado_animal after delete on Animal
@@ -338,7 +337,7 @@ USE `Zoonosis`;
 DELIMITER $$
 
 USE `Zoonosis`$$
-DROP TRIGGER IF EXISTS `Zoonosis`.`registro_usuario` $$
+DROP TRIGGER IF EXISTS `Zoonosis`.`modificado_animal` $$
 USE `Zoonosis`$$
 
 create trigger modificado_animal after update on Animal
