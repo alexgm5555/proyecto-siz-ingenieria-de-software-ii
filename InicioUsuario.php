@@ -139,8 +139,7 @@ $re=mysql_query("select * from animal");
                       <ol>
                         <li>Registrar Mascotas</li>
                         <li>Buscar Mascotas</li>
-                        <li>Administrar Animales Registrados</li>
-                        <li>Consultar Adopciones</li>
+                        <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
