@@ -2,6 +2,7 @@
 <?php
 error_reporting("E_PARSE");
 ?>
+<?php include ("conexionMySQL.php")?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
 	www.freewebsitetemplat.es / www.doni.us
@@ -10,10 +11,11 @@ error_reporting("E_PARSE");
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<!--<meta http-equiv="content-type" content="text/html; charset=utf-8" />-->
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>Zoonisis</title>
+		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
@@ -71,7 +73,18 @@ error_reporting("E_PARSE");
                                 </tr>
                                 <tr>
                                   <td>Ciudad:</td>
-                                  <td><input name="CiudadUsuario" type="text" id="CiudadUsuario" size="45px" /></td>
+                                  <td> <?php
+                                    $conexion = true;
+                                    Conectarse($conexion);
+                                    if($conexion){
+                                        $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                        echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
+                                        while($fila = mysql_fetch_array($consulta)){
+                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
+                                        }
+                                    echo "</select>";
+                                    }
+                                    ?></td>
                                 </tr>
                                 <tr>
                                   <td>E-mail:</td>
@@ -101,7 +114,7 @@ error_reporting("E_PARSE");
                                   <td colspan="2" ><div align="center">
                                     <input type="submit" name="login" value="Registrar Usuario" class="inputButton" />
                                   </div></td>
-                                  </tr>
+                                  </tr>                                  
                               </table>
                                 
                                 </form>
