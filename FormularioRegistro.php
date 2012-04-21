@@ -25,22 +25,22 @@ error_reporting("E_PARSE");
 				<div id="logo">
 					<h1> Zoonosis</h1>
 				</div>
-<div id="nav">
-			  <ul>
-						<li>
-							<a href="index.php">Inicio</a>
-						</li>
-						<li  class="first active">
-							<a href="FormularioRegistro.php">Registro</a>
-						</li>
-						<li>
-							<a href="#">Acerca de</a>
-						</li>
-						<li class="last">
-							<a href="#">Contacto</a>
-						</li>
-					</ul>
-					<br class="clear" />
+                <div id="nav">
+                    <ul>
+			<li>
+                            <a href="index.php">Inicio</a>
+                        </li>
+                        <li  class="first active">
+                            <a href="FormularioRegistro.php">Registro</a>
+                        </li>
+			<li>
+                            <a href="#">Acerca de</a>
+			</li>
+			<li class="last">
+                            <a href="#">Contacto</a>
+			</li>
+                        </ul>
+                        <br class="clear" />
 				</div>
 			</div>
 			<div id="banner">
@@ -51,8 +51,8 @@ error_reporting("E_PARSE");
 				
 										<div id="box2">
 						<div id="Accordion1" class="Accordion" tabindex="0">
-<div class="AccordionPanel">
-<div class="AccordionPanelTab">Registro de Usuarios</div>
+                    <div class="AccordionPanel">
+                    <div class="AccordionPanelTab">Registro de Usuarios</div>
                             <div class="AccordionPanelContent">
                               <div align="center">
                                 <p>Por favor diligencie el formularios de reistro:</p>
@@ -129,7 +129,7 @@ error_reporting("E_PARSE");
 				  <br class="clear" />
 			</div>
 		</div>
-		<div style="margin: 1em 0 3em 0; text-align: center;">
+		<div style="margin: 40em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonisis Team
 			<br />© 2012.</div>
