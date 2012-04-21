@@ -389,7 +389,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `Zoonosis`;
-INSERT INTO `Zoonosis`.`Usuarios` (`idUsuarioParticulares`, `TipoUsuario`, `Nombres`, `Apellidos`, `Cedula`, `Ciudad`, `Email`, `Telefono_Fij`, `Telefono_Cel`, `UserName`, `Password`, `SedeLaboral`) VALUES (NULL, 'Administrador', 'Administrador', 'Administrador', 0, 'Bogotá', 'administrador@gmail.com', '0000000', '0000000000', 'MasterAdministrator', 'AdministratorZoonosis', 'Sede Principal');
+INSERT INTO `Zoonosis`.`Usuarios` (`idUsuarioParticulares`, `TipoUsuario`, `Nombres`, `Apellidos`, `Cedula`, `Ciudad`, `Email`, `Telefono_Fij`, `Telefono_Cel`, `UserName`, `Password`, `SedeLaboral`) VALUES (NULL, 'Administrador', 'Administrador', 'Administrador', 0, 'Bogotá', 'administrador@gmail.com', '0000000', '0000000000', 'admin', 'siz', 'Sede Principal');
 
 COMMIT;
 
