@@ -110,16 +110,22 @@ $re=mysql_query("select * from animal");
 	echo $f['Sexo'];
 ?>
                         </p></th>
-                        <th align="center" scope="col"><a href="EliminarMascota.php">
-                          <input name="Adoptar" type="submit" id="Adoptar" value="Adoptar" />
-                        </a><a href="EliminarMascota.php"> </a></th>
+                        <th align="center" scope="col"> <?php
+						 $id= $f['idAnimal'];
+						 
+						#codigo para enviar los valores del animal seleccionado 
+echo "<a href=SolicitudAdopcion.php?idAnimal=$id>";
+?>
+                          <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Adoptar"/>
+                          </p>
+                          </a></th>
                       </tr>
                     </table>
                     <?php
 									}
 									
 									?>
-                  </form></tr>
+                </form></tr>
 			              </table></form>
 				            </form>
 				          <p></p>
