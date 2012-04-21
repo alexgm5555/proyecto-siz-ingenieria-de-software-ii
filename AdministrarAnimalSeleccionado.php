@@ -60,27 +60,48 @@ $f=mysql_fetch_array($re);
 				
 <div id="box1">
 					  <h2>Administración Mascotas Registradas</h2>
-				    <div align="center">
-				      <table width="71%" height="61" border="0" >
-    
-        <td ><div align="Center">
-          <?php
+	    <div align="center"></div>
+        <table width="100%" height="244" cellpadding="1" cellspacing="0">
+  			<tr>
+    			<th width="19%" scope="col">&nbsp;</th>
+    			<th width="34%" scope="col">
+    				<h6 align="center"><span class="sectionList"><?php echo $f['Nombre'];?></span> </h6>
+          			<h6 align="center">
+	            		<?php
           
+						#codigo para imprimir la foto
+						echo'<img src="'.$f['Foto'].'"width="220" heigth="220"/>';
+			 			 ?>
+	          		</h6>
+          			<h6 align="center"><span class="sectionList">Codigo: <?php echo $f['idAnimal'];?> </span> </h6>
+          			<h5 align="center">&nbsp;</h5>
+          
+    
+    			</th>
+   				
+    			<th width="39%" scope="col">
+    				<table width="72%" height="190" border="0" >
+           				<tr>
+                        
+              				<th scope="col">
+                            	
+				              	<h5 align="left" class="login">Tipo de Animal: <?php echo $f['TipoAnimal'];?></h5>
+								<h5 align="left">Sexo: <?php echo $f['Sexo'];?></h5>
+                				<h5 align="left">Color: <?php echo $f['Color'];?></h5>
+				                <h5 align="left">Edad: <?php echo $f['Edad'];?></h5>
+                				<h5 align="left">Peso:<?php echo $f['Peso'];?></h5>
+				        	 	<h5 align="left" class="login">&nbsp;</h5></th>
+            			</tr>
+      				</table>
+    			</th>
+  			</tr>
+		</table>
 
-echo'<img src="'.$f['Foto'].'"width="220" heigth="220"/>';
-		  ?>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-        </div></td>
-      
-  </table>
-        </div>
-<p>&nbsp;</p>
+	    <p align="center"><span class="login">Habilidad: <?php echo $f['Habilidad'];?></span></p>
 					  <p>
 					    
-                      </p>
-					</div>
+</p>
+				  </div>
 				
 					<div id="box2">
 						<div id="Accordion1" class="Accordion" tabindex="0">
