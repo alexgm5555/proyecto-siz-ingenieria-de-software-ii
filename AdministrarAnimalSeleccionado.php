@@ -11,11 +11,11 @@ header ('location:index.php?LoginMesagge=2');
 //Se hace la consulta de las sedes
 include ("conexionMySQL.php");
 $conexion = Conectarse();
-$consulta = "SELECT idSedes, Nombre FROM SEDES";
-$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-$numfilas = mysql_num_rows($resultado);
 
 
+$idAnimal=$_GET['idAnimal'];
+$re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
+$f=mysql_fetch_array($re);
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -59,16 +59,14 @@ $numfilas = mysql_num_rows($resultado);
 				<div id="content">
 				
 <div id="box1">
-					  <h2>Administración de Sedes</h2>
+					  <h2>Administración Mascotas Registradas</h2>
 				    <div align="center">
 				      <table width="71%" height="61" border="0" >
     
         <td ><div align="Center">
           <?php
           
-$idAnimal=$_GET['idAnimal'];
-$re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
-$f=mysql_fetch_array($re);
+
 echo'<img src="'.$f['Foto'].'"width="220" heigth="220"/>';
 		  ?>
           <p>&nbsp;</p>

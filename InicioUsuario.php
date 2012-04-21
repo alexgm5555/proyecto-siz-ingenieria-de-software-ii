@@ -3,6 +3,7 @@
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
+
 if ( isset( $_SESSION['usuario'])) {
 
 //Permite continuar en la página
@@ -10,7 +11,9 @@ if ( isset( $_SESSION['usuario'])) {
 else{	
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
-
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$re=mysql_query("select * from animal");
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -78,12 +81,7 @@ else{
 				          </table>
                           
 					      <p align="center">
-				            				              <?php
-mysql_connect("localhost","root","");
-mysql_select_db("Zoonosis");
-$re=mysql_query("select * from animal");
-
-	?><table width="70%" border="1" ><?php
+				            				              <table width="70%" border="1" ><?php
                                     while($f=mysql_fetch_array($re)){
 									?>
 <tr>
