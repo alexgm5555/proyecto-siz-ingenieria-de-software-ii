@@ -3,6 +3,7 @@
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
+
 if ( isset( $_SESSION['usuario'])) {
 
 //Permite continuar en la página
@@ -10,7 +11,9 @@ if ( isset( $_SESSION['usuario'])) {
 else{	
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
-
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$re=mysql_query("select * from animal");
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -78,12 +81,7 @@ else{
 				          </table>
                           
 					      <p align="center">
-				            				              <?php
-mysql_connect("localhost","root","");
-mysql_select_db("Zoonosis");
-$re=mysql_query("select * from animal");
-
-	?><table width="70%" border="1" ><?php
+				            				              <table width="70%" border="1" ><?php
                                     while($f=mysql_fetch_array($re)){
 									?>
 <tr>
@@ -140,13 +138,15 @@ echo "<a href=SolicitudAdopcion.php?idAnimal=$id>";
 					<h3>
                     
                   </h3>
-					<div class="form">
-					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
-                      <ol>
-                        <li>Registrar Mascotas</li>
-                        <li>Buscar Mascotas</li>
-                        <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
-                      </ol>
+				  <div class="form">
+				    <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
+                    <ol>
+                        
+                      <li>Pagina Inicio</li>
+                      <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
+                      <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                      <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
+                    </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">

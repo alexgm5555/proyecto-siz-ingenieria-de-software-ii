@@ -10,7 +10,14 @@ if ( isset( $_SESSION['usuario'])) {
 else{	
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
-
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$idAnimal=$_GET['idAnimal'];
+$usuario=$_SESSION['usuari'];
+$re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
+$f=mysql_fetch_array($re);
+$ret=mysql_query("select * from usuario WHERE idAnimal='".$usuario."'");
+$datosUsuario=mysql_fetch_array($ret);
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -64,13 +71,60 @@ else{
 			  <div id="content">
 				
 					<div id="box1">
-						<h2>Mascotas Que Has Registrado</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás ver todas las mascotas que registrar.</div>
-					
-				<div id="box2" align="center"> 
+						<h2>Pagina de Inicio</h2>
+						<table width="100%" height="244" cellpadding="1" cellspacing="0">
+						  <tr>
+						    <th width="37%" scope="col"><table width="86%" height="190" border="0" >
+						      <tr>
+						        <th width="28%" scope="col">&nbsp;</th>
+						        <th width="72%" scope="col"> <h5 align="left" class="AccordionPanelTab">Nombre : <?php echo $datosUsuario['TipoAnimal'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Apellido: <?php echo $datosUsuario['Sexo'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Ciudad: <?php echo $datosUsuario['Color'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Email: <?php echo $datosUsuario['Edad'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Telefono Fijo:<?php echo $datosUsuario['Peso'];?></h5>
+						          <h5 align="left" class="login">&nbsp;</h5></th>
+					          </tr>
+					        </table></th>
+						    <th width="27%" scope="col"> <h6 align="center"><span class="sectionList"><?php echo $f['Nombre'];?></span></h6>
+						      <h6 align="center">
+						        <?php
+          
+						#codigo para imprimir la foto
+						echo'<img src="'.$f['Foto'].'"width="220" heigth="220"/>';
+			 			 ?>
+					          </h6>
+						      <h6 align="center"><span class="sectionList">Codigo: <?php echo $f['idAnimal'];?></span></h6>
+						      <h5 align="center">&nbsp;</h5>
+					        </th>
+						    <th width="36%" scope="col"> <table width="72%" height="190" border="0" >
+						      <tr>
+						        <th width="18%" scope="col">&nbsp;</th>
+						        <th width="82%" scope="col"> <h5 align="left" class="login">Tipo de Animal: <?php echo $f['TipoAnimal'];?></h5>
+						          <h5 align="left">Sexo: <?php echo $f['Sexo'];?></h5>
+						          <h5 align="left">Color: <?php echo $f['Color'];?></h5>
+						          <h5 align="left">Edad: <?php echo $f['Edad'];?></h5>
+						          <h5 align="left">Peso:<?php echo $f['Peso'];?></h5>
+						          <h5 align="left" class="login">&nbsp;</h5></th>
+					          </tr>
+						      </table>
+					        </th>
+					      </tr>
+					  </table>
+						<table width="100%" border="1" cellspacing="0" cellpadding="0">
+						  <tr>
+						    <th width="19%" scope="col"><div align="left"></div></th>
+						    <th width="30%" scope="col"><div align="left">
+						      <h5>Telefono Celular:<?php echo $f['Peso'];?></h5>
+						    </div></th>
+						    <th width="51%" scope="col">&nbsp;</th>
+					      </tr>
+					  </table>
+<p>&nbsp;</p>
+                    </div>
+					<div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
-					      <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
+					      <div class="AccordionPanelTab">Solicitud de Adopción</div>
 					    </div>
 					    <div class="AccordionPanel">
 					      <table width="60%" height="110" border="0">
@@ -78,65 +132,17 @@ else{
 				          </table>
                           
 					      <p align="center">
-				            				              <?php
-include ("conexionMySQL.php");
-$conexion = Conectarse();
-$re=mysql_query("select * from animal");
-
-	?><table width="70%" border="0" ><?php
-                                    while($f=mysql_fetch_array($re)){
-									?>
-<tr>
-                <th scope="col">
-                  
-                    <table width="100%" height="120" border="0">
-                      <tr>
-                        <th width="16%"  align="center"  scope="col"border=""><?php
-	echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
-?></th>
-                        <th width="3%"  scope="col"border="" >&nbsp;</th>
-                        <th width="55%" align="left" scope="col"> <h5>Codigo:
-                          <?php
-						 
-	echo $f['idAnimal'];
-?>
-
-<br />
-                          Nombre:
-                          <?php
-	echo $f['Nombre'];
-?>
-                          <br />
-                          Sexo:
-                          <?php
-	echo $f['Sexo'];
-?>
-                        </h5></th>
-                        <th width="26%" align="center" scope="col"><a href="AdministrarAnimalSeleccionado.php">
-                        <?php
-						 $id= $f['idAnimal'];
-						 
-						#codigo para enviar los valores del animal seleccionado 
-echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
-?>
-                        <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Ver Solicitudes"/>
-                        </p>
-                        
-                        <input name="Adoptar2" type="submit" class="inputButton" id="Adoptar3" value="Modificar"/>
-                        <input name="Adoptar" type="submit" class="inputButton" id="Adoptar2" value="Eliminar"/>
-                        </a></th>
-                      </tr>
-                    </table>
-                    <?php
-									}
-									
-									?>
-                </tr>
-			              </table></form>
+				            				              
+					      <form id="form1" method="post" action="">
+                          
+                          
+				          </form>
+                          
+					      </form>
 				            </form>
 				          <p></p>
 </div>
-			          </div>
+</div>
 				      </div>
 			    
 					
@@ -149,10 +155,10 @@ echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li><a href="InicioUsuario.php">Pagina Inicio</a></li>
-                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
-                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                        <li>Registrar Mascotas</li>
+                        <li>Buscar Mascotas</li>
                         <li>Administrar Animales Registrados</li>
+                        <li>Consultar Adopciones</li>
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
