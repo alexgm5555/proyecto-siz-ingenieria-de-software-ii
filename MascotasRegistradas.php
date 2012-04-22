@@ -64,8 +64,8 @@ else{
 			  <div id="content">
 				
 					<div id="box1">
-						<h2>Pagina de Inicio</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
+						<h2>Mascotas Que Has Registrado</h2>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás ver todas las mascotas que registrar.</div>
 					
 				<div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
@@ -83,7 +83,7 @@ include ("conexionMySQL.php");
 $conexion = Conectarse();
 $re=mysql_query("select * from animal");
 
-	?><table width="70%" border="1" ><?php
+	?><table width="70%" border="0" ><?php
                                     while($f=mysql_fetch_array($re)){
 									?>
 <tr>
@@ -95,7 +95,7 @@ $re=mysql_query("select * from animal");
 	echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
 ?></th>
                         <th width="3%"  scope="col"border="" >&nbsp;</th>
-                        <th width="44%" align="left" scope="col"> <p>Codigo:
+                        <th width="55%" align="left" scope="col"> <h5>Codigo:
                           <?php
 						 
 	echo $f['idAnimal'];
@@ -111,15 +111,19 @@ $re=mysql_query("select * from animal");
                           <?php
 	echo $f['Sexo'];
 ?>
-                        </p></th>
-                        <th width="37%" align="center" scope="col"><?php
+                        </h5></th>
+                        <th width="26%" align="center" scope="col"><a href="AdministrarAnimalSeleccionado.php">
+                        <?php
 						 $id= $f['idAnimal'];
 						 
 						#codigo para enviar los valores del animal seleccionado 
 echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
 ?>
-                          <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Ver Solicitudes"/>
-                          </p>
+                        <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Ver Solicitudes"/>
+                        </p>
+                        
+                        <input name="Adoptar2" type="submit" class="inputButton" id="Adoptar3" value="Modificar"/>
+                        <input name="Adoptar" type="submit" class="inputButton" id="Adoptar2" value="Eliminar"/>
                         </a></th>
                       </tr>
                     </table>
