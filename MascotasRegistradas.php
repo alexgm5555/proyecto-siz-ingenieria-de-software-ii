@@ -11,6 +11,11 @@ else{
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
 
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$re=mysql_query("select * from animal");
+
+	
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -65,7 +70,7 @@ else{
 				
 					<div id="box1">
 						<h2>Mascotas Que Has Registrado</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás ver todas las mascotas que registrar.</div>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
 					
 				<div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
@@ -76,63 +81,54 @@ else{
 					      <table width="60%" height="110" border="0">
 					        
 				          </table>
-                          
-					      <p align="center">
-				            				              <?php
-include ("conexionMySQL.php");
-$conexion = Conectarse();
-$re=mysql_query("select * from animal");
-
-	?><table width="70%" border="0" ><?php
-                                    while($f=mysql_fetch_array($re)){
+                       	  <p align="center">
+			              <table width="70%" border="0" >
+			                <?php
+								while($f=mysql_fetch_array($re)){
+								?>
+			                <tr>
+			                  <th scope="col"> <table width="100%" height="120" border="0">
+			                    <tr>
+			                      <th  align="center"  scope="col"border="">
+								  <?php
+									echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
+									?></th>
+			                      <th  scope="col"border="" >&nbsp;</th>
+			                      <th align="left" scope="col"> <h5>Codigo:
+			                        <?php
+									echo $f['idAnimal'];
 									?>
-<tr>
-                <th scope="col">
-                  
-                    <table width="100%" height="120" border="0">
-                      <tr>
-                        <th width="16%"  align="center"  scope="col"border=""><?php
-	echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
-?></th>
-                        <th width="3%"  scope="col"border="" >&nbsp;</th>
-                        <th width="55%" align="left" scope="col"> <h5>Codigo:
-                          <?php
-						 
-	echo $f['idAnimal'];
-?>
-
-<br />
-                          Nombre:
-                          <?php
-	echo $f['Nombre'];
-?>
-                          <br />
-                          Sexo:
-                          <?php
-	echo $f['Sexo'];
-?>
-                        </h5></th>
-                        <th width="26%" align="center" scope="col"><a href="AdministrarAnimalSeleccionado.php">
-                        <?php
-						 $id= $f['idAnimal'];
-						 
-						#codigo para enviar los valores del animal seleccionado 
-echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
-?>
-                        <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Ver Solicitudes"/>
-                        </p>
-                        
-                        <input name="Adoptar2" type="submit" class="inputButton" id="Adoptar3" value="Modificar"/>
-                        <input name="Adoptar" type="submit" class="inputButton" id="Adoptar2" value="Eliminar"/>
-                        </a></th>
-                      </tr>
-                    </table>
-                    <?php
+			                        <br />
+			                        Nombre:
+			                        <?php
+									echo $f['Nombre'];
+									?>
+			                        <br />
+			                        Sexo:
+			                        <?php
+									echo $f['Sexo'];
+									?>
+			                        </h5></th>
+			                      <th align="center" scope="col"><a href="AdministrarAnimalSeleccionado.php">
+			                        <?php
+						 			$id= $f['idAnimal'];
+						 			#codigo para enviar los valores del animal seleccionado
+									#Semanda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
+									echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
+									?>
+			                        <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Administrar Datos "/>
+			                        </p>
+			                      </a></th>
+		                        </tr>
+			                    </table>
+			                    <?php
 									}
 									
 									?>
-                </tr>
-			              </table></form>
+		                      </th>
+		                    </tr>
+		                  </table>
+			              </form>
 				            </form>
 				          <p></p>
 </div>

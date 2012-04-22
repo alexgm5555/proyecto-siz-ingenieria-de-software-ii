@@ -12,12 +12,17 @@ else{
 	} 
 include ("conexionMySQL.php");
 $conexion = Conectarse();
+#Codigo para navegar por la BD haciendo selects respecto al parametro que le llega de Buscarmascota
 $idAnimal=$_GET['idAnimal'];
+#idAnimal es el parametro que envia BuscarMascota.php
 $usuario=$_SESSION['usuari'];
+#usari es un parametro que envia BuscarMascota.php
 $re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
 $f=mysql_fetch_array($re);
+#se guarda todo el array de la tabla idAnimal en la variable f
 $ret=mysql_query("select * from usuario WHERE idAnimal='".$usuario."'");
 $datosUsuario=mysql_fetch_array($ret);
+#se guarda todo el array de la tabla Usuario en la variable DatosUsuario
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -77,6 +82,9 @@ $datosUsuario=mysql_fetch_array($ret);
 						    <th width="37%" scope="col"><table width="86%" height="190" border="0" >
 						      <tr>
 						        <th width="28%" scope="col">&nbsp;</th>
+                                <?php
+								#el bloque siguiente basicamente coloca los datos del Usuario que se encontraron en la base de datos
+                                ?>
 						        <th width="72%" scope="col"> <h5 align="left" class="AccordionPanelTab">Nombre : <?php echo $datosUsuario['TipoAnimal'];?></h5>
 						          <h5 align="left" class="AccordionPanelTab">Apellido: <?php echo $datosUsuario['Sexo'];?></h5>
 						          <h5 align="left" class="AccordionPanelTab">Ciudad: <?php echo $datosUsuario['Color'];?></h5>
@@ -99,6 +107,9 @@ $datosUsuario=mysql_fetch_array($ret);
 						    <th width="36%" scope="col"> <table width="72%" height="190" border="0" >
 						      <tr>
 						        <th width="18%" scope="col">&nbsp;</th>
+                                <?php
+								#el bloque siguiente basicamente coloca los datos del Animal que se encontraron en la base de datos
+                                ?>
 						        <th width="82%" scope="col"> <h5 align="left" class="login">Tipo de Animal: <?php echo $f['TipoAnimal'];?></h5>
 						          <h5 align="left">Sexo: <?php echo $f['Sexo'];?></h5>
 						          <h5 align="left">Color: <?php echo $f['Color'];?></h5>
@@ -114,6 +125,9 @@ $datosUsuario=mysql_fetch_array($ret);
 						  <tr>
 						    <th width="19%" scope="col"><div align="left"></div></th>
 						    <th width="30%" scope="col"><div align="left">
+                            <?php
+								#el bloque siguiente basicamente coloca los datos del Usuario que se encontraron en la base de datos
+                                ?>
 						      <h5>Telefono Celular:<?php echo $f['Peso'];?></h5>
 						    </div></th>
 						    <th width="51%" scope="col">&nbsp;</th>
@@ -155,9 +169,11 @@ $datosUsuario=mysql_fetch_array($ret);
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li>Registrar Mascotas</li>
-                        <li>Buscar Mascotas</li>
-                        <li>Administrar Animales Registrados</li>
+                      
+                        <li><a href="ClasificadorRoles.php">Pagina Inicial</a></li>
+                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
+                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                        <li><a href="AdministrarAnimalSeleccionado.php">Administrar Animales Registrados</a></li>
                         <li>Consultar Adopciones</li>
                       </ol>
                   </div>
