@@ -10,6 +10,7 @@ if (!mysql_select_db("zoonosis",$link))
 {
 exit();
 }
-return $link;
+mysql_query ("SET NAMES 'utf8'");
+Return $link;
 }
 ?>
