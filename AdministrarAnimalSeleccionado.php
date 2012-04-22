@@ -14,8 +14,10 @@ $conexion = Conectarse();
 
 
 $idAnimal=$_GET['idAnimal'];
+#idAnimal es un parametro que llega de Mascotas registradas
 $re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
 $f=mysql_fetch_array($re);
+#se guardan todos los valores que se encontraron de la mascota con el idAnimal en la variable f que es un arreglo
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -84,7 +86,9 @@ $f=mysql_fetch_array($re);
            				<tr>
                         
               				<th scope="col">
-                            	
+                            	<?php
+                                #bloque de codigo para imprimir los datos del animal seleccionado, en mascotas registrada.php
+								?>
 				              	<h5 align="left" class="login">Tipo de Animal: <?php echo $f['TipoAnimal'];?></h5>
 								<h5 align="left">Sexo: <?php echo $f['Sexo'];?></h5>
                 				<h5 align="left">Color: <?php echo $f['Color'];?></h5>

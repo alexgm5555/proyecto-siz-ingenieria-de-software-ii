@@ -70,9 +70,9 @@ else{
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li><a href="InicioUsuario.php">Inicio Usuario</a></li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
+                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
+                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                        <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
                         <li>Módulo</li>
                         <li>Módulo</li>
                         <li>Módulo</li>

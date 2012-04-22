@@ -1,190 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+//error_reporting("E_PARSE");
+//Validamos si la sesión ya fue creada:
+session_start();
 
-<title>Zoonosis -  Buscar Mascota</title>
-<script language="javascript">
+if ( isset( $_SESSION['usuario'])) {
 
-function validarh(e) 
-{
-	
-	tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla==8) return true;
-    patron =/[-:\d\s]/;
-    te = String.fromCharCode(tecla);
-	letra=patron.test(te);
-    return (letra);
+//Permite continuar en la página
 }
-
-function validarn(e) 
-{
-	tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla==8) return true;
-    patron = /\d/;
-    te = String.fromCharCode(tecla);
-    return patron.test(te);
-}
-
-</script>
-
-<style type="text/css">
+else{	
+	header ('location:index.php?LoginMesagge=2'); 
+	} 
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$re=mysql_query("select * from animal");
+?>
 <!--
-body,td,th {
-	font-size: xx-small;
-}
-body {
-	background-image: url(images/Bello%20Verde_1200.jpg);
-	background-repeat: no-repeat;
-}
-a {
-	font-size: 9px;
-}
-body,td,th {
-	/* [disabled]color: #000; */
-}
-body {
-	background-color: #FFF;
-}
-.Estilo3 {
-	font-weight: bold;
-	font-size: 28px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-style: italic;
-}
-.Estilo14 {font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; font-size: 12px;}
-.Estilo18 {font-size: 12px; color: #FFFFFF; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; }
-.Estilo19 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-style: italic;
-}
+	Website Name by Adonis Ronquillo for Free Website Templates
+	www.freewebsitetemplat.es / www.doni.us
+	Images by Image Base http://imagebase.davidniblack.com/
+	Released under the Creative Commons Attribution 3.0 License.
 -->
-</style></head>
-
-<body bgproperties="fixed">
-<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" > 
-  
-  <tr>
-    <td width="790" height="139" colspan="2"><div align="center">
-        <div align="right">
-          <p><a href="index.php" title="Buscar Mascota" target="_self">Cerrar Sesión</a></p>
-          <p><a href="MenuUsuarioParticular.php">Menu de Usuario</a></p>
-        </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
-  </tr>
-  <tr>
-    <td height="76" colspan="2"><div align="center">
-      <p class="Estilo3 Estilo19">Búsqueda de Mascotas</p>
-      <p class="Estilo3 Estilo19">Zoonosis</p>
-    </div></td>
-  </tr>
-  <tr>
-    <td height="251" colspan="2"><form id="form1" name="form1" method="post" action="validar.php">
-        <table width="717" height="391" border="0" align="center" >
-          <tr>
-            <td width="647" height="226"><fieldset>
-              <legend class="Estilo18">Buscar Mascotas<br/>
-              </legend>
-              <table width="576" height="301" border="0" align="center" bgcolor="">
-                <tr>
-                  <td width="70" height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td width="189"><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Codigo:
-                        <label> </label>
-                      </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="Codigo" type="Text" maxlength="16" tabindex="2" />
-                      <br/>
-                    </div></td>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style type="text/css">
+-->
+.contenedor{
+	height: 280px;
+	width: 500px;
+	overflow: scroll;
+	visibility: visible;
+	}
+-->
+</style>
+<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>Zoonisis</title>
+		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="outer">
+			<div id="header">
+				<div id="logo">
+					<h1> Zoonosis</h1>
+				</div>
+<div id="nav">
+			  		
+                    <ul>
+						<li class="first active"><a href="index.php">Inicio</a></li>			
+						<li><a href="#">Acerca de</a></li>
+                       	<li class="last"><a href="#">Contacto</a></li>
+						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
+					</ul>
                     
-                
-                
-                  <td width="70" height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td width="189"><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Tipo de Animal:
-                      <label> </label>
-                      </span>
-                      <label><br/>
-                        </label>
-                      <label for="Sexo"></label>
-                      <select name="Raza" id="Tipo_de_Animal" tabindex="2">
-                        <option value="Perro">Perro</option>
-                        <option value="Gato">Gato</option>
-                        </select>
-  <br/>
-                    </div></td>
-                </tr>
-                <tr>
-                  <td height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Raza:
-                        <label> </label>
-                      </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="Raza" type="Text" maxlength="16" tabindex="2" />
-                      <br/>
-                    </div></td>
+              <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
+</div>
+			</div>
+			<div id="banner">
+				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
+			</div>
+			<div id="main">
+			  <div id="content">
+				
+					<div id="box1">
+						<h2>Pagina de Inicio</h2>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
+					
+				<div id="box2" align="center"> 
+<div id="Accordion1" class="Accordion" tabindex="0">
+					    <div class="AccordionPanel">
+					      <div class="AccordionPanelTab">Mascotas </div>
+					    </div>
+					    <div class="AccordionPanel">
+					      <table width="60%" height="110" border="0">
+					        
+				          </table>
+                          
+					      <p align="center">
+				            				              <table width="70%" border="1" >
+															<?php
+														  	#Se hace un mientras para colocar todas las mascotas que se han registrado
+                                    						while($f=mysql_fetch_array($re)){
+																
+															?>
+																<tr>
+                													<th scope="col">
+                  														<form action="" method="get" target="_top">
+                    														<table width="100%" height="120" border="0">
+                      															<tr>
+                      																<th  align="center"  scope="col"border="">
+																					<?php
+																					#codigo para colocar la imagen de la mascota 
+																					echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
+																					?>
+                                                                                    </th>
+                                                                                    <th  scope="col"border="" >&nbsp;</th>
+                                                                                    <th align="left" scope="col"> <p>Codigo:
+                                                                                    <?php
+																					#codigo para colocar la el id de la mascota 
+																					echo $f['idAnimal'];
+																					?>
+                                                                                    <br />
+                                                                                    Nombre:
+                                                                                    <?php
+																					echo $f['Nombre'];
+																					?>
+                                                                                    <br />
+                                                                                    Sexo:
+                                                                                    <?php
+																					echo $f['Sexo'];
+																					?>
+                                                                                    </p></th>
+                                                                                    <th align="center" scope="col">
+																					<?php
+																					$id= $f['idAnimal'];
+																					#codigo para enviar los valores del animal seleccionado 
+																					
+									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
+																					echo "<a href=SolicitudAdopcion.php?idAnimal=$id>";
+																					?>
+                                                           							<input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Adoptar"/>
+                                                                                    </p>
+                                                                                    </a>
+                                                                          			</th>
+                                                                            	</tr>
+                                                                           	</table>
+                                                                            <?php
+																}
+																			?>
+                                                                      	</form>
+                                                              	</tr>
+                                                         	</table>
+                                                        </form>
+				            						</form>
+				          <p></p>
+</div>
+			          </div>
+				      </div>
+			    
+					
+					<br class="clear" />
+			  </div>
+				<div id="sidebar">
+					<h3>
                     
-                
-                  <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Ciudad de origen:
-                        <label> </label>
-                      </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="CiudadAnimal" type="Text" maxlength="16" tabindex="2" />
-                      <br/>
-                    </div></td>
-                    
-                </tr>
-                <td height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Sexo:
-                        <label> </label>
-                      </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="Sexo" type="Text" maxlength="16" tabindex="2" id="Sexo" />
-                      <br/>
-                    </div></td>
-                    
-                  <td height="72"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14">Rasgo mas importante:
-                        <label> </label>
-                      </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="Rasgo" type="Text" maxlength="16" tabindex="2" />
-<br/>
-                    </div></td>
-                </tr>
-                 
-                
-                <tr>
-                  <td height="21" colspan="5"><label></label>
-                      <div align="center">
-                        <label>
-                        <input type="submit" name="Buscar" value="Buscar" />
-                        </label>
-                    </div></td>
-                </tr>
-            </table>
-              <br/>
-            </fieldset></td>
-          </tr>
-        </table>
-        <br/>
-    </form></td>
-  </tr>
-</table>
-
+                  </h3>
+				  <div class="form">
+				    <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
+                    <ol>
+                        
+                      <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
+                      <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
+                      <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                      <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
+                    </ol>
+                  </div>
+				  <h3>Enlaces de Interés</h3>
+					<ul class="linkedList">
+						<li class="first">
+							<a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
+						</li>
+						<li>
+							<a href="http://www.google.com.co">Google</a>
+						</li>
+						<li>
+							<a href="http://docs.google.com">Google Docs</a>
+						</li>
+					</ul>
+				  <p>&nbsp;</p>
+            </div>
+				<br class="clear" />
+			</div>
+</div>
+<div style="margin: 1em 0 3em 0; text-align: center;">
+        Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+			<br />Diseñado y Provisto por Zoonisis Team
+		<br />© 2012.</div>
+<script type="text/javascript">
+var Accordion1 = new Spry.Widget.Accordion("Accordion1");
+</script>
 </body>
 </html>
