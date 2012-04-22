@@ -15,12 +15,12 @@ $conexion = Conectarse();
 #Codigo para navegar por la BD haciendo selects respecto al parametro que le llega de Buscarmascota
 $idAnimal=$_GET['idAnimal'];
 #idAnimal es el parametro que envia BuscarMascota.php
-$usuario=$_SESSION['usuari'];
+$usuario=$_SESSION['usuario'];
 #usari es un parametro que envia BuscarMascota.php
 $re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
 $f=mysql_fetch_array($re);
 #se guarda todo el array de la tabla idAnimal en la variable f
-$ret=mysql_query("select * from usuario WHERE UserName='".$usuario."'");
+$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
 
 $datosUsuario=mysql_fetch_array($ret);
 #se guarda todo el array de la tabla Usuario en la variable DatosUsuario
@@ -42,8 +42,6 @@ $datosUsuario=mysql_fetch_array($ret);
 	}
 -->
 </style>
-<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
-<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -74,27 +72,29 @@ $datosUsuario=mysql_fetch_array($ret);
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
 			</div>
 			<div id="main">
-			  <div id="content">
+<div id="content">
 				
 					<div id="box1">
 						<h2>Pagina de Inicio</h2>
-						<table width="100%" height="244" cellpadding="1" cellspacing="0">
+					  <table width="100%" height="244" cellpadding="1" cellspacing="0">
 						  <tr>
-						    <th width="37%" scope="col"><table width="86%" height="190" border="0" >
+						    <th width="40%" scope="col"><table width="88%" height="229" border="0" >
 						      <tr>
-						        <th width="28%" scope="col">&nbsp;</th>
+						        <th width="13%" scope="col">&nbsp;</th>
                                 <?php
 								#el bloque siguiente basicamente coloca los datos del Usuario que se encontraron en la base de datos
                                 ?>
-						        <th width="72%" scope="col"> <h5 align="left" class="AccordionPanelTab">Nombre : <?php echo $datosUsuario['TipoAnimal'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Apellido: <?php echo $datosUsuario['Nombres'];echo $usuario;?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Ciudad: <?php #echo $datosUsuario['Color'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Email: <?php #echo $datosUsuario['Edad'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Telefono Fijo:<?php #echo $datosUsuario['Peso'];?></h5>
+						        <th width="87%" scope="col"><h5 align="left">Nombre : <?php echo $datosUsuario['Nombres'];?></h5>
+						          <h5 align="left">Apellido: <?php echo $datosUsuario['Apellidos'];echo $usuario;?></h5>
+						          <h5 align="left">Ciudad: <?php echo $datosUsuario['Ciudad'];?>
+						          </h5>
+						          <h5 align="left">Celular:<?php echo $datosUsuario['Telefono_Cel'];?></h5>
+						          <h5 align="left">Telefono Fijo:<?php echo $datosUsuario['Telefono_Fij'];?>
+						          </h5>
 						          <h5 align="left" class="login">&nbsp;</h5></th>
 					          </tr>
 					        </table></th>
-						    <th width="27%" scope="col"> <h6 align="center"><span class="sectionList"><?php echo $f['Nombre'];?></span></h6>
+						    <th width="24%" scope="col"> <h6 align="center"><span class="sectionList"><?php echo $f['Nombre'];?></span></h6>
 						      <h6 align="center">
 						        <?php
           
@@ -105,61 +105,59 @@ $datosUsuario=mysql_fetch_array($ret);
 						      <h6 align="center"><span class="sectionList">Codigo: <?php echo $f['idAnimal'];?></span></h6>
 						      <h5 align="center">&nbsp;</h5>
 					        </th>
-						    <th width="36%" scope="col"> <table width="72%" height="190" border="0" >
+						    <th width="36%" scope="col"> <table width="99%" height="190" border="0" >
 						      <tr>
-						        <th width="18%" scope="col">&nbsp;</th>
+						        <th width="16%" scope="col">&nbsp;</th>
                                 <?php
 								#el bloque siguiente basicamente coloca los datos del Animal que se encontraron en la base de datos
                                 ?>
-						        <th width="82%" scope="col"> <h5 align="left" class="login">Tipo de Animal: <?php echo $f['TipoAnimal'];?></h5>
+						        <th width="84%" scope="col"> <h5 align="left" class="login">Tipo de Animal: <?php echo $f['TipoAnimal'];?></h5>
 						          <h5 align="left">Sexo: <?php echo $f['Sexo'];?></h5>
 						          <h5 align="left">Color: <?php echo $f['Color'];?></h5>
 						          <h5 align="left">Edad: <?php echo $f['Edad'];?></h5>
 						          <h5 align="left">Peso:<?php echo $f['Peso'];?></h5>
-						          <p align="left">Tamaño:<?php echo $f['Peso'];?></p>
-					            <h5 align="left" class="login">&nbsp;</h5></th>
+<h5 align="left" class="login">&nbsp;</h5></th>
 					          </tr>
 						      </table>
 					        </th>
 					      </tr>
 					  </table>
-						<table width="100%" border="1" cellspacing="0" cellpadding="0">
+					  <table width="100%" border="0" cellspacing="0" cellpadding="0">
 						  <tr>
-						    <th width="19%" scope="col"><div align="left"></div></th>
-						    <th width="30%" scope="col"><div align="left">
-                            <?php
+						    <th width="48%" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+						      <tr>
+						        <th width="24%" scope="col">&nbsp;</th>
+						        <th width="72%" scope="col"><table width="73%" height="84" border="1" cellpadding="0" cellspacing="0">
+						          <tr>
+						            <th width="54%" scope="col" border="0"><div align="left">
+						              <?php
 								#el bloque siguiente basicamente coloca los datos del Usuario que se encontraron en la base de datos
                                 ?>
-						      <h5>Telefono Celular:<?php echo $f['Peso'];?></h5>
-						    </div></th>
-						    <th width="51%" scope="col">&nbsp;</th>
+						              <h5>Email: <?php echo $datosUsuario['Email'];?></h5>
+						              <h5>Nombre de Usuarior: <?php echo $datosUsuario['UserName'];?></h5>
+						              </div></th>
+						            <th width="46%" scope="col"><h5 align="left">Tamaño:<?php echo htmlentities($f['Tamaño'],ENT_NOQUOTES);
+								 ?></h5></th>
+					              </tr>
+					            </table></th>
+						        <th width="4%" scope="col">&nbsp;</th>
+					          </tr>
+					        </table>						      <h5 align="left">&nbsp;</h5></th>
 					      </tr>
 					  </table>
-<p>&nbsp;</p>
+					  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+					    <tr>
+					      <th width="43%" scope="col">&nbsp;</th>
+					      <th width="17%" scope="col"><h5>&nbsp; </h5>
+					        <h5>
+					          <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Enviar Solicitud"/>
+		                  </h5></th>
+					      <th width="40%" scope="col">&nbsp;</th>
+				        </tr>
+				      </table>
+					  <p>&nbsp;</p>
                     </div>
-					<div id="box2" align="center"> 
-<div id="Accordion1" class="Accordion" tabindex="0">
-					    <div class="AccordionPanel">
-					      <div class="AccordionPanelTab">Solicitud de Adopción</div>
-					    </div>
-					    <div class="AccordionPanel">
-					      <table width="60%" height="110" border="0">
-					        
-				          </table>
-                          
-					      <p align="center">
-				            				              
-					      <form id="form1" method="post" action="">
-                          
-                          
-				          </form>
-                          
-					      </form>
-				            </form>
-				          <p></p>
-</div>
-</div>
-				      </div>
+					<div id="box2" align="center"> </div>
 			    
 					
 					<br class="clear" />
@@ -200,8 +198,5 @@ $datosUsuario=mysql_fetch_array($ret);
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonisis Team
 		<br />© 2012.</div>
-<script type="text/javascript">
-var Accordion1 = new Spry.Widget.Accordion("Accordion1");
-</script>
 </body>
 </html>
