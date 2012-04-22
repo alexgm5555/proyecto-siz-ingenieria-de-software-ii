@@ -136,7 +136,7 @@ $re=mysql_query("select * from animal");
                                                               	</tr>
                                                          	</table>
                                                         </form>
-				            						</form>
+				            </form>
 				          <p></p>
 </div>
 			          </div>

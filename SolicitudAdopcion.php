@@ -20,7 +20,8 @@ $usuario=$_SESSION['usuari'];
 $re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
 $f=mysql_fetch_array($re);
 #se guarda todo el array de la tabla idAnimal en la variable f
-$ret=mysql_query("select * from usuario WHERE idAnimal='".$usuario."'");
+$ret=mysql_query("select * from usuario WHERE UserName='".$usuario."'");
+
 $datosUsuario=mysql_fetch_array($ret);
 #se guarda todo el array de la tabla Usuario en la variable DatosUsuario
 ?>
@@ -86,10 +87,10 @@ $datosUsuario=mysql_fetch_array($ret);
 								#el bloque siguiente basicamente coloca los datos del Usuario que se encontraron en la base de datos
                                 ?>
 						        <th width="72%" scope="col"> <h5 align="left" class="AccordionPanelTab">Nombre : <?php echo $datosUsuario['TipoAnimal'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Apellido: <?php echo $datosUsuario['Sexo'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Ciudad: <?php echo $datosUsuario['Color'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Email: <?php echo $datosUsuario['Edad'];?></h5>
-						          <h5 align="left" class="AccordionPanelTab">Telefono Fijo:<?php echo $datosUsuario['Peso'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Apellido: <?php echo $datosUsuario['Nombres'];echo $usuario;?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Ciudad: <?php #echo $datosUsuario['Color'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Email: <?php #echo $datosUsuario['Edad'];?></h5>
+						          <h5 align="left" class="AccordionPanelTab">Telefono Fijo:<?php #echo $datosUsuario['Peso'];?></h5>
 						          <h5 align="left" class="login">&nbsp;</h5></th>
 					          </tr>
 					        </table></th>
@@ -115,7 +116,8 @@ $datosUsuario=mysql_fetch_array($ret);
 						          <h5 align="left">Color: <?php echo $f['Color'];?></h5>
 						          <h5 align="left">Edad: <?php echo $f['Edad'];?></h5>
 						          <h5 align="left">Peso:<?php echo $f['Peso'];?></h5>
-						          <h5 align="left" class="login">&nbsp;</h5></th>
+						          <p align="left">Tamaño:<?php echo $f['Peso'];?></p>
+					            <h5 align="left" class="login">&nbsp;</h5></th>
 					          </tr>
 						      </table>
 					        </th>
