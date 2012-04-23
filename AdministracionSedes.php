@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-//error_reporting("E_PARSE");
+error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
 if ( !isset( $_SESSION['usuario'])) {
@@ -67,7 +67,10 @@ $numfilas = mysql_num_rows($resultado);
 			try {
 							
 							$mensaje = $_GET['Message']; 
-							switch ($mensaje) {								
+							switch ($mensaje) {	
+							case 0:
+									echo "";
+									break;							
 								case 1:
 									echo "<div id='box1'> 
 								<table width='auto' border='0'>
