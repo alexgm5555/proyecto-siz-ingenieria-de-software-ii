@@ -75,7 +75,7 @@ else{
                         <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
                         <li>Módulo</li>
                         <li>Módulo</li>
-                        <li>Módulo</li>
+                        <li><a href="AdministracionUsuarios.php">Administracion de Usuarios</li>
                         <li><a href="AdministracionSedes.php">Administración de Sedes</a></li>
                         <li><a href="Estadisticas.php">Estadísticas</a></li>
                       </ol>
