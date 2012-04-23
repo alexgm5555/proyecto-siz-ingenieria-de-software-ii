@@ -55,7 +55,7 @@ error_reporting("E_PARSE");
                     <div class="AccordionPanelTab">Registro de Usuarios</div>
                             <div class="AccordionPanelContent">
                               <div align="center">
-                                <p>Por favor diligencie el formularios de reistro:</p>
+                                <p>Por favor diligencie el formularios de registro:</p>
                                 <form id="form1" method="post" action="ResolverFormulario.php">
                                 <table width="600" border="0">
                                 <tr>
@@ -104,11 +104,11 @@ error_reporting("E_PARSE");
                                 </tr>
                                 <tr>
                                   <td>Contraseña:</td>
-                                  <td><input name="Password" type="text" id="Password" size="45px" /></td>
+                                  <td><input name="Password" type="password" id="Password" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Confirmar Contraseña:</td>
-                                  <td><input name="confPassword" type="text" id="confPassword" size="45px" /></td>
+                                  <td><input name="confPassword" type="password" id="confPassword" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
