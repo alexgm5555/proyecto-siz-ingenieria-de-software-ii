@@ -1,5 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
+error_reporting("E_PARSE");
+?>
+<?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
@@ -70,7 +73,39 @@ $re=mysql_query("select * from animal");
 						<h2>Pagina de Inicio</h2>
 					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
 					
-				<div id="box2" align="center"> 
+			    <p>
+                 <?php		
+						try {
+							$bandera=0;  
+							$mensaje = $_GET['Message']; 
+							switch ($mensaje) {
+								case 0:
+									echo "";
+									break;
+								
+								
+								case 1:	
+									echo "
+									<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>Tu solicitud ha sido enviada correctamente.</font></td>
+									  </tr>
+									</table>";
+									break;
+							}				
+							
+							}  
+						catch (Exception $e)  
+						{  
+    						echo "Sucedió un error PHP.";
+						}
+	  
+	  
+	  ?>
+                
+                &nbsp;</p>
+			    <div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
 					      <div class="AccordionPanelTab">Mascotas </div>
@@ -89,44 +124,42 @@ $re=mysql_query("select * from animal");
 															?>
 																<tr>
                 													<th scope="col">
-                  														<form action="" method="get" target="_top">
-                    														<table width="100%" height="120" border="0">
+                  														<form action="" method="post" target="_top">
+                    														<table width="100%" height="83" border="0">
                       															<tr>
-                      																<th  align="center"  scope="col"border="">
+                      																<th width="18%" height="79"  align="center"  scope="col"border="">
 																					<?php
 																					#codigo para colocar la imagen de la mascota 
 																					echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
 																					?>
                                                                                     </th>
-                                                                                    <th  scope="col"border="" >&nbsp;</th>
-                                                                                    <th align="left" scope="col"> <p>Codigo:
-                                                                                    <?php
-																					#codigo para colocar la el id de la mascota 
-																					echo $f['idAnimal'];
-																					?>
-                                                                                    <br />
-                                                                                    Nombre:
-                                                                                    <?php
+                                                                                  <th width="7%"  scope="col"border="" >&nbsp;</th>
+                                                                                    <th width="45%" align="left" scope="col">Nombre:
+                                                                                      <?php
 																					echo $f['Nombre'];
 																					?>
-                                                                                    <br />
-                                                                                    Sexo:
-                                                                                    <?php
+                                                                                      <br />
+Sexo:
+<?php
 																					echo $f['Sexo'];
-																					?>
-                                                                                    </p></th>
-                                                                                    <th align="center" scope="col">
-																					<?php
+																					?></th>
+                                                                                    <th width="30%" align="center" scope="col"><?php
 																					$id= $f['idAnimal'];
 																					#codigo para enviar los valores del animal seleccionado 
 																					
 									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
 																					echo "<a href=SolicitudAdopcion.php?idAnimal=$id>";
 																					?>
-                                                           							<input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Adoptar"/>
-                                                                                    </p>
+                                                                                      <?php
+																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
+                																		if($f['Sexo']=='Macho'){
+					 																		echo'<img src="images/Macho.jpg"width="70" heigth="70"/>';}
+																						else{
+																							echo'<img src="images/Hembra.jpg"width="70" heigth="70"/>';} 
+				?>
+                                                                                      </p>
                                                                                     </a>
-                                                                          			</th>
+                                                                       			  </th>
                                                                             	</tr>
                                                                            	</table>
                                                                             <?php
