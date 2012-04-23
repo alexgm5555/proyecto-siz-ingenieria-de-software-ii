@@ -181,7 +181,31 @@ $numfilas = mysql_num_rows($resultado);
                                 <p align="center">
                                   <label for="select"></label>
                                   Sede a Modificar:
-                                   if($conexion){
+                                  <tr>
+                                  <div class="AccordionPanelContent">
+                              <div align="center">
+                                <p>Por favor diligencie el formularios de registro:</p>
+                                <form id="form1" method="post" action="ResolverFormulario.php">
+                                <table width="600" border="0">
+                                <tr>
+                                  <td>Nombres:</td>
+                                  <td><label for="NombresUsuario"></label>
+                                  <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Apellidos:</td>
+                                  <td><input name="ApellidosUsuario" type="text" id="ApellidosUsuario" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Documento de Identidad:</td>
+                                  <td><input name="DocumentoUsuario" type="text" id="DocumentoUsuario" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Ciudad:</td>
+                                  <td> <?php
+                                    $conexion = true;
+                                    Conectarse($conexion);
+                                    if($conexion){
                                         $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
                                         echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
                                         while($fila = mysql_fetch_array($consulta)){
@@ -189,26 +213,30 @@ $numfilas = mysql_num_rows($resultado);
                                         }
                                     echo "</select>";
                                     }
-                                  <select name="select" id="select">
-                                    <?PHP
-									//////////////////////////////////////
-									/////CODIGO DE MODIFICAR SEDE AQUÍ////
-									//////////////////////////////////////
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
-         							}
-      							  }
-								  ?>    
-                                  </select>
+                                    ?></td>
+                                </tr>
+                                <tr>
+                                  <td>E-mail:</td>
+                                  <td><input name="emailUsuario" type="text" id="emailUsuario" size="45px" /></td>
+                                </tr>
+                                
+                                <tr>
+                                  <td>Confirmar Contraseña:</td>
+                                  <td><input name="confPassword" type="password" id="confPassword" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" ><div align="center">
+                                    <input type="submit" name="login" value="Registrar Usuario" class="inputButton" />
+                                  </div></td>
+                                  </tr>                                  
+                              </table>
+                                
+                                </form>
+                                <p>&nbsp;</p>
+                                
+                              </div>
+</div>
                                 </p>
-                                <div align="center">
-                                  <table width="100" border="0">
-                                    <tr>
-                                      <td><input type="submit" name="login2" value="Seleccionar Sede" class="inputButton" /></td>
-                                    </tr>
-                                  </table>
-                                </div>
                                 <p align="center">&nbsp;</p>
                               </form>
 <p>&nbsp;</p>
