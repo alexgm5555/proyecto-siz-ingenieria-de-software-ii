@@ -24,6 +24,17 @@ $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
 
 $datosUsuario=mysql_fetch_array($ret);
 #se guarda todo el array de la tabla Usuario en la variable DatosUsuario
+
+function EnviarDatos($animal,$usario) {
+	
+    echo "datos enviados";
+#como arriba se tiene todo el arreglo del usuario y de los datos pues solo accedo a el, pero para pasarlo a al clase tendriamos que colocar los selecs en este lugar 																					#codigo para enviar los valores del animal seleccionado 
+																					
+									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
+								
+									#$query = ("insert into solicitud_adopcion values ('','$datosUsuario['$Cedula']','$f['idAnimal']','En Espera','$f['CC_Dueño']')");/*inserta los valores en la BD*/
+		      
+}
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -142,25 +153,39 @@ $datosUsuario=mysql_fetch_array($ret);
 					            </table></th>
 						        <th width="4%" scope="col">&nbsp;</th>
 					          </tr>
-					        </table>						      <h5 align="left">&nbsp;</h5></th>
+					        </table>						      <h5 align="center">&nbsp;
+                            
+                            
+                            </h5>
+					        <h5 align="center">Si sus datos son correctos por fabor de click en enviar solicitud</h5></th>
 					      </tr>
 					  </table>
 					  <table width="100%" border="0" cellspacing="0" cellpadding="0">
 					    <tr>
 					      <th width="43%" scope="col">&nbsp;</th>
-					      <th width="17%" scope="col"><h5>&nbsp; </h5>
-					        <h5>
-					          <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Enviar Solicitud"/>
-		                  </h5></th>
+					      <th align="center" scope="col"><?php
+																					$idAnimal= $f['idAnimal'];
+																					$idUsuario= $datosUsuario['idUsuarioParticulares'];
+																					#codigo para enviar los valores del animal seleccionado 
+																					
+									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
+																					echo "<a href=SolicitudAdopcionApp.php?idAnimal=$idAnimal,&idUsuario=$idUsuario>";
+																					?>
+					        <?php
+																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
+                																		if($f['Sexo']=='Macho'){
+					 																		echo'<img src="images/Macho.jpg"width="100" heigth="100"/>';}
+																						else{
+																							echo'<img src="images/Hembra.jpg"width="130" heigth="130"/>';} 
+				?>
+					        </p>
+					        </a> </th>
 					      <th width="40%" scope="col">&nbsp;</th>
 				        </tr>
 				      </table>
 					  <p>&nbsp;</p>
                     </div>
-					<div id="box2" align="center"> </div>
-			    
-					
-					<br class="clear" />
+			<br class="clear" />
 			  </div>
 				<div id="sidebar">
 					<h3>
