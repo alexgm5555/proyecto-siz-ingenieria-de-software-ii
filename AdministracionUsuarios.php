@@ -173,14 +173,22 @@ $numfilas = mysql_num_rows($resultado);
                           </div>
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">
-  <div align="left">Modificar una Sede</div>
+  <div align="left">Modificar datos de un usuario</div>
 </div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor seleccione la sede que desea modificar:</p>
+                              <p align="center">Por favor ingrese el numero de documento del usuario que desea modificar:</p>
                               <form id="form2" method="post" action="ModificarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
                                   Sede a Modificar:
+                                   if($conexion){
+                                        $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                        echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
+                                        while($fila = mysql_fetch_array($consulta)){
+                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
+                                        }
+                                    echo "</select>";
+                                    }
                                   <select name="select" id="select">
                                     <?PHP
 									//////////////////////////////////////
