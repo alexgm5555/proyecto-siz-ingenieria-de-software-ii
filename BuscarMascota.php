@@ -17,6 +17,30 @@ else{
 include ("conexionMySQL.php");
 $conexion = Conectarse();
 $re=mysql_query("select * from animal");
+$consulta = "SELECT idUsuarioParticulares, Ciudad FROM usuarios";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas = mysql_num_rows($resultado);
+
+try {
+							$bandera=0;  
+							$mensaje = $_GET['Message']; 
+							switch ($mensaje) {
+								case 0:
+									echo "";
+									break;
+								
+								
+								case 2:	
+									$re=mysql_query("select * from animal Where TipoAnimal='$Tipo' and Sexo='$Sexo'");
+									break;
+							}				
+							
+							}  
+						catch (Exception $e)  
+						{  
+    						echo "Sucedió un error PHP.";
+						}
+
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -108,7 +132,7 @@ $re=mysql_query("select * from animal");
 			    <div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
-					      <div class="AccordionPanelTab">Mascotas </div>
+					      <div class="AccordionPanelTab">Buscar Mascotas </div>
 					    </div>
 					    <div class="AccordionPanel">
 					      <table width="60%" height="110" border="0">
@@ -116,7 +140,42 @@ $re=mysql_query("select * from animal");
 				          </table>
                           
 					      <p align="center">
-				            				              <table width="70%" border="1" >
+			              <form id="form1" method="post" action="BuscarMascota.php">
+			                <table width="70%" border="0" cellspacing="0" cellpadding="0">
+			                  <tr>
+			                    <th scope="col"><label for="Tipo De Animal5">Tipo</label>
+			                      <select name="Tipo" id="Tipo">
+			                        <option>Todos</option>
+			                        <option>Perro</option>
+			                        <option>Gato</option>
+	                            </select></th>
+			                    <th scope="col">Sexo
+			                      <select name="Sexo" id="Sexo">
+			                        <option>Todos</option>
+			                        <option>Hembra</option>
+			                        <option>Macho</option>
+	                            </select></th>
+			                    <th scope="col">Ciudad
+			                      <select name="Ciudad" id="Ciudad">
+			                        <option>Todos</option>
+                                  <?PHP
+									//////////////////////////////////////
+									/////CODIGO DE MODIFICAR SEDE AQUÍ////
+									//////////////////////////////////////
+								  if ($numfilas > 0) {  
+         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
+           								 echo " <option value='".$rowEmp['idUsuarioParticulares']."'>".$rowEmp['Ciudad']."</option>";  
+         							}
+      							  }
+								  ?>
+                                </select></th>
+		                      </tr>
+		                    </table>
+			                <p>
+			                  <input type="submit" name="Buscar" id="Buscar" value="Buscar" />
+			                </p>
+                          </form>
+			              <table width="70%" border="1" >
 															<?php
 														  	#Se hace un mientras para colocar todas las mascotas que se han registrado
                                     						while($f=mysql_fetch_array($re)){
@@ -166,8 +225,8 @@ Sexo:
 																}
 																			?>
                                                                       	</form>
-                                                              	</tr>
-                                                         	</table>
+                           	</tr>
+</table>
                                                         </form>
 				            </form>
 				          <p></p>

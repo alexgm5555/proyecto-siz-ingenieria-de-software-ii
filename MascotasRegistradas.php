@@ -111,14 +111,21 @@ $re=mysql_query("select * from animal");
 			                        </h5></th>
 			                      <th align="center" scope="col"><a href="AdministrarAnimalSeleccionado.php">
 			                        <?php
-						 			$id= $f['idAnimal'];
-						 			#codigo para enviar los valores del animal seleccionado
-									#Semanda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
-									echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
-									?>
-			                        <input name="Adopta" type="submit" class="inputButton" id="Adoptar" value="Administrar Datos "/>
-			                        </p>
-			                      </a></th>
+																					$id= $f['idAnimal'];
+																					#codigo para enviar los valores del animal seleccionado 
+																					
+									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
+																					echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
+																					?>
+                                    <?php
+																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
+                																		if($f['Sexo']=='Macho'){
+					 																		echo'<img src="images/Macho.jpg"width="70" heigth="70"/>';}
+																						else{
+																							echo'<img src="images/Hembra.jpg"width="70" heigth="70"/>';} 
+				?>
+                                    </p>
+                                  </a> </a></th>
 		                        </tr>
 			                    </table>
 			                    <?php
