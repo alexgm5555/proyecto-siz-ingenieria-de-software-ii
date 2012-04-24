@@ -186,10 +186,10 @@ $numfilas = mysql_num_rows($resultado);
                               <div align="center">
                                 <p>Por favor diligencie el formularios de registro:</p>
                                 <form id="form1" method="post" action="ResolverFormulario.php">
-                                <table width="600" border="0">
+                                <table width="736" border="0">
                                 <tr>
-                                  <td>Nombres:</td>
-                                  <td><label for="NombresUsuario"></label>
+                                  <td width="242">Nombres:</td>
+                                  <td width="484"><label for="NombresUsuario"></label>
                                   <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" /></td>
                                 </tr>
                                 <tr>
@@ -249,6 +249,7 @@ $numfilas = mysql_num_rows($resultado);
                               <form id="form3" method="post" action="EliminarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
+                                  <input name="UsuarioparaEliminar" type="text" id="UsuarioparaEliminar" size="45px" />
                                 </p>
                                 <div align="center">
                                   <table width="100" border="0">
