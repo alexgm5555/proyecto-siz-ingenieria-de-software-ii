@@ -5,15 +5,12 @@ error_reporting("E_PARSE");
 <?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
-session_start();
 
-if ( isset( $_SESSION['usuario'])) {
+
+isset( $_SESSION['usuario']); 
 
 //Permite continuar en la página
-}
-else{	
-	header ('location:index.php?LoginMesagge=2'); 
-	} 
+
 include ("conexionMySQL.php");
 $conexion = Conectarse();
 $re=mysql_query("select * from animal");
@@ -30,8 +27,19 @@ try {
 									break;
 								
 								
-								case 2:	
-									$re=mysql_query("select * from animal Where TipoAnimal='$Tipo' and Sexo='$Sexo'");
+								case 3:
+								if($Tipo=='Todos'){
+    $Tipo='';
+    echo "tipo:   ",$Tipo,"si es aqui";}
+if($Sexo=='Todos'){
+    $Sexo='';
+    echo "sexo:   ",$Sexo,"si es aqui";}
+if($Ciudad=='Todos'){
+    $Ciudad='';
+    echo "Ciudad:   ",$Ciudad,"si es aqui";}	
+								#$Sexo=$_GET['sexo'];
+								$Tipo=$_GET['Tipo'];
+									$re=mysql_query("select * from animal Where TipoAnimal='$Tipo' ");
 									break;
 							}				
 							
@@ -117,6 +125,15 @@ try {
 									  </tr>
 									</table>";
 									break;
+									case 2:
+									echo " 
+								<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='red' size='5px'>Acceso Restringido. Por favor inicia sesión.</font></td>
+									  </tr>
+									</table>";
+									break;
 							}				
 							
 							}  
@@ -140,23 +157,23 @@ try {
 				          </table>
                           
 					      <p align="center">
-			              <form id="form1" method="post" action="BuscarMascota.php">
+			              <form id="form1" method="post" action="">
 			                <table width="70%" border="0" cellspacing="0" cellpadding="0">
 			                  <tr>
-			                    <th scope="col"><label for="Tipo De Animal5">Tipo</label>
-			                      <select name="Tipo" id="Tipo">
+			                    <th scope="col"><label for="Tipo De Animal5">Tipo:</label>
+			                      <select name="Tipo" class="form" id="Tipo">
 			                        <option>Todos</option>
 			                        <option>Perro</option>
 			                        <option>Gato</option>
 	                            </select></th>
-			                    <th scope="col">Sexo
-			                      <select name="Sexo" id="Sexo">
+			                    <th scope="col">Sexo:
+			                      <select name="Sexo" class="form" id="Sexo">
 			                        <option>Todos</option>
 			                        <option>Hembra</option>
 			                        <option>Macho</option>
 	                            </select></th>
-			                    <th scope="col">Ciudad
-			                      <select name="Ciudad" id="Ciudad">
+			                    <th scope="col">Ciudad:
+			                      <select name="Ciudad" class="form" id="Ciudad">
 			                        <option>Todos</option>
                                   <?PHP
 									//////////////////////////////////////
@@ -172,9 +189,24 @@ try {
 		                      </tr>
 		                    </table>
 			                <p>
-			                  <input type="submit" name="Buscar" id="Buscar" value="Buscar" />
-			                </p>
-                          </form>
+			                  <?php
+																					
+																					#$id= "holllla";
+																					#codigo para enviar los valores del animal seleccionado 
+																					
+									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
+																					echo "<a href=BuscarMascota.php?Tipo=$Ciudad>";
+																					?>
+                              <?php
+																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
+                																		if($f['Sexo']=='Macho'){
+					 																		echo'<img src="images/Macho.jpg"width="70" heigth="70"/>';}
+																						else{
+																							echo'<img src="images/Hembra.jpg"width="70" heigth="70"/>';} 
+				
+				
+				?></p></a>
+                          </p></form>
 			              <table width="70%" border="1" >
 															<?php
 														  	#Se hace un mientras para colocar todas las mascotas que se han registrado
@@ -223,6 +255,7 @@ Sexo:
                                                                            	</table>
                                                                             <?php
 																}
+																
 																			?>
                                                                       	</form>
                            	</tr>
