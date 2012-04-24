@@ -180,7 +180,7 @@ $numfilas = mysql_num_rows($resultado);
                               <form id="form2" method="post" action="ModificarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
-                                  Sede a Modificar:
+                                  Usuario a Modificar:
                                   <tr>
                                   <div class="AccordionPanelContent">
                               <div align="center">
@@ -226,7 +226,7 @@ $numfilas = mysql_num_rows($resultado);
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Registrar Usuario" class="inputButton" />
+                                    <input type="submit" name="login" value="Modificar Usuario" class="inputButton" />
                                   </div></td>
                                   </tr>                                  
                               </table>
@@ -243,30 +243,17 @@ $numfilas = mysql_num_rows($resultado);
 </div>
                           </div>
                           <div class="AccordionPanel">
-                            <div class="AccordionPanelTab">Eliminar una Sede</div>
+                            <div class="AccordionPanelTab">Eliminar un Usuario</div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor seleccione la sede que desea eliminar:</p>
+                              <p align="center">Por favor busque el usuario que desea eliminar:</p>
                               <form id="form3" method="post" action="EliminarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
-                                  Sede a Eliminar:
-                                  <select name="sedeEliminar" id="sedeEliminar">                                    
-                                  <?php
-								  //Se reinicia el vector de la consulta para volverlo a recorrer
-								  mysql_data_seek($resultado, 0);
-								  //
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
-         							}
-      							  }
-								  ?>                                    
-                                  </select>
                                 </p>
                                 <div align="center">
                                   <table width="100" border="0">
                                     <tr>
-                                      <td><input type="submit" name="login3" value="Eliminar Sede" class="inputButton" /></td>
+                                      <td><input type="submit" name="login3" value="Eliminar Usuario" class="inputButton" /></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -293,7 +280,7 @@ $numfilas = mysql_num_rows($resultado);
                         <li>Módulo</li>
                         <li>Módulo</li>
                         <li>Administracion de Usuarios</li>
-                        <li><a href="AdministracionSedes.php">Administración de Sedes</li>
+                        <li>Administración de Sedes</li>
                         <li><a href="Estadisticas.php">Estadísticas</a></li>
                       </ol>
                   </div>
