@@ -8,7 +8,7 @@ if ( isset( $_SESSION['usuario'])) {
 //Permite continuar en la página
 }
 else{	
-	header ('location:index.php?LoginMesagge=2'); 
+	header ('location:BuscarMascota.php?Message=2'); 
 	} 
 include ("conexionMySQL.php");
 $conexion = Conectarse();
@@ -148,6 +148,9 @@ function EnviarDatos($animal,$usario) {
 						              <h5>Nombre de Usuarior: <?php echo $datosUsuario['UserName'];?></h5>
 						              </div></th>
 						            <th width="46%" scope="col"><h5 align="left">Tamaño:<?php echo htmlentities($f['Tamaño'],ENT_NOQUOTES);
+								 ?></h5>
+				                    <h5 align="left">Descripción:</h5>
+				                    <h5 align="left"><?php echo htmlentities($f['Habilidad'],ENT_NOQUOTES);
 								 ?></h5></th>
 					              </tr>
 					            </table></th>
