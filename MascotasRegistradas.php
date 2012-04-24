@@ -13,8 +13,14 @@ else{
 
 include ("conexionMySQL.php");
 $conexion = Conectarse();
-$re=mysql_query("select * from animal");
 
+$usuario=$_SESSION['usuario'];
+#usari es un parametro que envia BuscarMascota.php
+$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
+
+$datosUsuario=mysql_fetch_array($ret);
+$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula']."'");
+	#$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['cedula']."'");
 	
 ?>
 <!--

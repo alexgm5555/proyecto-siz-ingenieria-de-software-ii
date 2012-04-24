@@ -147,10 +147,10 @@ function EnviarDatos($animal,$usario) {
 						              <h5>Email: <?php echo $datosUsuario['Email'];?></h5>
 						              <h5>Nombre de Usuarior: <?php echo $datosUsuario['UserName'];?></h5>
 						              </div></th>
-						            <th width="46%" scope="col"><h5 align="left">Tamaño:<?php echo htmlentities($f['Tamaño'],ENT_NOQUOTES);
+						            <th width="46%" scope="col"><h5 align="left">Tamaño:<?php echo $f['Tamaño'];
 								 ?></h5>
 				                    <h5 align="left">Descripción:</h5>
-				                    <h5 align="left"><?php echo htmlentities($f['Habilidad'],ENT_NOQUOTES);
+				                    <h5 align="left"><?php echo $f['Habilidad'];
 								 ?></h5></th>
 					              </tr>
 					            </table></th>
