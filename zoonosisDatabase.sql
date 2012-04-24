@@ -307,7 +307,7 @@ USE `Zoonosis`$$
 create trigger registro_animal before insert on Animal
 for each row
 insert into Seguimiento_Animales (Fecha, Tipo_de_Operacion, Tipo_de_Animal, Dueño, Motivo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), "Insert", new.TipoAnimal, new.Tipo_Dueño, new.Tipo_Dueño, "Un nuevo animal se ha registrado en el sistema");
+values (now(), "Insert", new.TipoAnimal, new.Tipo_Dueño, "Operación", "Un nuevo animal se ha registrado en el sistema");
 
 $$
 
@@ -325,7 +325,7 @@ USE `Zoonosis`$$
 create trigger borrado_animal after delete on Animal
 for each row
 insert into Seguimiento_Animales (Fecha, Tipo_de_Operacion, Tipo_de_Animal, Dueño, Motivo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), "Delete", old.TipoAnimal, old.Tipo_Dueño, old_Tipo_Dueño, "Este animal ha sido eliminado del sistema");
+values (now(), "Delete", old.TipoAnimal, old.Tipo_Dueño, "Operación", "Este animal ha sido eliminado del sistema");
 
 $$
 
@@ -343,7 +343,7 @@ USE `Zoonosis`$$
 create trigger modificado_animal after update on Animal
 for each row
 insert into Seguimiento_Animales (Fecha, Tipo_de_Operacion, Tipo_de_Animal, Dueño, Motivo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), "Update", old.TipoAnimal, old.Tipo_Dueño, old.Tipo_Dueño, "Los datos de este animal han sido modificados");
+values (now(), "Update", old.TipoAnimal, old.Tipo_Dueño, "Operación", "Los datos de este animal han sido modificados");
 
 $$
 
