@@ -100,7 +100,7 @@ $numfilas = mysql_num_rows($resultado);
 					<div id="box2">
 						<div id="Accordion1" class="Accordion" tabindex="0">
 <div class="AccordionPanel">
-<div class="AccordionPanelTab">Registrar un Usuario</div>
+<div class="AccordionPanelTab">Registrar un Empleado</div>
                                         <div class="AccordionPanelContent">
                               <div align="center">
                                 <p>Por favor diligencie el formularios de registro:</p>
@@ -160,7 +160,7 @@ $numfilas = mysql_num_rows($resultado);
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Registrar Usuario" class="inputButton" />
+                                    <input type="submit" name="login" value="Registrar Empleado" class="inputButton" />
                                   </div></td>
                                   </tr>                                  
                               </table>
@@ -173,10 +173,10 @@ $numfilas = mysql_num_rows($resultado);
                           </div>
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">
-  <div align="left">Modificar datos de un usuario</div>
+  <div align="left">Modificar datos de un empleado</div>
 </div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor ingrese el numero de documento del usuario que desea modificar:</p>
+                              <p align="center">Por favor ingrese el numero de documento del empleado que desea modificar:</p>
                               <form id="form2" method="post" action="ModificarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
@@ -226,7 +226,7 @@ $numfilas = mysql_num_rows($resultado);
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Modificar Usuario" class="inputButton" />
+                                    <input type="submit" name="login" value="Modificar Empleado" class="inputButton" />
                                   </div></td>
                                   </tr>                                  
                               </table>
@@ -243,17 +243,18 @@ $numfilas = mysql_num_rows($resultado);
 </div>
                           </div>
                           <div class="AccordionPanel">
-                            <div class="AccordionPanelTab">Eliminar un Usuario</div>
+                            <div class="AccordionPanelTab">Eliminar un empleado</div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor busque el usuario que desea eliminar:</p>
+                              <p align="center">Por favor busque el empleado que desea eliminar:</p>
                               <form id="form3" method="post" action="EliminarSede.php">
                                 <p align="center">
                                   <label for="select"></label>
+                                  <input name="EmpleadoparaEliminar" type="text" id="EmpleadoparaEliminar" size="45px" />
                                 </p>
                                 <div align="center">
                                   <table width="100" border="0">
                                     <tr>
-                                      <td><input type="submit" name="login3" value="Eliminar Usuario" class="inputButton" /></td>
+                                      <td><input type="submit" name="login3" value="Eliminar Empleado" class="inputButton" /></td>
                                     </tr>
                                   </table>
                                 </div>
