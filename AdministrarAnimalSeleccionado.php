@@ -18,6 +18,18 @@ $idAnimal=$_GET['idAnimal'];
 $re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
 $f=mysql_fetch_array($re);
 #se guardan todos los valores que se encontraron de la mascota con el idAnimal en la variable f que es un arreglo
+function listaSolicitudes(){
+	#usario es la variavle donde guarda los datos del usuario 
+	$usuario=$_SESSION['usuario'];
+	$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
+
+	$datosUsuario=mysql_fetch_array($ret);
+	#se guarda todo el array de la tabla Usuario en la variable DatosUsuario
+		$solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$usuario."'and dueño_Animal='".$datosUsuario['Cedula']."'");
+
+	$datosUsuario=mysql_fetch_array($ret);
+	
+	}
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -114,36 +126,10 @@ $f=mysql_fetch_array($re);
                             <div class="AccordionPanelContent">
                               <div align="center">
                                 <p>Por favor ingrese la información de la Nueva Sede:</p>
-                                <form id="form1" method="post" action="CrearSede.php">
-                                <table width="600" border="0">
-                                <tr>
-                                  <td>Nombre:</td>
-                                  <td><label for="nombreSede"></label>
-                                  <input name="nombreSede" type="text" id="nombreSede" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Ciudad:</td>
-                                  <td><input name="ciudadSede" type="text" id="ciudadSede" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Dirección:</td>
-                                  <td><input name="direccionSede" type="text" id="direccionSede" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Teléfono:</td>
-                                  <td><input name="telefonoSede" type="text" id="telefonoSede" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>E-mail:</td>
-                                  <td><input name="emailSEde" type="text" id="emailSEde" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Crear Sede" class="inputButton" />
-                                  </div></td>
-                                  </tr>
-                              </table>
-                                
+                                <form id="form1" method="post" action=""><?php
+                                #aca llama la funcion de lista de solicitantes
+								listaSolicitudes();
+                                ?>
                                 </form>
                                 <p>&nbsp;</p>
                                 
@@ -189,28 +175,12 @@ $f=mysql_fetch_array($re);
                             <div class="AccordionPanelTab">Eliminar Registro</div>
                             <div class="AccordionPanelContent">
                             
-                              <p align="center">Por favor seleccione la sede que desea eliminar:</p>
-                              <form id="form3" method="post" action="EliminarSede.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  Sede a Eliminar:
-                                  <select name="sedeEliminar" id="sedeEliminar">                                    
-                                  <?php
-								  //Se reinicia el vector de la consulta para volverlo a recorrer
-								  mysql_data_seek($resultado, 0);
-								  //
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
-         							}
-      							  }
-								  ?>                                    
-                                  </select>
-                                </p>
+                              <p align="center">&nbsp;</p>
+                              <form id="form3" method="post" action="EliminarRegistroUsuario.php"><input name="idanimal" type="hidden" value="<?php echo $f['idAnimal'];?>" />
                                 <div align="center">
                                   <table width="100" border="0">
                                     <tr>
-                                      <td><input type="submit" name="login3" value="Eliminar Sede" class="inputButton" /></td>
+                                      <td><input type="submit" name="login3" value="Eliminar Registro" class="inputButton" /></td>
                                     </tr>
                                   </table>
                                 </div>
