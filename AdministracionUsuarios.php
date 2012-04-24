@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php
+<?php include ("EliminarUsuario.php"); ?>
+    <?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
@@ -10,12 +11,13 @@ header ('location:index.php?LoginMesagge=2');
 
 //Se hace la consulta de las sedes
 include ("conexionMySQL.php");
+
 $conexion = Conectarse();
-/*
+
 $consulta = "SELECT idSedes, Nombre FROM SEDES";
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
 $numfilas = mysql_num_rows($resultado);
-*/
+
 
 ?>
 <!--
@@ -186,10 +188,10 @@ $numfilas = mysql_num_rows($resultado);
                               <div align="center">
                                 <p>Por favor diligencie el formularios de registro:</p>
                                 <form id="form1" method="post" action="ResolverFormulario.php">
-                                <table width="736" border="0">
+                                <table width="600" border="0">
                                 <tr>
-                                  <td width="242">Nombres:</td>
-                                  <td width="484"><label for="NombresUsuario"></label>
+                                  <td>Nombres:</td>
+                                  <td><label for="NombresUsuario"></label>
                                   <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" /></td>
                                 </tr>
                                 <tr>
@@ -246,7 +248,7 @@ $numfilas = mysql_num_rows($resultado);
                             <div class="AccordionPanelTab">Eliminar un Usuario</div>
                             <div class="AccordionPanelContent">
                               <p align="center">Por favor busque el usuario que desea eliminar:</p>
-                              <form id="form3" method="post" action="EliminarSede.php">
+                              <form id="form3" method="post" action="EliminarUsuario.php">
                                 <p align="center">
                                   <label for="select"></label>
                                   <input name="UsuarioparaEliminar" type="text" id="UsuarioparaEliminar" size="45px" />
@@ -260,6 +262,7 @@ $numfilas = mysql_num_rows($resultado);
                                 </div>
                                 <p align="center">&nbsp;</p>
                               </form>
+          
                               <p></p>
                             </div>
                           </div>
