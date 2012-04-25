@@ -67,7 +67,7 @@ CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Usuarios` (
   `Telefono_Cel` VARCHAR(45) NULL ,
   `Contrato` VARCHAR(45) NULL DEFAULT 'Particular',
   `SedeLaboral` VARCHAR(45) NULL DEFAULT 'Particular',
-  `FechaInicio` DATETIME NULL DEFAULT now(),
+  `FechaInicio` DATETIME NULL DEFAULT '1000-01-01 00:00:00',
   `SuelDevengado` VARCHAR(45) NULL DEFAULT 'Particular',
   `UserName` VARCHAR(45) NOT NULL ,  
   `Password` VARCHAR(45) NOT NULL ,
