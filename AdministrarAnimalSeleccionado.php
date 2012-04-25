@@ -18,18 +18,8 @@ $idAnimal=$_GET['idAnimal'];
 $re=mysql_query("select * from animal WHERE idAnimal='".$idAnimal."'");
 $f=mysql_fetch_array($re);
 #se guardan todos los valores que se encontraron de la mascota con el idAnimal en la variable f que es un arreglo
-function listaSolicitudes(){
-	#usario es la variavle donde guarda los datos del usuario 
-	$usuario=$_SESSION['usuario'];
-	$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
+$solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$idAnimal."'");
 
-	$datosUsuario=mysql_fetch_array($ret);
-	#se guarda todo el array de la tabla Usuario en la variable DatosUsuario
-		$solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$usuario."'and dueño_Animal='".$datosUsuario['Cedula']."'");
-
-	$datosUsuario=mysql_fetch_array($ret);
-	
-	}
 ?>
 <!--
 	Website Name by Adonis Ronquillo for Free Website Templates
@@ -128,8 +118,56 @@ function listaSolicitudes(){
                                 <p>Por favor ingrese la información de la Nueva Sede:</p>
                                 <form id="form1" method="post" action=""><?php
                                 #aca llama la funcion de lista de solicitantes
-								listaSolicitudes();
+								
                                 ?>
+                                 <table width="70%" border="1" >
+			                <?php
+                            #ciclo para mostrar todos los registros de este usuario
+								while($solicitud=mysql_fetch_array($solicitudes)){
+									$CC=$solicitud['CC_Solicitante'];
+									
+									$datos=mysql_query("select * from usuarios WHERE Cedula ='".$CC."'");
+									$sol=mysql_fetch_array($datos);
+									
+								?>
+			                <tr>
+			                  <th scope="col"> <table width="100%" height="120" border="0">
+			                    <tr>
+			                      <th  align="center"  scope="col"border="">
+								  <?php
+									#echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
+									?></th>
+			                      <th  scope="col"border="" >&nbsp;</th>
+			                      <th align="left" scope="col"> <h5>Codigo:
+			                        <?php
+									echo $solicitud['Estado_Solicitud'];
+									?>
+			                        <br />
+			                        Nombres:
+			                        <?php
+									echo $sol['Nombres'];
+									?>
+			                        <br />
+			                        Solicitud:
+			                        <?php
+									echo $solicitud['idSolicitud_Adopcion'];
+									?>
+                                    <br />
+			                        Cedula del solicitante:
+			                        <?php
+									echo $CC;
+									?>
+			                        </h5></th>
+			                      
+		                        </tr>
+			                    </table>
+			                    <?php
+									}
+									
+									?>
+		                      </th>
+		                    </tr>
+		                  </table> 
                                 </form>
                                 <p>&nbsp;</p>
                                 
@@ -202,7 +240,7 @@ function listaSolicitudes(){
 				    <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                     <ol>
                       
-                      <li><a href="InicioUsuario.php">Pagina Inicio</a></li>
+                      <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
                       <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
                         <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>

@@ -1,5 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
+error_reporting("E_PARSE");
+?>
+
+<?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 session_start();
@@ -17,10 +21,12 @@ $conexion = Conectarse();
 $usuario=$_SESSION['usuario'];
 #usari es un parametro que envia BuscarMascota.php
 $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
-
+#datos usuario guarda una arreglo con los datos del el usuario
 $datosUsuario=mysql_fetch_array($ret);
+#$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['cedula']."'");
+#sirve para almacenar los registroas de este usario en un arreglo llamado re
 $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula']."'");
-	#$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['cedula']."'");
+	
 	
 ?>
 <!--
@@ -74,11 +80,44 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			<div id="main">
 			  <div id="content">
 				
-					<div id="box1">
+				<div id="box1">
 						<h2>Mascotas Que Has Registrado</h2>
 					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
 					
-				<div id="box2" align="center"> 
+			    <?php		
+						try {
+							$bandera=0;  
+							$mensaje = $_GET['Message']; 
+							$registro = $_GET['registro']; 
+							switch ($mensaje) {
+								case 0:
+									echo "";
+									break;
+								
+								
+								case 2:	
+									echo "
+									<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'> Ha sido  borrado el Registro $registro</font></td>
+									  </tr>
+									</table>";
+									break;
+									case 3:
+									
+									break;
+							}				
+							
+							}  
+						catch (Exception $e)  
+						{  
+    						echo "Sucedió un error PHP.";
+						}
+	  
+	  
+	  ?>
+			    <div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
 					      <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
@@ -90,6 +129,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
                        	  <p align="center">
 			              <table width="70%" border="0" >
 			                <?php
+                            #ciclo para mostrar todos los registros de este usuario
 								while($f=mysql_fetch_array($re)){
 								?>
 			                <tr>
@@ -145,8 +185,8 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 				            </form>
 				          <p></p>
 </div>
-			          </div>
-				      </div>
+		          </div>
+		        </div>
 			    
 					
 					<br class="clear" />
@@ -158,7 +198,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li><a href="InicioUsuario.php">Pagina Inicio</a></li>
+                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
                         <li>Administrar Animales Registrados</li>
