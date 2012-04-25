@@ -104,7 +104,7 @@ $numfilas = mysql_num_rows($resultado);
                                         <div class="AccordionPanelContent">
                               <div align="center">
                                 <p>Por favor diligencie el formulario de registro:</p>
-                                <form id="form1" method="post" action="ResolverFormulario.php">
+                                <form id="form1" method="post" action="RegistroEmpleadoApp.php">
                                 <table width="600" border="0">
                                 <tr>
                                   <td>Nombres:</td>
