@@ -121,7 +121,7 @@ $numfilas = mysql_num_rows($resultado);
                                     $conexion = true;
                                     Conectarse($conexion);
                                     if($conexion){
-                                        $consulta = mysql_query("select * from zoonosis.TiposUsuarios where TipoUser!='particular'order by TipoUser ASC");
+                                        $consulta = mysql_query("select * from zoonosis.TiposUsuarios where TipoUser!='particular' order by TipoUser ASC");
                                         echo "<select name = 'TipoEmpleado' id = 'TipoEmpleado'>";
                                         while($fila = mysql_fetch_array($consulta)){
                                             echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
@@ -171,7 +171,7 @@ $numfilas = mysql_num_rows($resultado);
                                     $conexion = true;
                                     Conectarse($conexion);
                                     if($conexion){
-                                        $consulta = mysql_query("select * from zoonosis.Sedes order by Nombre ASC");
+                                        $consulta = mysql_query("select * from zoonosis.Sedes where Nombre!='Particular' order by Nombre ASC");
                                         echo "<select name = 'SedeEmpleado' id = 'SedeEmpleado'>";
                                         while($fila = mysql_fetch_array($consulta)){
                                             echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
@@ -182,7 +182,7 @@ $numfilas = mysql_num_rows($resultado);
                                 </tr>
                                 <tr>
                                   <td>Inicio de contrato:</td>
-                                  <td><input name="InicioEmpleado" type="text" id="InicioEmpleado" size="45px" /></td>
+                                  <td><input name="InicioEmpleado" type="text" id="InicioEmpleado" value="YYYY-MM-DD" size="45px" /></td>
                                 </tr>
                                     <tr>
                                   <td>Sueldo Devengado:</td>

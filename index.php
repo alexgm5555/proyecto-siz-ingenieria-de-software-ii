@@ -48,14 +48,14 @@ error_reporting("E_PARSE");
 				<div id="content">
 				
 					<div id="box1">
-						<h2>Bienvenid@ a Zoonisis</h2>
+						<h2>Bienvenid@ a Zoonosis</h2>
 						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />
 						<p>
-							En Zoonisis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si quieres se parte de Zoonosis Colombia regístrate y forma parte de nuestra comunidad.</p>
+							En Zoonosis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si quieres se parte de Zoonosis Colombia regístrate y forma parte de nuestra comunidad.</p>
 					</div>
 					
 					<div id="box2">
-						<h2>En Zoonisis ellos son nuestros amigos</h2>
+						<h2>En Zoonosis ellos son nuestros amigos</h2>
 						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
 					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
 					
@@ -142,7 +142,7 @@ error_reporting("E_PARSE");
 		</div>
 		<div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
+			<br />Diseñado y Provisto por Zoonosis Team
 			<br />© 2012.</div>
 </body>
 </html>

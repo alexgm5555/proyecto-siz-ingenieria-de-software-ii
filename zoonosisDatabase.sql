@@ -385,6 +385,7 @@ COMMIT;
 START TRANSACTION;
 USE `Zoonosis`;
 INSERT INTO `Zoonosis`.`Sedes` (`idSedes`, `Nombre`, `Ciudad`, `Direccion`, `Telefono`, `Email`) VALUES (NULL, 'Sede Principal', 'Bogotá', 'Carrera 106A No 67 - 02 - Vía Engativá', '440 89 96 - 440 89 98', 'SedePrincipal@gmail.com');
+INSERT INTO `zoonosis`.`sedes` (`Nombre`, `Ciudad`, `Direccion`, `Telefono`, `Email`) VALUES ('Particular', 'Particular', 'Particular', 'Particular', 'Particular');
 
 COMMIT;
 
