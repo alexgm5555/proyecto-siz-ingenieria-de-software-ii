@@ -103,21 +103,36 @@ $numfilas = mysql_num_rows($resultado);
 <div class="AccordionPanelTab">Registrar un Empleado</div>
                                         <div class="AccordionPanelContent">
                               <div align="center">
-                                <p>Por favor diligencie el formularios de registro:</p>
+                                <p>Por favor diligencie el formulario de registro:</p>
                                 <form id="form1" method="post" action="ResolverFormulario.php">
                                 <table width="600" border="0">
                                 <tr>
                                   <td>Nombres:</td>
-                                  <td><label for="NombresUsuario"></label>
-                                  <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" /></td>
+                                  <td><label for="NombresEmpleado"></label>
+                                  <input name="NombresEmpleado" type="text" id="NombresEmpleado" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Apellidos:</td>
-                                  <td><input name="ApellidosUsuario" type="text" id="ApellidosUsuario" size="45px" /></td>
+                                  <td><input name="ApellidosEmpleado" type="text" id="ApellidosEmpleado" size="45px" /></td>
+                                </tr>
+                                    <tr>
+                                  <td>Tipo de Empleado:</td>
+                                  <td> <?php
+                                    $conexion = true;
+                                    Conectarse($conexion);
+                                    if($conexion){
+                                        $consulta = mysql_query("select * from zoonosis.TiposUsuarios where TipoUser!='particular'order by TipoUser ASC");
+                                        echo "<select name = 'TipoUsuario' id = 'TipoUsuario'>";
+                                        while($fila = mysql_fetch_array($consulta)){
+                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
+                                        }
+                                    echo "</select>";
+                                    }
+                                    ?></td>
                                 </tr>
                                 <tr>
                                   <td>Documento de Identidad:</td>
-                                  <td><input name="DocumentoUsuario" type="text" id="DocumentoUsuario" size="45px" /></td>
+                                  <td><input name="DocumentoEmpleado" type="text" id="DocumentoEmpleado" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Ciudad:</td>
@@ -128,7 +143,7 @@ $numfilas = mysql_num_rows($resultado);
                                         $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
                                         echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
                                         while($fila = mysql_fetch_array($consulta)){
-                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
+                                            echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
                                         }
                                     echo "</select>";
                                     }
@@ -136,15 +151,42 @@ $numfilas = mysql_num_rows($resultado);
                                 </tr>
                                 <tr>
                                   <td>E-mail:</td>
-                                  <td><input name="emailUsuario" type="text" id="emailUsuario" size="45px" /></td>
+                                  <td><input name="emailEmpleado" type="text" id="emailEmpleado" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Teléfono:</td>
-                                  <td><input name="telefonoUsuario" type="text" id="telefonoUsuario" size="45px" /></td>
+                                  <td><input name="telefonoEmpleado" type="text" id="telefonoEmpleado" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Celular:</td>
-                                  <td><input name="CelularUsuario" type="text" id="CelularUsuario" size="45px" /></td>
+                                  <td><input name="CelularEmpleado" type="text" id="CelularEmpleado" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Contrato:</td>
+                                  <td><input name="ContratoEmpleado" type="text" id="ContratoEmpleado" size="45px" /></td>
+                                </tr>
+                                <tr>
+                                  <td>Sede laboral:</td>
+                                  <td> <?php
+                                    $conexion = true;
+                                    Conectarse($conexion);
+                                    if($conexion){
+                                        $consulta = mysql_query("select * from zoonosis.Sedes order by Nombre ASC");
+                                        echo "<select name = 'SedeEmpleado' id = 'SedeEmpleado'>";
+                                        while($fila = mysql_fetch_array($consulta)){
+                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
+                                        }
+                                    echo "</select>";
+                                    }
+                                    ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Inicio de contrato:</td>
+                                  <td><input name="InicioEmpleado" type="text" id="InicioEmpleado" size="45px" /></td>
+                                </tr>
+                                    <tr>
+                                  <td>Sueldo Devengado:</td>
+                                  <td><input name="DevengadoEmpleado" type="text" id="DevengadoEmpleado" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Nombre de Usuario:</td>
@@ -246,7 +288,7 @@ $numfilas = mysql_num_rows($resultado);
                             <div class="AccordionPanelTab">Eliminar un empleado</div>
                             <div class="AccordionPanelContent">
                               <p align="center">Por favor busque el empleado que desea eliminar:</p>
-                              <form id="form3" method="post" action="EliminarSede.php">
+                              <form id="form3" method="post" action="EliminarEmpleado.php">
                                 <p align="center">
                                   <label for="select"></label>
                                   <input name="EmpleadoparaEliminar" type="text" id="EmpleadoparaEliminar" size="45px" />
