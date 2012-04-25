@@ -122,7 +122,7 @@ $numfilas = mysql_num_rows($resultado);
                                     Conectarse($conexion);
                                     if($conexion){
                                         $consulta = mysql_query("select * from zoonosis.TiposUsuarios where TipoUser!='particular'order by TipoUser ASC");
-                                        echo "<select name = 'TipoUsuario' id = 'TipoUsuario'>";
+                                        echo "<select name = 'TipoEmpleado' id = 'TipoEmpleado'>";
                                         while($fila = mysql_fetch_array($consulta)){
                                             echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
                                         }
@@ -141,7 +141,7 @@ $numfilas = mysql_num_rows($resultado);
                                     Conectarse($conexion);
                                     if($conexion){
                                         $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
-                                        echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
+                                        echo "<select name = 'CiudadEmpleado' id = 'CiudadEmpleado'>";
                                         while($fila = mysql_fetch_array($consulta)){
                                             echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
                                         }
