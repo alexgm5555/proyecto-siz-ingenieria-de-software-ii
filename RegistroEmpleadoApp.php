@@ -26,11 +26,11 @@ Conectarse($conexion);
 	if($conexion){
 		
             if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
-		$query = ("insert into zoonosis.usuarios(Nombre, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
-                        values ( '$NombreEmpleado', '$ApellidoEmpleado', $DocumentoEmpleado, '$SedeEmpleado' , '$CorreoEmpleado' , '$TelefonoEmpleado',  '$CelularEmpleado' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
+		$query = "insert into zoonosis.usuarios(TipoUsuario, Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, Contrato, SedeLaboral, FechaInicio, SuelDevengado, UserName, Password)
+                        values ( '$TipoEmpleado', '$NombreEmpleado', '$ApellidoEmpleado', '$DocumentoEmpleado', '$CiudadEmpleado' , '$CorreoEmpleado' , '$TelefonoEmpleado',  '$CelularEmpleado' , '$ContratoEmpleado', '$SedeEmpleado', '$InicioEmpleado', '$DevengadoEmpleado', '$NombredeUsuario' , '$ContraseñadeUsuario')";
 		mysql_query($query)or die(mysql_error()); 
             
-		header ('location:index.php'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php
+		header ('location:AdministracionEmpleados.php'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php
 		}
             else{
                 echo "Error en la contraseña";
