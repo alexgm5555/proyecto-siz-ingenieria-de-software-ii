@@ -13,7 +13,7 @@ error_reporting("E_PARSE");
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>Zoonisis</title>
+		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
