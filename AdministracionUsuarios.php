@@ -177,77 +177,17 @@ $numfilas = mysql_num_rows($resultado);
 <div class="AccordionPanelTab">
   <div align="left">Modificar datos de un usuario</div>
 </div>
+  
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor ingrese el numero de documento del usuario que desea modificar:</p>
-                              <form id="form2" method="post" action="ModificarSede.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  Usuario a Modificar:
-                                  <tr>
-                                  <div class="AccordionPanelContent">
-                              <div align="center">
-                                <p>Por favor diligencie el formularios de registro:</p>
-                                <form id="form1" method="post" action="ResolverFormulario.php">
-                                <table width="600" border="0">
-                                <tr>
-                                  <td>Nombres:</td>
-                                  <td><label for="NombresUsuario"></label>
-                                  <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Apellidos:</td>
-                                  <td><input name="ApellidosUsuario" type="text" id="ApellidosUsuario" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Documento de Identidad:</td>
-                                  <td><input name="DocumentoUsuario" type="text" id="DocumentoUsuario" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Ciudad:</td>
-                                  <td> <?php
-                                    $conexion = true;
-                                    Conectarse($conexion);
-                                    if($conexion){
-                                        $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
-                                        echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
-                                        while($fila = mysql_fetch_array($consulta)){
-                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
-                                        }
-                                    echo "</select>";
-                                    }
-                                    ?></td>
-                                </tr>
-                                <tr>
-                                  <td>E-mail:</td>
-                                  <td><input name="emailUsuario" type="text" id="emailUsuario" size="45px" /></td>
-                                </tr>
-                                
-                                <tr>
-                                  <td>Confirmar Contraseña:</td>
-                                  <td><input name="confPassword" type="password" id="confPassword" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Modificar Usuario" class="inputButton" />
-                                  </div></td>
-                                  </tr>                                  
-                              </table>
-                                
-                                </form>
-                                <p>&nbsp;</p>
-                                
-                              </div>
-</div>
-                                </p>
-                                <p align="center">&nbsp;</p>
-                              </form>
-<p>&nbsp;</p>
+                                    
+    <iframe src="EliminarEmpleadoApp.php" frameborder="0" width="100%" height="200">
+        p<a href="EliminarEmpleadoApp.php"></a>.</iframe>                             
 </div>
                           </div>
                           <div class="AccordionPanel">
                             <div class="AccordionPanelTab">Eliminar un Usuario</div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor busque el usuario que desea eliminar:</p>
+                              <p align="center">Por favor ingrese el número de documento del usuario que desea eliminar:</p>
                               <form id="form3" method="post" action="EliminarUsuario.php">
                                 <p align="center">
                                   <label for="select"></label>
@@ -256,7 +196,7 @@ $numfilas = mysql_num_rows($resultado);
                                 <div align="center">
                                   <table width="100" border="0">
                                     <tr>
-                                      <td><input type="submit" name="login3" value="Eliminar Usuario" class="inputButton" /></td>
+                                      <td><input type="submit" name="login3" value="Buscar Usuario" class="inputButton" /></td>
                                     </tr>
                                   </table>
                                 </div>
