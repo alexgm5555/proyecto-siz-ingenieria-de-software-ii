@@ -181,7 +181,7 @@ $numfilas = mysql_num_rows($resultado);
                             <div class="AccordionPanelContent">
                                     
     <iframe src="EliminarEmpleadoApp.php" frameborder="0" width="100%" height="200">
-        p<a href="EliminarEmpleadoApp.php"></a>.</iframe>                             
+        p<a href="EliminarEmpleadoApp"></a>.</iframe>                             
 </div>
                           </div>
                           <div class="AccordionPanel">
