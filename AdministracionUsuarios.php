@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php include ("EliminarUsuario.php"); ?>
+
     <?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
@@ -107,7 +107,7 @@ $numfilas = mysql_num_rows($resultado);
                               <div align="center">
                                 <p>Por favor diligencie el formularios de registro:</p>
                                 <form id="form1" method="post" action="ResolverFormulario.php">
-                                <table width="600" border="0">
+                                    <table width="600" border="0">
                                 <tr>
                                   <td>Nombres:</td>
                                   <td><label for="NombresUsuario"></label>
@@ -180,8 +180,8 @@ $numfilas = mysql_num_rows($resultado);
   
                             <div class="AccordionPanelContent">
                                     
-    <iframe src="EliminarEmpleadoApp.php" frameborder="0" width="100%" height="200">
-        p<a href="EliminarEmpleadoApp"></a>.</iframe>                             
+    <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
+        p<a href="BusquedaUsuario.php"></a>.</iframe>                             
 </div>
                           </div>
                           <div class="AccordionPanel">
