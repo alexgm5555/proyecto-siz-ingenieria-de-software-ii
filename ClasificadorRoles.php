@@ -52,12 +52,12 @@ else{
 				<div id="content">
 				
 					<div id="box1">
-						<h2>Bienvenid@ a Zoonisis <?php echo $_SESSION['usuario'];?></h2>
+						<h2>Bienvenid@ a Zoonosis <?php echo $_SESSION['usuario'];?></h2>
 						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar las estadísticas generales del Sistema de Información Zoonisis.
 					</div>
 					
 					<div id="box2">
-						<h2>En Zoonisis ellos son nuestros amigos</h2>
+						<h2>En Zoonosis ellos son nuestros amigos</h2>
 						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
 					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
 					
