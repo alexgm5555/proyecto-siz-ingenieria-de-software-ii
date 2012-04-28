@@ -28,7 +28,7 @@ $solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$i
 	Released under the Creative Commons Attribution 3.0 License.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -37,6 +37,11 @@ $solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$i
 		<link rel="stylesheet" type="text/css" href="style.css" />
     <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
 	<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelClosed .AccordionPanelContent table tr td {
+	text-align: center;
+}
+</style>
 </head>
 	<body>
 		<div id="outer">
@@ -206,8 +211,54 @@ $solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$i
                                 </div>
                                 <p align="center">&nbsp;</p>
                               </form>
+<p>
+  <label for="Nombre"></label>
+</p>
+<table width="200" border="1" align="center">
+  <tr>
+    <td>Nombre</td>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+  </tr>
+  <tr>
+    <td>Raza</td>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <td>Sexo</td>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" /></td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" /></td>
+  </tr>
+  <tr>
+    <td>Color</td>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" /></td>
+  </tr>
+  <tr>
+    <td>Peso</td>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" /></td>
+  </tr>
+  <tr>
+    <td>Altura</td>
+    <td><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" /></td>
+  </tr>
+  <tr>
+    <td>Dueño</td>
+    <td><label for="textfield8"></label>
+      <input type="text" name="textfield8" id="textfield8" /></td>
+  </tr>
+</table>
 <p>&nbsp;</p>
-</div>
+<p>&nbsp;</p>
+            </div>
                           </div>
                           <div class="AccordionPanel">
                             <div class="AccordionPanelTab">Eliminar Registro</div>
