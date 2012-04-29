@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
     <?php
 //error_reporting("E_PARSE");
@@ -20,12 +19,7 @@ $numfilas = mysql_num_rows($resultado);
 
 
 ?>
-<!--
-	Website Name by Adonis Ronquillo for Free Website Templates
-	www.freewebsitetemplat.es / www.doni.us
-	Images by Image Base http://imagebase.davidniblack.com/
-	Released under the Creative Commons Attribution 3.0 License.
--->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -181,7 +175,7 @@ $numfilas = mysql_num_rows($resultado);
                             <div class="AccordionPanelContent">
                                     
     <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
-        p<a href="BusquedaUsuario.php"></a>.</iframe>                             
+        <!--p<a href="BusquedaUsuario.php"></a>.--></iframe>                             
 </div>
                           </div>
                           <div class="AccordionPanel">

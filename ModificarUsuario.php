@@ -26,8 +26,7 @@
 		echo ("No ha sido posible establecer la conexion");}
 		
 ?>
-</body>
-</html>
+
 
 
 
