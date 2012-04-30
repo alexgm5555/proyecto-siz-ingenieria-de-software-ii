@@ -48,14 +48,14 @@
                                     <img src="images/pic01.jpg" width="1120" height="240" alt="" />
                                 </div>
                     
-                            <div id="main">
-				<div id="content">
+                                    <div id="main">
+                                        <div id="content">
 				
-					<div id="box1">
+                                            <div id="box1">
 						<h2>Administración de Empleados</h2>
 						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar los empleados de Zoonosis.</p>
                                                 <p>&nbsp;</p>
-					</div>
+                                            </div>
 			<?php
 			/*try {
 							
@@ -201,7 +201,7 @@
                                                                     <td>Sueldo Devengado:</td>
                                                                     <td><input name="DevengadoEmpleado" type="text" id="DevengadoEmpleado" size="45px" /></td>
                                                                 </tr>
-                                                                    <tr>
+                                                                <tr>
                                                                     <td>Nombre de Usuario:</td>
                                                                     <td><input name="UserName" type="text" id="UserName" size="45px" /></td>
                                                                 </tr>
@@ -226,143 +226,81 @@
                                                             </div>
                                                     </div>
                                             </div>
-<div class="AccordionPanel">
-<div class="AccordionPanelTab">
-  <div align="left">Modificar datos de un empleado</div>
-</div>
-                            <div class="AccordionPanelContent">
-                              <p align="center">Por favor ingrese el numero de documento del empleado que desea modificar:</p>
-                              <form id="form2" method="post" action="ModificarSede.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  Usuario a Modificar:
-                                  <tr>
-                                  <div class="AccordionPanelContent">
-                              <div align="center">
-                                <p>Por favor diligencie el formularios de registro:</p>
-                                <form id="form1" method="post" action="ResolverFormulario.php">
-                                <table width="600" border="0">
-                                <tr>
-                                  <td>Nombres:</td>
-                                  <td><label for="NombresUsuario"></label>
-                                  <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Apellidos:</td>
-                                  <td><input name="ApellidosUsuario" type="text" id="ApellidosUsuario" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Documento de Identidad:</td>
-                                  <td><input name="DocumentoUsuario" type="text" id="DocumentoUsuario" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td>Ciudad:</td>
-                                  <td> <?php
-                                    $conexion = true;
-                                    Conectarse($conexion);
-                                    if($conexion){
-                                        $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
-                                        echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
-                                        while($fila = mysql_fetch_array($consulta)){
-                                            echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
-                                        }
-                                    echo "</select>";
-                                    }
-                                    ?></td>
-                                </tr>
-                                <tr>
-                                  <td>E-mail:</td>
-                                  <td><input name="emailUsuario" type="text" id="emailUsuario" size="45px" /></td>
-                                </tr>
-                                
-                                <tr>
-                                  <td>Confirmar Contraseña:</td>
-                                  <td><input name="confPassword" type="password" id="confPassword" size="45px" /></td>
-                                </tr>
-                                <tr>
-                                  <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Modificar Empleado" class="inputButton" />
-                                  </div></td>
-                                  </tr>                                  
-                              </table>
-                                
-                                </form>
-                                <p>&nbsp;</p>
-                                
-                              </div>
-</div>
-                                </p>
-                                <p align="center">&nbsp;</p>
-                              </form>
-<p>&nbsp;</p>
-</div>
-                          </div>
-                          <div class="AccordionPanel">
-                            <div class="AccordionPanelTab">Eliminar un empleado</div>
-                            <div class="AccordionPanelContent">
-                              <p align="center">Por favor busque el empleado que desea eliminar:</p>
-                              <form id="form3" method="post" action="EliminarEmpleado.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  <input name="EmpleadoparaEliminar" type="text" id="EmpleadoparaEliminar" size="45px" />
-                                </p>
-                                <div align="center">
-                                  <table width="100" border="0">
-                                    <tr>
-                                      <td><input type="submit" name="login3" value="Eliminar Empleado" class="inputButton" /></td>
-                                    </tr>
-                                  </table>
-                                </div>
-                                <p align="center">&nbsp;</p>
-                              </form>
-                              <p></p>
+                                                <div class="AccordionPanel">
+                                                    <div class="AccordionPanelTab">
+                                                        <div align="left">Modificar datos de un Empleado</div></div>
+                                                            <div class="AccordionPanelContent">
+                                                                <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
+                                                                </iframe>                             
+                                                            </div>
+                                                </div>
+                                                <div class="AccordionPanel">
+                                                    <div class="AccordionPanelTab">Eliminar un empleado</div>
+                                                        <div class="AccordionPanelContent">
+                                                            <p align="center">Por favor busque el empleado que desea eliminar:</p>
+                                                                <form id="form3" method="post" action="EliminarEmpleado.php">
+                                                                    <p align="center">
+                                                                        <label for="select"></label>
+                                                                        <input name="EmpleadoparaEliminar" type="text" id="EmpleadoparaEliminar" size="45px" />
+                                                                    </p>
+                                                                    <div align="center">
+                                                                    <table width="100" border="0">
+                                                                        <tr>
+                                                                        <td><input type="submit" name="login3" value="Eliminar Empleado" class="inputButton" /></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    </div>
+                                                                    <p align="center">&nbsp;</p>
+                                                                </form>
+                                                                <p></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <br class="clear" />
+                                                        
+                                        </div>
+                                            <div id="sidebar">
+                                                <h3></h3>
+                                                <div class="form">
+                                                    <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
+                                                    <ol>
+                                                        <li>Módulo</li>
+                                                        <li>Módulo</li>
+                                                        <li>Módulo</li>
+                                                        <li>Módulo</li>
+                                                        <li>Módulo</li>
+                                                        <li>Administracion de Usuarios</li>
+                                                        <li>Administración de Sedes</li>
+                                                        <li><a href="Estadisticas.php">Estadísticas</a></li>
+                                                    </ol>
+                                                </div>
+                                                <h3>Enlaces de Interés</h3>
+                                                <ul class="linkedList">
+                                                        <li class="first">
+                                                                <a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="http://www.google.com.co">Google</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="http://docs.google.com">Google Docs</a>
+                                                        </li>
+                                                </ul>
+                                                <p>&nbsp;</p>
+                                            </div>
+                                            <br class="clear" />
                             </div>
-                          </div>
-					  </div>
-					</div>
-					
-					<br class="clear" />
-				</div>
-				<div id="sidebar">
-					<h3>
-                    
-                  </h3>
-					<div class="form">
-					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
-                      <ol>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Administracion de Usuarios</li>
-                        <li>Administración de Sedes</li>
-                        <li><a href="Estadisticas.php">Estadísticas</a></li>
-                      </ol>
-                  </div>
-				  <h3>Enlaces de Interés</h3>
-					<ul class="linkedList">
-						<li class="first">
-							<a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
-						</li>
-						<li>
-							<a href="http://www.google.com.co">Google</a>
-						</li>
-						<li>
-							<a href="http://docs.google.com">Google Docs</a>
-						</li>
-					</ul>
-				  <p>&nbsp;</p>
-            </div>
-				<br class="clear" />
-			</div>
 		</div>
+            
 		<div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonisis Team
 			<br />© 2012.</div>
-    <script type="text/javascript">
-var Accordion1 = new Spry.Widget.Accordion("Accordion1");
-        </script>
-</body>
+            
+                <script type="text/javascript">
+                    var Accordion1 = new Spry.Widget.Accordion("Accordion1");
+                </script>
+        </body>
 </html>
