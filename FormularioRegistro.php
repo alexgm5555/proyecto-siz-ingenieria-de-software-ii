@@ -3,15 +3,10 @@
 error_reporting("E_PARSE");
 ?>
 <?php include ("conexionMySQL.php")?>
-<!--
-	Website Name by Adonis Ronquillo for Free Website Templates
-	www.freewebsitetemplat.es / www.doni.us
-	Images by Image Base http://imagebase.davidniblack.com/
-	Released under the Creative Commons Attribution 3.0 License.
--->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-                <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -49,13 +44,10 @@ error_reporting("E_PARSE");
 			<div id="main">
 				<div id="content">
 				
-										<div id="box2">
-						<div id="Accordion1" class="Accordion" tabindex="0">
-                    <div class="AccordionPanel">
-                    <div class="AccordionPanelTab">Registro de Usuarios</div>
-                            <div class="AccordionPanelContent">
+                                    <div id="box2">
+                                                                                    
                               <div align="center">
-                                <p>Por favor diligencie el formularios de registro:</p>
+                                <p>Por favor diligencie el formulario de registro:</p>
                                 <form id="form1" method="post" action="ResolverFormulario.php">
                                 <table width="600" border="0">
                                 <tr>
@@ -73,7 +65,13 @@ error_reporting("E_PARSE");
                                 </tr>
                                 <tr>
                                   <td>Ciudad:</td>
-                                  <td> <?php
+                                  <td> 
+                                    <?php 
+                                    
+                                    /*Este bloque PHP mostrara un menu desplegable de ciudades valiendose de los registros 
+                                     * de la tabla Ciudades de la Base de Datos.
+                                     */
+                                    
                                     $conexion = true;
                                     Conectarse($conexion);
                                     if($conexion){
@@ -84,7 +82,8 @@ error_reporting("E_PARSE");
                                         }
                                     echo "</select>";
                                     }
-                                    ?></td>
+                                    ?>
+                                  </td>
                                 </tr>
                                 <tr>
                                   <td>E-mail:</td>
@@ -111,24 +110,28 @@ error_reporting("E_PARSE");
                                   <td><input name="confPassword" type="password" id="confPassword" size="45px" /></td>
                                 </tr>
                                 <tr>
-                                  <td colspan="2" ><div align="center">
+                                  <td colspan="2" >
                                     <input type="submit" name="login" value="Registrar Usuario" class="inputButton" />
-                                  </div></td>
-                                  </tr>                                  
+                                  </td>
+                                </tr>                                  
                               </table>
                                 
                                 </form>
                                 <p>&nbsp;</p>
                                 
-                              </div>
-</div>
-                          </div>
-						</div>
+                                </div>
+
 					<br class="clear" />
+                                        
 				</div>
-				  <br class="clear" />
-			</div>
-		</div>
+                                        
+                                        <br class="clear" />
+                            </div>
+                            
+                    </div>
+                    
+              </div>
+                    
 		<div style="margin: 40em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonisis Team
