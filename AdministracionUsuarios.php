@@ -13,11 +13,6 @@ include ("conexionMySQL.php");
 
 $conexion = Conectarse();
 
-$consulta = "SELECT idSedes, Nombre FROM SEDES";
-$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-$numfilas = mysql_num_rows($resultado);
-
-
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
