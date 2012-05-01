@@ -16,12 +16,7 @@ $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
 $numfilas = mysql_num_rows($resultado);
 
 ?>
-<!--
-	Website Name by Adonis Ronquillo for Free Website Templates
-	www.freewebsitetemplat.es / www.doni.us
-	Images by Image Base http://imagebase.davidniblack.com/
-	Released under the Creative Commons Attribution 3.0 License.
--->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -64,14 +59,16 @@ $numfilas = mysql_num_rows($resultado);
 						  <table width="600" border="0">
 						    <tr>
 						      <td><div align="center">Solicitud</div></td>
-						      <td><div align="center">Descripción</div></td>
+						      <td><div align="center">Dueño del Animal</div></td>
 						      <td><div align="center">Decisión</div></td>
 					        </tr>
 						    <tr>
-						      <?php
+						      <?php //Se recorre la consulta y se genera el formulario dinámicamente. Cada fila será un formulario y cuando se haga clic en guardar se guardará la solicitud correspondiente.
+						if ($numfilas > 0) {  
+         							while ($rowEmp = mysql_fetch_assoc($resultado)) {           								 
 						echo "	
-                            <form action='AproRechSolAdopApp.php' method='post'><td>006265</td>
-						      <td>Quiero adoptar al pajarito de Alex</td>
+                            <form action='AproRechSolAdopApp.php' method='post'><td>".$rowEmp['idSolicitud_Adopcion']."</td>
+						      <td>".$rowEmp['Dueño_Animal']."</td>
 						      <td><table width='200' border='0'>
 						        <tr>
 						          <td><label>
@@ -84,6 +81,7 @@ $numfilas = mysql_num_rows($resultado);
 						            Rechazar</label></td>
 					            </tr>
 					          </table></td></form>";
+									}}
 						 ?>	  
 					        </tr>
 						    <tr>
