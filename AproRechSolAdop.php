@@ -64,20 +64,23 @@ else{
 						      <td><div align="center">Decisión</div></td>
 					        </tr>
 						    <tr>
-						      <td>006265</td>
+						      <?php
+						echo "	
+                            <td>006265</td>
 						      <td>Quiero adoptar al pajarito de Alex</td>
-						      <td><table width="200" border="0">
+						      <td><table width='200' border='0'>
 						        <tr>
 						          <td><label>
-						            <input type="radio" name="RadioGroup1" value="opción" id="RadioGroup1_0" />
+						            <input type='radio' name='RadioGroup1' value='opción' id='RadioGroup1_0' />
 						            Aceptar</label></td>
 					            </tr>
 						        <tr>
 						          <td><label>
-						            <input type="radio" name="RadioGroup1" value="opción" id="RadioGroup1_1" />
+						            <input type='radio' name='RadioGroup1' value='opción' id='RadioGroup1_1' />
 						            Rechazar</label></td>
 					            </tr>
-					          </table></td>
+					          </table></td>";
+						 ?>	  
 					        </tr>
 						    <tr>
 						      <td>006266</td>
