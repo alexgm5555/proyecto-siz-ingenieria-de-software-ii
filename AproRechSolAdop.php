@@ -66,7 +66,7 @@ else{
 						    <tr>
 						      <?php
 						echo "	
-                            <td>006265</td>
+                            <form action='AproRechSolAdopApp.php' method='post'><td>006265</td>
 						      <td>Quiero adoptar al pajarito de Alex</td>
 						      <td><table width='200' border='0'>
 						        <tr>
@@ -79,7 +79,7 @@ else{
 						            <input type='radio' name='RadioGroup1' value='opción' id='RadioGroup1_1' />
 						            Rechazar</label></td>
 					            </tr>
-					          </table></td>";
+					          </table></td></form>";
 						 ?>	  
 					        </tr>
 						    <tr>
