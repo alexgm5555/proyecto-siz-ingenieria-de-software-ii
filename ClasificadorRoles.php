@@ -68,7 +68,7 @@ else{
                     
                   </h3>
 					<div class="form">
-					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
+					  <p><?php echo $_SESSION['usuario'];?>, según tu rol [<?php echo $_SESSION['tipoUsuario'];?>] puedes realizar las siguientes actividades</p>
                       <ol>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
