@@ -99,13 +99,13 @@ else{
 								
 								//Caso en que sea Particular
 								case 2:
-								echo   "<li>Realizar Solicitud de Adopción</li>
-                        				<li>Búsqueda de Animales</li>";
+								echo   "<li><a href='#'>Realizar Solicitud de Adopción</a></li>
+                        				<li><a href='#'>Búsqueda de Animales</a></li>";
 								break;
 							}
 					  ?>
                       </p>
-                      					
+                      								
 <p>&nbsp;</p>
                       <ol>
                         
