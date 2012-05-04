@@ -82,11 +82,11 @@ else{
 								
 								//Caso en que sea Administrador
 								case 0:
-								echo   "<li>Administracion de Usuarios</li>
-                        				<li>Administración de Animales</li>
-                        				<li>Administración de Empleados</li>
-                        				<li>Administración de Sedes</li>
-                        				<li>Estadísticas</li>";
+								echo   "<li><a href='#'>Administracion de Usuarios</a></li>
+                       					<li><a href='#'>Administración de Animales</a></li>
+                        				<li><a href='#'>Administración de Empleados</a></li>
+                        				<li><a href='#'>Administración de Sedes</a></li>
+                        				<li><a href='#'>Estadísticas</a></li>";
 								break;
 								
 								//Caso en que sea Empleado
@@ -105,7 +105,10 @@ else{
 							}
 					  ?>
                       </p>
-                      <p><a href="#">Hola</a> </p>
+                      <ul>
+                        
+                      </ul>
+<p>&nbsp;</p>
                       <ol>
                         
                         
