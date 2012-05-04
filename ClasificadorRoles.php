@@ -70,7 +70,7 @@ else{
 					<div class="form">
 					  <p><?php 
 					  //se capturan datos de la sesión del nombre y tipo de usuario, estos datos fueron generados al iniciar sesión
-					  echo $_SESSION['usuario'];?>, según tu rol [<?php echo $_SESSION['tipoUsuario'];?>] puedes realizar las siguientes actividades</p>
+					  echo $_SESSION['usuario'];?>, según tu rol [<?php echo $_SESSION['tipoUsuario'];?>] tienes acceso a las siguientes opciones:</p>
                       
                       <p>
                         <?php  // se muestran las opciones que corresponden a cada tipo de usuario dependiente del tipo de usuario que se haya registrado al iniciar sesión.
@@ -91,10 +91,10 @@ else{
 								
 								//Caso en que sea Empleado
 								case 1:
-								echo   "<li>Registrar Animal</li>
-                       					<li>Eliminar Animal</li>
-                        				<li>Modificar Animal</li>
-                       				    <li>Consultar Adopción</li>";
+								echo   "<li><a href='#'>Registrar Animal</a></li>
+                       					<li><a href='#'>Eliminar Animal</a></li>
+                        				<li><a href='#'>Modificar Animal</a></li>
+                       				    <li><a href='#'>Consultar Adopción</a></li>";
 								break;
 								
 								//Caso en que sea Particular
@@ -105,9 +105,7 @@ else{
 							}
 					  ?>
                       </p>
-                      <ul>
-                        
-                      </ul>
+                      					
 <p>&nbsp;</p>
                       <ol>
                         
