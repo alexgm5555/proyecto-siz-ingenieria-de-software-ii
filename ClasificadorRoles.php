@@ -68,16 +68,48 @@ else{
                     
                   </h3>
 					<div class="form">
-					  <p><?php echo $_SESSION['usuario'];?>, según tu rol [<?php echo $_SESSION['tipoUsuario'];?>] puedes realizar las siguientes actividades</p>
+					  <p><?php 
+					  //se capturan datos de la sesión del nombre y tipo de usuario, estos datos fueron generados al iniciar sesión
+					  echo $_SESSION['usuario'];?>, según tu rol [<?php echo $_SESSION['tipoUsuario'];?>] puedes realizar las siguientes actividades</p>
+                      
+                      <p>
+                        <?php  // se muestran las opciones que corresponden a cada tipo de usuario dependiente del tipo de usuario que se haya registrado al iniciar sesión.
+					  		$tipoUsuario = $_SESSION['usuario'];
+							if($tipoUsuario == "Administrador"){$tipo=0;};
+							if($tipoUsuario == "Empleado"){$tipo=1;};
+							if($tipoUsuario == "Particular"){$tipo=2;};
+							switch ($tipoUsuario){
+								
+								//Caso en que sea Administrador
+								case 0:
+								echo   "<li>Administracion de Usuarios</li>
+                        				<li>Administración de Animales</li>
+                        				<li>Administración de Empleados</li>
+                        				<li>Administración de Sedes</li>
+                        				<li>Estadísticas</li>";
+								break;
+								
+								//Caso en que sea Empleado
+								case 1:
+								echo   "<li>Registrar Animal</li>
+                       					<li>Eliminar Animal</li>
+                        				<li>Modificar Animal</li>
+                       				    <li>Consultar Adopción</li>";
+								break;
+								
+								//Caso en que sea Particular
+								case 2:
+								echo   "<li>Realizar Solicitud de Adopción</li>
+                        				<li>Búsqueda de Animales</li>";
+								break;
+							}
+					  ?>
+                      </p>
+                      <p><a href="#">Hola</a> </p>
                       <ol>
-                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
-                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li><a href="AdministracionUsuarios.php">Administracion de Usuarios</li>
-                        <li><a href="AdministracionSedes.php">Administración de Sedes</a></li>
-                        <li><a href="Estadisticas.php">Estadísticas</a></li>
+                        
+                        
+                        
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
