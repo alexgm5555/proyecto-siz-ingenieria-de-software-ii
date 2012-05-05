@@ -82,25 +82,25 @@ else{
 								
 								//Caso en que sea Administrador
 								case 0:
-								echo   "<li><a href='#'>Administracion de Usuarios</a></li>
-                       					<li><a href='#'>Administración de Animales</a></li>
-                        				<li><a href='#'>Administración de Empleados</a></li>
-                        				<li><a href='#'>Administración de Sedes</a></li>
-                        				<li><a href='#'>Estadísticas</a></li>";
+								echo   "<li><a href='AdministracionUsuarios.php'>Administracion de Usuarios</a></li>
+                                                                        <li><a href='#'>Administración de Animales</a></li>
+                                                                        <li><a href='AdministracionEmpleados.php'>Administración de Empleados</a></li>
+                                                                        <li><a href='AdministracionSedes.php'>Administración de Sedes</a></li>
+                                                                        <li><a href='Estadisticas.php'>Estadísticas</a></li>";
 								break;
 								
 								//Caso en que sea Empleado
 								case 1:
 								echo   "<li><a href='#'>Registrar Animal</a></li>
-                       					<li><a href='#'>Eliminar Animal</a></li>
-                        				<li><a href='#'>Modificar Animal</a></li>
-                       				    <li><a href='#'>Consultar Adopción</a></li>";
+                                                                        <li><a href='#'>Eliminar Animal</a></li>
+                                                                        <li><a href='#'>Modificar Animal</a></li>
+                                                                        <li><a href='#'>Consultar Solicitudes de Adopción</a></li>";
 								break;
 								
 								//Caso en que sea Particular
 								case 2:
 								echo   "<li><a href='#'>Realizar Solicitud de Adopción</a></li>
-                        				<li><a href='#'>Búsqueda de Animales</a></li>";
+                                                                        <li><a href='#'>Búsqueda de Animales</a></li>";
 								break;
 							}
 					  ?>
