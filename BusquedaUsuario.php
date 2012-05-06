@@ -1,16 +1,18 @@
 <html>
-    <title>
+
         
     <head>
+
+        <link rel="stylesheet" type="text/css" href="style2.css" />
+
     </head>
-    </title>
         <body>
             <p align="center">Por favor ingrese el numero de documento del usuario que desea modificar:</p>
-                               <form id="form2" method="post" action="ModificarUsuario.php">
+                               <form id="form2" method="post" action="BusquedaUsuarioApp.php">
                                    <input type="hidden" value="1" name="id"/>
                                 <p align="center">
                                   <label for="select"></label>
-                                  <input name="UsuarioparaEliminar" type="text" id="UsuarioparaEliminar" />
+                                  <input name="UsuarioparaModificar" type="text" id="UsuarioparaModificar" />
                                 </p>
                                 <div align="center">
                                   <table width="100" border="0">
