@@ -1,17 +1,15 @@
-
-    <?php
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
-session_start();
-if ( !isset( $_SESSION['usuario'])) {
+    session_start();
+    if ( !isset( $_SESSION['usuario'])) {
+        header ('location:index.php?LoginMesagge=2'); 
+    }
+    include ("conexionMySQL.php");
+    $conexion = Conectarse();
 
-header ('location:index.php?LoginMesagge=2'); 
-}
-
-//Se hace la consulta de las sedes
-include ("conexionMySQL.php");
-
-$conexion = Conectarse();
+    $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 ?>
 
@@ -23,26 +21,28 @@ $conexion = Conectarse();
 		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
-	<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
-</head>
+                <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+                <link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+        </head>
+    
 	<body>
 		<div id="outer">
 			<div id="header">
 				<div id="logo">
 					<h1> Zoonosis</h1>
 				</div>
-<div id="nav">
+                                        <div id="nav">
 			  		
-                    <ul>
+                                            <ul>
 						<li class="first active"><a href="index.php">Inicio</a></li>			
 						<li><a href="#">Acerca de</a></li>
-                       	<li class="last"><a href="#">Contacto</a></li>
+                                                <li class="last"><a href="#">Contacto</a></li>
 						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
-					</ul>
+                                            </ul>
                     
-              <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
-</div>
+                                                <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
+                                        
+                                        </div>
 			</div>
 			<div id="banner">
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />

@@ -6,9 +6,10 @@
     if ( !isset( $_SESSION['usuario'])) {
         header ('location:index.php?LoginMesagge=2'); 
     }
-
     include ("conexionMySQL.php");
     $conexion = Conectarse();
+    
+    $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 ?>
 
@@ -228,16 +229,17 @@
                                             </div>
                                                 <div class="AccordionPanel">
                                                     <div class="AccordionPanelTab">
-                                                        <div align="left">Modificar datos de un Empleado</div></div>
+                                                        <div align="left">Modificar un Empleado</div>
+                                                    </div>
                                                             <div class="AccordionPanelContent">
                                                                 <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
-                                                                </iframe>                             
+                                                                </iframe>                            
                                                             </div>
                                                 </div>
-                                                <div class="AccordionPanel">
-                                                    <div class="AccordionPanelTab">Eliminar un empleado</div>
+                                                <!--<div class="AccordionPanel">
+                                                    <div class="AccordionPanelTab">Buscar un empleado</div>
                                                         <div class="AccordionPanelContent">
-                                                            <p align="center">Por favor busque el empleado que desea eliminar:</p>
+                                                            <p align="center">Por favor ingrese el número de documento del usuario que desea buscar:</p>
                                                                 <form id="form3" method="post" action="EliminarEmpleado.php">
                                                                     <p align="center">
                                                                         <label for="select"></label>
@@ -254,7 +256,7 @@
                                                                 </form>
                                                                 <p></p>
                                                         </div>
-                                                    </div>
+                                                    </div>-->
                                                 </div>
                                             </div>
 

@@ -107,11 +107,6 @@ else{
                       </p>
                       								
 <p>&nbsp;</p>
-                      <ol>
-                        
-                        
-                        
-                      </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">
