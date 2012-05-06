@@ -222,14 +222,11 @@ $numfilas = mysql_num_rows($resultado);
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Administración de Sedes</li>
-                        <li><a href="Estadisticas.php">Estadísticas</a></li>
+                        <li><a href='AdministracionUsuarios.php'>Administracion de Usuarios</a></li>
+                        <li><a href='#'>Administración de Animales</a></li>
+                        <li><a href='AdministracionEmpleados.php'>Administración de Empleados</a></li>
+                        <li><a href='AdministracionSedes.php'>Administración de Sedes</a></li>
+                        <li><a href='Estadisticas.php'>Estadísticas</a></li>
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>
