@@ -235,29 +235,8 @@
                                                                 <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
                                                                 </iframe>                            
                                                             </div>
-                                                </div>
-                                                <!--<div class="AccordionPanel">
-                                                    <div class="AccordionPanelTab">Buscar un empleado</div>
-                                                        <div class="AccordionPanelContent">
-                                                            <p align="center">Por favor ingrese el número de documento del usuario que desea buscar:</p>
-                                                                <form id="form3" method="post" action="EliminarEmpleado.php">
-                                                                    <p align="center">
-                                                                        <label for="select"></label>
-                                                                        <input name="EmpleadoparaEliminar" type="text" id="EmpleadoparaEliminar" size="45px" />
-                                                                    </p>
-                                                                    <div align="center">
-                                                                    <table width="100" border="0">
-                                                                        <tr>
-                                                                        <td><input type="submit" name="login3" value="Eliminar Empleado" class="inputButton" /></td>
-                                                                        </tr>
-                                                                    </table>
-                                                                    </div>
-                                                                    <p align="center">&nbsp;</p>
-                                                                </form>
-                                                                <p></p>
-                                                        </div>
-                                                    </div>-->
-                                                </div>
+                                                </div>                                             
+                                              </div>
                                             </div>
 
                                             <br class="clear" />
