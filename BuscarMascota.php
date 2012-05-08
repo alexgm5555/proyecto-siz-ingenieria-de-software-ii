@@ -15,7 +15,15 @@ include ("conexionMySQL.php");
 $conexion = Conectarse();
 $re=mysql_query("select * from animal");
 $consulta = "SELECT idUsuarioParticulares, Ciudad FROM usuarios";
+#Seleccionar las ciudades en la bd
+$consulta2 = "SELECT * FROM ciudades order by Nombre_Ciudad ASC";
+#Seleccionar los tipos de animal  en la bd
+$consulta3 = "SELECT * FROM tipos_animal order by tipo ASC";
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+#para consultar las diferentes ciudades
+$resultado2 = mysql_query($consulta2, $conexion) or die(mysql_error());
+#para consultar las diferentes ciudades
+$resultado3 = mysql_query($consulta3, $conexion) or die(mysql_error());
 $numfilas = mysql_num_rows($resultado);
 
 try {
@@ -163,9 +171,18 @@ if($Ciudad=='Todos'){
 			                    <th scope="col"><label for="Tipo De Animal5">Tipo:</label>
 			                      <select name="Tipo" class="form" id="Tipo">
 			                        <option>Todos</option>
-			                        <option>Perro</option>
-			                        <option>Gato</option>
-	                            </select></th>
+                                    
+			                        <?PHP
+									//////////////////////////////////////
+									///// AQUÍ////
+									//////////////////////////////////////
+								  if ($numfilas > 0) {  
+         							while ($rowEmp = mysql_fetch_assoc($resultado3)) {  
+           								 echo " <option value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";  
+         							}
+      							  }
+								  ?>
+                                </select></th>
 			                    <th scope="col">Sexo:
 			                      <select name="Sexo" class="form" id="Sexo">
 			                        <option>Todos</option>
@@ -175,13 +192,14 @@ if($Ciudad=='Todos'){
 			                    <th scope="col">Ciudad:
 			                      <select name="Ciudad" class="form" id="Ciudad">
 			                        <option>Todos</option>
+                                    
                                   <?PHP
 									//////////////////////////////////////
 									/////CODIGO DE MODIFICAR SEDE AQUÍ////
 									//////////////////////////////////////
 								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idUsuarioParticulares']."'>".$rowEmp['Ciudad']."</option>";  
+         							while ($rowEmp = mysql_fetch_assoc($resultado2)) {  
+           								 echo " <option value='".$rowEmp['idCiudades']."'>".$rowEmp['Nombre_Ciudad']."</option>";  
          							}
       							  }
 								  ?>
@@ -195,7 +213,7 @@ if($Ciudad=='Todos'){
 																					#codigo para enviar los valores del animal seleccionado 
 																					
 									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
-																					echo "<a href=BuscarMascota.php?Tipo=$Ciudad>";
+																					echo $Ciudad,"holllllla";
 																					?>
                               <?php
 																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
@@ -210,6 +228,19 @@ if($Ciudad=='Todos'){
 			              <table width="70%" border="1" >
 															<?php
 														  	#Se hace un mientras para colocar todas las mascotas que se han registrado
+															$Tipo=$_POST['Tipo'];
+															$Tipo="";
+															$Sexo=$_POST['Sexo'];
+															$Sexo="";
+															$Ciudad=$_POST['Ciudad'];
+															$Ciudad="";
+															/*if(($Tipo!="Todos")||($Ciudad!="Todos")||($Sexo!="Todos")){
+																if($Tipo=="Todos"){$Tipo="";}
+																if($Sexo=="Todos"){$Sexo="";}
+																if($Ciudad=="Todos"){$Ciudad="";}
+																$re=mysql_query("select * from animal where TipoAnimal='$Tipo',Sexo='$Sexo'");
+																}*/
+															echo $Tipo,"no funciono";
                                     						while($f=mysql_fetch_array($re)){
 																
 															?>
