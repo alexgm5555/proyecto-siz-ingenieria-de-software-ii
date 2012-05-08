@@ -57,8 +57,8 @@
                                                             <p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar los usuarios de Zoonosis.</p>
                                                             <p>&nbsp;</p>
                                                     </div>
-			<?php
-			/*try {
+			<!--<?php/*
+			try {
 							
 							$mensaje = $_GET['Message']; 
 							switch ($mensaje) {								
@@ -67,7 +67,7 @@
 								<table width='auto' border='0'>
   									  <tr>
 										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'>&nbsp;Sede creada satisfactoriamente</font></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Usuario creado satisfactoriamente</font></td>
 									  </tr>
 									</table></div>";	
 									break;
@@ -76,7 +76,7 @@
 								<table width='auto' border='0'>
   									  <tr>
 										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'>&nbsp;Sede eliminada satisfactoriamente</font></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Usuario eliminado satisfactoriamente</font></td>
 									  </tr>
 									</table></div>";	
 									break;	
@@ -86,10 +86,8 @@
 						catch (Exception $e)  
 						{  
     						echo "Sucedió un error inesperado.".$e->getMessage();
-				}			
-			
-                */
-			?>	
+				}	*/	
+			?>	-->
 					<div id="box2">
                                             <div id="Accordion1" class="Accordion" tabindex="0">
                                                 <div class="AccordionPanel">
@@ -168,7 +166,7 @@
                                                 
                                             <div class="AccordionPanel">
                                                 <div class="AccordionPanelTab">
-                                                    <div align="left">Modificar datos de un usuario</div>
+                                                    <div align="left">Configuración de usuario</div>
                                                 </div>
                                                     <div class="AccordionPanelContent">
                                                         <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">

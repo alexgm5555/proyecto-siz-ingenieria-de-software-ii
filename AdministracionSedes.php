@@ -28,7 +28,7 @@ $numfilas = mysql_num_rows($resultado);
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>Zoonisis</title>
+		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
     <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ $numfilas = mysql_num_rows($resultado);
 				
 					<div id="box1">
 						<h2>Administración de Sedes</h2>
-						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</p>
+						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar las Sedes de Zoonisis.</p>
 					  <p>&nbsp;</p>
 					</div>
 			<?php

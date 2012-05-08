@@ -64,8 +64,7 @@ error_reporting("E_PARSE");
 				<div id="sidebar">
 					<h3>
                     <?php		
-						try {
-							$bandera=0;  
+						try { 
 							$mensaje = $_GET['LoginMesagge']; 
 							switch ($mensaje) {
 								case 0:
