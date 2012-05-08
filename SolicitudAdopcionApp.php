@@ -24,7 +24,7 @@ $datosUsuario=mysql_fetch_array($ret);
 		 $idAnimal=$f['idAnimal'];
 		 $Propietario=$f['CC_Dueño']; 
 		   
-		$query = ("insert into zoonosis.solicitud_adopcion values ( '', '$Cedula', '$idAnimal', 'En Espera' , '$Propietario')");
+		$query = ("insert into solicitud_adopcion values ( '', '$Cedula', '$idAnimal', 'En Espera' , '$Propietario')");
 		mysql_query($query)or die(mysql_error()); 
             
 		#se insertan los datos de solicitante y del animal en la tablasolicitud adopcion
