@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-//error_reporting("E_PARSE");
+error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
     session_start();
     if ( !isset( $_SESSION['usuario'])) {
@@ -57,8 +57,8 @@
 						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar los empleados de Zoonosis.</p>
                                                 <p>&nbsp;</p>
                                             </div>
-                                            <!--
-			<?php/*
+                                            
+			<?php
 			try {
 							
 							$mensaje = $_GET['Message']; 
@@ -87,8 +87,8 @@
 						catch (Exception $e)  
 						{  
     						echo "Sucedió un error inesperado.".$e->getMessage();
-				}*/			
-			?>	-->
+				}			
+			?>	
 					<div id="box2">
                                             <div id="Accordion1" class="Accordion">
                                                 <div class="AccordionPanel">
