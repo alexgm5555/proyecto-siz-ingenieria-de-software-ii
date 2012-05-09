@@ -25,7 +25,7 @@ session_start();
         $_SESSION['row'] = mysql_fetch_array($consulta);
         
         if($_SESSION['row'] != null){            
-            header('Location: ModificarUsuario.php');
+            header('Location: ConfigurarUsuario.php');
         }
         else{
             echo "El usuario no se encuentra registrado en el sistema.";

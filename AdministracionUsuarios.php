@@ -94,7 +94,7 @@
                                                     <div class="AccordionPanelTab">Registrar un Usuario</div>
                                                         <div class="AccordionPanelContent">
                                                             <div align="center">
-                                                                <p>Por favor diligencie el formularios de registro:</p>
+                                                                <p>Por favor diligencie el formulario de registro:</p>
                                                                 <form id="form1" method="post" action="ResolverFormulario.php">
                                                                 <table width="600" border="0">
                                                                     <tr>
