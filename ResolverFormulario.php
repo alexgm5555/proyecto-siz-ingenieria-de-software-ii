@@ -12,8 +12,10 @@
 
 //Este bloque de PHP nos permite guardar en la Base de Datos las variables solicitadas 
 //al usuario en FormularioRegistro.php
+session_start();
 
 $conexion = true;
+$url_anterior = $_SESSION['url'];
 $NombreUsuario = $_POST['NombresUsuario'];
 $ApellidoUsuario = $_POST['ApellidosUsuario'];
 $DocumentoUsuario = $_POST['DocumentoUsuario'];
@@ -33,16 +35,23 @@ Conectarse($conexion);
 		$query = ("insert into zoonosis.usuarios(Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
                         values ( '$NombreUsuario', '$ApellidoUsuario', $DocumentoUsuario, '$CiudadUsuario' , '$CorreoUsuario' , '$TelefonoUsuario',  '$CelularUsuario' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
 		mysql_query($query)or die(mysql_error()); 
-            
-		header ('location:index.php'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php
-		}
+                
+                if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/AdministracionUsuarios.php'){
+                    header ('location: AdministracionUsuarios.php');
+                }
+                else{
+                    header ('location:index.php'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php                   
+                }                
+                }
             else{
                 echo "Error en la contraseña";
                 header('location:'.$_SERVER['HTTP_REFERER']);
                 }
         }
 	else{
-		echo ("No ha sido posible establecer la conexion");}
+		echo ("No ha sido posible establecer la conexion");
+                
+                }
 		
 ?>
 </body>

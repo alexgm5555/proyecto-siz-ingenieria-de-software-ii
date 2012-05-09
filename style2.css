@@ -25,6 +25,7 @@ body {
         background: #FFF;
 	color: #657300;
         overflow: hidden;
+        text-align: center;
 }
 
 body,input {
@@ -109,6 +110,7 @@ ul h4 {
 	border: none;
 	color: #FFF;
 	border-radius: 10px;
+        
 }
 
 .round {
@@ -253,6 +255,15 @@ ul h4 {
 
 #search input.button {
 	margin-left: 1em;
+	border: 0;
+	color: #fff;
+	background: #7720d5;
+	padding: 5px;
+	font-family: Cabin, sans-serif;
+}
+
+#search button {
+        margin-left: 1em;
 	border: 0;
 	color: #fff;
 	background: #7720d5;
