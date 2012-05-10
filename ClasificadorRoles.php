@@ -74,11 +74,11 @@ else{
                       
                       <p>
                         <?php  // se muestran las opciones que corresponden a cada tipo de usuario dependiente del tipo de usuario que se haya registrado al iniciar sesión.
-					  		$tipoUsuario = $_SESSION['usuario'];
+					  		$tipoUsuario = $_SESSION['tipoUsuario'];
 							if($tipoUsuario == "Administrador"){$tipo=0;};
 							if($tipoUsuario == "Empleado"){$tipo=1;};
 							if($tipoUsuario == "Particular"){$tipo=2;};
-							switch ($tipoUsuario){
+							switch ($tipo){
 								
 								//Caso en que sea Administrador
 								case 0:
@@ -99,8 +99,9 @@ else{
 								
 								//Caso en que sea Particular
 								case 2:
-								echo   "<li><a href='#'>Realizar Solicitud de Adopción</a></li>
-                                                                        <li><a href='#'>Búsqueda de Animales</a></li>";
+								echo   "<li><a href='RegistrarMascota.php'>Registrar Animales en Adopción</a></li>
+                                                                        <li><a href='BuscarMascota.php'>Búsqueda de Animales</a></li>
+																		<li><a href='MascotasRegistradas.php'>Administrar Animales</a></li>";
 								break;
 							}
 					  ?>
