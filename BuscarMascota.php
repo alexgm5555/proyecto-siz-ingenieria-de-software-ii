@@ -73,6 +73,13 @@ if($Ciudad=='Todos'){
 	overflow: scroll;
 	visibility: visible;
 	}
+#outer #main #content #miiframe {
+	margin: auto;
+	height: 480px;
+	width: 640px;
+	border: 1px solid #0F0;
+	position: relative;
+}
 -->
 </style>
 <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
@@ -106,14 +113,14 @@ if($Ciudad=='Todos'){
 			<div id="banner">
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
 			</div>
-			<div id="main">
-			  <div id="content">
+  <div id="main">
+  <div id="content">
 				
 					<div id="box1">
 						<h2>Pagina de Inicio</h2>
 					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
 					
-			    <p>
+      <p>
                  <?php		
 						try {
 							$bandera=0;  
@@ -154,13 +161,15 @@ if($Ciudad=='Todos'){
 	  ?>
                 
                 &nbsp;</p>
-			    <div id="box2" align="center"> 
+			    <div id="miiframe"> <iframe name="ikm" src="filtroMascotas.php" frameborder="0" scrolling="yes"   width="640" height="480" ></iframe></div>
+<div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
 					      <div class="AccordionPanelTab">Buscar Mascotas </div>
 					    </div>
 					    <div class="AccordionPanel">
-					      <table width="60%" height="110" border="0">
+					      
+                          <table width="60%" height="110" border="0">
 					        
 				          </table>
                           
@@ -217,6 +226,8 @@ if($Ciudad=='Todos'){
 																					?>
                               <?php
 																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
+																					  echo "<a href=SolicitudAdopcion.php?>";
+																					
                 																		if($f['Sexo']=='Macho'){
 					 																		echo'<img src="images/Macho.jpg"width="70" heigth="70"/>';}
 																						else{
@@ -229,17 +240,21 @@ if($Ciudad=='Todos'){
 															<?php
 														  	#Se hace un mientras para colocar todas las mascotas que se han registrado
 															$Tipo=$_POST['Tipo'];
-															$Tipo="";
+															
 															$Sexo=$_POST['Sexo'];
 															$Sexo="";
 															$Ciudad=$_POST['Ciudad'];
 															$Ciudad="";
+															if(($Tipo!="Todos")){
+																echo "siiiiiiiiii todododdddds";
+																}
 															/*if(($Tipo!="Todos")||($Ciudad!="Todos")||($Sexo!="Todos")){
 																if($Tipo=="Todos"){$Tipo="";}
 																if($Sexo=="Todos"){$Sexo="";}
 																if($Ciudad=="Todos"){$Ciudad="";}
 																$re=mysql_query("select * from animal where TipoAnimal='$Tipo',Sexo='$Sexo'");
 																}*/
+																#Se hace un mientras para colocar todas las mascotas que se han registrado
 															echo $Tipo,"no funciono";
                                     						while($f=mysql_fetch_array($re)){
 																
@@ -295,12 +310,12 @@ Sexo:
 				            </form>
 				          <p></p>
 </div>
-			          </div>
-				      </div>
+	          </div>
+    </div>
 			    
 					
 					<br class="clear" />
-			  </div>
+    </div>
 				<div id="sidebar">
 					<h3>
                     
@@ -330,7 +345,7 @@ Sexo:
 				  <p>&nbsp;</p>
             </div>
 				<br class="clear" />
-			</div>
+  </div>
 </div>
 <div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
