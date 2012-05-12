@@ -52,11 +52,11 @@ error_reporting("E_PARSE");
                                     <div id="main">
                                         <div id="content">
 				
-                                            <div id="box1">
+                                            <!--<div id="box1">
 						<h2>Administración de Empleados</h2>
 						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar los empleados de Zoonosis.</p>
                                                 <p>&nbsp;</p>
-                                            </div>
+                                            </div>-->
                                             
 			<?php
 			try {

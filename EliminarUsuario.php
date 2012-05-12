@@ -8,7 +8,7 @@
  */
 session_start();
 
-$Cedula = $_SESSION['row'][2];
+$Cedula = $_SESSION['row'][4];
 $conexion = true;
 Conectarse($conexion);
 

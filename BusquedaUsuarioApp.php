@@ -5,7 +5,7 @@
 /*
  * Este bloque de PHP nos permite buscar en la Base de Datos las variables solicitadas
  * al usuario en BusquedaUsuario.php 
- */
+ */ 
     
 session_start();
     $url_anterior = $_SESSION['url'];
@@ -18,12 +18,12 @@ session_start();
         
         if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/AdministracionEmpleados.php')
             {
-            $query = "select Nombres, Apellidos, Cedula, Ciudad  from zoonosis.Usuarios 
+            $query = "select *  from zoonosis.Usuarios 
                   where (Cedula = $UsuarioModificar and TipoUsuario = 'Empleado')";
             }
         else
             {
-            $query = "select Nombres, Apellidos, Cedula, Ciudad  from zoonosis.Usuarios 
+            $query = "select *  from zoonosis.Usuarios 
                   where (Cedula = $UsuarioModificar and TipoUsuario = 'Particular')";
             }
         
@@ -31,7 +31,7 @@ session_start();
         $_SESSION['row'] = mysql_fetch_array($consulta);
         
         if($_SESSION['row'] != null)
-            {            
+            {
             header('Location: ConfigurarUsuario.php');
             }
         else

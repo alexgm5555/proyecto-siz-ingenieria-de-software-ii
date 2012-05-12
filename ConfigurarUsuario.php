@@ -27,13 +27,13 @@ echo '
  
 						<p>
                                                         '.$tipo.' encontrado: <br>
-							Nombre: '.$_SESSION['row'][0].' '.$_SESSION['row'][1].' <br>
-                                                        Cedula: '.$_SESSION['row'][2].' <br>
-                                                        Ciudad: '.$_SESSION['row'][3].' <br>
+							Nombre: '.$_SESSION['row'][2].' '.$_SESSION['row'][3].' <br>
+                                                        Cedula: '.$_SESSION['row'][4].' <br>
+                                                        Ciudad: '.$_SESSION['row'][5].' <br>
                                                         
                                                 </p>
                                                 
-                                                <a href="EliminarUsuario.php"><button><strong>Editar</strong>></button></a>
+                                                <a href="EditarUsuario.php"><button><strong>Editar</strong>></button></a>
                                                 <a href="EliminarUsuario.php"><button><strong>Eliminar</strong>></button></a>
             </div>
                                                 
