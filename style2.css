@@ -24,7 +24,7 @@ body {
 	line-height: 1.75em;
         background: #FFF;
 	color: #657300;
-        overflow: visible;
+        overflow: hidden;
         text-align: center;
 }
 
@@ -110,6 +110,22 @@ ul h4 {
 	border: none;
 	color: #FFF;
 	border-radius: 10px;
+        font-family: Sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+        
+}
+
+.button {
+        padding: 8px;
+        text-decoration: none;
+	/*float: right;*/
+	background: #234e00;
+	border: none;
+	color: #FFF;
+	border-radius: 10px;
+        font-family: Sans-serif;
+        font-size: 15px;
         
 }
 
