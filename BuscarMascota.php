@@ -8,7 +8,7 @@ error_reporting("E_PARSE");
 
 
 isset( $_SESSION['usuario']); 
-
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 //Permite continuar en la página
 
 include ("conexionMySQL.php");
@@ -161,15 +161,15 @@ if($Ciudad=='Todos'){
 	  ?>
                 
                 &nbsp;</p>
-			    <div id="miiframe"> <iframe name="ikm" src="filtroMascotas.php" frameborder="0" scrolling="yes"   width="640" height="480" ></iframe></div>
+			    
 <div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
-					      <div class="AccordionPanelTab">Buscar Mascotas </div>
+					      <div class="AccordionPanelTab">Buscar Mascotas </div><iframe name="ikm" src="FiltroMascotas.php?var=2" frameborder="0" scrolling="yes"   width="740" height="700" > </iframe>
 					    </div>
 					    <div class="AccordionPanel">
 					      
-                          <table width="60%" height="110" border="0">
+					      <table width="60%" height="110" border="0">
 					        
 				          </table>
                           
@@ -234,7 +234,10 @@ if($Ciudad=='Todos'){
 																							echo'<img src="images/Hembra.jpg"width="70" heigth="70"/>';} 
 				
 				
-				?></p></a>
+				?></p><?
+    #se envia filtroMascotas.php?var=2 para que no  pueda acceder a las variables tipo sexo y ciudad  y de esta manera no genere errores
+    ?>
+                </a>
                           </p></form>
 			              <table width="70%" border="1" >
 															<?php

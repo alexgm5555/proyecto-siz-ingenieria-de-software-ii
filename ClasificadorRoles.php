@@ -4,7 +4,9 @@
 //Validamos si la sesión ya fue creada:
 session_start();
 if ( isset( $_SESSION['usuario'])) {
-
+	# coloque esta liena de codigo por que la necesito para solucionar le problema del filtro de mascotas 
+	#lo que hace es llebar la url a buscar mascotas y si biene de aca pues muestra todas las mascotas registradaas
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 //Permite continuar en la página
 }
 else{	
