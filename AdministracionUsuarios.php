@@ -40,7 +40,7 @@
 						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
                                             </ul>
                     
-                                                <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
+                                                <div class="usuario">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
                                         
                                         </div>
 			</div>
