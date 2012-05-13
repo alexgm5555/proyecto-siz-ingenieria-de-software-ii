@@ -91,21 +91,24 @@
 					<div id="box2">
                                             <div id="Accordion1" class="Accordion" tabindex="0">
                                                 <div class="AccordionPanel">
-                                                    <div class="AccordionPanelTab">Registrar un Usuario</div>
-                                                        <div class="AccordionPanelContent">
-                                                            
+                                                    <div class="AccordionPanelTab">Registrar un Animal</div>
+                                                        <div class="AccordionPanelContent1">
+                                                            <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
-<iframe name="ikm" src="RegistrarMascotaEmpleado.php" frameborder="0" scrolling="yes"   width="740" height="700" > </iframe></p>
-                                                          </div>
+                                                                <iframe name="ikm" src="RegistrarMascotaEmpleado.php" frameborder="0" scrolling="no"   width="730" height="1006" > </iframe></p>
+                                                            <p>&nbsp;</p>
+                                
+                                                    </div>
                                                 </div>
                                             </div>
                                                 
                                             <div class="AccordionPanel">
                                                 <div class="AccordionPanelTab">
-                                                    <div align="left">Configuración de animal</div>
+                                                    <div align="left">Configuración de usuario</div>
                                                 </div>
                                                     <div class="AccordionPanelContent">
-                                                                                     
+                                                        <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
+                                                        </iframe>                             
                                                     </div>
                                             </div>
                                           </div>

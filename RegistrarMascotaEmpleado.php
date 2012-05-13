@@ -63,10 +63,7 @@ body {
 <style type="text/css">
 -->
 .contenedor{
-	height: 1000px;
-	width: 790px;
-	overflow: scroll;
-	visibility: visible;
+	
 	}
 -->
 </style>
