@@ -85,7 +85,7 @@ else{
 								//Caso en que sea Administrador
 								case 0:
 								echo   "<li><a href='AdministracionUsuarios.php'>Administracion de Usuarios</a></li>
-                                                                        <li><a href='#'>Administración de Animales</a></li>
+                                                                        <li><a href='AdministracionAnimales.php'>Administración de Animales</a></li>
                                                                         <li><a href='AdministracionEmpleados.php'>Administración de Empleados</a></li>
                                                                         <li><a href='AdministracionSedes.php'>Administración de Sedes</a></li>
                                                                         <li><a href='Estadisticas.php'>Estadísticas</a></li>";
@@ -94,6 +94,7 @@ else{
 								//Caso en que sea Empleado
 								case 1:
 								echo   "<li><a href='#'>Registrar Animal</a></li>
+																		<li><a href='RegistrarMascotaEmpleados.php'>Registrar Animal</a></li>
                                                                         <li><a href='#'>Eliminar Animal</a></li>
                                                                         <li><a href='#'>Modificar Animal</a></li>
                                                                         <li><a href='#'>Consultar Solicitudes de Adopción</a></li>";

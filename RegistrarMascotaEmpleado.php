@@ -63,7 +63,7 @@ body {
 <style type="text/css">
 -->
 .contenedor{
-	height: 280px;
+	height: 1000px;
 	width: 790px;
 	overflow: scroll;
 	visibility: visible;
@@ -73,31 +73,17 @@ body {
 </head>
 
 <body bgproperties="fixed">
-<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" > 
-  
-  <tr>
-    <td width="790" height="139" colspan="2"><div align="center">
-        <div align="right">
-          <p><a href="index.php" title="Buscar Mascota" target="_self">Cerrar Sesión</a></p>
-          <p><a href="MenuUsuarioParticular.php">Menu de Usuario</a></p>
-        </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
-  </tr>
-  <tr>
-    <td height="76" colspan="2"><div align="center">
-      <p class="Estilo3 Estilo19">Registro  de Mascotas</p>
-      <p class="Estilo3 Estilo19">Zoonosis</p>
-    </div></td>
-  </tr>
+
   <tr>
     <td height="251" colspan="2">
 <form action="RegistrarMascotaEmpleadoApp.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
   <p>
       
-       <div style class="contenedor">
+      <div style class="contenedor">
         <table width="500" height="100"  border="0" align="center">
           <tr>
-            <td width="600" height="999"><fieldset>
-              <legend class="Estilo18">Registrar Mascotas</legend>
+            <td width="600" height="999">
+              
               
               
               
@@ -146,7 +132,7 @@ body {
                     <th height="24" class="row-header freezebar-origin-ltr"></th>
                     <th style="width:90px" class="column-headers-background"></th>
                     <th style="width:120px" class="column-headers-background">Imagen</th>
-                    <th style="width:90px" class="column-headers-background">Tipo</th>
+                    <th style="width:70px" class="column-headers-background">Tipo</th>
                     <th style="width:90px" class="column-headers-background">Sexo</th>
                     <th style="width:90px" class="column-headers-background">Raza</th>
                     <th style="width:90px" class="column-headers-background">Color</th>
@@ -794,8 +780,7 @@ body {
         
         <br/>
     </form></td>
-  </tr>
-</table>
+  
 
 </body>
 </html>

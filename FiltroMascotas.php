@@ -76,14 +76,14 @@ $numfilas = mysql_num_rows($resultado);
                 <input type="submit" name="button" id="button" value="Buscar">
               <p align="center">
               <?php
-			  	#codigo para guardar las variables que el usuario escoje para filtrar la busqueda de animales
+			  	#codigo en caso de que el usuario haclick en algun animal pues este lo saque del iframe y lo envie a enviar solicitud
 			  if(($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/FiltroMascotas.php?var=0')&&($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/FiltroMascotas.php?var=2')){
 				  echo $url_anterior;
 					$id	=$_GET['idAnimal'];
 				  	echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/SolicitudAdopcion.php?idAnimal='.$id.'>" </script>';
 			
                      }	
-			  
+			  #codigo para guardar las variables que el usuario escoje para filtrar la busqueda de animales
               	if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/FiltroMascotas.php?var=0'){
 					echo "/n",$url_anterior;
 					$Tipo1	=	$_POST['Tipo'];
