@@ -187,44 +187,49 @@ $solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$i
                             <div class="AccordionPanelContent">
                               <p align="center">Por favor seleccione la sede que desea modificar:</p>
                               <p align="center"><input name="" type="text" value/>&nbsp;</p>
-                              <form id="form2" method="post" action="ModificarAnimalApp.php">
+                              <form action="ModificarAnimalApp.php" method="post" enctype="multipart/form-data" id="form2">
                                 <table width="713" border="0">
                                   <tr><?php
  
   ?>                                  <td width="63">Nombre:</td>
                                     <td width="268"><label for="nombreSede"></label>
-                                      <input name="NombreAnimal" type="text" id="NombreAninal" value="<?php $f['Nombre']?>" size="45px" /></td>
+                                      <input name="NombreAnimal" type="text" id="NombreAninal" value="<?php echo $f['Nombre'];?>" size="45px" /></td>
                                     <td width="68">Peso:</td>
-                                    <td width="296"><input name="PesoAnimal" type="text" id="nombreSede2" size="45px" /></td>
+                                    <td width="296"><input name="PesoAnimal" type="text" id="PesoAnimal" value="<?php echo $f['Peso'];?>" size="45px" /></td>
                                   </tr>
                                   <tr>
                                     <td>Raza:</td>
-                                    <td><input name="RazaAnimal" type="text" id="ciudadSede" value="<?php $f['No']?>" size="45px" /></td>
-                                    <td>Ciudad:</td>
-                                    <td><input name="CiudadAnimal" type="text" id="nombreSede3" size="45px" /></td>
+                                    <td><input name="RazaAnimal" type="text" id="RazaAninal" value="<?php echo $f['Raza'];?>" size="45px" /></td>
+                                    <td>Habilidad:</td>
+                                    <td><input name="HabilidadAnimal" type="text" id="HabilidadAnimal" value="<?php echo $f['Habilidad'];?>" size="45px" /></td>
                                   </tr>
                                   <tr>
                                     <td>Sexo:</td>
-                                    <td><input name="SexoAnimal" type="text" id="direccionSede" size="45px" /></td>
-                                    <td>Dirección:</td>
+                                    <td><input name="SexoAnimal" type="text" id="SexoAnimal" value="<?php echo $f['Sexo'];?>" size="45px" /></td>
+                                    <td>Estado Animal:</td>
                                     <td><input name="DireccionAnimal" type="text" id="nombreSede4" size="45px" /></td>
                                   </tr>
                                   <tr>
                                     <td>Edad:</td>
-                                    <td><input name="EdadAnimal" type="text" id="telefonoSede" size="45px" /></td>
-                                    <td>Dueño:</td>
-                                    <td><input name="DueñoAnimal" type="text" id="nombreSede5" size="45px" /></td>
+                                    <td><input name="EdadAnimal" type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="45px" /></td>
+                                    <td>Foto:</td>
+                                    <td><label for="fileField"></label>
+                                    <input type="file" name="fileField" id="fileField" value="<?php echo $f['Foto'];?>"/></td>
                                   </tr>
                                   <tr>
                                     <td>Color:</td>
-                                    <td><input name="ColorAnimal" type="text" id="emailSEde" size="45px" /></td>
-                                    <td>Celular:</td>
-                                    <td><input name="CelularAnimal" type="text" id="nombreSede6" size="45px" /></td>
+                                    <td><input name="ColorAnimal" type="text" id="Color" value="<?php echo $f['Color'];?>" size="45px" /></td>
+                                    <td>&nbsp;</td>
+                                    <td  align "center">   <?php
+          
+						#codigo para imprimir la foto
+						echo'<img src="'.$f['Foto'].'"width="110" heigth="110"/>';
+			 			 ?>  &nbsp;</td>
                                   <tr>
-                                    <td>Altura:</td>
-                                    <td><input name="AlturaAnimal" type="text" id="emailSEde" size="45px" /></td>
-                                    <td>Telefono:</td>
-                                    <td><input name="TelefonoAnimal" type="text" id="nombreSede6" size="45px" /></td>
+                                    <td>Tamaño:</td>
+                                    <td><input name="TamañoAnimal" type="text" id="TamañoAnimal" value="<?php echo $f['Tamaño'];?>" size="45px" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
                                   </tr>
                                   <tr>
                                     <td colspan="4" ><div align="center">
