@@ -184,81 +184,55 @@ $solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$i
   <div align="left">Modificar Registro</div>
 </div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor seleccione la sede que desea modificar:</p>
-                              <form id="form2" method="post" action="ModificarSede.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  Sede a Modificar:
-                                  <select name="select" id="select">
-                                    <?PHP
-									//////////////////////////////////////
-									/////CODIGO DE MODIFICAR SEDE AQUÍ////
-									//////////////////////////////////////
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
-         							}
-      							  }
-								  ?>    
-                                  </select>
-                                </p>
-                                <div align="center">
-                                  <table width="100" border="0">
-                                    <tr>
-                                      <td><input type="submit" name="login2" value="Seleccionar Sede" class="inputButton" /></td>
-                                    </tr>
-                                  </table>
-                                </div>
+                              <p align="center"><input name="" type="text" value/>&nbsp;</p>
+                              <form id="form2" method="post" action="ModificarAnimalApp.php">
+                                <table width="713" border="0">
+                                  <tr><?php
+ 
+  ?>                                  <td width="63">Nombre:</td>
+                                    <td width="268"><label for="nombreSede"></label>
+                                      <input name="NombreAnimal" type="text" id="nombreSede" value="<?php $f['Nombre']?>" size="45px" /></td>
+                                    <td width="68">Peso:</td>
+                                    <td width="296"><input name="PesoAnimal" type="text" id="nombreSede2" size="45px" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Raza:</td>
+                                    <td><input name="RazaAnimal" type="text" id="ciudadSede" value="<?php $f['No']?>" size="45px" /></td>
+                                    <td>Ciudad:</td>
+                                    <td><input name="CiudadAnimal" type="text" id="nombreSede3" size="45px" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sexo:</td>
+                                    <td><input name="SexoAnimal" type="text" id="direccionSede" size="45px" /></td>
+                                    <td>Dirección:</td>
+                                    <td><input name="DireccionAnimal" type="text" id="nombreSede4" size="45px" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Edad:</td>
+                                    <td><input name="EdadAnimal" type="text" id="telefonoSede" size="45px" /></td>
+                                    <td>Dueño:</td>
+                                    <td><input name="DueñoAnimal" type="text" id="nombreSede5" size="45px" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Color:</td>
+                                    <td><input name="ColorAnimal" type="text" id="emailSEde" size="45px" /></td>
+                                    <td>Celular:</td>
+                                    <td><input name="CelularAnimal" type="text" id="nombreSede6" size="45px" /></td>
+                                  <tr>
+                                    <td>Altura:</td>
+                                    <td><input name="AlturaAnimal" type="text" id="emailSEde" size="45px" /></td>
+                                    <td>Telefono:</td>
+                                    <td><input name="TelefonoAnimal" type="text" id="nombreSede6" size="45px" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="4" ><div align="center">
+                                      <input type="submit" name="login" value="Modificar" class="inputButton" />
+                                    </div></td>
+                                  </tr>
+                                </table>
                                 <p align="center">&nbsp;</p>
                               </form>
-<p>
-  <label for="Nombre"></label>
-</p>
-<table width="200" border="1" align="center">
-  <tr>
-    <td>Nombre</td>
-    <td><label for="textfield"></label>
-      <input type="text" name="textfield" id="textfield" /></td>
-  </tr>
-  <tr>
-    <td>Raza</td>
-    <td><label for="textfield2"></label>
-      <input type="text" name="textfield2" id="textfield2" /></td>
-  </tr>
-  <tr>
-    <td>Sexo</td>
-    <td><label for="textfield3"></label>
-      <input type="text" name="textfield3" id="textfield3" /></td>
-  </tr>
-  <tr>
-    <td>Edad</td>
-    <td><label for="textfield4"></label>
-      <input type="text" name="textfield4" id="textfield4" /></td>
-  </tr>
-  <tr>
-    <td>Color</td>
-    <td><label for="textfield5"></label>
-      <input type="text" name="textfield5" id="textfield5" /></td>
-  </tr>
-  <tr>
-    <td>Peso</td>
-    <td><label for="textfield6"></label>
-      <input type="text" name="textfield6" id="textfield6" /></td>
-  </tr>
-  <tr>
-    <td>Altura</td>
-    <td><label for="textfield7"></label>
-      <input type="text" name="textfield7" id="textfield7" /></td>
-  </tr>
-  <tr>
-    <td>Dueño</td>
-    <td><label for="textfield8"></label>
-      <input type="text" name="textfield8" id="textfield8" /></td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-            </div>
+                            </div>
                           </div>
                           <div class="AccordionPanel">
                             <div class="AccordionPanelTab">Eliminar Registro</div>
