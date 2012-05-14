@@ -143,7 +143,10 @@ la Nueva Sede:</p>
                                #aca llama la funcion de lista de solicitantes
 
                                ?>
-                                <table width="70%" border="1" >
+                                 <input name="ColorAnimal"
+type="text" id="Color" value="<?php echo $f['Color'];?>" size="45px"
+/>
+                                 <table width="70%" border="1" >
                                        <?php
                            #ciclo para mostrar todos los registros de este usuario
                                                                while($solicitud=mysql_fetch_array($solicitudes)){
@@ -208,41 +211,43 @@ la sede que desea modificar:&nbsp;</p>
                              <form action="ModificarAnimalApp.php"
 method="post" enctype="multipart/form-data" id="form2">
                                <table width="713" border="0">
-                                 <tr><?php
+                               <tr>
+                                 <td><table width="713" border="0">
+                                   <tr>
+                                     <?php
 
- ?>                                  <td width="63">Nombre:</td>
-                                   <td width="268"><label
-for="nombreSede"></label>
-                                     <input name="NombreAnimal"
+ ?>
+                                     <td width="63">Nombre:</td>
+                                     <td width="268"><label
+for="nombreSede2"></label>
+                                       <input name="NombreAnimal"
 type="text" id="NombreAninal" value="<?php echo $f['Nombre'];?>"
 size="45px" /></td>
-                                   <td width="68">Peso:</td>
-                                   <td width="296"><input
+                                     <td width="68">Peso:</td>
+                                     <td width="296"><input
 name="PesoAnimal" type="text" id="PesoAnimal" value="<?php echo
 $f['Peso'];?>" size="45px" /></td>
-                                 </tr>
-                                 <tr>
-                                   <td>Raza:</td>
-                                   <td><input name="RazaAnimal"
+                                   </tr>
+                                   <tr>
+                                     <td>Raza:</td>
+                                     <td><input name="RazaAnimal"
 type="text" id="RazaAninal" value="<?php echo $f['Raza'];?>"
 size="45px" /></td>
-                                   <td>Habilidad:</td>
-                                   <td><input name="HabilidadAnimal"
+                                     <td>Habilidad:</td>
+                                     <td><input name="HabilidadAnimal"
 type="text" id="HabilidadAnimal" value="<?php echo $f['Habilidad'];?>"
 size="45px" /></td>
-                                 </tr>
-                                 <tr>
-                                   <td>Sexo:</td>
-                                   <td><input name="SexoAnimal"
+                                   </tr>
+                                   <tr>
+                                     <td>Sexo:</td>
+                                     <td><input name="SexoAnimal"
 type="text" id="SexoAnimal" value="<?php echo $f['Sexo'];?>"
 size="45px" /></td>
-                                   <td>Estado Animal:</td>
-                                   <td>
-
-                                   <select name="Estado" class="form"
+                                     <td>Estado Animal:</td>
+                                     <td><select name="Estado" class="form"
 id="Estado">
-                     <option>Todos</option>
-                     <?PHP
+                                       
+                                       <?PHP
                                                                        //////////////////////////////////////
                                                                        /////CODIGO DE MODIFICAR SEDE AQUÍ////
                                                                        //////////////////////////////////////
@@ -254,48 +259,46 @@ value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
                                                          }
 
                                                                  ?>
-                   </select>
-
-
-
-                                   </td>
-                                 </tr>
-                                 <tr>
-                                   <td>Edad:</td>
-                                   <td><input name="EdadAnimal"
+                                     </select></td>
+                                   </tr>
+                                   <tr>
+                                     <td>Edad:</td>
+                                     <td><input name="EdadAnimal"
 type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="45px"
 /></td>
-                                   <td>Foto:</td>
-                                   <td><label for="fileField"></label>
-                                   <input type="file"
+                                     <td>Foto:</td>
+                                     <td><label for="fileField"></label>
+                                       <input type="file"
 name="fileField" id="fileField" value="<?php echo
 $f['Foto'];?>"/></td>
-                                 </tr>
-                                 <tr>
-                                   <td>Color:</td>
-                                   <td><input name="ColorAnimal"
-type="text" id="Color" value="<?php echo $f['Color'];?>" size="45px"
-/></td>
-                                   <td>&nbsp;</td>
-                                   <td  align "center">   <?php
+                                   </tr>
+                                   <tr>
+                                     <td>Color:</td>
+                                     <td>&nbsp;</td>
+                                     <td>&nbsp;</td>
+                                     <td  align "center"><?php
 
                                                #codigo para imprimir la foto
                                                echo'<img src="'.$f['Foto'].'"width="110" heigth="110"/>';
-                                                ?>  &nbsp;</td>
-                                 <tr>
-                                   <td>Tamaño:</td>
-                                   <td><input name="TamañoAnimal"
+                                                ?>
+                                       &nbsp;</td>
+                                   </tr>
+                                   <tr>
+                                     <td>Tamaño:</td>
+                                     <td><input name="TamañoAnimal"
 type="text" id="TamañoAnimal" value="<?php echo $f['Tamaño'];?>"
 size="45px" /></td>
-                                   <td>&nbsp;</td>
-                                   <td>&nbsp;</td>
-                                 </tr>
-                                 <tr>
-                                   <td colspan="4" ><div align="center">
-                                     <input type="submit"
+                                     <td>&nbsp;</td>
+                                     <td>&nbsp;</td>
+                                   </tr>
+                                   <tr>
+                                     <td colspan="4" ><div align="center">
+                                       <input type="submit"
 name="login" value="Modificar" class="inputButton" />
-                                   </div></td>
-                                 </tr>
+                                     </div></td>
+                                   </tr>
+                                 </table></td>
+                               </tr>
                                </table>
                                <p align="center">&nbsp;</p>
                              </form>

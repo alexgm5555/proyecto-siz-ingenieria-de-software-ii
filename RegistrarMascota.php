@@ -1,184 +1,178 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+error_reporting("E_PARSE");
+
+
+
+?>
+<?php include ("conexionMySQL.php");
+
+
+$conexion = Conectarse();
+
+#Seleccionar las ciudades en la bd
+$consulta = "SELECT * FROM estado_animal order by Estado ASC";
+
+#para consultar las diferentes ciudades
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas = mysql_num_rows($resultado);
+?>
+
+
+
+
+
+
+
+
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head>
 
-<title>Zoonosis -  RegistrarMascota</title>
-<script language="javascript">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>Zoonosis</title>
+		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div id="outer">
+			<div id="header">
+				<div id="logo">
+					<h1> Zoonosis: Registrar Mascota</h1>
+				</div>
+                <div id="nav">
+                    <ul>
+			<li>
+                            <a href="index.php">Inicio</a>
+                        </li>
+                        <li  class="first active">
+                            <a href="FormularioRegistro.php">Registro</a>
+                        </li>
+			<li>
+                            <a href="#">Acerca de</a>
+			</li>
+			<li class="last">
+                            <a href="#">Contacto</a>
+			</li>
+                     </ul>
+                        <br class="clear" />
+				</div>
+			</div>
+			<div id="banner">
+				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
+			</div>
+			<div id="main">
+                            <div id="content">
+				<div id="box2">
+                                    <div>
+                                        <p>Por favor diligencie el formulario de registro:</p>
+                                        <form id="form1" method="post" action="ResolverFormulario.php"> <table width="713" border="0">
+                                   <tr>
+                                     <?php
 
-function validarh(e) 
-{
-	
-	tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla==8) return true;
-    patron =/[-:\d\s]/;
-    te = String.fromCharCode(tecla);
-	letra=patron.test(te);
-    return (letra);
-}
+ ?>
+                                     <td width="63">Nombre:</td>
+                                     <td width="268"><label
+for="nombreSede2"></label>
+                                       <input name="NombreAnimal"
+type="text" id="NombreAninal" value="<?php echo $f['Nombre'];?>"
+size="45px" /></td>
+                                     <td width="68">Peso:</td>
+                                     <td width="296"><input
+name="PesoAnimal" type="text" id="PesoAnimal" value="<?php echo
+$f['Peso'];?>" size="45px" /></td>
+                                   </tr>
+                                   <tr>
+                                     <td>Raza:</td>
+                                     <td><input name="RazaAnimal"
+type="text" id="RazaAninal" value="<?php echo $f['Raza'];?>"
+size="45px" /></td>
+                                     <td>Habilidad:</td>
+                                     <td><input name="HabilidadAnimal"
+type="text" id="HabilidadAnimal" value="<?php echo $f['Habilidad'];?>"
+size="45px" /></td>
+                                   </tr>
+                                   <tr>
+                                     <td>Sexo:</td>
+                                     <td><input name="SexoAnimal"
+type="text" id="SexoAnimal" value="<?php echo $f['Sexo'];?>"
+size="45px" /></td>
+                                     <td>Estado Animal:</td>
+                                     <td><select name="Estado" class="form"
+id="Estado">
+                                       
+                                       <?PHP
+                                                                       //////////////////////////////////////
+                                                                       /////CODIGO DE MODIFICAR SEDE AQUÍ////
+                                                                       //////////////////////////////////////
+                                                                 if ($numfilas > 0) {
+                                                               while ($rowEmp = mysql_fetch_assoc($resultado)) {
+                                                                        echo " <option
+value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
+                                                               }
+                                                         }
 
-function validarn(e) 
-{
-	tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla==8) return true;
-    patron = /\d/;
-    te = String.fromCharCode(tecla);
-    return patron.test(te);
-}
+                                                                 ?>
+                                     </select></td>
+                                   </tr>
+                                   <tr>
+                                     <td>Edad:</td>
+                                     <td><input name="EdadAnimal"
+type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="45px"
+/></td>
+                                     <td>Foto:</td>
+                                     <td><label for="fileField"></label>
+                                       <input type="file"
+name="fileField" id="fileField" value="<?php echo
+$f['Foto'];?>"/></td>
+                                   </tr>
+                                   <tr>
+                                     <td>Color:</td>
+                                     <td>&nbsp;</td>
+                                     <td>&nbsp;</td>
+                                     <td  align "center"><?php
 
-</script>
+                                               #codigo para imprimir la foto
+                                               echo'<img src="'.$f['Foto'].'"width="110" heigth="110"/>';
+                                                ?>
+                                       &nbsp;</td>
+                                   </tr>
+                                   <tr>
+                                     <td>Tamaño:</td>
+                                     <td><input name="TamañoAnimal"
+type="text" id="TamañoAnimal" value="<?php echo $f['Tamaño'];?>"
+size="45px" /></td>
+                                     <td>&nbsp;</td>
+                                     <td>&nbsp;</td>
+                                   </tr>
+                                   <tr>
+                                     <td colspan="4" ><div align="center">
+                                       <input type="submit"
+name="login" value="Registrar" class="inputButton" />
+                                     </div></td>
+                                   </tr>
+                                 </table>
+                                        </form>
+                                        <p>&nbsp;</p>
 
-<style type="text/css">
-body,td,th {
-	font-size: xx-small;
-}
-body {
-	background-image: url(images/Bello%20Verde_1200.jpg);
-	background-repeat: no-repeat;
-}
-a {
-	font-size: 9px;
-}
-<!--
-body,td,th {
-	/* [disabled]color: #000; */
-}
-body {
-	background-color: #FFF;
-}
-.Estilo3 {
-	font-weight: bold;
-	font-size: 28px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-style: italic;
-}
-.Estilo14 {font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; font-size: 12px;}
-.Estilo18 {font-size: 12px; color: #FFFFFF; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; }
-.Estilo19 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-style: italic;
-}
--->
-</style></head>
-
-<body bgproperties="fixed">
-<br/><br/><table width="796" border="0" align="center" background="images/Bello Verde_800.jpg"   bgcolor="#FFFFFF" > 
-  <tr>
-    <td width="790" height="139" colspan="2"><div align="center">
-        <div align="right">
-          <p><a href="index.php" title="Buscar Mascota" target="_self">Cerrar Sesión</a></p>
-          <p><a href="MenuUsuarioParticular.php">Menu Usuario</a></p>
-        </div><img src="images/images.jpg?q=tbn:ANd9GcSRJ_TeKNnn8Gn_EcTop6MJ0j57XOqV7kjY6Yd62StcrPukKOmc" alt="IMAGEN" width="152" height="108" align="middle"/></div></td>
-  </tr>
-  <tr>
-    <td height="76" colspan="2"><div align="center">
-      <p class="Estilo3 Estilo19">Registro de Mascotas para Adopción</p>
-      <p class="Estilo3 Estilo19">Zoonosis</p>
-    </div></td>
-  </tr>
-  <tr>
-    <td height="251" colspan="2"><form action="validar.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
-        <table width="717" height="391" border="0" align="center" >
-          <tr>
-            <td width="647" height="226"><fieldset>
-              <legend class="Estilo18">Buscar Mascotas<br/>
-              </legend>
-              <table width="576" height="301" border="0" align="center" bgcolor="">
-                <tr>
-                  
+                                    </div>
+                                    <br class="clear" />
+                                        
+				</div>
+                                <br class="clear" />
+                                
+                          </div>
+                            
+                    </div>
                     
-                
-                
-                  <td width="70" height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td width="189"><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14"><strong>Tipo de Animal:
-                      </strong> </span>
-                      <label><br/>
-                        </label>
-                      <label for="TipoAnimal"></label>
-                      <select name="TipoAnimal" id="Tipo_de_Animal" tabindex="2">
-                        <option value="Perro">Perro</option>
-                        <option value="Gato">Gato</option>
-                        </select>
-  <br/>
-                    </div></td>
-                    <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14"><strong>Ciudad de origen:
-                        </strong> </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="CiudadAnimal" type="Text" maxlength="16" tabindex="2" />
-                      <br/>
-                    </div></td>
-                </tr>
-                <tr>
-                <td height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14"><strong>Sexo:</strong>
-                        </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="Sexo" type="Text" maxlength="16" tabindex="2" id="Sexo" />
-                      <br/>
-                    </div></td>
-                  <td height="64"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14"><strong>Raza:</strong> </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="Raza" type="Text" maxlength="16" tabindex="2" />
-                      <br/>
-                    </div></td>
+              </div>
                     
-                
-                  
-                    
-                </tr>
-                
-                    
-                  <td height="72"><div align="center"><img src="images/gato4.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14"><strong>Foto:</strong> </span>
-                      <label><br/>
-                      </label>
-                      <label for="Raza2"></label>
-                      <input name="foto" type="file" id="foto" size="23" />
-<br/>
-                    </div></td>
-                    
-                    <td height="64"><div align="center"><img src="images/perro3.jpg" alt="usuario" width="70" height="70" /></div></td>
-                  <td><span class="Estilo14"> </span>
-                    <div align="left" ><span class="Estilo14"><strong>Descripcion:</strong></span>
-                      <label><br/>
-                    </label>
-                      <label for="Raza2"></label>
-                      <textarea name="Descripcion" cols="30" tabindex="2" id="Descripcion"></textarea>
-                      <br/>
-                    </div></td>
-                </tr>
-                 
-                
-                <tr>
-                  <td height="21" colspan="5"><label></label>
-                      <div align="center">
-                        <label>
-                        <input name="Generar registro" type="submit" class="Estilo14" id="Generar registro" value="Generar Registro" />
-                        </label>
-                    </div></td>
-                </tr>
-            </table>
-              <br/>
-            </fieldset></td>
-          </tr>
-        </table>
-        <br/>
-    </form></td>
-  </tr>
-</table>
-
+		<div style="margin: 40em 0 3em 0; text-align: center;">
+        Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+			<br />Diseñado y Provisto por Zoonisis Team
+			<br />© 2012.</div>
 </body>
 </html>
