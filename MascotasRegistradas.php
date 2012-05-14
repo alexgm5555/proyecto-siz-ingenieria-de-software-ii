@@ -25,7 +25,7 @@ $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
 $datosUsuario=mysql_fetch_array($ret);
 #$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['cedula']."'");
 #sirve para almacenar los registroas de este usario en un arreglo llamado re
-$re=mysql_query ("select * from animal Where Sexo=Macho");
+$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula']."'");
 	
 	
 ?>
