@@ -201,11 +201,9 @@ border="0">
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">
  <div align="left">Modificar Registro</div>
-</div><?php
-echo $idAnimal;
- ?>
-                           <div class="AccordionPanelContent">
-                             <p align="center">Por favor seleccione
+</div>
+<div class="AccordionPanelContent">
+              <p align="center">Por favor seleccione
 la sede que desea modificar:&nbsp;</p>
                              <form action="ModificarAnimalApp.php"
 method="post" enctype="multipart/form-data" id="form2">
