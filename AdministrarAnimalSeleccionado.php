@@ -201,16 +201,16 @@ border="0">
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">
  <div align="left">Modificar Registro</div>
-</div>
+</div><?php
+echo $idAnimal;
+ ?>
                            <div class="AccordionPanelContent">
                              <p align="center">Por favor seleccione
 la sede que desea modificar:&nbsp;</p>
                              <form action="ModificarAnimalApp.php"
 method="post" enctype="multipart/form-data" id="form2">
                                <table width="713" border="0">
-                                 <tr><?php
-
- ?>                                  <td width="63">Nombre:</td>
+                                 <tr>                                  <td width="63">Nombre:</td>
                                    <td width="268"><label
 for="nombreSede"></label>
                                      <input name="NombreAnimal"
@@ -239,8 +239,8 @@ size="45px" /></td>
                                    <td>Estado Animal:</td>
                                    <td>
 
-                                   <select name="Estado" class="form"
-id="Estado">
+                                   <select name="EstadoAnimal" class="form"
+id="EstadoAnimal">
                      <option>Todos</option>
                      <?PHP
                                                                        //////////////////////////////////////
@@ -266,9 +266,9 @@ value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
 type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="45px"
 /></td>
                                    <td>Foto:</td>
-                                   <td><label for="fileField"></label>
+                                   <td><label for="FotoAnimal"></label>
                                    <input type="file"
-name="fileField" id="fileField" value="<?php echo
+name="FotoAnimal" id="FotoAnimal" value="<?php echo
 $f['Foto'];?>"/></td>
                                  </tr>
                                  <tr>
@@ -292,6 +292,8 @@ size="45px" /></td>
                                  </tr>
                                  <tr>
                                    <td colspan="4" ><div align="center">
+                                     <input name="idAnimal"
+type="hidden" value="<?php echo $f['idAnimal'];?>" />
                                      <input type="submit"
 name="login" value="Modificar" class="inputButton" />
                                    </div></td>

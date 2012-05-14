@@ -1,21 +1,28 @@
 <?php include ("conexionMySQL.php")?>
 <?php
+
+
+
 $NombreAnimal=$_POST['NombreAnimal'];
 $RazaAnimal=$_POST['RazaAnimal'];
 $SexoAnimal=$_POST['SexoAnimal'];
 $EdadAnimal=$_POST['EdadAnimal'];
 $ColorAnimal=$_POST['ColorAnimal'];
-$AlturaAnimal=$_POST['AlturaAnimal'];
+$TamañoAnimal=$_POST['TamañoAnimal'];
 $PesoAnimal=$_POST['PesoAnimal'];
-$DireccionAnimal=$_POST['DireccionAnimal'];
-$CelularAnimal=$_POST['CelularAnimal'];
-$TelefonoAnimal=$_POST['TelefonoAnimal'];
+$HabilidadAnimal=$_POST['HabilidadAnimal'];
+$idAnimal=$_POST['idAnimal'];
+#$EstadoAnimal=$_POST['EstadoAnimal'];
+#$FotoAnimal=$_POST['FotoAnimal'];
 $conexion=true;
 Conectarse($conexion);
+echo $idAnimal;
+echo $NombreAnimal;
 if($conexion){
-	$query=("insert into animal values('$NombreAnimal', '$RazaAnimal', '$SexoAnimal', '$EdadAnimal', '$ColorAnimal', '$AlturaAnimal', '$PesoAnimal', '$DireccionAnimal', '$CelularAnimal', '$TelefonoAnimal')");
+	$query=("update animal set Nombre = '$NombreAnimal' where idAnimal = '$idAnimal'");
+	
 	mysql_query($query)or die(mysql_error());
-	header ('location:AdministrarAnimal.php?Message=2,idAnimal=".$."');
+	header ('location:MascotasRegistradas.php?Message=3');
 	}
 
 ?>
