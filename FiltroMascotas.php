@@ -71,7 +71,7 @@ $numfilas = mysql_num_rows($resultado);
                     </select></th>
                 </tr>
               </table>
-              </p>
+              </p>á
               <p align="center">
                 <input type="submit" name="button" id="button" value="Buscar">
               <p align="center">

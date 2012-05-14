@@ -104,7 +104,7 @@
                                                 
                                             <div class="AccordionPanel">
                                                 <div class="AccordionPanelTab">
-                                                    <div align="left">Configuración de usuario</div>
+                                                    <div align="left">Configuración de Animal</div>
                                                 </div>
                                                     <div class="AccordionPanelContent">
                                                         <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
