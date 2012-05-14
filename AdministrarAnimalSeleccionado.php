@@ -185,7 +185,7 @@ $solicitudes=mysql_query("select * from solicitud_adopcion WHERE id_Animal='".$i
   <div align="left">Modificar Registro</div>
 </div>
                             <div class="AccordionPanelContent">
-                              <p align="center">Por favor seleccione la sede que desea modificar:&nbsp;</p>
+                              <p align="center">Por favor haga las modificaciones pertinentes:&nbsp;</p>
                               <form action="ModificarAnimalApp.php" method="post" enctype="multipart/form-data" id="form2">
                                 <table width="713" border="0">
                                   <tr><?php
