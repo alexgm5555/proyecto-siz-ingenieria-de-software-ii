@@ -180,7 +180,7 @@ if($Ciudad=='Todos'){
 			                    <th scope="col"><label for="Tipo De Animal5">Tipo:</label>
 			                      <select name="Tipo" class="form" id="Tipo">
 			                        <option>Todos</option>
-                                    
+			              
 			                        <?PHP
 									//////////////////////////////////////
 									///// AQUÍ////
@@ -306,7 +306,7 @@ Sexo:
 																}
 																
 																			?>
-                                                                      	</form>
+				            </form>
                            	</tr>
 </table>
                                                         </form>
