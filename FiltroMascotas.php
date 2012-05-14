@@ -3,6 +3,7 @@
 session_start();
 
 include ("conexionMySQL.php");
+#hola
 $conexion = Conectarse();
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 $url_anterior = $_SESSION['url'];
