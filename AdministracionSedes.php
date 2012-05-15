@@ -8,13 +8,6 @@ if ( !isset( $_SESSION['usuario'])) {
 header ('location:index.php?LoginMesagge=2'); 
 }
 
-//Se hace la consulta de las sedes
-include ("conexionMySQL.php");
-$conexion = Conectarse();
-$consulta = "SELECT idSedes, Nombre FROM SEDES";
-$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-$numfilas = mysql_num_rows($resultado);
-
 
 ?>
 <!--
@@ -144,72 +137,14 @@ $numfilas = mysql_num_rows($resultado);
                           </div>
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">
-  <div align="left">Modificar una Sede</div>
+  <div align="left">Configuración de Sedes</div>
 </div>
-                            <div class="AccordionPanelContent">
-                              <p align="center">Por favor seleccione la sede que desea modificar:</p>
-                              <form id="form2" method="post" action="ModificarSede.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  Sede a Modificar:
-                                  <select name="select" id="select">
-                                    <?PHP
-									//////////////////////////////////////
-									/////CODIGO DE MODIFICAR SEDE AQUÍ////
-									//////////////////////////////////////
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
-         							}
-      							  }
-								  ?>    
-                                  </select>
-                                </p>
-                                <div align="center">
-                                  <table width="100" border="0">
-                                    <tr>
-                                      <td><input type="submit" name="login2" value="Seleccionar Sede" class="inputButton" /></td>
-                                    </tr>
-                                  </table>
-                                </div>
-                                <p align="center">&nbsp;</p>
-                              </form>
-<p>&nbsp;</p>
-</div>
+                           <div class="AccordionPanelContent">
+                               <iframe src="BusquedaSedes.php" frameborder="0" width="100%" height="200">
+                               </iframe> 
+                           </div>
                           </div>
-                          <div class="AccordionPanel">
-                            <div class="AccordionPanelTab">Eliminar una Sede</div>
-                            <div class="AccordionPanelContent">
-                              <p align="center">Por favor seleccione la sede que desea eliminar:</p>
-                              <form id="form3" method="post" action="EliminarSede.php">
-                                <p align="center">
-                                  <label for="select"></label>
-                                  Sede a Eliminar:
-                                  <select name="sedeEliminar" id="sedeEliminar">                                    
-                                  <?php
-								  //Se reinicia el vector de la consulta para volverlo a recorrer
-								  mysql_data_seek($resultado, 0);
-								  //
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado)) {  
-           								 echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";  
-         							}
-      							  }
-								  ?>                                    
-                                  </select>
-                                </p>
-                                <div align="center">
-                                  <table width="100" border="0">
-                                    <tr>
-                                      <td><input type="submit" name="login3" value="Eliminar Sede" class="inputButton" /></td>
-                                    </tr>
-                                  </table>
-                                </div>
-                                <p align="center">&nbsp;</p>
-                              </form>
-                              <p></p>
-                            </div>
-                          </div>
+                          
 					  </div>
 					</div>
 					
