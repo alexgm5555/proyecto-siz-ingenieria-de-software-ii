@@ -8,14 +8,13 @@ header ('location:index.php?LoginMesagge=2');
 //Se realiza la eliminación en la base de datos
 include ("conexionMySQL.php");
 $conexion = Conectarse();
+$sedeEliminar = $_SESSION['row'];
 
-//Variables capturadas del formulario
-$codigoSede = $_POST['sedeEliminar'];
 
 try{
-	$consulta = "DELETE FROM SEDES WHERE idSedes = $codigoSede";
+	$consulta = "DELETE FROM SEDES WHERE Nombre = '$sedeEliminar[1]'";
 	$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-	header ('location:AdministracionSedes.php?Message=2'); 
+	header ('location:BusquedaSedes.php'); 
 	}
 catch(Exception $e){
 	Echo "Sucedió un error inesperado.".$e->getMessage();
