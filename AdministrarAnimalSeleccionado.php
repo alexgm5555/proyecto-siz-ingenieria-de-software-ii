@@ -52,9 +52,12 @@ rel="stylesheet" type="text/css" />
 td {
        text-align: center;
 }
+#outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelClosed .AccordionPanelContent #form2 table {
+	font-size: 12pt;
+}
 </style>
 </head>
-       <body>
+<body>
                <div id="outer">
                        <div id="header">
                          <div id="logo">
@@ -205,41 +208,49 @@ border="0">
 <div class="AccordionPanelContent">
               <p align="center">Por favor seleccione
 la sede que desea modificar:&nbsp;</p>
-                             <form action="ModificarAnimalApp.php"
+              <form action="ModificarAnimalApp.php"
 method="post" enctype="multipart/form-data" id="form2">
-                               <table width="713" border="0">
-                                 <tr>                                  <td width="63">Nombre:</td>
-                                   <td width="268"><label
+				<p align="center">
+                <table width="690" border="0" align="center" >
+                  <tr>
+                    <td width="30">&nbsp;</td>                                  
+                    <td width="60">Nombre:</td>
+                    <td width="181"><label
 for="nombreSede"></label>
-                                     <input name="NombreAnimal"
+                      <input name="NombreAnimal"
 type="text" id="NombreAninal" value="<?php echo $f['Nombre'];?>"
-size="45px" /></td>
-                                   <td width="68">Peso:</td>
-                                   <td width="296"><input
+size="30px" /></td>
+                    <td width="14">&nbsp;</td>
+                    <td width="115">Peso:</td>
+                    <td width="241"><input
 name="PesoAnimal" type="text" id="PesoAnimal" value="<?php echo
-$f['Peso'];?>" size="45px" /></td>
-                                 </tr>
-                                 <tr>
-                                   <td>Raza:</td>
-                                   <td><input name="RazaAnimal"
+$f['Peso'];?>" size="30px" /></td>
+                                   <td width="19">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td height="48">Raza:</td>
+                    <td><input name="RazaAnimal"
 type="text" id="RazaAninal" value="<?php echo $f['Raza'];?>"
-size="45px" /></td>
-                                   <td>Habilidad:</td>
-                                   <td><input name="HabilidadAnimal"
-type="text" id="HabilidadAnimal" value="<?php echo $f['Habilidad'];?>"
-size="45px" /></td>
-                                 </tr>
-                                 <tr>
-                                   <td>Sexo:</td>
-                                   <td><input name="SexoAnimal"
+size="30px" /></td>
+                    <td>&nbsp;</td>
+                    <td>Habilidad:</td>
+                    <td><textarea name="HabilidadAnimal" cols="30px" id="HabilidadAnimal"><?php echo $f['Habilidad'];?></textarea></td>
+                                   <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Sexo:</td>
+                    <td><input name="SexoAnimal"
 type="text" id="SexoAnimal" value="<?php echo $f['Sexo'];?>"
-size="45px" /></td>
-                                   <td>Estado Animal:</td>
-                                   <td>
+size="30px" /></td>
+                    <td>&nbsp;</td>
+                    <td>Estado Animal:</td>
+                    <td>
 
-                                   <select name="EstadoAnimal" class="form"
+                      <select name="EstadoAnimal" class="form"
 id="EstadoAnimal">
-                     <option>Todos</option>
+                     
                      <?PHP
                                                                        //////////////////////////////////////
                                                                        /////CODIGO DE MODIFICAR SEDE AQUÍ////
@@ -256,49 +267,66 @@ value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
 
 
 
-                                   </td>
-                                 </tr>
-                                 <tr>
-                                   <td>Edad:</td>
-                                   <td><input name="EdadAnimal"
-type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="45px"
-/></td>
-                                   <td>Foto:</td>
-                                   <td><label for="FotoAnimal"></label>
-                                   <input type="file"
-name="FotoAnimal" id="FotoAnimal" value="<?php echo
-$f['Foto'];?>"/></td>
-                                 </tr>
-                                 <tr>
-                                   <td>Color:</td>
-                                   <td><input name="ColorAnimal"
-type="text" id="Color" value="<?php echo $f['Color'];?>" size="45px"
-/></td>
+                    </td>
                                    <td>&nbsp;</td>
-                                   <td  align "center">   <?php
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Edad:</td>
+                    <td><input name="EdadAnimal"
+type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="30px"
+/></td>
+                    <td>&nbsp;</td>
+                    <td>Foto:</td>
+                    <td><label for="FotoAnimal"></label>
+                    <input type="file" name="FotoAnimal" id="FotoAnimal" value"" /></td>
+                                   <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Color:</td>
+                    <td><input name="ColorAnimal"
+type="text" id="Color" value="<?php echo $f['Color'];?>" size="30px"
+/></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td  align "center">&nbsp;</td>
+                                   <td  align "center">&nbsp;</td>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Tamaño:</td>
+                    <td><input name="TamañoAnimal"
+type="text" id="TamañoAnimal" value="<?php echo $f['Tamaño'];?>"
+size="30px" /></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><?php
 
                                                #codigo para imprimir la foto
                                                echo'<img src="'.$f['Foto'].'"width="110" heigth="110"/>';
-                                                ?>  &nbsp;</td>
-                                 <tr>
-                                   <td>Tamaño:</td>
-                                   <td><input name="TamañoAnimal"
-type="text" id="TamañoAnimal" value="<?php echo $f['Tamaño'];?>"
-size="45px" /></td>
-                                   <td>&nbsp;</td>
-                                   <td>&nbsp;</td>
-                                 </tr>
-                                 <tr>
-                                   <td colspan="4" ><div align="center">
-                                     <input name="idAnimal"
+                                                ?></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td colspan="7" ><div align="center">
+                        <input name="idAnimal"
 type="hidden" value="<?php echo $f['idAnimal'];?>" />
-                                     <input type="submit"
+                        <input type="submit"
 name="login" value="Modificar" class="inputButton" />
-                                   </div></td>
-                                 </tr>
-                               </table>
-                               <p align="center">&nbsp;</p>
-                             </form>
+                    </div></td>
+                  </tr>
+                </table>
+                </p>
+                </form>
            </div>
                          </div>
                          <div class="AccordionPanel">
