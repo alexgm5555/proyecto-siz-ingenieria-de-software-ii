@@ -16,7 +16,7 @@ echo '
     <body>
         <div>
                                 <p>Por favor diligencie el formulario de la Sede:</p>
-                                <form id="form1" method="post" action="CrearSede.php">
+                                <form id="form1" method="post" action="ActualizarSede.php">
                                 <table width="600" border="0">
                                 <tr>
                                   <td>Nombre:</td>
