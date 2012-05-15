@@ -21,7 +21,7 @@ echo '
                                 <tr>
                                   <td>Nombre:</td>
                                   <td><label for="nombreSede"></label>
-                                  <input name="nombreSede" type="text" id="nombreSede" value= '.$sedeEditar[1].' size="45px" /></td>
+                                  <input name="nombreSede" type="text" id="nombreSede" value= "'.$sedeEditar[1].'" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Ciudad:</td>
@@ -47,15 +47,15 @@ echo '
                                 </tr>
                                 <tr>
                                   <td>Dirección:</td>
-                                  <td><input name="direccionSede" type="text" id="direccionSede" value= '.$sedeEditar[3].' size="45px" /></td>
+                                  <td><input name="direccionSede" type="text" id="direccionSede" value= "'.$sedeEditar[3].'" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>Teléfono:</td>
-                                  <td><input name="telefonoSede" type="text" id="telefonoSede" value= '.$sedeEditar[4].' size="45px" /></td>
+                                  <td><input name="telefonoSede" type="text" id="telefonoSede" value= "'.$sedeEditar[4].'" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td>E-mail:</td>
-                                  <td><input name="emailSEde" type="text" id="emailSEde" value= '.$sedeEditar[5].' size="45px" /></td>
+                                  <td><input name="emailSEde" type="text" id="emailSEde" value= "'.$sedeEditar[5].'" size="45px" /></td>
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
