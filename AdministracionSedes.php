@@ -7,7 +7,8 @@ if ( !isset( $_SESSION['usuario'])) {
 
 header ('location:index.php?LoginMesagge=2'); 
 }
-
+include ("conexionMySQL.php");
+$conexion = Conectarse();
 
 ?>
 <!--
@@ -108,23 +109,20 @@ header ('location:index.php?LoginMesagge=2');
                                 </tr>
                                 <tr>
                                   <td>Ciudad:</td>
-                                  <td>
-                                      <?php
-                                      /*Este bloque PHP mostrara un menu desplegable de ciudades valiendose de los registros 
-                                       * de la tabla Ciudades de la Base de Datos.
-                                       */
-                                                $conexion = true;
-                                                Conectarse($conexion);
-                                                if($conexion){
-                                                    $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
-                                                    echo "<select name = ciudadSede id = ciudadSede>";
-                                                    while($fila = mysql_fetch_array($consulta)){
-                                                        echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
-                                                    }
-                                                echo "</select>";
-                                                }
-                                      ?>
-                                  </td>
+                                     <td> 
+                                                                            <?php
+                                                                            $conexion = true;
+                                                                            Conectarse($conexion);
+                                                                            if($conexion){
+                                                                                $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                                                                echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
+                                                                                while($fila = mysql_fetch_array($consulta)){
+                                                                                    echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
+                                                                                }
+                                                                            echo "</select>";
+                                                                            }
+                                                                            ?>
+                                                                        </td>                                   
                                 </tr>
                                 <tr>
                                   <td>Dirección:</td>
