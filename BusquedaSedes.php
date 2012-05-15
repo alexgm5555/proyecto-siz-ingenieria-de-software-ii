@@ -13,22 +13,22 @@
             
             
             <p align="center">Por favor seleccione la sede que desea modificar:</p>
-                              <form id="form2" method="post" action="ModificarSede.php">
+                              <form id="form2" method="post" action="BusquedaSedesApp.php">
                                 <p align="center">
                                   <label for="select"></label>
                                   Sede a Modificar:
-                                  <select name="select" id="select">
+                                  <select name="Sede" id="Sede">
                                     <?PHP
                                     
                                     include ("conexionMySQL.php");
                                     $conexion = Conectarse();
-                                    $consulta = "SELECT idSedes, Nombre FROM SEDES";
+                                    $consulta = "SELECT idSedes, Nombre FROM SEDES where Nombre != 'Particular' ";
                                     $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
                                     $numfilas = mysql_num_rows($resultado);
                                     
                                     if ($numfilas > 0) {
                                         while ($rowEmp = mysql_fetch_assoc($resultado)) {
-                                            echo " <option value='".$rowEmp['idSedes']."'>".$rowEmp['Nombre']."</option>";
+                                            echo " <option value='".$rowEmp['Nombre']."'>".$rowEmp['Nombre']."</option>";
                                             }
                                     }
 				  ?>    
@@ -41,6 +41,7 @@
                                     </tr>
                                   </table>
                                 </div>
+                             </form>
                                 <p align="center">&nbsp;</p>
                                   
             <p>&nbsp;</p>
