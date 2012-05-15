@@ -134,20 +134,19 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 					        
 				          </table>
                        	  <p align="center">
-			              <table width="70%" border="0" >
+			              <table width="70%" border=1" align="center" >
 			                <?php
                             #ciclo para mostrar todos los registros de este usuario
 							echo $datosUsuario['Cedula'];
 								while($f=mysql_fetch_array($re)){
 								?>
 			                <tr>
-			                  <th scope="col"> <table width="100%" height="120" border="0">
-			                    <tr>
-			                      <th  align="center"  scope="col"border="">
-								  <?php
+			                  <th width="24%" scope="col" border="0"><?php
 									echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
 									?></th>
-			                      <th  scope="col"border="" >&nbsp;</th>
+			                  <th width="54%" scope="col"><table width="100%" height="83" border="0">
+			                    <tr>
+			                      <th  align="center"  scope="col"border="0">&nbsp;</th>
 			                      <th align="left" scope="col"> <h5>Codigo:
 			                        <?php
 									echo $f['idAnimal'];
@@ -163,30 +162,28 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 									echo $f['Sexo'];
 									?>
 			                        </h5></th>
-			                      <th align="center" scope="col"><a href="AdministrarAnimalSeleccionado.php">
-			                        <?php
+		                        </tr>
+		                      </table></th>
+			                  <th width="22%" scope="col"><a href="AdministrarAnimalSeleccionado.php">
+			                    <?php
 																					$id= $f['idAnimal'];
 																					#codigo para enviar los valores del animal seleccionado 
 																					
 									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
 																					echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
 																					?>
-                                    <?php
+                                <?php
 																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
                 																		if($f['Sexo']=='Macho'){
 					 																		echo'<img src="images/Macho.jpg"width="70" heigth="70"/>';}
 																						else{
 																							echo'<img src="images/Hembra.jpg"width="70" heigth="70"/>';} 
 				?>
-                                    </p>
-                                  </a> </a></th>
-		                        </tr>
-			                    </table>
-			                    <?php
+                                </p>
+                              </a> </a>                              <?php
 									}
 									
-									?>
-		                      </th>
+									?></th>
 		                    </tr>
 		                  </table>
 			              </form>

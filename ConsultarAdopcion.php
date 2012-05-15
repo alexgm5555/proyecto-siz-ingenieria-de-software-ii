@@ -168,7 +168,7 @@ if($Ciudad=='Todos'){
                                                         <div class="AccordionPanelContent1">
                                                             <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
-                                                                <iframe name="ikm" src="FiltroMascotas.php?var=2" frameborder="0" scrolling="no"   width="730" height="1006" > </iframe></p>
+                                                                <iframe name="ikm" src="ConsultarAdopcionApp.php" frameborder="0" scrolling="no"   width="730" height="1006" > </iframe></p>
                                                             <p>&nbsp;</p>
                                 
                                                     </div>
