@@ -16,22 +16,22 @@ echo '
     <body>
         <div>
                                         <p>Por favor diligencie el formulario de registro:</p>
-                                        <form id="form1" method="post" action="ResolverFormulario.php">
+                                        <form id="form1" method="post" action="Actualizar.php">
                                         <table width="600" border="0">
                                         <tr>
-                                            <td>Nombres: '.$Usuario[4].'</td>
+                                            <td>Nombres:</td>
                                             <td><label for="NombresUsuario"></label>
-                                            <input name="NombresUsuario" type="text" id="NombresUsuario" value= '.$Usuario[2].' ></td>
+                                            <input name="NombresUsuario" type="text" id="NombresUsuario" value= "'.$Usuario[2].'" ></td>
                                         </tr>
                                         <tr>
                                             <td>Apellidos:</td>
                                             <td><label for="ApellidosUsuario"></label>
-                                            <input name="ApellidosUsuario" type="text" id="ApellidosUsuario" value='.$Usuario[3].'></td>
+                                            <input name="ApellidosUsuario" type="text" id="ApellidosUsuario" value= "'.$Usuario[3].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Documento de Identidad:</td>
                                             <td><label for="DocumentoUsuario"></label>
-                                            <input name="DocumentoUsuario" type="text" id="DocumentoUsuario" value='.$Usuario[4].'></td>
+                                            <input name="DocumentoUsuario" type="text" id="DocumentoUsuario" value= "'.$Usuario[4].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Ciudad:</td>
@@ -56,22 +56,22 @@ echo '
                                         </tr>
                                         <tr>
                                             <td>E-mail:</td>
-                                            <td><input name="emailUsuario" type="text" id="emailUsuario" value='.$Usuario[6].'></td>
+                                            <td><input name="emailUsuario" type="text" id="emailUsuario" value= "'.$Usuario[6].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Teléfono:</td>
-                                            <td><input name="telefonoUsuario" type="text" id="telefonoUsuario" value='.$Usuario[7].'></td>
+                                            <td><input name="telefonoUsuario" type="text" id="telefonoUsuario" value= "'.$Usuario[7].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Celular:</td>
-                                            <td><input name="CelularUsuario" type="text" id="CelularUsuario" value='.$Usuario[8].'></td>
+                                            <td><input name="CelularUsuario" type="text" id="CelularUsuario" value= "'.$Usuario[8].'"></td>
                                         </tr>
                                         ';
                                         if($Usuario[1]=='Empleado'){
                                         echo '
                                         <tr>
                                             <td>Contrato:</td>
-                                            <td><input name="ContratoEmpleado" type="text" id="ContratoEmpleado" size="45px" value='.$Usuario[9].'></td>
+                                            <td><input name="ContratoEmpleado" type="text" id="ContratoEmpleado" size="45px" value= "'.$Usuario[9].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Sede laboral:</td>
@@ -98,22 +98,22 @@ echo '
 
                                         <tr>
                                             <td>Inicio de contrato:</td>
-                                            <td><input name="InicioEmpleado" type="text" id="InicioEmpleado" value="YYYY-MM-DD" size="45px" value='.$Usuario[11].'></td>
+                                            <td><input name="InicioEmpleado" type="text" id="InicioEmpleado" value="YYYY-MM-DD" size="45px" value= "'.$Usuario[11].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Sueldo Devengado:</td>
-                                            <td><input name="DevengadoEmpleado" type="text" id="DevengadoEmpleado" size="45px" value='.$Usuario[12].'></td>
+                                            <td><input name="DevengadoEmpleado" type="text" id="DevengadoEmpleado" size="45px" value= "'.$Usuario[12].'"></td>
                                         </tr>
                                         ';
                                         }
                                         echo '
                                         <tr>
                                             <td>Nombre de Usuario:</td>
-                                            <td><input name="UserName" type="text" id="UserName" value='.$Usuario[13].'></td>
+                                            <td><input name="UserName" type="text" id="UserName" value= "'.$Usuario[13].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Contraseña:</td>
-                                            <td><input name="Password" type="password" id="Password" value='.$Usuario[14].'></td>
+                                            <td><input name="Password" type="password" id="Password" value= "'.$Usuario[14].'"></td>
                                         </tr>
                                         <tr>
                                             <td>Confirmar Contraseña:</td>
