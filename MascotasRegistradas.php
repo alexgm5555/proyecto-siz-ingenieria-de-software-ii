@@ -114,6 +114,16 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 									</table>";
 									
 									break;
+									case 4:
+									echo "
+									<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'> Ha sido  Insertado  el Registro $registro</font></td>
+									  </tr>
+									</table>";
+									
+									break;
 							}				
 							
 							}  

@@ -156,7 +156,8 @@ if($Ciudad=='Todos'){
 						{  
     						echo "Sucedió un error PHP.";
 						}
-	  
+	  $idUsuario=$_SESSION['idUsuarioParticulares'];
+	  echo $idUsuario;
 	  
 	  ?>
                 
@@ -167,8 +168,11 @@ if($Ciudad=='Todos'){
 					   <div class="AccordionPanelTab">Registrar un Animal</div>
                                                         <div class="AccordionPanelContent1">
                                                             <div align="center">
-                                                                <p>Por favor diligencie el formulario de registro:</p>
-                                                                <iframe name="ikm" src="ConsultarAdopcionApp.php" frameborder="0" scrolling="no"   width="730" height="1006" > </iframe></p>
+                                                                <p><?php  $idUsuario=$_SESSION['idUsuario'];
+	  echo $idUsuario;
+	  
+	  ?>Por favor diligencie el formulario de registro:</p>
+                                                                <iframe name="ikm" src="ConsultarAdopcionApp.php?idUsuario='.$idUsuario" frameborder="0" scrolling="no"   width="730" height="1006" > </iframe></p>
                                                             <p>&nbsp;</p>
                                 
                                                     </div>
