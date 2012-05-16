@@ -59,7 +59,7 @@ echo '
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Registrar Sede" class="inputButton" />
+                                    <input type="submit" name="login" value="Registrar Cambios" class="inputButton" />
                                   </div></td>
                                   </tr>
                               </table>
