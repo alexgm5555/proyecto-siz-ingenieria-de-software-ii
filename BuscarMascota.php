@@ -81,7 +81,21 @@ if($Ciudad=='Todos'){
 	position: relative;
 }
 -->
+<? #este codigo sirve para dejar el tamano de iframe de buscarmascota por defecto ?>
 </style>
+<script type="text/javascript">
+function autoIframe(frameId){
+try{
+frame = document.getElementById(frameId);
+innerDoc = (frame.contentDocument) ? frame.contentDocument : frame.contentWindow.document;
+objToResize = (frame.style) ? frame.style : frame;
+objToResize.height = innerDoc.body.scrollHeight + 10;
+}
+catch(err){
+window.status = err.message;
+}
+}
+</script>
 <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
 <head>
@@ -117,8 +131,8 @@ if($Ciudad=='Todos'){
   <div id="content">
 				
 					<div id="box1">
-						<h2>Pagina de Inicio</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
+						<h2>Busqueda de Mascotas</h2>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar todas las mascotas que se han registrado en el sitio.</div>
 					
       <p>
                  <?php		
@@ -165,10 +179,11 @@ if($Ciudad=='Todos'){
 <div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					   <div class="AccordionPanelTab">Registrar un Animal</div>
-                                                        <div class="AccordionPanelContent1">
+                                                        <div class="AccordionPanelContent2">
                                                             <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
-                                                                <iframe name="ikm" src="FiltroMascotas.php?var=2" frameborder="0" scrolling="no"   width="730" height="1006" > </iframe></p>
+ <iframe id="tree" name="tree" src="FiltroMascotas.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                                                               </p>
                                                             <p>&nbsp;</p>
                                 
                                                     </div>

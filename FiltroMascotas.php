@@ -30,7 +30,7 @@ $numfilas = mysql_num_rows($resultado);
 	
     #se envia filtroMascotas.php?var=0 para que pueda acceder a las variables tipo sexo y ciudad
     ?>
-        <body><form name="form1" method="post" action="FiltroMascotas.php?var=0">
+  <body><form name="form1" method="post" action="FiltroMascotas.php?var=0">
             	<p align="center">
               <table width="70%" border="0" cellspacing="0" cellpadding="0" align="center">
                 <tr>
@@ -72,10 +72,9 @@ $numfilas = mysql_num_rows($resultado);
                     </select></th>
                 </tr>
               </table>
-              </p>á
-              <p align="center">
-                <input type="submit" name="button" id="button" value="Buscar">
-              <p align="center">
+        <p align="center">
+          <input type="submit" name="button" id="button" value="Buscar">
+<p align="center">
               <?php
 			  	#codigo en caso de que el usuario haclick en algun animal pues este lo saque del iframe y lo envie a enviar solicitud
 			  if(($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/FiltroMascotas.php?var=0')&&($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/FiltroMascotas.php?var=2')){
@@ -135,15 +134,17 @@ $numfilas = mysql_num_rows($resultado);
 																					?>
                           </th>
                           <th width="7%"  scope="col"border="" >&nbsp;</th>
-                          <th width="45%" align="left" scope="col">Nombre:
+                          <th width="45%" align="left" scope="col"><form name="form2" method="post" action="">
                             <?php
 																					echo $f['Nombre'];
 																					?>
-                            <br />
+                            </form>
+                            <h5><br />
                             Sexo:
-                            <?php
+<?php
 																					echo $f['Sexo'];
-																					?></th>
+																					?>
+                          </h5></th>
                           <th width="30%" align="center" scope="col">
                           </iframe>
                           <?php

@@ -7,7 +7,7 @@ echo  $idUsuario;
 $conexion = Conectarse();
 $conexion = true;
  if($conexion){
-	 echo $idUsuario;
+	 
  	$solicitudes=mysql_query("select * from solicitud_adopcion where CC_Solicitante= '.$idUsuario.'");
 	echo  "Aca va el codigo de consultad adopcion.php";
 	
