@@ -56,7 +56,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `Zoonosis`.`Usuarios` ;
 
 CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Usuarios` (
-  `idUsuarioParticulares` INT NOT NULL AUTO_INCREMENT ,
+  `idUsuarioParticulares` INT NULL AUTO_INCREMENT ,
   `TipoUsuario` VARCHAR(45) NULL DEFAULT 'Particular' ,
   `Nombres` VARCHAR(45) NOT NULL ,
   `Apellidos` VARCHAR(45) NOT NULL ,
