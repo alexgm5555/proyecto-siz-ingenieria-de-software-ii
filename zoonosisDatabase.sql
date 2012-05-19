@@ -1,430 +1,430 @@
-set @OLD_uNIQue_cHecKs=@@uNIQue_cHecKs, uNIQue_cHecKs=0;
-set @OLD_FOReIGN_KeY_cHecKs=@@FOReIGN_KeY_cHecKs, FOReIGN_KeY_cHecKs=0;
-set @OLD_sQL_MODe=@@sQL_MODe, sQL_MODe='tRaDItIONaL';
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-cReate scHeMa IF NOt eXIsts `u117694550_zoonosis` DeFauLt cHaRacteR set utf8 cOLLate utf8_general_ci ;
-use `u117694550_zoonosis` ;
-
--- -----------------------------------------------------
--- table `u117694550_zoonosis`.`ciudades`
--- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`ciudades` ;
-
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`ciudades` (
-  `idciudades` INt NOt NuLL autO_INcReMeNt ,
-  `Nombre_ciudad` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idciudades`) ,
-  uNIQue INDeX `Nombre_ciudad_uNIQue` (`Nombre_ciudad` asc) )
-eNGINe = InnoDB;
-
+CREATE SCHEMA IF NOT EXISTS `Zoonosis` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `Zoonosis` ;
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`tiposusuarios`
+-- Table `Zoonosis`.`Ciudades`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`tiposusuarios` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Ciudades` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`tiposusuarios` (
-  `idtiposusuarios` INt NOt NuLL autO_INcReMeNt ,
-  `tipouser` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idtiposusuarios`) ,
-  uNIQue INDeX `tipouser_uNIQue` (`tipouser` asc) ,
-  uNIQue INDeX `idtiposusuarios_uNIQue` (`idtiposusuarios` asc) )
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Ciudades` (
+  `idCiudades` INT NOT NULL AUTO_INCREMENT ,
+  `Nombre_Ciudad` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idCiudades`) ,
+  UNIQUE INDEX `Nombre_Ciudad_UNIQUE` (`Nombre_Ciudad` ASC) )
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`sedes`
+-- Table `Zoonosis`.`TiposUsuarios`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`sedes` ;
+DROP TABLE IF EXISTS `Zoonosis`.`TiposUsuarios` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`sedes` (
-  `idsedes` INt NOt NuLL autO_INcReMeNt ,
-  `Nombre` VaRcHaR(45) NOt NuLL ,
-  `ciudad` VaRcHaR(45) NOt NuLL ,
-  `Direccion` VaRcHaR(45) NOt NuLL ,
-  `telefono` VaRcHaR(45) NOt NuLL ,
-  `email` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idsedes`) ,
-  uNIQue INDeX `Direccion_uNIQue` (`Direccion` asc) ,
-  uNIQue INDeX `Nombre_uNIQue` (`Nombre` asc) )
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`TiposUsuarios` (
+  `idTiposUsuarios` INT NOT NULL AUTO_INCREMENT ,
+  `TipoUser` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idTiposUsuarios`) ,
+  UNIQUE INDEX `TipoUser_UNIQUE` (`TipoUser` ASC) ,
+  UNIQUE INDEX `idTiposUsuarios_UNIQUE` (`idTiposUsuarios` ASC) )
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`usuarios`
+-- Table `Zoonosis`.`Sedes`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`usuarios` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Sedes` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`usuarios` (
-  `idusuarioParticulares` INt NOt NuLL autO_INcReMeNt ,
-  `tipousuario` VaRcHaR(45) NuLL DeFauLt 'Particular' ,
-  `Nombres` VaRcHaR(45) NOt NuLL ,
-  `apellidos` VaRcHaR(45) NOt NuLL ,
-  `cedula` BIGINt NOt NuLL ,
-  `ciudad` VaRcHaR(45) NOt NuLL ,
-  `email` VaRcHaR(45) NOt NuLL ,
-  `telefono_Fij` VaRcHaR(45) NuLL ,
-  `telefono_cel` VaRcHaR(45) NuLL ,
-  `contrato` VaRcHaR(45) NuLL DeFauLt 'Particular',
-  `sedeLaboral` VaRcHaR(45) NuLL DeFauLt 'Particular',
-  `FechaInicio` DatetIMe NuLL DeFauLt '1000-01-01 00:00:00',
-  `suelDevengado` VaRcHaR(45) NuLL DeFauLt 'Particular',
-  `userName` VaRcHaR(45) NOt NuLL ,  
-  `Password` VaRcHaR(45) NOt NuLL ,
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Sedes` (
+  `idSedes` INT NOT NULL AUTO_INCREMENT ,
+  `Nombre` VARCHAR(45) NOT NULL ,
+  `Ciudad` VARCHAR(45) NOT NULL ,
+  `Direccion` VARCHAR(45) NOT NULL ,
+  `Telefono` VARCHAR(45) NOT NULL ,
+  `Email` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idSedes`) ,
+  UNIQUE INDEX `Direccion_UNIQUE` (`Direccion` ASC) ,
+  UNIQUE INDEX `Nombre_UNIQUE` (`Nombre` ASC) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Zoonosis`.`Usuarios`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Zoonosis`.`Usuarios` ;
+
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Usuarios` (
+  `idUsuarioParticulares` INT NOT NULL AUTO_INCREMENT ,
+  `TipoUsuario` VARCHAR(45) NULL DEFAULT 'Particular' ,
+  `Nombres` VARCHAR(45) NOT NULL ,
+  `Apellidos` VARCHAR(45) NOT NULL ,
+  `Cedula` BIGINT NOT NULL ,
+  `Ciudad` VARCHAR(45) NOT NULL ,
+  `Email` VARCHAR(45) NOT NULL ,
+  `Telefono_Fij` VARCHAR(45) NULL ,
+  `Telefono_Cel` VARCHAR(45) NULL ,
+  `Contrato` VARCHAR(45) NULL DEFAULT 'Particular',
+  `SedeLaboral` VARCHAR(45) NULL DEFAULT 'Particular',
+  `FechaInicio` DATETIME NULL DEFAULT '1000-01-01 00:00:00',
+  `SuelDevengado` VARCHAR(45) NULL DEFAULT 'Particular',
+  `UserName` VARCHAR(45) NOT NULL ,  
+  `Password` VARCHAR(45) NOT NULL ,
  
-  uNIQue INDeX `user_uNIQue` (`userName` asc) ,
-  uNIQue INDeX `cedula_uNIQue` (`cedula` asc) ,
-  uNIQue INDeX `email_uNIQue` (`email` asc) ,
-  INDeX `FK_ciudades` (`ciudad` asc) ,
-  uNIQue INDeX `idusuarioParticulares_uNIQue` (`idusuarioParticulares` asc) ,
-  PRIMaRY KeY (`idusuarioParticulares`) ,
-  INDeX `FK_tipo_usuario` (`tipousuario` asc) ,
-  INDeX `FK_sede_Laboral` (`sedeLaboral` asc) ,
-  cONstRaINt `FK_ciudades`
-    FOReIGN KeY (`ciudad` )
-    ReFeReNces `u117694550_zoonosis`.`ciudades` (`Nombre_ciudad` )
-    ON DeLete NO actION
-    ON uPDate NO actION,
-  cONstRaINt `FK_tipo_usuario`
-    FOReIGN KeY (`tipousuario` )
-    ReFeReNces `u117694550_zoonosis`.`tiposusuarios` (`tipouser` )
-    ON DeLete NO actION
-    ON uPDate NO actION,
-  cONstRaINt `FK_sede_Laboral`
-    FOReIGN KeY (`sedeLaboral` )
-    ReFeReNces `u117694550_zoonosis`.`sedes` (`Nombre` )
-    ON DeLete NO actION
-    ON uPDate NO actION)
-eNGINe = InnoDB;
+  UNIQUE INDEX `User_UNIQUE` (`UserName` ASC) ,
+  UNIQUE INDEX `Cedula_UNIQUE` (`Cedula` ASC) ,
+  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) ,
+  INDEX `FK_Ciudades` (`Ciudad` ASC) ,
+  UNIQUE INDEX `idUsuarioParticulares_UNIQUE` (`idUsuarioParticulares` ASC) ,
+  PRIMARY KEY (`idUsuarioParticulares`) ,
+  INDEX `FK_Tipo_Usuario` (`TipoUsuario` ASC) ,
+  INDEX `FK_Sede_Laboral` (`SedeLaboral` ASC) ,
+  CONSTRAINT `FK_Ciudades`
+    FOREIGN KEY (`Ciudad` )
+    REFERENCES `Zoonosis`.`Ciudades` (`Nombre_Ciudad` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Tipo_Usuario`
+    FOREIGN KEY (`TipoUsuario` )
+    REFERENCES `Zoonosis`.`TiposUsuarios` (`TipoUser` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Sede_Laboral`
+    FOREIGN KEY (`SedeLaboral` )
+    REFERENCES `Zoonosis`.`Sedes` (`Nombre` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`tipos_animal`
+-- Table `Zoonosis`.`Tipos_Animal`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`tipos_animal` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Tipos_Animal` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`tipos_animal` (
-  `idtipos_animal` INt NOt NuLL autO_INcReMeNt ,
-  `tipo` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idtipos_animal`) ,
-  uNIQue INDeX `tipo_uNIQue` (`tipo` asc) )
-eNGINe = InnoDB;
-
-
--- -----------------------------------------------------
--- table `u117694550_zoonosis`.`estado_animal`
--- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`estado_animal` ;
-
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`estado_animal` (
-  `idestado_animal` INt NOt NuLL autO_INcReMeNt ,
-  `estado` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idestado_animal`) ,
-  uNIQue INDeX `estado_uNIQue` (`estado` asc) )
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Tipos_Animal` (
+  `idTipos_Animal` INT NOT NULL AUTO_INCREMENT ,
+  `Tipo` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idTipos_Animal`) ,
+  UNIQUE INDEX `Tipo_UNIQUE` (`Tipo` ASC) )
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`animal`
+-- Table `Zoonosis`.`Estado_Animal`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`animal` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Estado_Animal` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`animal` (
-  `idanimal` INt NOt NuLL autO_INcReMeNt ,
-  `tipo_DueÒo` VaRcHaR(45) NOt NuLL ,
-  `cc_DueÒo` BIGINt NOt NuLL ,
-  `tipoanimal` VaRcHaR(45) NOt NuLL ,
-  `estadoanimal` VaRcHaR(45) NOt NuLL ,
-  `Nombre` VaRcHaR(45) NOt NuLL ,
-  `sexo` VaRcHaR(45) NOt NuLL ,
-  `Raza` VaRcHaR(45) NOt NuLL ,
-  `color` VaRcHaR(45) NOt NuLL ,
-  `tamaÒo` VaRcHaR(45) NOt NuLL ,
-  `edad` VaRcHaR(45) NOt NuLL ,
-  `Peso` VaRcHaR(45) NOt NuLL ,
-  `Foto` VaRcHaR(255) NuLL ,
-  `tipoImagen` VaRcHaR(255) NuLL ,
-  `Habilidad` teXt NuLL ,
-  PRIMaRY KeY (`idanimal`) ,
-  INDeX `FK_usuarios` (`cc_DueÒo` asc) ,
-  INDeX `FK_tipo_animal` (`tipoanimal` asc) ,
-  INDeX `FK_estado_animal` (`estadoanimal` asc) ,
-  cONstRaINt `FK_usuarios`
-    FOReIGN KeY (`cc_DueÒo` )
-    ReFeReNces `u117694550_zoonosis`.`usuarios` (`cedula` )
-    ON DeLete NO actION
-    ON uPDate NO actION,
-  cONstRaINt `FK_tipo_animal`
-    FOReIGN KeY (`tipoanimal` )
-    ReFeReNces `u117694550_zoonosis`.`tipos_animal` (`tipo` )
-    ON DeLete NO actION
-    ON uPDate NO actION,
-  cONstRaINt `FK_estado_animal`
-    FOReIGN KeY (`estadoanimal` )
-    ReFeReNces `u117694550_zoonosis`.`estado_animal` (`estado` )
-    ON DeLete NO actION
-    ON uPDate NO actION)
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Estado_Animal` (
+  `idEstado_Animal` INT NOT NULL AUTO_INCREMENT ,
+  `Estado` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idEstado_Animal`) ,
+  UNIQUE INDEX `Estado_UNIQUE` (`Estado` ASC) )
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`estados_solicitud`
+-- Table `Zoonosis`.`Animal`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`estados_solicitud` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Animal` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`estados_solicitud` (
-  `idestados_solicitud` INt NOt NuLL autO_INcReMeNt ,
-  `estado` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idestados_solicitud`) ,
-  uNIQue INDeX `estado_uNIQue` (`estado` asc) )
-eNGINe = InnoDB;
-
-
--- -----------------------------------------------------
--- table `u117694550_zoonosis`.`solicitud_adopcion`
--- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`solicitud_adopcion` ;
-
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`solicitud_adopcion` (
-  `idsolicitud_adopcion` INt NOt NuLL autO_INcReMeNt ,
-  `cc_solicitante` BIGINt NOt NuLL ,
-  `id_animal` INt NOt NuLL ,
-  `estado_solicitud` VaRcHaR(45) NOt NuLL DeFauLt 'en espera' ,
-  `DueÒo_animal` VaRcHaR(45) NOt NuLL ,
-  PRIMaRY KeY (`idsolicitud_adopcion`) ,
-  INDeX `FK_usuario` (`cc_solicitante` asc) ,
-  INDeX `FK_animal` (`id_animal` asc) ,
-  INDeX `FK_estados` (`estado_solicitud` asc) ,
-  cONstRaINt `FK_usuario`
-    FOReIGN KeY (`cc_solicitante` )
-    ReFeReNces `u117694550_zoonosis`.`usuarios` (`cedula` )
-    ON DeLete NO actION
-    ON uPDate NO actION,
-  cONstRaINt `FK_animal`
-    FOReIGN KeY (`id_animal` )
-    ReFeReNces `u117694550_zoonosis`.`animal` (`idanimal` )
-    ON DeLete NO actION
-    ON uPDate NO actION,
-  cONstRaINt `FK_estados`
-    FOReIGN KeY (`estado_solicitud` )
-    ReFeReNces `u117694550_zoonosis`.`estados_solicitud` (`estado` )
-    ON DeLete NO actION
-    ON uPDate NO actION)
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Animal` (
+  `idAnimal` INT NOT NULL AUTO_INCREMENT ,
+  `Tipo_Due√±o` VARCHAR(45) NOT NULL ,
+  `CC_Due√±o` BIGINT NOT NULL ,
+  `TipoAnimal` VARCHAR(45) NOT NULL ,
+  `EstadoAnimal` VARCHAR(45) NOT NULL ,
+  `Nombre` VARCHAR(45) NOT NULL ,
+  `Sexo` VARCHAR(45) NOT NULL ,
+  `Raza` VARCHAR(45) NOT NULL ,
+  `Color` VARCHAR(45) NOT NULL ,
+  `Tama√±o` VARCHAR(45) NOT NULL ,
+  `Edad` VARCHAR(45) NOT NULL ,
+  `Peso` VARCHAR(45) NOT NULL ,
+  `Foto` VARCHAR(255) NULL ,
+  `TipoImagen` VARCHAR(255) NULL ,
+  `Habilidad` TEXT NULL ,
+  PRIMARY KEY (`idAnimal`) ,
+  INDEX `FK_Usuarios` (`CC_Due√±o` ASC) ,
+  INDEX `FK_Tipo_Animal` (`TipoAnimal` ASC) ,
+  INDEX `FK_Estado_Animal` (`EstadoAnimal` ASC) ,
+  CONSTRAINT `FK_Usuarios`
+    FOREIGN KEY (`CC_Due√±o` )
+    REFERENCES `Zoonosis`.`Usuarios` (`Cedula` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Tipo_Animal`
+    FOREIGN KEY (`TipoAnimal` )
+    REFERENCES `Zoonosis`.`Tipos_Animal` (`Tipo` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Estado_Animal`
+    FOREIGN KEY (`EstadoAnimal` )
+    REFERENCES `Zoonosis`.`Estado_Animal` (`Estado` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`seguimiento_usuarios`
+-- Table `Zoonosis`.`Estados_Solicitud`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`seguimiento_usuarios` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Estados_Solicitud` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`seguimiento_usuarios` (
-  `idBitacora_seguimiento` INt NOt NuLL autO_INcReMeNt ,
-  `Fecha` DatetIMe NOt NuLL ,
-  `tipo_de_Operacion` VaRcHaR(45) NOt NuLL ,
-  `tipo_de_usuario` VaRcHaR(45) NOt NuLL ,
-  `Nombre_de_usuario` VaRcHaR(45) NOt NuLL ,
-  `Descripcion_de_Operacion` VaRcHaR(200) NOt NuLL ,
-  PRIMaRY KeY (`idBitacora_seguimiento`) )
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Estados_Solicitud` (
+  `idEstados_Solicitud` INT NOT NULL AUTO_INCREMENT ,
+  `Estado` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idEstados_Solicitud`) ,
+  UNIQUE INDEX `Estado_UNIQUE` (`Estado` ASC) )
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- table `u117694550_zoonosis`.`seguimiento_animales`
+-- Table `Zoonosis`.`Solicitud_Adopcion`
 -- -----------------------------------------------------
-DROP taBLe IF eXIsts `u117694550_zoonosis`.`seguimiento_animales` ;
+DROP TABLE IF EXISTS `Zoonosis`.`Solicitud_Adopcion` ;
 
-cReate  taBLe IF NOt eXIsts `u117694550_zoonosis`.`seguimiento_animales` (
-  `idseguimiento_animales` INt NOt NuLL autO_INcReMeNt ,
-  `Fecha` DatetIMe NOt NuLL ,
-  `tipo_de_Operacion` VaRcHaR(45) NOt NuLL ,
-  `tipo_de_animal` VaRcHaR(45) NOt NuLL ,
-  `DueÒo` VaRcHaR(45) NOt NuLL ,
-  `Motivo_de_Operacion` VaRcHaR(45) NOt NuLL ,
-  `Descripcion_de_Operacion` VaRcHaR(200) NOt NuLL ,
-  PRIMaRY KeY (`idseguimiento_animales`) )
-eNGINe = InnoDB;
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Solicitud_Adopcion` (
+  `idSolicitud_Adopcion` INT NOT NULL AUTO_INCREMENT ,
+  `CC_Solicitante` BIGINT NOT NULL ,
+  `id_Animal` INT NOT NULL ,
+  `Estado_Solicitud` VARCHAR(45) NOT NULL DEFAULT 'En Espera' ,
+  `Due√±o_Animal` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`idSolicitud_Adopcion`) ,
+  INDEX `FK_Usuario` (`CC_Solicitante` ASC) ,
+  INDEX `FK_Animal` (`id_Animal` ASC) ,
+  INDEX `FK_Estados` (`Estado_Solicitud` ASC) ,
+  CONSTRAINT `FK_Usuario`
+    FOREIGN KEY (`CC_Solicitante` )
+    REFERENCES `Zoonosis`.`Usuarios` (`Cedula` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Animal`
+    FOREIGN KEY (`id_Animal` )
+    REFERENCES `Zoonosis`.`Animal` (`idAnimal` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Estados`
+    FOREIGN KEY (`Estado_Solicitud` )
+    REFERENCES `Zoonosis`.`Estados_Solicitud` (`Estado` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
-use `u117694550_zoonosis`;
 
-DeLIMIteR $$
+-- -----------------------------------------------------
+-- Table `Zoonosis`.`Seguimiento_Usuarios`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Zoonosis`.`Seguimiento_Usuarios` ;
 
-use `u117694550_zoonosis`$$
-DROP tRIGGeR IF eXIsts `u117694550_zoonosis`.`registro_usuario` $$
-use `u117694550_zoonosis`$$
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Seguimiento_Usuarios` (
+  `idBitacora_Seguimiento` INT NOT NULL AUTO_INCREMENT ,
+  `Fecha` DATETIME NOT NULL ,
+  `Tipo_de_Operacion` VARCHAR(45) NOT NULL ,
+  `Tipo_de_Usuario` VARCHAR(45) NOT NULL ,
+  `Nombre_de_Usuario` VARCHAR(45) NOT NULL ,
+  `Descripcion_de_Operacion` VARCHAR(200) NOT NULL ,
+  PRIMARY KEY (`idBitacora_Seguimiento`) )
+ENGINE = InnoDB;
 
 
-create trigger registro_usuario before insert on usuarios
+-- -----------------------------------------------------
+-- Table `Zoonosis`.`Seguimiento_Animales`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Zoonosis`.`Seguimiento_Animales` ;
+
+CREATE  TABLE IF NOT EXISTS `Zoonosis`.`Seguimiento_Animales` (
+  `idSeguimiento_Animales` INT NOT NULL AUTO_INCREMENT ,
+  `Fecha` DATETIME NOT NULL ,
+  `Tipo_de_Operacion` VARCHAR(45) NOT NULL ,
+  `Tipo_de_Animal` VARCHAR(45) NOT NULL ,
+  `Due√±o` VARCHAR(45) NOT NULL ,
+  `Motivo_de_Operacion` VARCHAR(45) NOT NULL ,
+  `Descripcion_de_Operacion` VARCHAR(200) NOT NULL ,
+  PRIMARY KEY (`idSeguimiento_Animales`) )
+ENGINE = InnoDB;
+
+USE `Zoonosis`;
+
+DELIMITER $$
+
+USE `Zoonosis`$$
+DROP TRIGGER IF EXISTS `Zoonosis`.`registro_usuario` $$
+USE `Zoonosis`$$
+
+
+create trigger registro_usuario before insert on Usuarios
 for each row
-insert into seguimiento_usuarios (Fecha, tipo_de_Operacion, tipo_de_usuario, Nombre_de_usuario, Descripcion_de_Operacion) 
-values (now(), "Insert", new.tipousuario, new.userName, "un nuevo usuario se ha registrado en el sistema");
+insert into Seguimiento_Usuarios (Fecha, Tipo_de_Operacion, Tipo_de_Usuario, Nombre_de_Usuario, Descripcion_de_Operacion) 
+values (now(), "Insert", new.TipoUsuario, new.UserName, "Un nuevo usuario se ha registrado en el sistema");
 
 $$
 
 
-DeLIMIteR ;
+DELIMITER ;
 
-use `u117694550_zoonosis`;
+USE `Zoonosis`;
 
-DeLIMIteR $$
+DELIMITER $$
 
-use `u117694550_zoonosis`$$
-DROP tRIGGeR IF eXIsts `u117694550_zoonosis`.`borrado_usuario` $$
-use `u117694550_zoonosis`$$
+USE `Zoonosis`$$
+DROP TRIGGER IF EXISTS `Zoonosis`.`borrado_usuario` $$
+USE `Zoonosis`$$
 
-create trigger borrado_usuario after delete on usuarios
+create trigger borrado_usuario after delete on Usuarios
 for each row
-insert into seguimiento_usuarios (Fecha, tipo_de_Operacion, tipo_de_usuario, Nombre_de_usuario, Descripcion_de_Operacion) 
-values (now(), "Delete", old.tipousuario, old.userName, "este usuario ha sido eliminado del sistema");
+insert into Seguimiento_Usuarios (Fecha, Tipo_de_Operacion, Tipo_de_Usuario, Nombre_de_Usuario, Descripcion_de_Operacion) 
+values (now(), "Delete", old.TipoUsuario, old.UserName, "Este Usuario ha sido eliminado del sistema");
 
 $$
 
 
-DeLIMIteR ;
+DELIMITER ;
 
-use `u117694550_zoonosis`;
+USE `Zoonosis`;
 
-DeLIMIteR $$
+DELIMITER $$
 
-use `u117694550_zoonosis`$$
-DROP tRIGGeR IF eXIsts `u117694550_zoonosis`.`modificado_usuario` $$
-use `u117694550_zoonosis`$$
+USE `Zoonosis`$$
+DROP TRIGGER IF EXISTS `Zoonosis`.`modificado_usuario` $$
+USE `Zoonosis`$$
 
-create trigger modificado_usuario after update on usuarios
+create trigger modificado_usuario after update on Usuarios
 for each row
-insert into seguimiento_usuarios (Fecha, tipo_de_Operacion, tipo_de_usuario, Nombre_de_usuario, Descripcion_de_Operacion) 
-values (now(), "update", old.tipousuario, old.userName, "Los datos de este usuario han sido modificados");
+insert into Seguimiento_Usuarios (Fecha, Tipo_de_Operacion, Tipo_de_Usuario, Nombre_de_Usuario, Descripcion_de_Operacion) 
+values (now(), "Update", old.TipoUsuario, old.UserName, "Los datos de este usuario han sido modificados");
 
 $$
 
 
-DeLIMIteR ;
+DELIMITER ;
 
-use `u117694550_zoonosis`;
+USE `Zoonosis`;
 
-DeLIMIteR $$
+DELIMITER $$
 
-use `u117694550_zoonosis`$$
-DROP tRIGGeR IF eXIsts `u117694550_zoonosis`.`registro_animal` $$
-use `u117694550_zoonosis`$$
+USE `Zoonosis`$$
+DROP TRIGGER IF EXISTS `Zoonosis`.`registro_animal` $$
+USE `Zoonosis`$$
 
-create trigger registro_animal before insert on animal
+create trigger registro_animal before insert on Animal
 for each row
-insert into seguimiento_animales (Fecha, tipo_de_Operacion, tipo_de_animal, DueÒo, Motivo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), "Insert", new.tipoanimal, new.tipo_DueÒo, "OperaciÛn", "un nuevo animal se ha registrado en el sistema");
+insert into Seguimiento_Animales (Fecha, Tipo_de_Operacion, Tipo_de_Animal, Due√±o, Motivo_de_Operacion, Descripcion_de_Operacion) 
+values (now(), "Insert", new.TipoAnimal, new.Tipo_Due√±o, "Operaci√≥n", "Un nuevo animal se ha registrado en el sistema");
 
 $$
 
 
-DeLIMIteR ;
+DELIMITER ;
 
-use `u117694550_zoonosis`;
+USE `Zoonosis`;
 
-DeLIMIteR $$
+DELIMITER $$
 
-use `u117694550_zoonosis`$$
-DROP tRIGGeR IF eXIsts `u117694550_zoonosis`.`borrado_animal` $$
-use `u117694550_zoonosis`$$
+USE `Zoonosis`$$
+DROP TRIGGER IF EXISTS `Zoonosis`.`borrado_animal` $$
+USE `Zoonosis`$$
 
-create trigger borrado_animal after delete on animal
+create trigger borrado_animal after delete on Animal
 for each row
-insert into seguimiento_animales (Fecha, tipo_de_Operacion, tipo_de_animal, DueÒo, Motivo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), "Delete", old.tipoanimal, old.tipo_DueÒo, "OperaciÛn", "este animal ha sido eliminado del sistema");
+insert into Seguimiento_Animales (Fecha, Tipo_de_Operacion, Tipo_de_Animal, Due√±o, Motivo_de_Operacion, Descripcion_de_Operacion) 
+values (now(), "Delete", old.TipoAnimal, old.Tipo_Due√±o, "Operaci√≥n", "Este animal ha sido eliminado del sistema");
 
 $$
 
 
-DeLIMIteR ;
+DELIMITER ;
 
-use `u117694550_zoonosis`;
+USE `Zoonosis`;
 
-DeLIMIteR $$
+DELIMITER $$
 
-use `u117694550_zoonosis`$$
-DROP tRIGGeR IF eXIsts `u117694550_zoonosis`.`modificado_animal` $$
-use `u117694550_zoonosis`$$
+USE `Zoonosis`$$
+DROP TRIGGER IF EXISTS `Zoonosis`.`modificado_animal` $$
+USE `Zoonosis`$$
 
-create trigger modificado_animal after update on animal
+create trigger modificado_animal after update on Animal
 for each row
-insert into seguimiento_animales (Fecha, tipo_de_Operacion, tipo_de_animal, DueÒo, Motivo_de_Operacion, Descripcion_de_Operacion) 
-values (now(), "update", old.tipoanimal, old.tipo_DueÒo, "OperaciÛn", "Los datos de este animal han sido modificados");
+insert into Seguimiento_Animales (Fecha, Tipo_de_Operacion, Tipo_de_Animal, Due√±o, Motivo_de_Operacion, Descripcion_de_Operacion) 
+values (now(), "Update", old.TipoAnimal, old.Tipo_Due√±o, "Operaci√≥n", "Los datos de este animal han sido modificados");
 
 $$
 
 
-DeLIMIteR ;
+DELIMITER ;
 
 
-set sQL_MODe=@OLD_sQL_MODe;
-set FOReIGN_KeY_cHecKs=@OLD_FOReIGN_KeY_cHecKs;
-set uNIQue_cHecKs=@OLD_uNIQue_cHecKs;
-
--- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`ciudades`
--- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`ciudades` (`idciudades`, `Nombre_ciudad`) VaLues (NuLL, 'Bogot·');
-
-cOMMIt;
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`tiposusuarios`
+-- Data for table `Zoonosis`.`Ciudades`
 -- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`tiposusuarios` (`idtiposusuarios`, `tipouser`) VaLues (NuLL, 'Particular');
-INseRt INtO `u117694550_zoonosis`.`tiposusuarios` (`idtiposusuarios`, `tipouser`) VaLues (NuLL, 'empleado');
-INseRt INtO `u117694550_zoonosis`.`tiposusuarios` (`idtiposusuarios`, `tipouser`) VaLues (NuLL, 'administrador');
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`Ciudades` (`idCiudades`, `Nombre_Ciudad`) VALUES (NULL, 'Bogot√°');
 
-cOMMIt;
+COMMIT;
 
 -- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`sedes`
+-- Data for table `Zoonosis`.`TiposUsuarios`
 -- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`sedes` (`idsedes`, `Nombre`, `ciudad`, `Direccion`, `telefono`, `email`) VaLues (NuLL, 'sede Principal', 'Bogot·', 'carrera 106a No 67 - 02 - V√≠a engativ·', '440 89 96 - 440 89 98', 'sedePrincipal@gmail.com');
-INseRt INtO `u117694550_zoonosis`.`sedes` (`Nombre`, `ciudad`, `Direccion`, `telefono`, `email`) VaLues ('Particular', 'Particular', 'Particular', 'Particular', 'Particular');
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`TiposUsuarios` (`idTiposUsuarios`, `TipoUser`) VALUES (NULL, 'Particular');
+INSERT INTO `Zoonosis`.`TiposUsuarios` (`idTiposUsuarios`, `TipoUser`) VALUES (NULL, 'Empleado');
+INSERT INTO `Zoonosis`.`TiposUsuarios` (`idTiposUsuarios`, `TipoUser`) VALUES (NULL, 'Administrador');
 
-cOMMIt;
-
--- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`usuarios`
--- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`usuarios` (`idusuarioParticulares`, `tipousuario`, `Nombres`, `apellidos`, `cedula`, `ciudad`, `email`, `telefono_Fij`, `telefono_cel`, `userName`, `Password`, `sedeLaboral`) VaLues (NuLL, 'administrador', 'administrador', 'administrador', 0, 'Bogot·', 'administrador@gmail.com', '0000000', '0000000000', 'admin', 'siz', 'sede Principal');
-
-cOMMIt;
+COMMIT;
 
 -- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`tipos_animal`
+-- Data for table `Zoonosis`.`Sedes`
 -- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`tipos_animal` (`idtipos_animal`, `tipo`) VaLues (NuLL, 'Perro');
-INseRt INtO `u117694550_zoonosis`.`tipos_animal` (`idtipos_animal`, `tipo`) VaLues (NuLL, 'Gato');
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`Sedes` (`idSedes`, `Nombre`, `Ciudad`, `Direccion`, `Telefono`, `Email`) VALUES (NULL, 'Sede Principal', 'Bogot√°', 'Carrera 106A No 67 - 02 - V√≠a Engativ√°', '440 89 96 - 440 89 98', 'SedePrincipal@gmail.com');
+INSERT INTO `zoonosis`.`sedes` (`Nombre`, `Ciudad`, `Direccion`, `Telefono`, `Email`) VALUES ('Particular', 'Particular', 'Particular', 'Particular', 'Particular');
 
-cOMMIt;
-
--- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`estado_animal`
--- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`estado_animal` (`idestado_animal`, `estado`) VaLues (NuLL, 'en adopcion');
-INseRt INtO `u117694550_zoonosis`.`estado_animal` (`idestado_animal`, `estado`) VaLues (NuLL, 'Perdido');
-
-cOMMIt;
+COMMIT;
 
 -- -----------------------------------------------------
--- Data for table `u117694550_zoonosis`.`estados_solicitud`
+-- Data for table `Zoonosis`.`Usuarios`
 -- -----------------------------------------------------
-staRt tRaNsactION;
-use `u117694550_zoonosis`;
-INseRt INtO `u117694550_zoonosis`.`estados_solicitud` (`idestados_solicitud`, `estado`) VaLues (NuLL, 'en espera');
-INseRt INtO `u117694550_zoonosis`.`estados_solicitud` (`idestados_solicitud`, `estado`) VaLues (NuLL, 'aceptada');
-INseRt INtO `u117694550_zoonosis`.`estados_solicitud` (`idestados_solicitud`, `estado`) VaLues (NuLL, 'Rechazada');
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`Usuarios` (`idUsuarioParticulares`, `TipoUsuario`, `Nombres`, `Apellidos`, `Cedula`, `Ciudad`, `Email`, `Telefono_Fij`, `Telefono_Cel`, `UserName`, `Password`, `SedeLaboral`) VALUES (NULL, 'Administrador', 'Administrador', 'Administrador', 0, 'Bogot√°', 'administrador@gmail.com', '0000000', '0000000000', 'admin', 'siz', 'Sede Principal');
 
-cOMMIt;
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `Zoonosis`.`Tipos_Animal`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`Tipos_Animal` (`idTipos_Animal`, `Tipo`) VALUES (NULL, 'Perro');
+INSERT INTO `Zoonosis`.`Tipos_Animal` (`idTipos_Animal`, `Tipo`) VALUES (NULL, 'Gato');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `Zoonosis`.`Estado_Animal`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`Estado_Animal` (`idEstado_Animal`, `Estado`) VALUES (NULL, 'En Adopcion');
+INSERT INTO `Zoonosis`.`Estado_Animal` (`idEstado_Animal`, `Estado`) VALUES (NULL, 'Perdido');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `Zoonosis`.`Estados_Solicitud`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `Zoonosis`;
+INSERT INTO `Zoonosis`.`Estados_Solicitud` (`idEstados_Solicitud`, `Estado`) VALUES (NULL, 'En Espera');
+INSERT INTO `Zoonosis`.`Estados_Solicitud` (`idEstados_Solicitud`, `Estado`) VALUES (NULL, 'Aceptada');
+INSERT INTO `Zoonosis`.`Estados_Solicitud` (`idEstados_Solicitud`, `Estado`) VALUES (NULL, 'Rechazada');
+
+COMMIT;
