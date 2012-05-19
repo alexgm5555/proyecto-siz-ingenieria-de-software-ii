@@ -17,7 +17,18 @@ else{
 
 include ("conexionMySQL.php");
 $conexion = Conectarse();
+#Seleccionar los tipos de animal  en la bd
+$consulta = "SELECT * FROM tipos_animal order by tipo ASC";
 
+#para consultar las diferentes estados
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas = mysql_num_rows($resultado);
+#Seleccionar los tipos de animal  en la bd
+$consulta1 = "SELECT * FROM estado_animal order by Estado ASC";
+
+#para consultar las diferentes estados
+$resultado1 = mysql_query($consulta1, $conexion) or die(mysql_error());
+$numfilas1 = mysql_num_rows($resultado1);
 $usuario=$_SESSION['usuario'];
 #usari es un parametro que envia BuscarMascota.php
 $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
@@ -161,20 +172,42 @@ size="45px" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Sexo:</td>
-			                      <td><input name="SexoAnimal"
-type="text" id="SexoAnimal" value=""
-size="45px" /></td>
-			                      <td>Tipo Animal:</td>
-			                      <td><select name="Estado" class="form"
-id="Estado">
+			                      <td><select name="SexoAnimal" id="SexoAnimal">
+			                        <option>Macho</option>
+			                        <option>Hembra</option>
+		                          </select></td>
+			                      <td>Tipo de Animal:</td>
+			                      <td><select name="Tipo" class="form" id="Tipo">
+			                        
+			                        <?PHP
+					  
+									//////////////////////////////////////
+									///// AQUÍ////
+									//////////////////////////////////////
+								  if ($numfilas > 0) {  
+         							while ($rowEmp = mysql_fetch_assoc($resultado )) {  
+           								 echo " <option value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";  
+         							}
+      							  }
+								  ?>
+		                          </select></td>
+		                        </tr>
+			                    <tr>
+			                      <td>Edad:</td>
+			                      <td><input name="EdadAnimal"
+type="text" id="Edad" value="" size="45px"
+/></td>
+			                      <td>Estado Animal:</td>
+			                      <td><select name="EstadoAnimal" class="form"
+id="EstadoAnimal">
 			                        <?PHP
                                                                        //////////////////////////////////////
                                                                        /////CODIGO DE MODIFICAR SEDE AQUÍ////
                                                                        //////////////////////////////////////
-                                                                 if ($numfilas > 0) {
-                                                               while ($rowEmp = mysql_fetch_assoc($resultado)) {
+                                                                 if ($numfilas1 > 0) {
+                                                               while ($rowEmp = mysql_fetch_assoc($resultado1)) {
                                                                         echo " <option
-value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";
+value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
                                                                }
                                                          }
 
@@ -182,22 +215,12 @@ value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";
 			                        </select></td>
 		                        </tr>
 			                    <tr>
-			                      <td>Edad:</td>
-			                      <td><input name="EdadAnimal"
-type="text" id="Edad" value="" size="45px"
-/></td>
-			                      <td>Foto:
-			                        
-			                      <td><input type="file" name="FotoAnimal" id="FotoAnimal" />			                        
-		                          </td>
-		                        </tr>
-			                    <tr>
 			                      <td>Color:</td>
 			                      <td><input name="ColorAnimal"
 type="text" id="ColorAnimal" value="" size="45px"
 /></td>
-			                      <td>&nbsp;</td>
-			                      <td  align "center">&nbsp;</td>
+			                      <td>Foto: </td>
+			                      <td><input type="file" name="FotoAnimal" id="FotoAnimal" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Tamaño:</td>
