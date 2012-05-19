@@ -140,21 +140,22 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 					      <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
 					    </div>
 					    <div class="AccordionPanel">
+                        <p>Dando click en Modificar podras ver las solicitudes, eliminar o modificar el registro.</p>
 					      <table width="60%" height="110" border="0">
 					        
 				          </table>
-                       	  <p align="center">
-			              <table width="70%" border=1" align="center" >
+					      <p align="center">
+			              <table width="70%" border="1" align="center" >
 			                <?php
                             #ciclo para mostrar todos los registros de este usuario
-							echo $datosUsuario['Cedula'];
+							
 								while($f=mysql_fetch_array($re)){
 								?>
 			                <tr>
 			                  <th width="24%" scope="col" border="0"><?php
 									echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
 									?></th>
-			                  <th width="54%" scope="col"><table width="100%" height="83" border="0">
+			                  <th width="55%" scope="col"><table width="100%" height="83" border="0">
 			                    <tr>
 			                      <th  align="center"  scope="col"border="0">&nbsp;</th>
 			                      <th align="left" scope="col"> <h5>Codigo:
@@ -174,7 +175,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			                        </h5></th>
 		                        </tr>
 		                      </table></th>
-			                  <th width="22%" scope="col"><a href="AdministrarAnimalSeleccionado.php">
+			                  <th width="21%" scope="col"><a href="AdministrarAnimalSeleccionado.php">
 			                    <?php
 																					$id= $f['idAnimal'];
 																					#codigo para enviar los valores del animal seleccionado 
@@ -182,14 +183,14 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
 																					echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
 																					?>
-                                <?php
+			                    <?php
 																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
                 																		if($f['Sexo']=='Macho'){
-					 																		echo'<img src="images/Macho.jpg"width="70" heigth="70"/>';}
+					 																		echo'<img src="images/MachoMod.jpg"width="80" heigth="80"/>';}
 																						else{
-																							echo'<img src="images/Hembra.jpg"width="70" heigth="70"/>';} 
+																							echo'<img src="images/HembraMod.jpg"width="70" heigth="70"/>';} 
 				?>
-                                </p>
+			                    </p>
                               </a> </a>                              <?php
 									}
 									

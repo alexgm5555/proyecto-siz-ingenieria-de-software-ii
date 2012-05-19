@@ -12,8 +12,8 @@ $ColorAnimal=$_POST['ColorAnimal'];
 $TamañoAnimal=$_POST['TamañoAnimal'];
 $PesoAnimal=$_POST['PesoAnimal'];
 $HabilidadAnimal=$_POST['HabilidadAnimal'];
-
-#$EstadoAnimal=$_POST['EstadoAnimal'];
+$TipoAnimal=$_POST['TipoAnimal'];
+$EstadoAnimal=$_POST['EstadoAnimal'];
 $FotoAnimal1=$_FILES["FotoAnimal"]["name"];
 $FotoAnimal2=$_FILES["FotoAnimal"]["tmp_name"];
 
@@ -32,7 +32,7 @@ if($conexion){
 		$Cedula= $faa['Cedula'];
 		echo $Cedula;
 		$TipoAnimal='Perro';
-	$query = ("insert into animal values ('','Particular','$Cedula','$TipoAnimal','En Adopcion','$NombreAnimal','Macho','$RazaAnimal','$ColorAnimal','$TamañoAnimal','$EdadAnimal','$PesoAnimal','$FotoAnimal','','$HabilidadAnimal')");/*inserta los valores en la BD*/
+	$query = ("insert into animal values ('','Particular','$Cedula','$TipoAnimal','En Adopcion','$NombreAnimal','$SexoAnimal','$RazaAnimal','$ColorAnimal','$TamañoAnimal','$EdadAnimal','$PesoAnimal','$FotoAnimal','','$HabilidadAnimal')");/*inserta los valores en la BD*/
 	
 	mysql_query($query)or die(mysql_error());
 	header ('location:MascotasRegistradas.php?Message=4');

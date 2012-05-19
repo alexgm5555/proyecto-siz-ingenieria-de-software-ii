@@ -13,10 +13,10 @@ header ('location:index.php?LoginMesagge=2');
 include ("conexionMySQL.php");
 $conexion = Conectarse();
 
-#Seleccionar las ciudades en la bd
+#Seleccionar los estados del animal en la bd
 $consulta = "SELECT * FROM estado_animal order by Estado ASC";
 
-#para consultar las diferentes ciudades
+#para consultar las diferentes estados
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
 $numfilas = mysql_num_rows($resultado);
 $idAnimal=$_GET['idAnimal'];
@@ -279,7 +279,8 @@ type="text" id="Edad" value="<?php echo $f['Edad'];?>" size="30px"
                     <td>&nbsp;</td>
                     <td>Foto:</td>
                     <td><label for="FotoAnimal"></label>
-                    <input type="file" name="FotoAnimal" id="FotoAnimal" value"" /></td>
+                    <input type="file" name="FotoAnimal" id="FotoAnimal"  size="30px"
+/></td>
                                    <td>&nbsp;</td>
                   </tr>
                   <tr>
