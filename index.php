@@ -46,18 +46,22 @@ error_reporting("E_PARSE");
 			</div>
 			<div id="main">
 				<div id="content">
-				
+				<div id="box3">
+					  <h2>Bienvenid@ a Zoonosis</h2>
+					  <iframe align="top" id="tree" name="tree" src="jquery1.php" frameborder="0" width="830" height="230"  scrolling="no"></iframe>
+				  </div>
 					<div id="box1">
-						<h2>Bienvenid@ a Zoonosis</h2>
+						<h2>&nbsp;</h2>
 						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />
 						<p>
 							En Zoonosis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si quieres se parte de Zoonosis Colombia regístrate y forma parte de nuestra comunidad.</p>
 					</div>
 					
-					<div id="box2">
+			  <div id="box2">
 						<h2>En Zoonosis ellos son nuestros amigos</h2>
 						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
 					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
+					
 					
 					<br class="clear" />
 				</div>
