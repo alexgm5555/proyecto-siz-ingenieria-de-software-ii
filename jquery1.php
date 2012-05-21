@@ -261,7 +261,7 @@ $re=mysql_query("select * from animal");
 
   </head>
 
-  <body bgcolor="#CCFF99" background="images/huellas.jpg">
+  <body>
 
     <div id="wrapper"  >
 
