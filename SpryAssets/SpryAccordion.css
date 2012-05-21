@@ -89,6 +89,12 @@
 	padding: 0px;
 	height: 400px;
 }
+.AccordionPanelContent2 {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	height: 400px;
+}
 /* This is an example of how to change the appearance of the panel tab that is
  * currently open. The class "AccordionPanelOpen" is programatically added and removed
  * from panels as the user clicks on the tabs within the Accordion.

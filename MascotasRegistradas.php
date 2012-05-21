@@ -14,10 +14,8 @@ if ( isset( $_SESSION['usuario'])) {
 else{	
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
-
 include ("conexionMySQL.php");
-$conexion = Conectarse();
-
+$conexion = Conectarse();  
 $usuario=$_SESSION['usuario'];
 #usari es un parametro que envia BuscarMascota.php
 $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
@@ -26,6 +24,7 @@ $datosUsuario=mysql_fetch_array($ret);
 #$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['cedula']."'");
 #sirve para almacenar los registroas de este usario en un arreglo llamado re
 $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula']."'");
+
 	
 	
 ?>
@@ -133,7 +132,9 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 						}
 	  
 	  
-	  ?>
+	  ?>				<?php
+                          	if($f=mysql_fetch_array($re)){
+							 ?> 
 			    <div id="box2" align="center"> 
 <div id="Accordion1" class="Accordion" tabindex="0">
 					    <div class="AccordionPanel">
@@ -145,58 +146,30 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 					        
 				          </table>
 					      <p align="center">
-			              <table width="70%" border="1" align="center" >
-			                <?php
-                            #ciclo para mostrar todos los registros de este usuario
+                          
+							  
+                          <iframe id="tree" name="tree" src="MascotasRegistradasIFrame.php" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                          <?php
+                          	}
+							else{
+							?>
+			    <div id="box2" align="center"> 
+<div id="Accordion1" class="Accordion" tabindex="0">
+					    <div class="AccordionPanel">
+					      <div class="AccordionPanelTab">Buscar Animales por: <?php echo $_SESSION['usuario'];?>.</div>
+					    </div>
+					    <div class="AccordionPanel">
+                        <p><?php echo $_SESSION['usuario'];?> como no has registrado ningun animal te invitamos a buscarlos ca podras encontrara tu mascota si se perdio</p>
+					      <table width="60%" height="110" border="0">
+					        
+				          </table>
+					      <p align="center">                            
+                            	 <iframe id="tree" name="tree" src="FiltroMascotas.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                          <?php
+								
+								}
 							
-								while($f=mysql_fetch_array($re)){
-								?>
-			                <tr>
-			                  <th width="24%" scope="col" border="0"><?php
-									echo'<img src="'.$f['Foto'].'"width="70" heigth="90"/>';
-									?></th>
-			                  <th width="55%" scope="col"><table width="100%" height="83" border="0">
-			                    <tr>
-			                      <th  align="center"  scope="col"border="0">&nbsp;</th>
-			                      <th align="left" scope="col"> <h5>Codigo:
-			                        <?php
-									echo $f['idAnimal'];
-									?>
-			                        <br />
-			                        Nombre:
-			                        <?php
-									echo $f['Nombre'];
-									?>
-			                        <br />
-			                        Sexo:
-			                        <?php
-									echo $f['Sexo'];
-									?>
-			                        </h5></th>
-		                        </tr>
-		                      </table></th>
-			                  <th width="21%" scope="col"><a href="AdministrarAnimalSeleccionado.php">
-			                    <?php
-																					$id= $f['idAnimal'];
-																					#codigo para enviar los valores del animal seleccionado 
-																					
-									#Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
-																					echo "<a href=AdministrarAnimalSeleccionado.php?idAnimal=$id>";
-																					?>
-			                    <?php
-																					  #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
-                																		if($f['Sexo']=='Macho'){
-					 																		echo'<img src="images/MachoMod.jpg"width="80" heigth="80"/>';}
-																						else{
-																							echo'<img src="images/HembraMod.jpg"width="70" heigth="70"/>';} 
-				?>
-			                    </p>
-                              </a> </a>                              <?php
-									}
-									
-									?></th>
-		                    </tr>
-		                  </table>
+						  ?>
 			              </form>
 				            </form>
 				          <p></p>
