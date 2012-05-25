@@ -53,6 +53,13 @@ error_reporting("E_PARSE");
        return 0; 
     }
 	
+	//La contraseña no puede ser mayor que 20 caracteres
+	else if (document.loginform.contrasena.value.length > 20){ 
+       alert("La contraseña no puede contener más de 20 caracteres.") 
+       document.loginform.contrasena.focus() 
+       return 0; 
+    } 
+	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
