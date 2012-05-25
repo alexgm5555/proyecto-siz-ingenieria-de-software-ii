@@ -67,6 +67,13 @@ error_reporting("E_PARSE");
        return 0; 
     } 
 	
+	//La contraseña no puede contener comillas ni simples ni normales
+	else if (contrasenac.search(patron) != -1 || contrasenac.search(patron2) != -1){ 
+       alert("La Contraseña no puede llevar comillas.") 
+       document.loginform.contrasena.focus() 
+       return 0; 
+    } 
+	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
