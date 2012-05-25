@@ -21,6 +21,16 @@ error_reporting("E_PARSE");
 		}
 		document.onkeypress = stopRKey; 
 	</script>
+    
+    <script language="javascript">
+
+	function valida_envia(){ 
+	var usuarioc = document.loginform.usuario.value;
+	var contrasenac = document.loginform.contrasena.value;
+	var patron = /'/;
+	var patron2 = /"/;
+	
+	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
