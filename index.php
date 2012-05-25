@@ -46,6 +46,13 @@ error_reporting("E_PARSE");
        return 0; 
     } 
 	
+	//El usuario no puede ser mayor que 20 caracteres
+	else if (document.loginform.usuario.value.length > 20){ 
+       alert("El usuario no puede contener más de 20 caracteres.") 
+       document.loginform.usuario.focus() 
+       return 0; 
+    }
+	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
