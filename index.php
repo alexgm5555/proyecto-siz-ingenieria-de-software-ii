@@ -200,7 +200,7 @@ error_reporting("E_PARSE");
 <p>
 		  <span><input type="checkbox" name="remember" /> 
 		  &nbsp;Recordarme</span> 
-							<input type="submit" name="login" value="Login" class="inputButton" /></form>
+							<input type="submit" name="login" value="Login" class="inputButton" onclick="valida_envia()"/></form>
 						</p>
 				  </div>
 				  <h3>Enlaces de Interés</h3>
