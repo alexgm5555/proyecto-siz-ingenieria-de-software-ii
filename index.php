@@ -190,7 +190,7 @@ error_reporting("E_PARSE");
 	  ?>
                     </h3>
 					<div class="form">
-						<form action="loginApp.php" method="post" id="formularioregistro">
+						<form action="loginApp.php" method="post" id="loginform" name="loginform">
 <p>
 				<label for="usuario" class="login">Usuario</label> <input type="text" name="usuario" id="usuario" value="Usuario" class="inputBox" />
 						</p>
