@@ -78,6 +78,13 @@ error_reporting("E_PARSE");
    
     document.loginform.submit(); 
 } 
+
+// Funcion que llama a la anterior si en alguno de los campos se presiona la tecla enter
+	function onEnter(ev) {  
+	if(ev==13)    { 
+	valida_envia();  
+	}  
+	}
 	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
