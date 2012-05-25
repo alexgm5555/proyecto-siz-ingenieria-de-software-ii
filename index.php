@@ -74,6 +74,11 @@ error_reporting("E_PARSE");
        return 0; 
     } 
 	
+	//el formulario se envia 
+   
+    document.loginform.submit(); 
+} 
+	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
