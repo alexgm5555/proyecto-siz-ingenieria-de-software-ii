@@ -98,7 +98,7 @@ error_reporting("E_PARSE");
 		<div id="outer">
 			<div id="header">
 				<div id="logo">
-					<h1><img src="images/Logo1.png" alt="" width="432" height="159" /></h1>
+					<h1><img src="images/Logo1.png" alt="" width="592" height="159" /></h1>
 				</div>
 <div id="nav">
 			  <ul>
