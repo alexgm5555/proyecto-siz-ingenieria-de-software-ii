@@ -60,6 +60,13 @@ error_reporting("E_PARSE");
        return 0; 
     } 
 	
+	//El usuario no puede contener comillas ni simples ni normales
+	else if (usuarioc.search(patron) != -1 || usuarioc.search(patron2) != -1){ 
+       alert("El Usuario no puede llevar comillas.") 
+       document.loginform.usuario.focus() 
+       return 0; 
+    } 
+	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
