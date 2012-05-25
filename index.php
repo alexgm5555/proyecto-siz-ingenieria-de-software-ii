@@ -30,6 +30,15 @@ error_reporting("E_PARSE");
 	var patron = /'/;
 	var patron2 = /"/;
 	
+	//valido el usuario
+	
+	// El usuario no puede ser vacio:
+    if (document.loginform.usuario.value.length==0){ 
+       alert("Ingrese un nombre de Usuario") 
+       document.loginform.usuario.focus() 
+       return 0; 
+    } 
+	
 	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
