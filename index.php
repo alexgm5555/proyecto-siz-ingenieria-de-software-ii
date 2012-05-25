@@ -10,6 +10,17 @@ error_reporting("E_PARSE");
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+    <!--
+    Script que permite capturar la tecla enter y enviar el formulario
+    -->
+    <script language="javascript "type="text/javascript">
+		function stopRKey(evt) { 
+		var evt = (evt) ? evt : ((event) ? event : null);
+		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+		}
+		document.onkeypress = stopRKey; 
+	</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
