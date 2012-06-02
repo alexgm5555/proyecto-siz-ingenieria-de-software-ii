@@ -80,9 +80,9 @@ if($Ciudad=='Todos'){
 	border: 1px solid #0F0;
 	position: relative;
 }
--->
+--></style>
 <? #este codigo sirve para dejar el tamano de iframe de buscarmascota por defecto ?>
-</style>
+
 <script type="text/javascript">
 function autoIframe(frameId){
 try{
@@ -182,7 +182,7 @@ window.status = err.message;
                                                         <div class="AccordionPanelContent2">
                                                             <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
- <iframe id="tree" name="tree" src="FiltroMascotas.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+ <iframe id="tree" name="tree" src="BuscarMascotaIFrame.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
                                                                </p>
                                                             <p>&nbsp;</p>
                                 

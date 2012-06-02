@@ -125,7 +125,7 @@ error_reporting("E_PARSE");
 				<div id="content">
 				<div id="box3">
 					  <h2>Bienvenid@ a Zoonosis</h2>
-					  <iframe align="top" id="tree" name="tree" src="jquery1.php" frameborder="0" width="830" height="230"  scrolling="no"></iframe>
+					  <iframe align="top" id="tree" name="tree" src="CarruselImagenesIndexJQuery.php" frameborder="0" width="830" height="230"  scrolling="no"></iframe>
 				  </div>
 					<div id="box1">
 						<h2>&nbsp;</h2>

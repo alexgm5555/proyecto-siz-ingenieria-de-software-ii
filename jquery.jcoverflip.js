@@ -85,7 +85,7 @@ animationqueue.AnimationQueue.prototype = {
 	 */
 	start: function( time, callback ){
 		this.totalTime = time;
-		this.elapsedTime = 5;
+		this.elapsedTime = 0;
 		this.isRunning = true;
 		
 		callback = $.isFunction( callback )? callback : nofn;

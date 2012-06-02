@@ -19,11 +19,11 @@ $conexion = Conectarse();
 $usuario=$_SESSION['usuario'];
 #usari es un parametro que envia BuscarMascota.php
 $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
-#datos usuario guarda una arreglo con los datos del el usuario
+#datos usuario guarda un arreglo con los datos del el usuario
 $datosUsuario=mysql_fetch_array($ret);
-#$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['cedula']."'");
-#sirve para almacenar los registroas de este usario en un arreglo llamado re
-$re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula']."'");
+#sirve para almacenar los registroas de este usario en un arreglo llamado ArregloAnimalesRegistradosUsuario usando en un while de la linea 133
+/* @var $ArregloAnimalesRegistradosUsuario ArrayObject */
+$ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula']."'");
 
 	
 	
@@ -78,142 +78,135 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			</div>
 			<div id="main">
 			  <div id="content">
-				
 				<div id="box1">
 						<h2>Mascotas Que Has Registrado</h2>
 					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
 					
-			    <?php		
-						try {
-							$bandera=0;  
-							$mensaje = $_GET['Message']; 
-							$registro = $_GET['registro']; 
-							switch ($mensaje) {
-								case 0:
-									echo "";
-									break;
-								
-								
-								case 2:	
-									echo "
-									<table width='auto' border='0'>
-  									  <tr>
-										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'> Ha sido  borrado el Registro $registro</font></td>
-									  </tr>
-									</table>";
-									break;
-								case 3:
-									echo "
-									<table width='auto' border='0'>
-  									  <tr>
-										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'> Ha sido  Modificado  el Registro $registro</font></td>
-									  </tr>
-									</table>";
+                                        <?php
+                                        #el siguiente codigo try sirve para mostrar un mensaje de modificacion eliminacion de mascota
+                                                try {
+                                                    $bandera=0;  
+                                                    $mensaje = $_GET['Message']; 
+                                                    $registro = $_GET['registro']; 
+                                                    switch ($mensaje) {
+                                                        case 0:
+                                                            echo "";
+                                                            break;
+                                                        #Manda este Mensajesi viene de AdministrarAnimalSeleccionado.php y selecciona Eliminar Registro
+							case 2:	
+                                                            echo    "<table width='auto' border='0'>
+                                                                        <tr>
+                                                                            <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+                                                                            <td align='center'><font color='green' size='5px'> Ha sido  borrado el Registro $registro</font></td>
+                                                                         </tr>
+                                                                     </table>";
+                                                            break;
+							#Manda este Mensaje si viene de AdministrarAnimalSeleccionado.php y selecciona Modificar Registro
+							case 3:
+                                                            echo    "<table width='auto' border='0'>
+                                                                        <tr>
+                                                                            <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+                                                                            <td align='center'><font color='green' size='5px'> Ha sido  Modificado  el Registro $registro</font></td>
+                                                                        </tr>
+                                                                    </table>";
 									
-									break;
-									case 4:
-									echo "
-									<table width='auto' border='0'>
-  									  <tr>
-										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'> Ha sido  Insertado  el Registro $registro</font></td>
-									  </tr>
-									</table>";
+                                                            break;
+                                                        #Manda este Mensaje si viene de RegistrarMascota.php 
+							case 4:
+                                                            echo "  <table width='auto' border='0'>
+                                                                        <tr>
+                                                                            <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+                                                                            <td align='center'><font color='green' size='5px'> Ha sido  Insertado  el Registro $registro</font></td>
+                                                                        </tr>
+                                                                    </table>";
 									
-									break;
-							}				
+                                                            break;
+                                                    }				
 							
-							}  
+						}  
 						catch (Exception $e)  
 						{  
     						echo "Sucedió un error PHP.";
 						}
 	  
-	  
-	  ?>				<?php
-                          	if($f=mysql_fetch_array($re)){
-							 ?> 
-			    <div id="box2" align="center"> 
-<div id="Accordion1" class="Accordion" tabindex="0">
-					    <div class="AccordionPanel">
-					      <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
+                                        ?>				
+                        <?php
+                            if($f=mysql_fetch_array($ArregloAnimalesRegistradosUsuario)){
+                        ?>      
+                                <div id="box2" align="center"> 
+                                    <div id="Accordion1" class="Accordion" tabindex="0">
+                                        <div class="AccordionPanel">
+                                            <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
 					    </div>
 					    <div class="AccordionPanel">
-                        <p>Dando click en Modificar podras ver las solicitudes, eliminar o modificar el registro.</p>
-					      <table width="60%" height="110" border="0">
-					        
-				          </table>
-					      <p align="center">
-                          
-							  
-                          <iframe id="tree" name="tree" src="MascotasRegistradasIFrame.php" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
-                          <?php
+                                                <p>Dando click en Modificar podras ver las solicitudes, eliminar o modificar el registro.</p>
+                                                <table width="60%" height="110" border="0">
+                                                </table>
+                                                <p align="center">
+                                                    <?// este iframe envia a mascotas registradasIframe donde hace todo el Query parabuscar las mascotas registradas por el usuario que se registro
+                                                      // tiene un if y otro codigo extra;o ese codigo sirve para que el tamanio del scrollbar se defina automaticamente dependiendo del contenido?>
+                                                    <iframe id="tree" name="tree" src="MascotasRegistradasIFrame.php" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                        <?php
                           	}
-							else{
-							?>
-			    <div id="box2" align="center"> 
-<div id="Accordion1" class="Accordion" tabindex="0">
-					    <div class="AccordionPanel">
-					      <div class="AccordionPanelTab">Buscar Animales por: <?php echo $_SESSION['usuario'];?>.</div>
+                            else{
+			?>
+                                <div id="box2" align="center"> 
+                                    <div id="Accordion1" class="Accordion" tabindex="0">
+                                        <div class="AccordionPanel">
+                                            <div class="AccordionPanelTab">Buscar Animales por: <?php echo $_SESSION['usuario'];?>.</div>
 					    </div>
 					    <div class="AccordionPanel">
-                        <p><?php echo $_SESSION['usuario'];?> como no has registrado ningun animal te invitamos a buscarlos ca podras encontrara tu mascota si se perdio</p>
-					      <table width="60%" height="110" border="0">
-					        
-				          </table>
-					      <p align="center">                            
-                            	 <iframe id="tree" name="tree" src="FiltroMascotas.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                                            <p><?php echo $_SESSION['usuario'];?> como no has registrado ningun animal te invitamos a buscarlos ca podras encontrara tu mascota si se perdio</p>
+					    <table width="60%" height="110" border="0">
+					    </table>
+					    <p align="center">
+                                                <?// este iframe envia a filtromascotas donde hace todo el Query parabuscar todas las mascotas  registradas en la base de datos
+                                                  // tiene un if y otro codigo extra;o ese codigo sirve para que el tamanio del scrollbar se defina automaticamente dependiendo del contenido?>
+                                                <iframe id="tree" name="tree" src="BuscarMascotaIFrame.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
                           <?php
-								
-								}
-							
-						  ?>
-			              </form>
-				            </form>
-				          <p></p>
-</div>
-		          </div>
-		        </div>
-			    
-					
-					<br class="clear" />
-			  </div>
-				<div id="sidebar">
-					<h3>
-                    
-                  </h3>
-					<div class="form">
-					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
-                      <ol>
-                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
-                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
-                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li>Administrar Animales Registrados</li>
-                      </ol>
-                  </div>
-				  <h3>Enlaces de Interés</h3>
-					<ul class="linkedList">
-						<li class="first">
-							<a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
-						</li>
-						<li>
-							<a href="http://www.google.com.co">Google</a>
-						</li>
-						<li>
-							<a href="http://docs.google.com">Google Docs</a>
-						</li>
-					</ul>
-				  <p>&nbsp;</p>
-            </div>
-				<br class="clear" />
+				}
+                            ?>
+			    </form>
+			</form>
+				          
+                                        </div>
+                                    </div>
+                                </div>
+                                <br class="clear" />
+                            </div>
+                            <div id="sidebar">
+                                <h3>
+                                </h3>
+				<div class="form">
+                                    <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
+                                    <ol>
+                                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
+                                        <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
+                                        <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                                        <li>Administrar Animales Registrados</li>
+                                    </ol>
+                                </div>
+                                <h3>Enlaces de Interés</h3>
+				<ul class="linkedList">
+                                    <li class="first">
+					<a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
+                                    </li>
+                                    <li>
+					<a href="http://www.google.com.co">Google</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://docs.google.com">Google Docs</a>
+                                    </li>
+				</ul>
+                                <p>&nbsp;</p>
+                            </div>
+                            <br class="clear" />
 			</div>
-</div>
-<div style="margin: 1em 0 3em 0; text-align: center;">
-        Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
-		<br />© 2012.</div>
+                    </div>
+                <div style="margin: 1em 0 3em 0; text-align: center;">
+                    Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+                    <br />Diseñado y Provisto por Zoonisis Team
+                    <br />© 2012.</div>
 <script type="text/javascript">
 var Accordion1 = new Spry.Widget.Accordion("Accordion1");
 </script>
