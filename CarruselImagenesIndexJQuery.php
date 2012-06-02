@@ -6,9 +6,8 @@ session_start();
 include ("conexionMySQL.php");
 #hola
 $conexion = Conectarse();
-$_SESSION['url'] = $_SERVER['REQUEST_URI'];
-$url_anterior = $_SESSION['url'];
-$re=mysql_query("select * from animal");
+#
+$ArregloAnimalesRegistrados=mysql_query("select * from animal");
 
 ?>
 <head>
@@ -169,11 +168,7 @@ $re=mysql_query("select * from animal");
 
     <script type="text/javascript" src="jquery.jcoverflip.js"></script>
 
-    
-
-    
-
-     <script>
+    <script>
 
     jQuery( document ).ready( function(){
 
@@ -266,24 +261,24 @@ $re=mysql_query("select * from animal");
     <div id="wrapper"  >
 
     <ul id="flip">
-
-      <?php
-	  $numerodemascotas=0;
-		#Se hace un mientras para colocar todas las mascotas que se han registrado
-		while($f=mysql_fetch_array($re)){
-			$numerodemascotas=$numerodemascotas+1;
-			?>
-      <li><span class="title"><?php echo $f['Nombre'];?><br /><?php echo $f['Sexo'];?></span><?php
+		<?php
+	 	#Se hace un mientras para colocar todas las mascotas que se han registrado, para enviarselas a flip que hace que se vea el carrusel en el index
+		#en el f queda un arreglo de los datos de cada animal registrado en la BD
+                while($f=mysql_fetch_array($ArregloAnimalesRegistrados)){
+		?>
+      		<li><span class="title">
+	  		<?php 
+                        #codigo para colocar la Nombre de la mascota 
+	  		echo $f['Sexo'];?><br /><?php echo $f['Nombre'];?></span><?php
 			#codigo para colocar la imagen de la mascota 
 			echo'<img src="'.$f['Foto'].'"width="500" heigth="450"/>';
-				?></li>
-      <?php
+			?></li>
+                <?php
 		}
-	  ?>
+	  	?>
 
       
-
-    </ul>
+	</ul>
 
     <div id="scrollbar">c</div>
     </div>
