@@ -16,7 +16,7 @@ try{
 	$consulta1 = "DELETE FROM animal WHERE idAnimal = $animal";
 	$resultado1 = mysql_query($consulta1, $conexion) or die(mysql_error());
 	
-	header ('location:MascotasRegistradas.php?Message=2,&registro="'.$animal.'"'); 
+	header ('location:MascotasRegistradas.php?Message=1,&registro="'.$animal.'"'); 
 	}
 catch(Exception $e){
 	Echo "Sucedió un error inesperado.".$e->getMessage();

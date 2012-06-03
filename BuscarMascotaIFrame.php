@@ -7,6 +7,11 @@ include ("conexionMySQL.php");
 $conexion = Conectarse();
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 $url_anterior = $_SESSION['url'];
+$usuario=$_SESSION['usuario'];
+#usario es un parametro que envia BuscarMascota.php
+$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
+#datos usuario guarda un arreglo con los datos del el usuario
+$datosUsuario=mysql_fetch_array($ret);
 $re=mysql_query("select * from animal");
 $consulta = "SELECT idUsuarioParticulares, Ciudad FROM usuarios";
 #Seleccionar las ciudades en la bd
@@ -36,7 +41,8 @@ $numfilas = mysql_num_rows($resultado);
                         <select name="Tipo" class="form" id="Tipo">
                             <option>Todos</option>
                             <?PHP
-                            if ($numfilas > 0) {  
+                            if ($numfilas > 0) { 
+                                //codigo paracolocar los diferentes tipos de animales registrados en la base de datos 
          			while ($rowEmp = mysql_fetch_assoc($resultado3)) {  
                                     echo " <option value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";  
                                     }
@@ -44,6 +50,11 @@ $numfilas = mysql_num_rows($resultado);
                             ?>
                         </select>
                     </th>
+                    <?
+                    ///////////////////////////////////////////////////////////
+                    /////codigo para colocar las opciones de busqueda/////////
+                    //////////////////////////////////////////////////////////
+                    ?>
                     <th scope="col">Sexo:
                         <select name="Sexo" class="form" id="Sexo">
                         <option>Todos</option>
@@ -55,7 +66,8 @@ $numfilas = mysql_num_rows($resultado);
                         <select name="Ciudad" class="form" id="Ciudad">
                             <option>Todos</option>
                             <?PHP
-                            if ($numfilas > 0) {  
+                            if ($numfilas > 0) {
+                                //codigo paracolocar los diferentes tipos de ciudades registrados en la base de datos 
                                 while ($rowEmp = mysql_fetch_assoc($resultado2)) {  
                                     echo " <option value='".$rowEmp['idCiudades']."'>".$rowEmp['Nombre_Ciudad']."</option>";  
                                     }
@@ -70,13 +82,13 @@ $numfilas = mysql_num_rows($resultado);
                 <input type="submit" name="button" id="button" value="Buscar">
                 <p align="center">
                     <?php
-                    #codigo en caso de que el usuario haclick en algun animal pues este lo saque del iframe y lo envie a enviar solicitud
+                    #codigo en caso de que el usuario haga click en algun animal pues este lo saque del iframe y lo envie a enviar solicitud
                     if(($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/BuscarMascotaIFrame.php?var=0')&&($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/BuscarMascotaIFrame.php?var=2')){
                         echo $url_anterior;
 			$id = $_GET['idAnimal'];
                         echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/SolicitudAdopcion.php?idAnimal='.$id.'>" </script>';
 			}	
-			#codigo para guardar las variables que el usuario escoje para filtrar la busqueda de animales
+			#codigo para guardar las variables que el usuario escoje, para filtrar la busqueda de animales
                     if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/BuscarMascotaIFrame.php?var=0'){
 			echo "/n",$url_anterior;
 			$Tipo1	=	$_POST['Tipo'];
@@ -106,6 +118,8 @@ $numfilas = mysql_num_rows($resultado);
                         <?php
 			#Se hace un mientras para colocar todas las mascotas que se han registrado
 			while($f=mysql_fetch_array($re)){
+                            #se hace una condicion para que no muestre los animales que registro el usuario
+                            if($f['CC_Dueño']!=$datosUsuario['Cedula']){
 			?>
                             <tr>
                                 <th scope="col"> 
@@ -135,9 +149,9 @@ $numfilas = mysql_num_rows($resultado);
                                         <th width="30%" align="center" scope="col">
                                             <?php
                                             $id= $f['idAnimal'];
-                                            #codigo para enviar los valores del animal seleccionado 
+                                            #codigo para enviar los valores del animal seleccionado
+                                            // se envia asi mismo para que en el bloque de codigo de la line  171 se salga del iframe por completo y lo mande con el id del animal a solicitud de adopcion
                                             #Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
-                                            #la variable var no se envia por que no es necesaria
                                             echo "<a href=BuscarMascotaIFrame.php?idAnimal=$id>";
                                             ?>
                                             <?php
@@ -155,6 +169,7 @@ $numfilas = mysql_num_rows($resultado);
                             </th>
                         
                         <?php
+                                }
                             }
 			?>
                     </tr>
