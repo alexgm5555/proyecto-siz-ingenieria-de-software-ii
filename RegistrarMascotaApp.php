@@ -35,7 +35,7 @@ if($conexion){
 	$query = ("insert into animal values (null, 'Particular','$Cedula','$TipoAnimal','En Adopcion','$NombreAnimal','$SexoAnimal','$RazaAnimal','$ColorAnimal','$TamañoAnimal','$EdadAnimal','$PesoAnimal','$FotoAnimal','','$HabilidadAnimal')");/*inserta los valores en la BD*/
 	
 	mysql_query($query)or die(mysql_error());
-	header ('location:MascotasRegistradas.php?Message=4');
+	header ('location:MascotasRegistradas.php?Message=3');
 	}
 
 ?>

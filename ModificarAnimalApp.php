@@ -33,7 +33,7 @@ if($conexion){
 		
 	# Raza = '$RazaAnimal',Sexo = '$SexoAnimal',,Color = '$ColorAnimal',Tamaño = '$TamañoAnimal',Peso = '$PesoAnimal'Habilidad = '$HabilidadAnimal',
 	mysql_query($query)or die(mysql_error());
-	header ('location:MascotasRegistradas.php?Message=3');
+	header ('location:MascotasRegistradas.php?Message=2');
 	}
 
 ?>

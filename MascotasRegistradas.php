@@ -18,8 +18,8 @@ include ("conexionMySQL.php");
 $conexion = Conectarse();  
 $usuario=$_SESSION['usuario'];
 #usari es un parametro que envia BuscarMascota.php
-$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
 #datos usuario guarda un arreglo con los datos del el usuario
+$ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
 $datosUsuario=mysql_fetch_array($ret);
 #sirve para almacenar los registroas de este usario en un arreglo llamado ArregloAnimalesRegistradosUsuario usando en un while de la linea 133
 /* @var $ArregloAnimalesRegistradosUsuario ArrayObject */
@@ -35,16 +35,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 	Released under the Creative Commons Attribution 3.0 License.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<style type="text/css">
--->
-.contenedor{
-	height: 280px;
-	width: 500px;
-	overflow: scroll;
-	visibility: visible;
-	}
--->
-</style>
+
 <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
 <head>
@@ -56,44 +47,40 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 		<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<div id="outer">
-			<div id="header">
-				<div id="logo">
-					<h1> Zoonosis</h1>
-				</div>
-<div id="nav">
-			  		
-                    <ul>
-						<li class="first active"><a href="index.php">Inicio</a></li>			
-						<li><a href="#">Acerca de</a></li>
-                       	<li class="last"><a href="#">Contacto</a></li>
-						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
-					</ul>
-                    
-              <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
-</div>
-			</div>
-			<div id="banner">
-				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
-			</div>
-			<div id="main">
-			  <div id="content">
-				<div id="box1">
-						<h2>Mascotas Que Has Registrado</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
+    <div id="outer">
+	<div id="header">
+            <div id="logo">
+		<h1> Zoonosis</h1>
+            </div>
+            <div id="nav">
+	    <ul>
+		<li class="first active"><a href="index.php">Inicio</a></li>			
+		<li><a href="#">Acerca de</a></li>
+               	<li class="last"><a href="#">Contacto</a></li>
+		<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
+            </ul>
+            <div align="right">Usuario Activo: <?php echo $_SESSION['usuario'];?></div>
+            </div>
+	</div>
+	<div id="banner">
+            <img src="images/pic01.jpg" width="1120" height="240" alt="" />
+	</div>
+	<div id="main">
+            <div id="content">
+		<div id="box1">
+                    <h2>Mascotas Que Has Registrado</h2>
+                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
 					
                                         <?php
-                                        #el siguiente codigo try sirve para mostrar un mensaje de modificacion eliminacion de mascota
+                                        #el siguiente codigo try sirve para mostrar un mensaje de modificacion eliminacion O INSET de mascota
                                                 try {
                                                     $bandera=0;  
                                                     $mensaje = $_GET['Message']; 
                                                     $registro = $_GET['registro']; 
                                                     switch ($mensaje) {
-                                                        case 0:
-                                                            echo "";
-                                                            break;
+                                                        
                                                         #Manda este Mensajesi viene de AdministrarAnimalSeleccionado.php y selecciona Eliminar Registro
-							case 2:	
+							case 1:	
                                                             echo    "<table width='auto' border='0'>
                                                                         <tr>
                                                                             <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
@@ -102,7 +89,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
                                                                      </table>";
                                                             break;
 							#Manda este Mensaje si viene de AdministrarAnimalSeleccionado.php y selecciona Modificar Registro
-							case 3:
+							case 2:
                                                             echo    "<table width='auto' border='0'>
                                                                         <tr>
                                                                             <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
@@ -112,7 +99,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 									
                                                             break;
                                                         #Manda este Mensaje si viene de RegistrarMascota.php 
-							case 4:
+							case 3:
                                                             echo "  <table width='auto' border='0'>
                                                                         <tr>
                                                                             <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
