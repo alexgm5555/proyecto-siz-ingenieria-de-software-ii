@@ -2,7 +2,7 @@
 <?php
 error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
-/*session_start();
+session_start();
 if ( isset( $_SESSION['usuario'])) {
 
 //Permite continuar en la página
@@ -10,7 +10,7 @@ if ( isset( $_SESSION['usuario'])) {
 else{	
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
-*/
+
 
 include ("conexionMySQL.php");
 $conexion = Conectarse();
