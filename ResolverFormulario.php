@@ -10,12 +10,18 @@
 
 <?php 
 
+
 //Este bloque de PHP nos permite guardar en la Base de Datos las variables solicitadas 
 //al usuario en FormularioRegistro.php
 session_start();
 
 $conexion = true;
-$url_anterior = $_SESSION['url'];
+
+if(isset($_SESSION['url'])){
+$url_anterior = $_SESSION['url'];}
+else{
+	$url_anterior=$_SERVER['REQUEST_URI'];
+	}
 $NombreUsuario = $_POST['NombresUsuario'];
 $ApellidoUsuario = $_POST['ApellidosUsuario'];
 $DocumentoUsuario = $_POST['DocumentoUsuario'];
