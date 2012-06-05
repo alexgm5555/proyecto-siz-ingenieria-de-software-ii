@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-//error_reporting("E_PARSE");
+error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 /*session_start();
 if ( isset( $_SESSION['usuario'])) {
@@ -167,16 +167,42 @@ echo renderChartHTML("Column3D.swf", "",$strXML, "Estadisticas", 700, 400, false
                   </h3>
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
-                      <ol>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Módulo</li>
-                        <li>Estadísticas</li>
-                      </ol>
+					  <p>
+					    <?php  // se muestran las opciones que corresponden a cada tipo de usuario dependiente del tipo de usuario que se haya registrado al iniciar sesión.
+					  		$tipoUsuario = $_SESSION['tipoUsuario'];
+							if($tipoUsuario == "Administrador"){$tipo=0;};
+							if($tipoUsuario == "Empleado"){$tipo=1;};
+							if($tipoUsuario == "Particular"){$tipo=2;};
+							switch ($tipo){
+								
+								//Caso en que sea Administrador
+								case 0:
+								echo   "<li><a href='AdministracionUsuarios.php'>Administracion de Usuarios</a></li>
+                                                                        <li><a href='AdministracionAnimales.php'>Administración de Animales</a></li>
+                                                                        <li><a href='AdministracionEmpleados.php'>Administración de Empleados</a></li>
+                                                                        <li><a href='AdministracionSedes.php'>Administración de Sedes</a></li>
+                                                                        <li><a href='Estadisticas.php'>Estadísticas</a></li>";
+								break;
+								
+								//Caso en que sea Empleado
+								case 1:
+								echo   "<li><a href='#'>Registrar Animal</a></li>
+																		<li><a href='RegistrarMascotaEmpleados.php'>Registrar Animal</a></li>
+                                                                        <li><a href='#'>Eliminar Animal</a></li>
+                                                                        <li><a href='#'>Modificar Animal</a></li>
+                                                                        <li><a href='#'>Consultar Solicitudes de Adopción</a></li>";
+								break;
+								
+								//Caso en que sea Particular
+								case 2:
+								echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/MascotasRegistradas.php" </script>';
+								echo   "<li><a href='RegistrarMascota.php'>Registrar Animales</a></li>
+                                                                        <li><a href='BuscarMascota.php'>Búsqueda de Animales</a></li>
+																		<li><a href='MascotasRegistradas.php'>Administrar Animales</a></li>";
+								break;
+							}
+					  ?>
+				      </p>
                   </div>
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">
