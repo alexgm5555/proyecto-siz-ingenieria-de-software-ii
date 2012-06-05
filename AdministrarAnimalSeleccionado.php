@@ -357,10 +357,10 @@ td {
                 <div class="form">
                     <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                     <ol>
-                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
+                        <li><a href="MascotasRegistradas.php">Pagina Inicio</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
+                        <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
                     </ol>
                  </div>
                 <h3>Enlaces de Interés</h3>

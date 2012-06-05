@@ -23,12 +23,17 @@ $datosUsuario=mysql_fetch_array($ret);
 		 
 		 $idAnimal=$f['idAnimal'];
 		 $Propietario=$f['CC_Dueño']; 
-		   
-		$query = ("insert into solicitud_adopcion values ( '', '$Cedula', '$idAnimal', 'En Espera' , '$Propietario')");
+		 $arregloSolicitudes=mysql_query("select * from solicitud_adopcion WHERE CC_Solicitante='".$Cedula."'and id_Animal ='".$idAnimal."'");
+		 $farreglosol=mysql_fetch_array($arregloSolicitudes);
+		 if(!$farreglosol){
+			 $query = ("insert into solicitud_adopcion values ( '', '$Cedula', '$idAnimal', 'En Espera' , '$Propietario')");
 		mysql_query($query)or die(mysql_error()); 
             
 		#se insertan los datos de solicitante y del animal en la tablasolicitud adopcion
 		
+		
+			 }
+  
 		header ('location:BuscarMascota.php?Message=1');
         }
 		
