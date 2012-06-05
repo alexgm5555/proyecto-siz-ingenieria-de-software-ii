@@ -182,6 +182,15 @@ error_reporting("E_PARSE");
 			return 0; 
     }
 	
+	//Se valida si el campo de email tiene el formato de email correcto
+	
+    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
+    if(!re.exec(emailUsuario))    {
+        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
+		document.loginform.emailUsuario.focus();
+		return 0; 
+    }
+	
 	//Se valida que el celular sea numerico
 	Numer=parseInt(CelularUsuario);
     if (isNaN(Numer)){
@@ -189,7 +198,13 @@ error_reporting("E_PARSE");
 			document.loginform.CelularUsuario.focus();
 			return 0; 
     }
-                      
+	
+	//Se valida si las contraseñas son iguales
+	if(Password != confPassword){
+		alert("Las contraseñas no coinciden. Por favor ingréselas de nuevo.");
+		document.loginform.CelularUsuario.focus();
+		return 0; 
+	}
 	
 	//el formulario se envia 
    
