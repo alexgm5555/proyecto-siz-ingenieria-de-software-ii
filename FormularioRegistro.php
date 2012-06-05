@@ -34,6 +34,7 @@ error_reporting("E_PARSE");
 	
 	var patron = /'/;
 	var patron2 = /"/;
+	var patron3 = /;/;
 	
 	//valido el usuario
 	
@@ -101,19 +102,69 @@ error_reporting("E_PARSE");
     }             
 	
 		
-	//El nombre no puede contener comillas ni simples ni normales
-	else if (NombresUsuario.search(patron) != -1 || NombresUsuario.search(patron2) != -1){ 
-       alert("El Nombre no puede llevar comillas.") 
+	//El nombre no puede contener caracteres especiales
+	else if (NombresUsuario.search(patron) != -1 || NombresUsuario.search(patron2) != -1 || NombresUsuario.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
        document.loginform.NombresUsuario.focus() 
        return 0; 
     } 
 	
-	//El apellido no puede contener comillas ni simples ni normales
-	else if (ApellidosUsuario.search(patron) != -1 || ApellidosUsuario.search(patron2) != -1){ 
-       alert("El Apellido no puede llevar comillas.") 
+	//El apellido no puede contener caracteres especiales
+	else if (ApellidosUsuario.search(patron) != -1 || ApellidosUsuario.search(patron2) != -1 || ApellidosUsuario.search(patron3) != -1){ 
+       alert("El Apellido no puede llevar caracteres especiales.") 
        document.loginform.ApellidosUsuario.focus() 
        return 0; 
-    } 
+    }
+	
+	//El documento no puede contener caracteres especiales
+	else if (DocumentoUsuario.search(patron) != -1 || DocumentoUsuario.search(patron2) != -1 || DocumentoUsuario.search(patron3) != -1){ 
+       alert("El Documento no puede llevar caracteres especiales.") 
+       document.loginform.DocumentoUsuario.focus() 
+       return 0; 
+    }
+	
+	//El email no puede contener caracteres especiales
+	else if (emailUsuario.search(patron) != -1 || emailUsuario.search(patron2) != -1 || emailUsuario.search(patron3) != -1){ 
+       alert("El Email no puede llevar caracteres especiales excepto @.") 
+       document.loginform.emailUsuario.focus() 
+       return 0; 
+    }
+	
+	//El email no puede contener caracteres especiales
+	else if (telefonoUsuario.search(patron) != -1 || telefonoUsuario.search(patron2) != -1 || telefonoUsuario.search(patron3) != -1){ 
+       alert("El Teléfono no puede llevar caracteres especiales.") 
+       document.loginform.telefonoUsuario.focus() 
+       return 0; 
+    }  
+	
+	//El email no puede contener caracteres especiales
+	else if (CelularUsuario.search(patron) != -1 || CelularUsuario.search(patron2) != -1 || CelularUsuario.search(patron3) != -1){ 
+       alert("El Celular no puede llevar caracteres especiales.") 
+       document.loginform.CelularUsuario.focus() 
+       return 0; 
+    }
+	
+	//El usuario no puede contener caracteres especiales
+	else if (UserName.search(patron) != -1 || UserName.search(patron2) != -1 || UserName.search(patron3) != -1){ 
+       alert("El Nombre de Usuario no puede llevar caracteres especiales.") 
+       document.loginform.UserName.focus() 
+       return 0; 
+    }
+	
+	
+	//La contraseña no puede contener caracteres especiales
+	else if (Password.search(patron) != -1 || Password.search(patron2) != -1 || Password.search(patron3) != -1){ 
+       alert("La Contraseña no puede llevar caracteres especiales.") 
+       document.loginform.Password.focus() 
+       return 0; 
+    }
+	
+	//La confirmacion de la contraseña no puede contener caracteres especiales
+	else if (confPassword.search(patron) != -1 || confPassword.search(patron2) != -1 || confPassword.search(patron3) != -1){ 
+       alert("La confirmación de la Contraseña no puede llevar caracteres especiales.") 
+       document.loginform.confPassword.focus() 
+       return 0; 
+    }                  
 	
 	//el formulario se envia 
    
