@@ -164,7 +164,32 @@ error_reporting("E_PARSE");
        alert("La confirmación de la Contraseña no puede llevar caracteres especiales.") 
        document.loginform.confPassword.focus() 
        return 0; 
-    }                  
+    }   
+	
+	//Se valida que el documento sea numerico
+	Numer=parseInt(DocumentoUsuario);
+    if (isNaN(Numer)){
+            alert("El Documento ingresado no es válido.");
+			document.loginform.DocumentoUsuario.focus();
+			return 0; 
+    }
+	
+	//Se valida que el telefono sea numerico
+	Numer=parseInt(telefonoUsuario);
+    if (isNaN(Numer)){
+            alert("El Teléfono ingresado no es válido.");
+			document.loginform.telefonoUsuario.focus();
+			return 0; 
+    }
+	
+	//Se valida que el celular sea numerico
+	Numer=parseInt(CelularUsuario);
+    if (isNaN(Numer)){
+            alert("El Celular ingresado no es válido.");
+			document.loginform.CelularUsuario.focus();
+			return 0; 
+    }
+                      
 	
 	//el formulario se envia 
    
