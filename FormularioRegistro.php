@@ -100,31 +100,18 @@ error_reporting("E_PARSE");
        return 0; 
     }             
 	
-	//El usuario no puede ser mayor que 20 caracteres
-	else if (document.loginform.usuario.value.length > 40){ 
-       alert("El usuario no puede contener más de 40 caracteres.") 
-       document.loginform.usuario.focus() 
-       return 0; 
-    }
-	
-	//La contraseña no puede ser mayor que 20 caracteres
-	else if (document.loginform.contrasena.value.length > 40){ 
-       alert("La contraseña no puede contener más de 40 caracteres.") 
-       document.loginform.contrasena.focus() 
+		
+	//El nombre no puede contener comillas ni simples ni normales
+	else if (NombresUsuario.search(patron) != -1 || NombresUsuario.search(patron2) != -1){ 
+       alert("El Nombre no puede llevar comillas.") 
+       document.loginform.NombresUsuario.focus() 
        return 0; 
     } 
 	
-	//El usuario no puede contener comillas ni simples ni normales
-	else if (usuarioc.search(patron) != -1 || usuarioc.search(patron2) != -1){ 
-       alert("El Usuario no puede llevar comillas.") 
-       document.loginform.usuario.focus() 
-       return 0; 
-    } 
-	
-	//La contraseña no puede contener comillas ni simples ni normales
-	else if (contrasenac.search(patron) != -1 || contrasenac.search(patron2) != -1){ 
-       alert("La Contraseña no puede llevar comillas.") 
-       document.loginform.contrasena.focus() 
+	//El apellido no puede contener comillas ni simples ni normales
+	else if (ApellidosUsuario.search(patron) != -1 || ApellidosUsuario.search(patron2) != -1){ 
+       alert("El Apellido no puede llevar comillas.") 
+       document.loginform.ApellidosUsuario.focus() 
        return 0; 
     } 
 	
