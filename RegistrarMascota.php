@@ -93,7 +93,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 				
 				<div id="box1">
 						<h2>Mascotas Que Has Registrado</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás insertar el registro de un animal.</div>
 					
 			    <?php		
 						try {
@@ -142,42 +142,42 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			            <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
 		              </div>
 			          <div class="AccordionPanel">
-			            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 			              <tr>
 			                <th scope="col"> <form action="RegistrarMascotaApp.php" method="post" enctype="multipart/form-data" id="form1">
-			                  <table width="713" border="0">
+			                  <table width="627" height="308" border="0" align="center">
 			                    <tr>
 			                      <?php
 
  ?>
-			                      <td width="63">Nombre:</td>
-			                      <td width="268"><label
+			                      <td width="67" align="left" >Nombre:</td>
+			                      <td width="194"><label
 for="nombreSede2"></label>
 			                        <input name="NombreAnimal"
 type="text" id="NombreAnimal" value=""
-size="45px" /></td>
-			                      <td width="68">Peso:</td>
-			                      <td width="296"><input
-name="PesoAnimal" type="text" id="PesoAnimal" value="" size="45px" /></td>
+size="30px" /></td>
+			                      <td width="103">Peso:</td>
+			                      <td width="243" align="left"><input
+name="PesoAnimal" type="text" id="PesoAnimal" value="" size="30px" / ></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Raza:</td>
 			                      <td><input name="RazaAnimal"
 type="text" id="RazaAninal" value=""
-size="45px" /></td>
+size="30px" /></td>
 			                      <td>Habilidad:</td>
-			                      <td><input name="HabilidadAnimal"
+			                      <td align="left"><input name="HabilidadAnimal"
 type="text" id="HabilidadAnimal" value=""
-size="45px" /></td>
+size="30px" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Sexo:</td>
-			                      <td><select name="SexoAnimal" id="SexoAnimal">
+			                      <td align="left"><select name="SexoAnimal" id="SexoAnimal">
 			                        <option>Macho</option>
 			                        <option>Hembra</option>
 		                          </select></td>
 			                      <td>Tipo de Animal:</td>
-			                      <td><select name="Tipo" class="form" id="Tipo">
+			                      <td align="left"><select name="Tipo" class="form" id="Tipo">
 			                        
 			                        <?PHP
 					  
@@ -195,10 +195,10 @@ size="45px" /></td>
 			                    <tr>
 			                      <td>Edad:</td>
 			                      <td><input name="EdadAnimal"
-type="text" id="Edad" value="" size="45px"
+type="text" id="Edad" value="" size="30px"
 /></td>
 			                      <td>Estado Animal:</td>
-			                      <td><select name="EstadoAnimal" class="form"
+			                      <td align="left"><select name="EstadoAnimal" class="form"
 id="EstadoAnimal">
 			                        <?PHP
                                                                        //////////////////////////////////////
@@ -217,16 +217,16 @@ value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
 			                    <tr>
 			                      <td>Color:</td>
 			                      <td><input name="ColorAnimal"
-type="text" id="ColorAnimal" value="" size="45px"
+type="text" id="ColorAnimal" value="" size="30px"
 /></td>
 			                      <td>Foto: </td>
-			                      <td><input type="file" name="FotoAnimal" id="FotoAnimal" /></td>
+			                      <td align="left"><input name="FotoAnimal" type="file" id="FotoAnimal" size="10px" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Tamaño:</td>
 			                      <td><input name="TamañoAnimal"
 type="text" id="TamañoAnimal" value=""
-size="45px" /></td>
+size="30px" /></td>
 			                      <td>&nbsp;</td>
 			                      <td>&nbsp;</td>
 		                        </tr>
@@ -258,10 +258,9 @@ name="login" value="Registrar" class="inputButton" />
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
+                        <li><a href="MascotasRegistradas.php">Pagina Inicio</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li>Administrar Animales Registrados</li>
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>

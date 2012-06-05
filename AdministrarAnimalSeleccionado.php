@@ -215,7 +215,7 @@ td {
                                 <p align="center">Por favor seleccione la sede que desea modificar:&nbsp;</p>
                                 <form action="ModificarAnimalApp.php" method="post" enctype="multipart/form-data" id="form2">
                                     <p align="center">
-                                    <table width="690" border="0" align="center" >
+                                    <table width="610" border="0" align="center" >
                                         <tr>
                                             <td width="30">&nbsp;</td>                                  
                                             <td width="60">Nombre:</td>
