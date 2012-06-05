@@ -47,14 +47,14 @@ error_reporting("E_PARSE");
     } 
 	
 	//El usuario no puede ser mayor que 20 caracteres
-	else if (document.loginform.usuario.value.length > 20){ 
+	else if (document.loginform.usuario.value.length > 40){ 
        alert("El usuario no puede contener más de 20 caracteres.") 
        document.loginform.usuario.focus() 
        return 0; 
     }
 	
 	//La contraseña no puede ser mayor que 20 caracteres
-	else if (document.loginform.contrasena.value.length > 20){ 
+	else if (document.loginform.contrasena.value.length > 40){ 
        alert("La contraseña no puede contener más de 20 caracteres.") 
        document.loginform.contrasena.focus() 
        return 0; 
