@@ -3,7 +3,13 @@ include ("conexionMySQL.php");
 $conexion = Conectarse();
 $usuario=$_POST['usuario'];
 $contrasena=$_POST['contrasena'];
-$consulta = "SELECT * from usuarios where UserName='$usuario' and Password='$contrasena'";
+
+//Se rediseña la consulta para evitar sql injection y ataques similares.
+//$consulta = "SELECT * from usuarios where UserName='$usuario' and Password='$contrasena'";
+
+$consulta = sprintf("SELECT * FROM usuarios WHERE UserName='".mysql_real_escape_string($usuario)."' 
+and Password='".mysql_real_escape_string($contrasena)."'");
+
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
 $numfilas = mysql_num_rows($resultado);         							
       							  
@@ -20,4 +26,5 @@ if($numfilas > 0){
 else{
         header ('location:index.php?LoginMesagge=1'); 
 }
+
 ?>

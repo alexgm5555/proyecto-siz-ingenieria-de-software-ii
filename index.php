@@ -48,14 +48,14 @@ error_reporting("E_PARSE");
 	
 	//El usuario no puede ser mayor que 20 caracteres
 	else if (document.loginform.usuario.value.length > 40){ 
-       alert("El usuario no puede contener más de 20 caracteres.") 
+       alert("El usuario no puede contener más de 40 caracteres.") 
        document.loginform.usuario.focus() 
        return 0; 
     }
 	
 	//La contraseña no puede ser mayor que 20 caracteres
 	else if (document.loginform.contrasena.value.length > 40){ 
-       alert("La contraseña no puede contener más de 20 caracteres.") 
+       alert("La contraseña no puede contener más de 40 caracteres.") 
        document.loginform.contrasena.focus() 
        return 0; 
     } 
@@ -137,7 +137,7 @@ error_reporting("E_PARSE");
 			  <div id="box2">
 						<h2>En Zoonosis ellos son nuestros amigos</h2>
 						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
-					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
+					y la respuesta es muy sencilla, están por todo el planeta. En Zoonosis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
 					
 					
 					<br class="clear" />
@@ -192,7 +192,7 @@ error_reporting("E_PARSE");
 					<div class="form">
 						<form action="loginApp.php" method="post" id="loginform" name="loginform">
 <p>
-				<label for="usuario" class="login">Usuario</label> <input type="text" name="usuario" id="usuario" class="inputBox" onkeyup="onEnter(event.keyCode);" />
+				<label for="usuario" class="login">Usuario</label> <input name="usuario" type="text" class="inputBox" id="usuario" onkeyup="onEnter(event.keyCode);" maxlength="40" />
 						</p>
 <p>
 				<label for="contrasena" class="login">Contraseña</label> <input type="password" name="contrasena" id="contrasena" class="inputBox" onkeyup="onEnter(event.keyCode);" />
