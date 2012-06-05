@@ -28,7 +28,15 @@ $numfilas3 = mysql_num_rows($resultado);
 
 $consulta = "SELECT * from solicitud_adopcion";
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-$numfilas4 = mysql_num_rows($resultado);     							
+$numfilas4 = mysql_num_rows($resultado);
+
+$consulta = "SELECT * from sedes";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas5 = mysql_num_rows($resultado);
+
+$consulta = "SELECT * from estado_animal where idEstado_Animal = 1";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas6 = mysql_num_rows($resultado);      							
       							  
 
 ?>
@@ -82,7 +90,8 @@ $intTotalAnio1 = $numfilas1;
 $intTotalAnio2 = $numfilas2;
 $intTotalAnio3 = $numfilas3;
 $intTotalAnio4 = $numfilas4;
-$intTotalAnio5 = 145;
+$intTotalAnio5 = $numfilas5;
+$intTotalAnio6 = $numfilas6;
 // $strXML: Para concatenar los parámetros finales para el gráfico.
 $strXML = "";
 // Armo los parámetros para el gráfico. Todos estos datos se concatenan en una variable.
@@ -92,7 +101,7 @@ $strXML = "";
 // baseFontSize: Tamaño de la fuente que se usará en el gráfico.
 // showValues: = 1 indica que se mostrarán los valores de cada barra. = 0 No mostrará los valores en el gráfico.
 // xAxisName: define el texto que irá sobre el eje X. Abajo del gráfico. También está xAxisName.
-$strXML = "<chart caption = 'Estadísticas Generales' bgColor='#CDDEE5' baseFontSize='12' showValues='1' xAxisName='Variables' >";
+$strXML = "<chart caption = 'Estadísticas Generales' bgColor='#CDDEE5' baseFontSize='12' showValues='1' xAxisName='SIZ: Estadísticas Generales del Sistema' >";
 // Armado de cada barra.
 // set label: asigno el nombre de cada barra.
 // value: asigno el valor para cada barra.
@@ -101,7 +110,8 @@ $strXML .= "<set label = 'Usuarios registrados' value ='".$intTotalAnio1."' colo
 $strXML .= "<set label = 'Tipos de animales existentes' value ='".$intTotalAnio2."' color = '6D8D16' />";
 $strXML .= "<set label = 'Tipos de usuarios activos' value ='".$intTotalAnio3."' color = 'FFBA00' />";
 $strXML .= "<set label = 'Solicitudes de adopción en proceso' value ='".$intTotalAnio4."' color = '0000FF' />";
-$strXML .= "<set label = 'Anio 4' value ='".$intTotalAnio5."' color = 'FFBA00' />";
+$strXML .= "<set label = 'Numero de Sedes activas' value ='".$intTotalAnio5."' color = 'FFBA00' />";
+$strXML .= "<set label = 'Animales en Adopción' value ='".$intTotalAnio6."' color = 'FFBA00' />";
 // Cerramos la etiqueta "chart".
 $strXML .= "</chart>";
 // Por último imprimo el gráfico.
@@ -113,7 +123,7 @@ $strXML .= "</chart>";
 // 4to parámetro: "ejemplo". Es el identificador del gráfico. Puede ser cualquier nombre.
 // 5to y 6to parámetro: indica ancho y alto que tendrá el gráfico.
 // 7mo parámetro: "false". Trata del "modo debug". No es im,portante en nuestro caso, pero pueden ponerlo a true ara probarlo.
-echo renderChartHTML("Column3D.swf", "",$strXML, "ejemplo", 500, 400, false);
+echo renderChartHTML("Column3D.swf", "",$strXML, "Estadisticas", 700, 400, false);
 ?>                 
                         
                      
