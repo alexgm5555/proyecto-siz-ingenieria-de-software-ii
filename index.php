@@ -47,14 +47,14 @@ error_reporting("E_PARSE");
     } 
 	
 	//El usuario no puede ser mayor que 20 caracteres
-	else if (document.loginform.usuario.value.length > 20){ 
+	else if (document.loginform.usuario.value.length > 40){ 
        alert("El usuario no puede contener más de 20 caracteres.") 
        document.loginform.usuario.focus() 
        return 0; 
     }
 	
 	//La contraseña no puede ser mayor que 20 caracteres
-	else if (document.loginform.contrasena.value.length > 20){ 
+	else if (document.loginform.contrasena.value.length > 40){ 
        alert("La contraseña no puede contener más de 20 caracteres.") 
        document.loginform.contrasena.focus() 
        return 0; 
@@ -98,7 +98,7 @@ error_reporting("E_PARSE");
 		<div id="outer">
 			<div id="header">
 				<div id="logo">
-					<h1><img src="images/Logo1.png" alt="" width="592" height="159" /></h1>
+					<h1><img src="images/Logo2.png" alt="" width="500" height="200" /></h1>
 				</div>
 <div id="nav">
 			  <ul>
