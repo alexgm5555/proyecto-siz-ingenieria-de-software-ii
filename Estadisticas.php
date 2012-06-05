@@ -20,7 +20,15 @@ $numfilas1 = mysql_num_rows($resultado);
 
 $consulta = "SELECT * from tipos_animal";
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-$numfilas2 = mysql_num_rows($resultado);         							
+$numfilas2 = mysql_num_rows($resultado);   
+
+$consulta = "SELECT * from tiposusuarios";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas3 = mysql_num_rows($resultado);   
+
+$consulta = "SELECT * from solicitud_adopcion";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas4 = mysql_num_rows($resultado);     							
       							  
 
 ?>
@@ -72,8 +80,8 @@ include "Functions.php";
 // Inicializo las variables a utilizar.
 $intTotalAnio1 = $numfilas1;
 $intTotalAnio2 = $numfilas2;
-$intTotalAnio3 = 118;
-$intTotalAnio4 = 145;
+$intTotalAnio3 = $numfilas3;
+$intTotalAnio4 = $numfilas4;
 $intTotalAnio5 = 145;
 // $strXML: Para concatenar los parámetros finales para el gráfico.
 $strXML = "";
@@ -91,8 +99,8 @@ $strXML = "<chart caption = 'Estadísticas Generales' bgColor='#CDDEE5' baseFont
 // color: color que tendrá cada barra. Si no lo defino, tomará colores por defecto.
 $strXML .= "<set label = 'Usuarios registrados' value ='".$intTotalAnio1."' color = 'EA1000' />";
 $strXML .= "<set label = 'Tipos de animales existentes' value ='".$intTotalAnio2."' color = '6D8D16' />";
-$strXML .= "<set label = 'Anio 3' value ='".$intTotalAnio3."' color = 'FFBA00' />";
-$strXML .= "<set label = 'Anio 4' value ='".$intTotalAnio4."' color = '0000FF' />";
+$strXML .= "<set label = 'Tipos de usuarios activos' value ='".$intTotalAnio3."' color = 'FFBA00' />";
+$strXML .= "<set label = 'Solicitudes de adopción en proceso' value ='".$intTotalAnio4."' color = '0000FF' />";
 $strXML .= "<set label = 'Anio 4' value ='".$intTotalAnio5."' color = 'FFBA00' />";
 // Cerramos la etiqueta "chart".
 $strXML .= "</chart>";
