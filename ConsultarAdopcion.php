@@ -88,7 +88,7 @@ if($Ciudad=='Todos'){
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>Zoonisis</title>
+		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -118,7 +118,7 @@ if($Ciudad=='Todos'){
 				
 					<div id="box1">
 						<h2>Pagina de Inicio</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonisis.</div>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar administrar las Sedes de Zoonosis.</div>
 					
       <p>
                  <?php		
@@ -216,7 +216,7 @@ if($Ciudad=='Todos'){
 </div>
 <div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
+			<br />Diseñado y Provisto por Zoonosis Team
 		<br />© 2012.</div>
 <script type="text/javascript">
 var Accordion1 = new Spry.Widget.Accordion("Accordion1");
