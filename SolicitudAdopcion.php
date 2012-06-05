@@ -201,6 +201,7 @@ function EnviarDatos($animal,$usario) {
                         <li><a href="MascotasRegistradas.php">Pagina Inicial</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
+                        <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
                         
                       </ol>
                   </div>
