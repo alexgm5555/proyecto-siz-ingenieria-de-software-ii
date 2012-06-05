@@ -36,7 +36,15 @@ $numfilas5 = mysql_num_rows($resultado);
 
 $consulta = "SELECT * from estado_animal where idEstado_Animal = 1";
 $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
-$numfilas6 = mysql_num_rows($resultado);      							
+$numfilas6 = mysql_num_rows($resultado);  
+
+$consulta = "SELECT * from estado_animal where idEstado_Animal = 2";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas7 = mysql_num_rows($resultado);
+
+$consulta = "SELECT * from estados_solicitud";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas8 = mysql_num_rows($resultado);          	    							
       							  
 
 ?>
@@ -92,6 +100,8 @@ $intTotalAnio3 = $numfilas3;
 $intTotalAnio4 = $numfilas4;
 $intTotalAnio5 = $numfilas5;
 $intTotalAnio6 = $numfilas6;
+$intTotalAnio7 = $numfilas7;
+$intTotalAnio8 = $numfilas8;
 // $strXML: Para concatenar los parámetros finales para el gráfico.
 $strXML = "";
 // Armo los parámetros para el gráfico. Todos estos datos se concatenan en una variable.
@@ -111,7 +121,9 @@ $strXML .= "<set label = 'Tipos de animales existentes' value ='".$intTotalAnio2
 $strXML .= "<set label = 'Tipos de usuarios activos' value ='".$intTotalAnio3."' color = 'FFBA00' />";
 $strXML .= "<set label = 'Solicitudes de adopción en proceso' value ='".$intTotalAnio4."' color = '0000FF' />";
 $strXML .= "<set label = 'Numero de Sedes activas' value ='".$intTotalAnio5."' color = 'FFBA00' />";
-$strXML .= "<set label = 'Animales en Adopción' value ='".$intTotalAnio6."' color = 'FFBA00' />";
+$strXML .= "<set label = 'Animales en Adopción' value ='".$intTotalAnio6."' color = '6D8D16' />";
+$strXML .= "<set label = 'Animales Perdidos' value ='".$intTotalAnio7."' color = 'EA1000' />";
+$strXML .= "<set label = 'Estados de solicitudes activas' value ='".$intTotalAnio8."' color = '0000FF' />";
 // Cerramos la etiqueta "chart".
 $strXML .= "</chart>";
 // Por último imprimo el gráfico.
