@@ -11,6 +11,14 @@ else{
 	header ('location:index.php?LoginMesagge=2'); 
 	} 
 */
+
+include ("conexionMySQL.php");
+$conexion = Conectarse();
+$consulta = "SELECT * from usuarios";
+$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+$numfilas = mysql_num_rows($resultado);         							
+      							  
+
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -50,7 +58,7 @@ else{
 						<h2><?php echo $_SESSION['usuario'];?>- Estadísticas</h2>
 						<p>A continuación se muestran las estadísticas generales del Sistema:</p>
 						
-						<p>
+						<p align="center">
                         <?php
 // archivos incluidos. Librerías PHP para poder graficar.
 include "FusionCharts.php";
@@ -58,7 +66,7 @@ include "Functions.php";
 // Gráfico de Barras. 4 Variables, 4 barras.
 // Estas variables serán usadas para representar los valores de cada unas de las 4 barras.
 // Inicializo las variables a utilizar.
-$intTotalAnio1 = 350;
+$intTotalAnio1 = $numfilas;
 $intTotalAnio2 = 440;
 $intTotalAnio3 = 118;
 $intTotalAnio4 = 145;
@@ -77,7 +85,7 @@ $strXML = "<chart caption = 'Estadísticas Generales' bgColor='#CDDEE5' baseFont
 // set label: asigno el nombre de cada barra.
 // value: asigno el valor para cada barra.
 // color: color que tendrá cada barra. Si no lo defino, tomará colores por defecto.
-$strXML .= "<set label = 'Anio 1' value ='".$intTotalAnio1."' color = 'EA1000' />";
+$strXML .= "<set label = 'Usuarios Registrados en el Sistema' value ='".$intTotalAnio1."' color = 'EA1000' />";
 $strXML .= "<set label = 'Anio 2' value ='".$intTotalAnio2."' color = '6D8D16' />";
 $strXML .= "<set label = 'Anio 3' value ='".$intTotalAnio3."' color = 'FFBA00' />";
 $strXML .= "<set label = 'Anio 4' value ='".$intTotalAnio4."' color = '0000FF' />";
