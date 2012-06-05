@@ -192,7 +192,7 @@ error_reporting("E_PARSE");
 					<div class="form">
 						<form action="loginApp.php" method="post" id="loginform" name="loginform">
 <p>
-				<label for="usuario" class="login">Usuario</label> <input type="text" name="usuario" id="usuario" class="inputBox" onkeyup="onEnter(event.keyCode);" />
+				<label for="usuario" class="login">Usuario</label> <input name="usuario" type="text" class="inputBox" id="usuario" onkeyup="onEnter(event.keyCode);" maxlength="40" />
 						</p>
 <p>
 				<label for="contrasena" class="login">Contraseña</label> <input type="password" name="contrasena" id="contrasena" class="inputBox" onkeyup="onEnter(event.keyCode);" />
