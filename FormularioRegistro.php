@@ -22,26 +22,83 @@ error_reporting("E_PARSE");
     <script language="javascript">
 
 	function valida_envia(){ 
-	var usuarioc = document.loginform.usuario.value;
-	var contrasenac = document.loginform.contrasena.value;
+	var NombresUsuario = document.loginform.NombresUsuario.value;
+	var ApellidosUsuario = document.loginform.ApellidosUsuario.value;
+	var DocumentoUsuario = document.loginform.DocumentoUsuario.value;
+	var emailUsuario = document.loginform.emailUsuario.value;
+	var telefonoUsuario = document.loginform.telefonoUsuario.value;
+	var CelularUsuario = document.loginform.CelularUsuario.value;
+	var UserName = document.loginform.UserName.value;
+	var Password = document.loginform.Password.value;
+	var confPassword = document.loginform.confPassword.value;
+	
 	var patron = /'/;
 	var patron2 = /"/;
 	
 	//valido el usuario
 	
 	// El usuario no puede ser vacio:
-    if (document.loginform.usuario.value.length==0){ 
+    if (NombresUsuario.length==0){ 
        alert("Ingrese un nombre de Usuario") 
-       document.loginform.usuario.focus() 
+       document.loginform.NombresUsuario.focus() 
        return 0; 
     } 
 	
-	// La contraseña no puede ser vacia:
-    else if (document.loginform.contrasena.value.length==0){ 
-       alert("La contraseña no puede ser vacía.") 
-       document.loginform.contrasena.focus() 
+	// El apellido no puede ser vacio:
+    else if (ApellidosUsuario.length==0){ 
+       alert("El Apellido no puede ser vacío.") 
+       document.loginform.ApellidosUsuario.focus() 
        return 0; 
     } 
+	
+	// El documento no puede ser vacio:
+    else if (DocumentoUsuario.length==0){ 
+       alert("El Documento no puede ser vacío.") 
+       document.loginform.DocumentoUsuario.focus() 
+       return 0; 
+    }
+	
+	// El email no puede ser vacio:
+    else if (emailUsuario.length==0){ 
+       alert("El email no puede ser vacío.") 
+       document.loginform.emailUsuario.focus() 
+       return 0; 
+    }
+	
+	// El telefono no puede ser vacio:
+    else if (telefonoUsuario.length==0){ 
+       alert("El teléfono no puede ser vacío.") 
+       document.loginform.telefonoUsuario.focus() 
+       return 0; 
+    }
+	
+	// El celular no puede ser vacio:
+    else if (CelularUsuario.length==0){ 
+       alert("El celular no puede ser vacío.") 
+       document.loginform.CelularUsuario.focus() 
+       return 0; 
+    }
+	
+	// El usuario no puede ser vacio:
+    else if (UserName.length==0){ 
+       alert("El usuario no puede ser vacío.") 
+       document.loginform.UserName.focus() 
+       return 0; 
+    }
+	
+	// La contraseña no puede ser vacia:
+    else if (Password.length==0){ 
+       alert("La contraseña no puede ser vacía.") 
+       document.loginform.Password.focus() 
+       return 0; 
+    }
+	
+	//  Confirmar contraseña no puede ser vacia:
+    else if (confPassword.length==0){ 
+       alert("Ingrese de nuevo la contraseña.") 
+       document.loginform.confPassword.focus() 
+       return 0; 
+    }             
 	
 	//El usuario no puede ser mayor que 20 caracteres
 	else if (document.loginform.usuario.value.length > 40){ 
@@ -124,12 +181,12 @@ error_reporting("E_PARSE");
 				<div id="box2">
                                     <div>
                                         <p>Por favor diligencie el formulario de registro:</p>
-                                        <form id="form1" method="post" action="ResolverFormulario.php">
+                                        <form id="loginform"  name="loginform" method="post" action="ResolverFormulario.php">
                                         <table width="600" border="0">
                                         <tr>
                                             <td>Nombres:</td>
                                             <td><label for="NombresUsuario"></label>
-                                            <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" maxlength="40" /></td>
+                                            <input name="NombresUsuario" type="text" id="NombresUsuario" size="45px" maxlength="40" onkeyup="onEnter(event.keyCode);"/></td>
                                         </tr>
                                         <tr>
                                             <td>Apellidos:</td>
@@ -187,7 +244,7 @@ error_reporting("E_PARSE");
                                         </tr>
                                         <tr>
                                             <td colspan="2" >
-                                            <input type="submit" name="login" value="Registrar Usuario" class="inputButton" />
+                                            <input type="button" name="login" value="Registrar Usuario" class="inputButton" onclick="valida_envia()"/>
                                             </td>
                                         </tr>                                  
                                         </table>
