@@ -62,7 +62,7 @@ $numfilas10 = mysql_num_rows($resultado);
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>Zoonisis</title>
+		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
@@ -155,9 +155,9 @@ echo renderChartHTML("Column3D.swf", "",$strXML, "Estadisticas", 700, 400, false
                     </div>
 					
 					<div id="box2">
-						<h2>En Zoonisis ellos son nuestros amigos</h2>
+						<h2>En Zoonosis ellos son nuestros amigos</h2>
 						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
-					y la respuesta es muy sencilla, están por todo el planeta. En Zoonisis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
+					y la respuesta es muy sencilla, están por todo el planeta. En Zoonosis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
 					
 					<br class="clear" />
 				</div>
@@ -223,7 +223,7 @@ echo renderChartHTML("Column3D.swf", "",$strXML, "Estadisticas", 700, 400, false
 		</div>
 		<div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
+			<br />Diseñado y Provisto por Zoonosis Team
 			<br />© 2012.</div>
 </body>
 </html>

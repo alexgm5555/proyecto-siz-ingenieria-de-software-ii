@@ -22,7 +22,7 @@ $numfilas = mysql_num_rows($resultado);
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>Zoonisis</title>
+		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
@@ -167,7 +167,7 @@ $numfilas = mysql_num_rows($resultado);
 		</div>
 		<div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
+			<br />Diseñado y Provisto por Zoonosis Team
 			<br />© 2012.</div>
 </body>
 </html>

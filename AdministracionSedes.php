@@ -53,7 +53,7 @@ include ("conexionMySQL.php");
 				
 					<div id="box1">
 						<h2>Administración de Sedes</h2>
-						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar las Sedes de Zoonisis.</p>
+						<p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar las Sedes de Zoonosis.</p>
 					  <p>&nbsp;</p>
 					</div>
 			<?php
@@ -196,7 +196,7 @@ include ("conexionMySQL.php");
 		</div>
 		<div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
+			<br />Diseñado y Provisto por Zoonosis Team
 			<br />© 2012.</div>
     <script type="text/javascript">
 var Accordion1 = new Spry.Widget.Accordion("Accordion1");

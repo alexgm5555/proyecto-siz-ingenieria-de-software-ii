@@ -211,7 +211,7 @@
             
 		<div style="margin: 1em 0 3em 0; text-align: center;">
         Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
-			<br />Diseñado y Provisto por Zoonisis Team
+			<br />Diseñado y Provisto por Zoonosis Team
 			<br />© 2012.</div>
     
                 <script type="text/javascript">
