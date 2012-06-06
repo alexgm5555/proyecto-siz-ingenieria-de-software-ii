@@ -198,8 +198,8 @@ error_reporting("E_PARSE");
 				<label for="contrasena" class="login">Contraseña</label> <input type="password" name="contrasena" id="contrasena" class="inputBox" onkeyup="onEnter(event.keyCode);" />
 						</p>
 <p>
-<input type="button" name="login" value="Login" class="inputButton" onclick="valida_envia()"/></form>
-						</p>
+<input type="button" name="login" value="Login" class="inputButton" onclick="valida_envia()"/>
+						</p></form>
 				  </div>
 				  <h3>&nbsp;</h3>
 				  <h3>Enlaces de Interés</h3>
