@@ -28,7 +28,6 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
                                     </td>
                                </tr>
  <input name="TipoBusquedaOculto" type="hidden" value="$TipoBusqueda" />
- buscar
  <input type="submit" name="buscar" id="buscar" value="Enviar" />
  <tr>
 <td>&nbsp;</td>
