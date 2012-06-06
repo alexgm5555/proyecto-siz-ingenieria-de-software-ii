@@ -1,7 +1,12 @@
 
 <?php
-$tipo=$_POST['TipoBusquedaOculto'];
-echo $tipo;
+
+session_start();
+
+
+$tipo = $_POST['TipoBusquedaOculto'];
+
+
 
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,12 +20,12 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
 
     </head>
         <body>
-            <p align="center">Por favor ingrese el numero de documento de un usuario:</p>
-                               <form id="form2" method="post" action="BusquedaUsuarioApp.php">
+            <p align="center">Por favor ingrese el nombre de un usuario:</p>
+                               <form id="form2" method="post" action="MascotasRegistradasIFrame.php">
                                    <input type="hidden" value="1" name="id"/>
                                 <p align="center">
                                   <label for="select"></label>
-                                  <input name="UsuarioparaModificar" type="text" id="UsuarioparaModificar" />
+                                  <input name="UsuarioAsociado" type="text" id="UsuarioAsociado" />
                                 </p>
                                 <div align="center">
                                   <table width="100" border="0">

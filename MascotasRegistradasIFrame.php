@@ -2,11 +2,26 @@
 session_start();
 #fue necesario definir bn la url para salir por completo de este iframe su us es en la linea
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
+
 $url_anterior = $_SESSION['url']; 
+
+/*
+ * En este if verificamos de donde viene la consulta para dar el nombre de usuario adecuado
+ */
+
+
+if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/MascotasRegistradas.php'){
+    $usuario = $_SESSION['usuario'];
+}
+else{
+    $usuario = $_POST['UsuarioAsociado'];
+}
+
 
 include ("conexionMySQL.php");
 $conexion = Conectarse();  
-$usuario=$_SESSION['usuario'];
+#$usuario=$_SESSION['usuario']; #esta linea se quita si se activa el if de arriba...
 #usario es un parametro que envia BuscarMascota.php
 $ret=mysql_query("select * from usuarios WHERE UserName='".$usuario."'");
 #datos usuario guarda un arreglo con los datos del el usuario
