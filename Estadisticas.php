@@ -152,13 +152,7 @@ echo renderChartHTML("Column3D.swf", "",$strXML, "Estadisticas", 700, 400, false
                         
                      
                         </p>
-                    </div>
-					
-					<div id="box2">
-						<h2>En Zoonosis ellos son nuestros amigos</h2>
-						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
-					y la respuesta es muy sencilla, están por todo el planeta. En Zoonosis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
-					
+                    </div>				
 					<br class="clear" />
 				</div>
 				<div id="sidebar">

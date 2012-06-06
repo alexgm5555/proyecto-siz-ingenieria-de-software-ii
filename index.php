@@ -87,12 +87,17 @@ error_reporting("E_PARSE");
 	}
 	
 	</script>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<title>Zoonosis</title>
 		<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
+    <style type="text/css">
+    #texto_centrado {
+	text-align: center;
+}
+    </style>
 	</head>
 	<body>
 		<div id="outer">
@@ -128,17 +133,19 @@ error_reporting("E_PARSE");
 					  <iframe align="top" id="tree" name="tree" src="CarruselImagenesIndexJQuery.php" frameborder="0" width="830" height="230"  scrolling="no"></iframe>
 				  </div>
 					<div id="box1">
-						<h2>&nbsp;</h2>
-						<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />
-						<p>
-							En Zoonosis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si quieres se parte de Zoonosis Colombia regístrate y forma parte de nuestra comunidad.</p>
-					</div>
-					
-			  <div id="box2">
+					  <h2>&nbsp;</h2>
+						<!--<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />-->
+						<blockquote>
+						  <p id="texto_centrado">
+						    <br> En Zoonosis nos preocupamos por el estado y los derechos de los animales, por ello nos dedicamos a desarrollar actividades que procuren por su bienestar. Si <br> quieres se parte de Zoonosis Colombia regístrate y forma <br> parte de nuestra comunidad.</p>
+					  </blockquote>
+                    </div>
+					<!--
+                                        <div id="box2">
 						<h2>En Zoonosis ellos son nuestros amigos</h2>
 						<img class="left round" src="images/pic03.jpg" width="200" height="180" alt="" />En muchas ocasiones nos preguntamos ¿dónde están nuestros amigos cuando los necesitamos?
-					y la respuesta es muy sencilla, están por todo el planeta. En Zoonosis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
-					
+                                                y la respuesta es muy sencilla, están por todo el planeta. En Zoonosis los animales son nuestros amigos, y como amigos nuestro objetivo es brindarles apoyo para todas las necesidades que ellos tengan.</div>
+					-->
 					
 					<br class="clear" />
 				</div>
