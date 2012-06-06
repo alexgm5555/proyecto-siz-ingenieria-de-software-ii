@@ -17,25 +17,30 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
         <div>
             <p align="center">Por favor seleccione el tipo de busqueda:</p>
                 <div class="form">
-                    <form action="BusquedaMascotaParticular.php" method="post" id="loginform" name="loginform">
-                               <tr>
-                                    <td>Tipo de busqueda:</td>
-                                    <td> <select name = TipoBusqueda id = TipoBusqueda>
+                   <form action="BusquedaMascotaParticular.php" method="post">
+ <tr>
+   
+<td> <select name = TipoBusqueda id = TipoBusqueda>
                                                  <option value="">Elija una opción...
                                                  <option value="Zoonosis">Registrada por Zoonosis</option>
                                                  <option value="Particular">Registrada por un usuario particular</option>
                                                  </select>
                                     </td>
                                </tr>
-                               <tr>
-                                    <td><input type="button" name="Buscar" value="Buscar" class="inputButton" /> </td>
-                               </tr>
-                                 </form>
+ <input name="TipoBusquedaOculto" type="hidden" value="$TipoBusqueda" />
+ buscar
+ <input type="submit" name="buscar" id="buscar" value="Enviar" />
+ <tr>
+<td>&nbsp;</td>
+                           </tr>
+</form>
                  </div>
                </div>                  
             <p>&nbsp;</p>
         </body>
 </html>
 ';
+
+ 
 
 ?>
