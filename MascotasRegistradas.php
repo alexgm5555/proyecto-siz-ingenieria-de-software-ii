@@ -132,7 +132,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
                                                 <p align="center">
                                                     <?// este iframe envia a mascotas registradasIframe donde hace todo el Query parabuscar las mascotas registradas por el usuario que se registro
                                                       // tiene un if y otro codigo extra;o ese codigo sirve para que el tamanio del scrollbar se defina automaticamente dependiendo del contenido?>
-                                                    <iframe id="tree" name="tree" src="MascotasRegistradasIFrame.php" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                                                    <iframe id="tree" name="tree" src="MascotasRegistradasIFrame1.php" frameborder="0" width="730" height="390" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
                         <?php
                           	}
                             else{
@@ -149,7 +149,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 					    <p align="center">
                                                 <?// este iframe envia a filtromascotas donde hace todo el Query parabuscar todas las mascotas  registradas en la base de datos
                                                   // tiene un if y otro codigo extra;o ese codigo sirve para que el tamanio del scrollbar se defina automaticamente dependiendo del contenido?>
-                                                <iframe id="tree" name="tree" src="BuscarMascotaIFrame.php?var=2" frameborder="0" width="730" height="350" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
+                                                <iframe id="tree" name="tree" src="BuscarMascotaIFrame.php?var=2" frameborder="0" width="730" height="390" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
                           <?php
 				}
                             ?>

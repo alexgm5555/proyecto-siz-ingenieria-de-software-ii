@@ -26,9 +26,7 @@ $resultado3 = mysql_query($consulta3, $conexion) or die(mysql_error());
 $numfilas = mysql_num_rows($resultado);
 ?>
         
-<head>
-    <link rel="stylesheet" type="text/css" href="style2.css" />
-</head>
+
 <?
 #se envia BuscarMascotaIFrame.php?var=0 para que pueda acceder a las variables tipo sexo y ciudad
 ?>

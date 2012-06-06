@@ -107,7 +107,8 @@
                                                     <div align="left">Configuración de Animal</div>
                                                 </div>
                                                     <div class="AccordionPanelContent">
-                                                        <iframe src="BusquedaMascota.php" frameborder="0" width="100%" height="200">
+                                                       
+                                                            <iframe id="tree" name="tree" src="BusquedaMascota.php" frameborder="0" width="730" height="390" onload="if (window.parent && window.parent.autoIframe) {window.parent.autoIframe('tree');}"></iframe>
                                                         </iframe>                             
                                                     </div>
                                             </div>
