@@ -103,7 +103,7 @@ window.status = err.message;
                 </p>
 		<div id="box2" align="center"> 
                     <div id="Accordion1" class="Accordion" tabindex="0">
-			<div class="AccordionPanelTab">Buiscar  Animal</div>
+			<div class="AccordionPanelTab">Buscar  Animal</div>
                             <div class="AccordionPanelContent2">
                                 <div align="center">
                                     <p>Por favor haga click en la mascota sobre la cual desea mas información: </p>
