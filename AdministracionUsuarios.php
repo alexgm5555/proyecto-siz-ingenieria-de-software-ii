@@ -217,7 +217,7 @@
 	
 	//el formulario se envia 
    
-    document.loginform.submit(); 
+    document.form1.submit(); 
 } 
 
 // Funcion que llama a la anterior si en alguno de los campos se presiona la tecla enter
