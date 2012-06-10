@@ -149,7 +149,7 @@ td {
                             <div class="AccordionPanelTab">Listado de Solicitudes de Adopción</div>
                             <div class="AccordionPanelContent">
                                 <div align="center">
-                                    <p>Por favor ingrese la información de la Nueva Sede:</p>
+                                    <p>Solicitudes de Adopción:</p>
                                     <form id="form1" method="post" action="">
                                         <?php
                                         #aca llama la funcion de lista de solicitantes
