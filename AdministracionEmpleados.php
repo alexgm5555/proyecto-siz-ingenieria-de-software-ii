@@ -15,6 +15,220 @@ error_reporting("E_PARSE");
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+            
+        <!--
+    Script que permite capturar la tecla enter y enviar el formulario
+    -->
+    <script language="javascript "type="text/javascript">
+		function stopRKey(evt) { 
+		var evt = (evt) ? evt : ((event) ? event : null);
+		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+		}
+		document.form1.onkeypress = stopRKey; 
+	</script>
+    
+    <script language="javascript">
+
+	function valida_envia(){ 
+	var NombresUsuario = document.form1.NombresEmpleado.value;
+	var ApellidosUsuario = document.form1.ApellidosEmpleado.value;
+	var DocumentoUsuario = document.form1.DocumentoEmpleado.value;
+	var emailUsuario = document.form1.emailEmpleado.value;
+	var telefonoUsuario = document.form1.telefonoEmpleado.value;
+	var CelularUsuario = document.form1.CelularEmpleado.value;
+	var UserName = document.form1.UserName.value;
+	var Password = document.form1.Password.value;
+	var confPassword = document.form1.confPassword.value;
+	
+	var patron = /'/;
+	var patron2 = /"/;
+	var patron3 = /;/;
+	
+	//valido el usuario
+	
+	// El usuario no puede ser vacio:
+    if (NombresUsuario.length==0){ 
+       alert("Ingrese un nombre de Usuario") 
+       document.form1.NombresUsuario.focus() 
+       return 0; 
+    } 
+	
+	// El apellido no puede ser vacio:
+    else if (ApellidosUsuario.length==0){ 
+       alert("El Apellido no puede ser vacío.") 
+       document.form1.ApellidosUsuario.focus() 
+       return 0; 
+    } 
+	
+	// El documento no puede ser vacio:
+    else if (DocumentoUsuario.length==0){ 
+       alert("El Documento no puede ser vacío.") 
+       document.form1.DocumentoUsuario.focus() 
+       return 0; 
+    }
+	
+	// El email no puede ser vacio:
+    else if (emailUsuario.length==0){ 
+       alert("El email no puede ser vacío.") 
+       document.form1.emailUsuario.focus() 
+       return 0; 
+    }
+	
+	// El telefono no puede ser vacio:
+    else if (telefonoUsuario.length==0){ 
+       alert("El teléfono no puede ser vacío.") 
+       document.form1.telefonoUsuario.focus() 
+       return 0; 
+    }
+	
+	// El celular no puede ser vacio:
+    else if (CelularUsuario.length==0){ 
+       alert("El celular no puede ser vacío.") 
+       document.form1.CelularUsuario.focus() 
+       return 0; 
+    }
+	
+	// El usuario no puede ser vacio:
+    else if (UserName.length==0){ 
+       alert("El usuario no puede ser vacío.") 
+       document.form1.UserName.focus() 
+       return 0; 
+    }
+	
+	// La contraseña no puede ser vacia:
+    else if (Password.length==0){ 
+       alert("La contraseña no puede ser vacía.") 
+       document.form1.Password.focus() 
+       return 0; 
+    }
+	
+	//  Confirmar contraseña no puede ser vacia:
+    else if (confPassword.length==0){ 
+       alert("Ingrese de nuevo la contraseña.") 
+       document.form1.confPassword.focus() 
+       return 0; 
+    }             
+	
+		
+	//El nombre no puede contener caracteres especiales
+	else if (NombresUsuario.search(patron) != -1 || NombresUsuario.search(patron2) != -1 || NombresUsuario.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
+       document.form1.NombresUsuario.focus() 
+       return 0; 
+    } 
+	
+	//El apellido no puede contener caracteres especiales
+	else if (ApellidosUsuario.search(patron) != -1 || ApellidosUsuario.search(patron2) != -1 || ApellidosUsuario.search(patron3) != -1){ 
+       alert("El Apellido no puede llevar caracteres especiales.") 
+       document.form1.ApellidosUsuario.focus() 
+       return 0; 
+    }
+	
+	//El documento no puede contener caracteres especiales
+	else if (DocumentoUsuario.search(patron) != -1 || DocumentoUsuario.search(patron2) != -1 || DocumentoUsuario.search(patron3) != -1){ 
+       alert("El Documento no puede llevar caracteres especiales.") 
+       document.form1.DocumentoUsuario.focus() 
+       return 0; 
+    }
+	
+	//El email no puede contener caracteres especiales
+	else if (emailUsuario.search(patron) != -1 || emailUsuario.search(patron2) != -1 || emailUsuario.search(patron3) != -1){ 
+       alert("El Email no puede llevar caracteres especiales excepto @.") 
+       document.form1.emailUsuario.focus() 
+       return 0; 
+    }
+	
+	//El email no puede contener caracteres especiales
+	else if (telefonoUsuario.search(patron) != -1 || telefonoUsuario.search(patron2) != -1 || telefonoUsuario.search(patron3) != -1){ 
+       alert("El Teléfono no puede llevar caracteres especiales.") 
+       document.form1.telefonoUsuario.focus() 
+       return 0; 
+    }  
+	
+	//El email no puede contener caracteres especiales
+	else if (CelularUsuario.search(patron) != -1 || CelularUsuario.search(patron2) != -1 || CelularUsuario.search(patron3) != -1){ 
+       alert("El Celular no puede llevar caracteres especiales.") 
+       document.form1.CelularUsuario.focus() 
+       return 0; 
+    }
+	
+	//El usuario no puede contener caracteres especiales
+	else if (UserName.search(patron) != -1 || UserName.search(patron2) != -1 || UserName.search(patron3) != -1){ 
+       alert("El Nombre de Usuario no puede llevar caracteres especiales.") 
+       document.form1.UserName.focus() 
+       return 0; 
+    }
+	
+	
+	//La contraseña no puede contener caracteres especiales
+	else if (Password.search(patron) != -1 || Password.search(patron2) != -1 || Password.search(patron3) != -1){ 
+       alert("La Contraseña no puede llevar caracteres especiales.") 
+       document.form1.Password.focus() 
+       return 0; 
+    }
+	
+	//La confirmacion de la contraseña no puede contener caracteres especiales
+	else if (confPassword.search(patron) != -1 || confPassword.search(patron2) != -1 || confPassword.search(patron3) != -1){ 
+       alert("La confirmación de la Contraseña no puede llevar caracteres especiales.") 
+       document.form1.confPassword.focus() 
+       return 0; 
+    }   
+	
+	//Se valida que el documento sea numerico
+	Numer=parseInt(DocumentoUsuario);
+    if (isNaN(Numer)){
+            alert("El Documento ingresado no es válido.");
+			document.form1.DocumentoUsuario.focus();
+			return 0; 
+    }
+	
+	//Se valida que el telefono sea numerico
+	Numer=parseInt(telefonoUsuario);
+    if (isNaN(Numer)){
+            alert("El Teléfono ingresado no es válido.");
+			document.form1.telefonoUsuario.focus();
+			return 0; 
+    }
+	
+	//Se valida si el campo de email tiene el formato de email correcto
+	
+    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
+    if(!re.exec(emailUsuario))    {
+        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
+		document.form1.emailUsuario.focus();
+		return 0; 
+    }
+	
+	//Se valida que el celular sea numerico
+	Numer=parseInt(CelularUsuario);
+    if (isNaN(Numer)){
+            alert("El Celular ingresado no es válido.");
+			document.form1.CelularUsuario.focus();
+			return 0; 
+    }
+	
+	//Se valida si las contraseñas son iguales
+	if(Password != confPassword){
+		alert("Las contraseñas no coinciden. Por favor ingréselas de nuevo.");
+		document.form1.CelularUsuario.focus();
+		return 0; 
+	}
+	
+	//el formulario se envia 
+   
+    document.form1.submit(); 
+} 
+
+// Funcion que llama a la anterior si en alguno de los campos se presiona la tecla enter
+	function onEnter(ev) {  
+	if(ev==13)    { 
+	valida_envia();  
+	}  
+	}
+	
+	</script>
+            
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -96,16 +310,16 @@ error_reporting("E_PARSE");
                                                         <div class="AccordionPanelContent">
                                                             <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
-                                                                <form id="form1" method="post" action="RegistroEmpleadoApp.php">
+                                                                <form id="form1" name="form1" method="post" action="RegistroEmpleadoApp.php">
                                                                 <table width="600" border="0">
                                                                 <tr>
                                                                    <td>Nombres:</td>
                                                                    <td><label for="NombresEmpleado"></label>
-                                                                   <input name="NombresEmpleado" type="text" id="NombresEmpleado" size="45px" /></td>
+                                                                   <input name="NombresEmpleado" type="text" id="NombresEmpleado" size="45px" maxlength="40" onkeyup="onEnter(event.keyCode);"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                    <td>Apellidos:</td>
-                                                                   <td><input name="ApellidosEmpleado" type="text" id="ApellidosEmpleado" size="45px" /></td>
+                                                                   <td><input name="ApellidosEmpleado" type="text" id="ApellidosEmpleado" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                    <td>Tipo de Empleado:</td>
@@ -131,7 +345,7 @@ error_reporting("E_PARSE");
                                                                 </tr>
                                                                 <tr>
                                                                    <td>Documento de Identidad:</td>
-                                                                   <td><input name="DocumentoEmpleado" type="text" id="DocumentoEmpleado" size="45px" /></td>
+                                                                   <td><input name="DocumentoEmpleado" type="text" id="DocumentoEmpleado" size="45px" maxlength="15"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                    <td>Ciudad:</td>
@@ -157,19 +371,19 @@ error_reporting("E_PARSE");
                                                                 </tr>
                                                                 <tr>
                                                                     <td>E-mail:</td>
-                                                                    <td><input name="emailEmpleado" type="text" id="emailEmpleado" size="45px" /></td>
+                                                                    <td><input name="emailEmpleado" type="text" id="emailEmpleado" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Teléfono:</td>
-                                                                    <td><input name="telefonoEmpleado" type="text" id="telefonoEmpleado" size="45px" /></td>
+                                                                    <td><input name="telefonoEmpleado" type="text" id="telefonoEmpleado" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Celular:</td>
-                                                                    <td><input name="CelularEmpleado" type="text" id="CelularEmpleado" size="45px" /></td>
+                                                                    <td><input name="CelularEmpleado" type="text" id="CelularEmpleado" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Contrato:</td>
-                                                                    <td><input name="ContratoEmpleado" type="text" id="ContratoEmpleado" size="45px" /></td>
+                                                                    <td><input name="ContratoEmpleado" type="text" id="ContratoEmpleado" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Sede laboral:</td>
@@ -203,19 +417,19 @@ error_reporting("E_PARSE");
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Nombre de Usuario:</td>
-                                                                    <td><input name="UserName" type="text" id="UserName" size="45px" /></td>
+                                                                    <td><input name="UserName" type="text" id="UserName" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Contraseña:</td>
-                                                                    <td><input name="Password" type="password" id="Password" size="45px" /></td>
+                                                                    <td><input name="Password" type="password" id="Password" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Confirmar Contraseña:</td>
-                                                                    <td><input name="confPassword" type="password" id="confPassword" size="45px" /></td>
+                                                                    <td><input name="confPassword" type="password" id="confPassword" size="45px" maxlength="40"/></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td colspan="2" ><div align="center">
-                                                                    <input type="submit" name="login" value="Registrar Empleado" class="inputButton" />
+                                                                    <input type="submit" name="login" value="Registrar Empleado" class="inputButton" onclick="valida_envia()"/>
                                                                     </div></td>
                                                                 </tr>                                  
                                                                 
