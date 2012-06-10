@@ -40,7 +40,7 @@ error_reporting("E_PARSE");
 	
 	// El usuario no puede ser vacio:
     if (NombresUsuario.length==0){ 
-       alert("Ingrese un nombre de Usuario") 
+       alert("Ingrese su nombre") 
        document.loginform.NombresUsuario.focus() 
        return 0; 
     } 
@@ -77,12 +77,12 @@ error_reporting("E_PARSE");
     else if (CelularUsuario.length==0){ 
        alert("El celular no puede ser vacío.") 
        document.loginform.CelularUsuario.focus() 
-       return 0; 
+       return 0;
     }
 	
 	// El usuario no puede ser vacio:
     else if (UserName.length==0){ 
-       alert("El usuario no puede ser vacío.") 
+       alert("El nombre de usuario no puede ser vacío.") 
        document.loginform.UserName.focus() 
        return 0; 
     }
