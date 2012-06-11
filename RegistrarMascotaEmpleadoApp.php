@@ -61,16 +61,32 @@ foreach ($array as $v) {
 		$tamano =$i+6;
 		$edad =$i+7;
 		$peso =$i+8;
-		
-		/*hacer un select de el idAnimal para guardar la imagen con ese nombre y de ese modo evitar que la bd no encuentre las imagenes*/
-		$destino= "images/".$array[$i];/*le adiciona el nombre de la carpeta al nombre de la imagen*/
-		copy($array[$ruta],$destino);/*codigo para copiar el archivo temporal al destino que tiene especifico*/
-		$query = ("insert into animal values ('','Zoonosis','0','$array[$tipo]','Perdido','','$array[$sexo]','$array[$raza]','$array[$color]','$array[$tamano]','$array[$edad]','$array[$peso]','$destino','','')");/*inserta los valores en la BD*/
-		mysql_query($query);
-                echo "quedo registrado el animal",$array[$i];
+		$ExtFotoanimal=pathinfo($array[$i]);
+
+                //condicion para no dejar pasar un archivo diferente a un jpg
+
+                if(is_uploaded_file($array[$ruta])){
+                    if(($ExtFotoanimal['extension']=="jpg")||($ExtFotoanimal['extension']=="JPG")||($ExtFotoanimal['extension']=="PNG")||($ExtFotoanimal['extension']=="png")){
+
+                            /*hacer un select de el idAnimal para guardar la imagen con ese nombre y de ese modo evitar que la bd no encuentre las imagenes*/
+                            $destino= "images/".$array[$i];/*le adiciona el nombre de la carpeta al nombre de la imagen*/
+                            copy($array[$ruta],$destino);/*codigo para copiar el archivo temporal al destino que tiene especifico*/
+                            $query = ("insert into animal values ('','Zoonosis','0','$array[$tipo]','Perdido','','$array[$sexo]','$array[$raza]','$array[$color]','$array[$tamano]','$array[$edad]','$array[$peso]','$destino','','')");/*inserta los valores en la BD*/
+                            
+                            mysql_query($query)or die(mysql_error());
+                            echo "ok";
+
+                    }
+                }
+                else{
+                    echo "paila";
+                    //header ('location:MascotasRegistradasEmpleado.php?Message=1');
+                }
+                
 	}
     $i++;
 }
+//header ('location:MascotasRegistradasEmpleado.php?Message=2');
 	}
 
 ?>
