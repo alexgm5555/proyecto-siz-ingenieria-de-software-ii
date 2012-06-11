@@ -38,7 +38,7 @@ else{
 <div id="nav">
 			  		
                     <ul>
-						<li class="first active"><a href="index.php">Inicio</a></li>			
+						<li class="first active"><a href="ClasificadorRoles.php">Inicio</a></li>			
 						<li><a href="#">Acerca de</a></li>
                        	<li class="last"><a href="#">Contacto</a></li>
 						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
@@ -105,7 +105,7 @@ else{
 								echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/MascotasRegistradas.php" </script>';
 								echo   "<li><a href='RegistrarMascota.php'>Registrar Animales</a></li>
                                                                         <li><a href='BuscarMascota.php'>Búsqueda de Animales</a></li>
-																		<li><a href='MascotasRegistradas.php'>Administrar Animales</a></li>";
+									<li><a href='MascotasRegistradas.php'>Administrar Animales</a></li>";
 								break;
 							}
 					  ?>

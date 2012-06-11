@@ -6,13 +6,13 @@ error_reporting("E_PARSE");
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
 
-
+session_start();
 isset( $_SESSION['usuario']); 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 //Permite continuar en la página
 ?>
 <!--
-	Website Name by Adonis Ronquillo for Free Website Templates
+	Web site Name by Adonis Ronquillo for Free Website Templates
 	www.freewebsitetemplat.es / www.doni.us
 	Images by Image Base http://imagebase.davidniblack.com/
 	Released under the Creative Commons Attribution 3.0 License.
@@ -56,7 +56,7 @@ window.status = err.message;
             </div>
             <div id="nav">
 	 	<ul>
-                    <li class="first active"><a href="index.php">Inicio</a></li>			
+                    <li class="first active"><a href="ClasificadorRoles.php">Inicio</a></li>			
                     <li><a href="#">Acerca de</a></li>
                     <li class="last"><a href="#">Contacto</a></li>
                     <li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
@@ -122,7 +122,7 @@ window.status = err.message;
 		<div class="form">
                     <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                     <ol>
-                      <li><a href="MascotasRegistradas.php">Pagina Inicio</a></li>
+                      <li><a href="ClasificadorRoles.php">Mascotas Registradas</a></li>
                       <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                       <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
                       <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>

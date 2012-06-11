@@ -248,7 +248,7 @@ error_reporting("E_PARSE");
                                          <div id="nav">
 			  		
                                             <ul>
-						<li class="first active"><a href="index.php">Inicio</a></li>			
+						<li class="first active"><a href="ClasificadorRoles.php">Inicio</a></li>			
 						<li><a href="#">Acerca de</a></li>
                                                 <li class="last"><a href="#">Contacto</a></li>
 						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
