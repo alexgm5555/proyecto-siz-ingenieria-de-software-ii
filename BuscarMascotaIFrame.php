@@ -30,6 +30,9 @@ $numfilas = mysql_num_rows($resultado);
 <?
 #se envia BuscarMascotaIFrame.php?var=0 para que pueda acceder a las variables tipo sexo y ciudad
 ?>
+<head>
+    
+</head>
 <body>
     <form name="form1" method="post" action="BuscarMascotaIFrame.php?var=0">
         <p align="center">
