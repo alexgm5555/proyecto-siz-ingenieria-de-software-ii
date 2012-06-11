@@ -427,7 +427,7 @@ error_reporting("E_PARSE");
                                                                 </tr>
                                                                 <tr>
                                                                     <td colspan="2" ><div align="center">
-                                                                    <input type="submit" name="login" value="Registrar Empleado" class="inputButton" onclick="valida_envia()"/>
+                                                                    <input type="button" name="login" value="Registrar Empleado" class="inputButton" onclick="valida_envia()"/>
                                                                     </div></td>
                                                                 </tr>                                  
                                                                 
