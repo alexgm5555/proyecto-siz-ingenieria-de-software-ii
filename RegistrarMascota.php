@@ -47,16 +47,48 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 	Released under the Creative Commons Attribution 3.0 License.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<style type="text/css">
--->
-.contenedor{
-	height: 280px;
-	width: 500px;
-	overflow: scroll;
-	visibility: visible;
+<script language="javascript">
+
+	function valida_envia(){ 
+	var NombreAnimal = document.form1.NombreAnimal.value;
+	
+	
+	var patron2 = /"/;
+	var patron3 = /;/;
+	
+	//valido el usuario
+	
+	// El usuario no puede ser vacio:
+    if (NombresAnimal.length==0){ 
+       alert("Ingrese un nombre de Usuario") 
+       document.form1.NombreAnimal.focus() 
+       return 0; 
+    } 
+	
+            
+	
+		
+	//El nombre no puede contener caracteres especiales
+	else if (NombreAnimal.search(patron2) != -1 || NombreAnimal.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
+       document.form1.NombreAnimal.focus() 
+       return 0; 
+    } 
+	
+   
+    document.form1.submit(); 
+} 
+
+// Funcion que llama a la anterior si en alguno de los campos se presiona la tecla enter
+	function onEnter(ev) {  
+	if(ev==13)    { 
+	valida_envia();  
+	}  
 	}
--->
-</style>
+	
+	</script>
+
+
 <script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
 <head>
@@ -144,31 +176,23 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			          <div class="AccordionPanel">
 			            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 			              <tr>
-			                <th scope="col"> <form action="RegistrarMascotaApp.php" method="post" enctype="multipart/form-data" id="form1">
+			                <th scope="col"> 
+                                            <form name ="form1" action="RegistrarMascotaApp.php" method="post" enctype="multipart/form-data" id="form1">
 			                  <table width="627" height="308" border="0" align="center">
 			                    <tr>
 			                      <?php
 
  ?>
 			                      <td width="67" align="left" >Nombre:</td>
-			                      <td width="194"><label
-for="nombreSede2"></label>
-			                        <input name="NombreAnimal"
-type="text" id="NombreAnimal" value=""
-size="30px" /></td>
+			                      <td width="194"><label for="nombreSede2"></label>
+			                        <input name="NombreAnimal" type="text" id="NombreAnimal" value=""size="30px" /></td>
 			                      <td width="103">Peso:</td>
-			                      <td width="243" align="left"><input
-name="PesoAnimal" type="text" id="PesoAnimal" value="" size="30px" / ></td>
-		                        </tr>
+			                      <td width="243" align="left"><input name="PesoAnimal" type="text" id="PesoAnimal" value="" size="30px" / ></td>		                        </tr>
 			                    <tr>
 			                      <td>Raza:</td>
-			                      <td><input name="RazaAnimal"
-type="text" id="RazaAninal" value=""
-size="30px" /></td>
+			                      <td><input name="RazaAnimal" type="text" id="RazaAninal" value="" size="30px" /></td>
 			                      <td>Habilidad:</td>
-			                      <td align="left"><input name="HabilidadAnimal"
-type="text" id="HabilidadAnimal" value=""
-size="30px" /></td>
+			                      <td align="left"><input name="HabilidadAnimal"type="text" id="HabilidadAnimal" value=""size="30px" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Sexo:</td>
@@ -194,20 +218,16 @@ size="30px" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Edad:</td>
-			                      <td><input name="EdadAnimal"
-type="text" id="Edad" value="" size="30px"
-/></td>
+			                      <td><input name="EdadAnimal" type="text" id="Edad" value="" size="30px"/></td>
 			                      <td>Estado Animal:</td>
-			                      <td align="left"><select name="EstadoAnimal" class="form"
-id="EstadoAnimal">
+			                      <td align="left"><select name="EstadoAnimal" class="form" id="EstadoAnimal">
 			                        <?PHP
                                                                        //////////////////////////////////////
                                                                        /////CODIGO DE MODIFICAR SEDE AQUÍ////
                                                                        //////////////////////////////////////
                                                                  if ($numfilas1 > 0) {
                                                                while ($rowEmp = mysql_fetch_assoc($resultado1)) {
-                                                                        echo " <option
-value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
+                                                                        echo " <option value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
                                                                }
                                                          }
 
@@ -216,25 +236,20 @@ value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
 		                        </tr>
 			                    <tr>
 			                      <td>Color:</td>
-			                      <td><input name="ColorAnimal"
-type="text" id="ColorAnimal" value="" size="30px"
-/></td>
+			                      <td><input name="ColorAnimal"type="text" id="ColorAnimal" value="" size="30px"/></td>
 			                      <td>Foto: </td>
 			                      <td align="left"><input name="FotoAnimal" type="file" id="FotoAnimal" size="10px" /></td>
 		                        </tr>
 			                    <tr>
 			                      <td>Tamaño:</td>
-			                      <td><input name="TamañoAnimal"
-type="text" id="TamañoAnimal" value=""
-size="30px" /></td>
+			                      <td><input name="TamañoAnimal"type="text" id="TamañoAnimal" value=""size="30px" /></td>
 			                      <td>&nbsp;</td>
 			                      <td>&nbsp;</td>
 		                        </tr>
 			                    <tr>
 			                      <td colspan="4" ><div align="center">
-			                        <input type="submit"
-name="login" value="Registrar" class="inputButton" />
-			                        </div></td>
+			                        <input type="submit" name="fo" value="Registrar" class="inputButton" onclick="valida_envia()"/>
+			                      </div></td>
 		                        </tr>
 		                      </table>
 			                  </form>
