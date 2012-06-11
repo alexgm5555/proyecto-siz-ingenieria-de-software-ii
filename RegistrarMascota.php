@@ -106,7 +106,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 <div id="nav">
 			  		
                     <ul>
-						<li class="first active"><a href="index.php">Inicio</a></li>			
+						<li class="first active"><a href="ClasificadorRoles">Inicio</a></li>			
 						<li><a href="#">Acerca de</a></li>
                        	<li class="last"><a href="#">Contacto</a></li>
 						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
@@ -271,7 +271,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 					<div class="form">
 					  <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                       <ol>
-                        <li><a href="MascotasRegistradas.php">Pagina Inicio</a></li>
+                        <li><a href="ClasificadorRoles.php">Mascotas Registradas</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
                         <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>

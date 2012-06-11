@@ -54,7 +54,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
             </div>
             <div id="nav">
 	    <ul>
-		<li class="first active"><a href="index.php">Inicio</a></li>			
+		<li class="first active"><a href="MascotasRegistradas.php">Inicio</a></li>			
 		<li><a href="#">Acerca de</a></li>
                	<li class="last"><a href="#">Contacto</a></li>
 		<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
@@ -167,7 +167,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 				<div class="form">
                                     <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                                     <ol>
-                                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
+                                        <li><a href="MascotasRegistradas.php">Mascotas Registradas</a></li>
                                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
                                         <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
@@ -191,7 +191,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 			</div>
                     </div>
                 <div style="margin: 1em 0 3em 0; text-align: center;">
-                    Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+                    Este Sitio Web es desarrollado por estudiantes de la Universidad Nacional de Colombia
                     <br />Diseñado y Provisto por Zoonosis Team
                     <br />© 2012.</div>
 <script type="text/javascript">
