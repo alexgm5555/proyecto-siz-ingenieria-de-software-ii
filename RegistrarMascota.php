@@ -51,16 +51,14 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 
 	function valida_envia(){ 
 	var NombreAnimal = document.form1.NombreAnimal.value;
-	
-	
 	var patron2 = /"/;
 	var patron3 = /;/;
 	
 	//valido el usuario
 	
 	// El usuario no puede ser vacio:
-    if (NombresAnimal.length==0){ 
-       alert("Ingrese un nombre de Usuario") 
+    if (NombreAnimal.length==0){ 
+       alert("Ingrese un nombre para el animal.") 
        document.form1.NombreAnimal.focus() 
        return 0; 
     } 
@@ -297,7 +295,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			</div>
 </div>
 <div style="margin: 1em 0 3em 0; text-align: center;">
-        Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+        Este Sitio Web es desarrollado por estudiantes de la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonosis Team
 		<br />© 2012.</div>
 <script type="text/javascript">
