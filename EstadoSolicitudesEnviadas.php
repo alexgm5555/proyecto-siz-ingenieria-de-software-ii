@@ -114,7 +114,7 @@ td {
                                                              </th>
                                                              <th  scope="col"border="" >&nbsp;</th>
                                                              <th align="left" scope="col">
-                                                                 <h5>Codigo del animal:
+                                                               <h5>Codigo del animal:
                                                                     <?php
                                                                     echo $solicitud['id_Animal'];
                                                                     ?>
@@ -134,7 +134,27 @@ td {
                                                                     echo $CC;
                                                                     ?>
                                                                 </h5>
-                                                             </th>
+                                                               <h5>
+                                                                 <?php
+									if($solicitud['Estado_Solicitud']=="Aceptada"){							   
+                                                                            $CedulaDuenio= $solicitud['Dueño_Animal'];
+                                                                            $duenio=mysql_query("select * from usuarios WHERE Cedula='".$CedulaDuenio."'");
+                                                                            $DatosDueñoAnimal=mysql_fetch_array($duenio);
+                                                                            ?>
+                                                                        Datos del Dueño del animal:
+                                                                        <br>
+                                                          </br>                                                                        
+                                                          <?php
+                                                                            echo "Nombre:  " , $DatosDueñoAnimal['Nombres'];?>
+                                                                        <br> <?php 
+                                                                        echo " Email:", $DatosDueñoAnimal['Email'];?>
+                                                                        <br> <?php 
+                                                                        echo " Telefono:", $DatosDueñoAnimal['Telefono_Fij'];
+                                                                            
+									}
+                                                                    
+                                                                    ?>                                                          
+                                                          </h5></th>
                                                              <th align="left" scope="col">
                                                              	
                                                              	
