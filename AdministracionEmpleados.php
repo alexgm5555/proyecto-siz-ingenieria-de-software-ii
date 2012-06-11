@@ -52,6 +52,13 @@ error_reporting("E_PARSE");
        alert("Ingrese un nombre de Usuario") 
        document.form1.NombresUsuario.focus() 
        return 0; 
+    }
+    
+    //El nombre no puede contener caracteres especiales
+	else if (NombresUsuario.search(patron) != -1 || NombresUsuario.search(patron2) != -1 || NombresUsuario.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
+       document.form1.NombresUsuario.focus() 
+       return 0; 
     } 
 	
 	// El apellido no puede ser vacio:
@@ -60,12 +67,34 @@ error_reporting("E_PARSE");
        document.form1.ApellidosUsuario.focus() 
        return 0; 
     } 
+    
+    //El apellido no puede contener caracteres especiales
+	else if (ApellidosUsuario.search(patron) != -1 || ApellidosUsuario.search(patron2) != -1 || ApellidosUsuario.search(patron3) != -1){ 
+       alert("El Apellido no puede llevar caracteres especiales.") 
+       document.form1.ApellidosUsuario.focus() 
+       return 0; 
+    }
 	
 	// El documento no puede ser vacio:
     else if (DocumentoUsuario.length==0){ 
        alert("El Documento no puede ser vacío.") 
        document.form1.DocumentoUsuario.focus() 
        return 0; 
+    }
+    
+    //El documento no puede contener caracteres especiales
+	else if (DocumentoUsuario.search(patron) != -1 || DocumentoUsuario.search(patron2) != -1 || DocumentoUsuario.search(patron3) != -1){ 
+       alert("El Documento no puede llevar caracteres especiales.") 
+       document.form1.DocumentoUsuario.focus() 
+       return 0; 
+    }
+    
+    //Se valida que el documento sea numerico
+	Numer=parseInt(DocumentoUsuario);
+    if (isNaN(Numer)){
+            alert("El Documento ingresado no es válido.");
+			document.form1.DocumentoUsuario.focus();
+			return 0; 
     }
 	
 	// El email no puede ser vacio:
@@ -74,12 +103,43 @@ error_reporting("E_PARSE");
        document.form1.emailUsuario.focus() 
        return 0; 
     }
+    
+    //El email no puede contener caracteres especiales
+	else if (emailUsuario.search(patron) != -1 || emailUsuario.search(patron2) != -1 || emailUsuario.search(patron3) != -1){ 
+       alert("El Email no puede llevar caracteres especiales excepto @.") 
+       document.form1.emailUsuario.focus() 
+       return 0; 
+    }
+    
+    //Se valida si el campo de email tiene el formato de email correcto
+	
+    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
+    if(!re.exec(emailUsuario))    {
+        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
+		document.form1.emailUsuario.focus();
+		return 0; 
+    }
 	
 	// El telefono no puede ser vacio:
     else if (telefonoUsuario.length==0){ 
        alert("El teléfono no puede ser vacío.") 
        document.form1.telefonoUsuario.focus() 
        return 0; 
+    }
+    
+    //El telefono no puede contener caracteres especiales
+	else if (telefonoUsuario.search(patron) != -1 || telefonoUsuario.search(patron2) != -1 || telefonoUsuario.search(patron3) != -1){ 
+       alert("El Teléfono no puede llevar caracteres especiales.") 
+       document.form1.telefonoUsuario.focus() 
+       return 0; 
+    }
+    
+    //Se valida que el telefono sea numerico
+	Numer=parseInt(telefonoUsuario);
+    if (isNaN(Numer)){
+            alert("El Teléfono ingresado no es válido.");
+			document.form1.telefonoUsuario.focus();
+			return 0; 
     }
 	
 	// El celular no puede ser vacio:
@@ -88,10 +148,32 @@ error_reporting("E_PARSE");
        document.form1.CelularUsuario.focus() 
        return 0; 
     }
+    
+    //El celular no puede contener caracteres especiales
+	else if (CelularUsuario.search(patron) != -1 || CelularUsuario.search(patron2) != -1 || CelularUsuario.search(patron3) != -1){ 
+       alert("El Celular no puede llevar caracteres especiales.") 
+       document.form1.CelularUsuario.focus() 
+       return 0; 
+    }
+    
+    //Se valida que el celular sea numerico
+	Numer=parseInt(CelularUsuario);
+    if (isNaN(Numer)){
+            alert("El Celular ingresado no es válido.");
+			document.form1.CelularUsuario.focus();
+			return 0; 
+    }
 	
 	// El usuario no puede ser vacio:
     else if (UserName.length==0){ 
        alert("El usuario no puede ser vacío.") 
+       document.form1.UserName.focus() 
+       return 0; 
+    }
+    
+    //El usuario no puede contener caracteres especiales
+	else if (UserName.search(patron) != -1 || UserName.search(patron2) != -1 || UserName.search(patron3) != -1){ 
+       alert("El Nombre de Usuario no puede llevar caracteres especiales.") 
        document.form1.UserName.focus() 
        return 0; 
     }
@@ -102,111 +184,27 @@ error_reporting("E_PARSE");
        document.form1.Password.focus() 
        return 0; 
     }
-	
-	//  Confirmar contraseña no puede ser vacia:
-    else if (confPassword.length==0){ 
-       alert("Ingrese de nuevo la contraseña.") 
-       document.form1.confPassword.focus() 
-       return 0; 
-    }             
-	
-		
-	//El nombre no puede contener caracteres especiales
-	else if (NombresUsuario.search(patron) != -1 || NombresUsuario.search(patron2) != -1 || NombresUsuario.search(patron3) != -1){ 
-       alert("El Nombre no puede llevar caracteres especiales.") 
-       document.form1.NombresUsuario.focus() 
-       return 0; 
-    } 
-	
-	//El apellido no puede contener caracteres especiales
-	else if (ApellidosUsuario.search(patron) != -1 || ApellidosUsuario.search(patron2) != -1 || ApellidosUsuario.search(patron3) != -1){ 
-       alert("El Apellido no puede llevar caracteres especiales.") 
-       document.form1.ApellidosUsuario.focus() 
-       return 0; 
-    }
-	
-	//El documento no puede contener caracteres especiales
-	else if (DocumentoUsuario.search(patron) != -1 || DocumentoUsuario.search(patron2) != -1 || DocumentoUsuario.search(patron3) != -1){ 
-       alert("El Documento no puede llevar caracteres especiales.") 
-       document.form1.DocumentoUsuario.focus() 
-       return 0; 
-    }
-	
-	//El email no puede contener caracteres especiales
-	else if (emailUsuario.search(patron) != -1 || emailUsuario.search(patron2) != -1 || emailUsuario.search(patron3) != -1){ 
-       alert("El Email no puede llevar caracteres especiales excepto @.") 
-       document.form1.emailUsuario.focus() 
-       return 0; 
-    }
-	
-	//El email no puede contener caracteres especiales
-	else if (telefonoUsuario.search(patron) != -1 || telefonoUsuario.search(patron2) != -1 || telefonoUsuario.search(patron3) != -1){ 
-       alert("El Teléfono no puede llevar caracteres especiales.") 
-       document.form1.telefonoUsuario.focus() 
-       return 0; 
-    }  
-	
-	//El email no puede contener caracteres especiales
-	else if (CelularUsuario.search(patron) != -1 || CelularUsuario.search(patron2) != -1 || CelularUsuario.search(patron3) != -1){ 
-       alert("El Celular no puede llevar caracteres especiales.") 
-       document.form1.CelularUsuario.focus() 
-       return 0; 
-    }
-	
-	//El usuario no puede contener caracteres especiales
-	else if (UserName.search(patron) != -1 || UserName.search(patron2) != -1 || UserName.search(patron3) != -1){ 
-       alert("El Nombre de Usuario no puede llevar caracteres especiales.") 
-       document.form1.UserName.focus() 
-       return 0; 
-    }
-	
-	
-	//La contraseña no puede contener caracteres especiales
+    
+    //La contraseña no puede contener caracteres especiales
 	else if (Password.search(patron) != -1 || Password.search(patron2) != -1 || Password.search(patron3) != -1){ 
        alert("La Contraseña no puede llevar caracteres especiales.") 
        document.form1.Password.focus() 
        return 0; 
     }
 	
-	//La confirmacion de la contraseña no puede contener caracteres especiales
+	//  Confirmar contraseña no puede ser vacia:
+    else if (confPassword.length==0){ 
+       alert("Ingrese de nuevo la contraseña.") 
+       document.form1.confPassword.focus() 
+       return 0; 
+    }
+    
+    //La confirmacion de la contraseña no puede contener caracteres especiales
 	else if (confPassword.search(patron) != -1 || confPassword.search(patron2) != -1 || confPassword.search(patron3) != -1){ 
        alert("La confirmación de la Contraseña no puede llevar caracteres especiales.") 
        document.form1.confPassword.focus() 
        return 0; 
     }   
-	
-	//Se valida que el documento sea numerico
-	Numer=parseInt(DocumentoUsuario);
-    if (isNaN(Numer)){
-            alert("El Documento ingresado no es válido.");
-			document.form1.DocumentoUsuario.focus();
-			return 0; 
-    }
-	
-	//Se valida que el telefono sea numerico
-	Numer=parseInt(telefonoUsuario);
-    if (isNaN(Numer)){
-            alert("El Teléfono ingresado no es válido.");
-			document.form1.telefonoUsuario.focus();
-			return 0; 
-    }
-	
-	//Se valida si el campo de email tiene el formato de email correcto
-	
-    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
-    if(!re.exec(emailUsuario))    {
-        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
-		document.form1.emailUsuario.focus();
-		return 0; 
-    }
-	
-	//Se valida que el celular sea numerico
-	Numer=parseInt(CelularUsuario);
-    if (isNaN(Numer)){
-            alert("El Celular ingresado no es válido.");
-			document.form1.CelularUsuario.focus();
-			return 0; 
-    }
 	
 	//Se valida si las contraseñas son iguales
 	if(Password != confPassword){
