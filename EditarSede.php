@@ -165,7 +165,7 @@ echo '
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Registrar Cambios" class="inputButton" onclick="valida_envia()"/>
+                                    <input type="button" name="login" value="Registrar Cambios" class="inputButton" onclick="valida_envia()"/>
                                   </div></td>
                                   </tr>
                               </table>

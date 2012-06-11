@@ -87,7 +87,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
                                 <div align="center">
                                   <table width="100" border="0">
                                     <tr>
-                                      <td><input type="submit" name="login3" value="Buscar '.$tipo.'" class="inputButton" onclick="valida_envia()"/></td>
+                                      <td><input type="button" name="login3" value="Buscar '.$tipo.'" class="inputButton" onclick="valida_envia()"/></td>
                                     </tr>
                                   </table>
                                 </div>
