@@ -18,7 +18,7 @@ if($conexion){
 
         try{
             $consulta = "UPDATE zoonosis.SEDES set Nombre = '$nombreSede', Ciudad = '$ciudadSede', Direccion = '$direccionSede', Telefono = '$telefonoSede', Email = '$emailSEde' where Nombre = '$sedeActualizar[1]'";
-            mysql_query($consulta) or die(mysql_error());
+            mysql_query($consulta) or die(header ('location:BusquedaSedes.php'));
             header ('location:BusquedaSedes.php'); 
            }
            catch(Exception $e){

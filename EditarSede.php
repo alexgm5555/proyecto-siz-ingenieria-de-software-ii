@@ -33,11 +33,18 @@ echo '
 	var patron2 = /"/;
 	var patron3 = /;/;
 	
-	//valido el usuario
+		//valido el usuario
 	
 	// El usuario no puede ser vacio:
     if (nombreSede.length==0){ 
        alert("Ingrese un nombre de la Sede") 
+       document.form1.nombreSede.focus() 
+       return 0; 
+    }
+    
+    //El nombre no puede contener caracteres especiales
+	else if (nombreSede.search(patron) != -1 || nombreSede.search(patron2) != -1 || nombreSede.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
        document.form1.nombreSede.focus() 
        return 0; 
     } 
@@ -48,6 +55,22 @@ echo '
        document.form1.emailSede.focus() 
        return 0; 
     }
+    
+    //El email no puede contener caracteres especiales
+	else if (emailSede.search(patron) != -1 || emailSede.search(patron2) != -1 || emailSede.search(patron3) != -1){ 
+       alert("El Email no puede llevar caracteres especiales excepto @.") 
+       document.form1.emailSede.focus() 
+       return 0; 
+    }
+    
+    //Se valida si el campo de email tiene el formato de email correcto
+	
+    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
+    if(!re.exec(emailSede))    {
+        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
+		document.form1.emailSede.focus();
+		return 0; 
+    }
 	
 	// El telefono no puede ser vacio:
     else if (telefonoSede.length==0){ 
@@ -56,51 +79,26 @@ echo '
        return 0; 
     }
     
-    // La direccion no puede ser vacia:
-    else if (direccionSede.length==0){ 
-       alert("La direccion no puede ser vacia.") 
-       document.form1.direccionSede.focus() 
-       return 0; 
-    }
-	
-	
-	//El nombre no puede contener caracteres especiales
-	else if (nombreSede.search(patron2) != -1 || nombreSede.search(patron3) != -1){ 
-       alert("El Nombre no puede llevar caracteres especiales.") 
-       document.form1.nombreSede.focus() 
-       return 0; 
-    } 
-	
-
-	//El email no puede contener caracteres especiales
-	else if (emailSede.search(patron2) != -1 || emailSede.search(patron3) != -1){ 
-       alert("El Email no puede llevar caracteres especiales excepto @.") 
-       document.form1.emailSede.focus() 
-       return 0; 
-    }
-	
-	//El email no puede contener caracteres especiales
-	else if (telefonoSede.search(patron2) != -1 || telefonoSede.search(patron3) != -1){ 
+    //El telefono no puede contener caracteres especiales
+	else if (telefonoSede.search(patron) != -1 || telefonoSede.search(patron2) != -1 || telefonoSede.search(patron3) != -1){ 
        alert("El Teléfono no puede llevar caracteres especiales.") 
        document.form1.telefonoSede.focus() 
        return 0; 
-    }  
-
-	//Se valida que el telefono sea numerico
+    }
+    
+    //Se valida que el telefono sea numerico
 	Numer=parseInt(telefonoSede);
     if (isNaN(Numer)){
             alert("El Teléfono ingresado no es válido.");
 			document.form1.telefonoSede.focus();
 			return 0; 
     }
-	
-	//Se valida si el campo de email tiene el formato de email correcto
-	
-    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
-    if(!re.exec(emailSede))    {
-        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
-		document.form1.emailSede.focus();
-		return 0; 
+    
+    // La direccion no puede ser vacia:
+    else if (direccionSede.length==0){ 
+       alert("La direccion no puede ser vacia.") 
+       document.form1.direccionSede.focus() 
+       return 0; 
     }
 
 	//el formulario se envia 
