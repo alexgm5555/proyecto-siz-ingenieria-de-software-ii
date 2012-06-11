@@ -47,24 +47,72 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 	Released under the Creative Commons Attribution 3.0 License.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+        
+
+
+<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<head>
+    <!--
+    Script que permite capturar la tecla enter y enviar el formulario
+    -->
+    <script language="javascript "type="text/javascript">
+		function stopRKey(evt) { 
+		var evt = (evt) ? evt : ((event) ? event : null);
+		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+		}
+		document.form1.onkeypress = stopRKey; 
+	</script>
 <script language="javascript">
 
 	function valida_envia(){ 
 	var NombreAnimal = document.form1.NombreAnimal.value;
+        var PesoAnimal = document.form1.PesoAnimal.value;
+        var RazaAnimal = document.form1.RazaAnimal.value;
+        var HabilidadAnimal = document.form1.HabilidadAnimal.value;
+        var EdadAnimal = document.form1.EdadAnimal.value;
+        var ColorAnimal = document.form1.ColorAnimal.value;
+        var TamañoAnimal = document.form1.TamañoAnimal.value;
+        var FotoAnimal = document.form1.FotoAnimal.value;
 	
 	var patron = /'/;
 	var patron2 = /"/;
 	var patron3 = /;/;
 	
-	//valido el usuario
 	
-	// El usuario no puede ser vacio:
+	
+	// El Nombre de Animal no puede ser vacio:
     if (NombreAnimal.length==0){ 
-       alert("Ingrese un nombre de Usuario") 
+       alert("Ingrese un nombre del Animal") 
        document.form1.NombreAnimal.focus() 
        return 0; 
     } 
-	
+    // La habilidad del Animal no puede ser vacio:
+    else if (HabilidadAnimal.length==0){ 
+       alert("Ingrese la habilidad o una descripción general del animal") 
+       document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    	// El Nombre de Animal no puede ser vacio:
+    else if (EdadAnimal.length==0){ 
+       alert("Ingrese la Edad del Animal") 
+       document.form1.EdadAnimal.focus() 
+       return 0; 
+    }
+    	// El Color del Animal no puede ser vacio:
+    else if (ColorAnimal.length==0){ 
+       alert("Ingrese un Color del Animal") 
+       document.form1.ColorAnimal.focus() 
+       return 0; 
+    }
+    // La Foto del Animal no puede ser vacio:
+    else if (FotoAnimal.length==0){ 
+       alert("Ingrese la Foto del animal") 
+       document.form1.FotoAnimal.focus() 
+       return 0; 
+    }
+    
             
 	
 		
@@ -74,8 +122,57 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
        document.form1.NombreAnimal.focus() 
        return 0; 
     } 
-	
-   
+        //El peso no puede contener caracteres especiales
+	else if (PesoAnimal.search(patron) != -1 ||PesoAnimal.search(patron2) != -1 || PesoAnimal.search(patron3) != -1){ 
+       alert("El Peso no puede llevar caracteres especiales.") 
+       document.form1.PesoAnimal.focus() 
+       return 0; 
+    }
+    //El Raza no puede contener caracteres especiales
+	else if (RazaAnimal.search(patron) != -1 ||RazaAnimal.search(patron2) != -1 || RazaAnimal.search(patron3) != -1){ 
+       alert("El Raza no puede llevar caracteres especiales.") 
+       document.form1.RazaAnimal.focus() 
+       return 0; 
+    }
+    //La habiliadad no puede contener caracteres especiales
+	else if (HabilidadAnimal.search(patron) != -1 ||HabilidadAnimal.search(patron2) != -1 || HabilidadAnimal.search(patron3) != -1){ 
+       alert("La Habilidad no puede llevar caracteres especiales.") 
+       document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    //La Edad no puede contener caracteres especiales
+    	else if (EdadAnimal.search(patron) != -1 ||EdadAnimal.search(patron2) != -1 || EdadAnimal.search(patron3) != -1){ 
+       alert("La Edad no puede llevar caracteres especiales.") 
+       document.form1.EdadAnimal.focus() 
+       return 0; 
+    }
+    //El Color no puede contener caracteres especiales
+	else if (ColorAnimal.search(patron) != -1 ||ColorAnimal.search(patron2) != -1 || ColorAnimal.search(patron3) != -1){ 
+       alert("El Color no puede llevar caracteres especiales.") 
+       document.form1.ColorAnimal.focus() 
+       return 0; 
+    }
+    	//El Tamaño no puede contener caracteres especiales
+	else if (TamañoAnimal.search(patron) != -1 ||TamañoAnimal.search(patron2) != -1 || TamañoAnimal.search(patron3) != -1){ 
+       alert("El Tamaño no puede llevar caracteres especiales.") 
+       document.form1.TamañoAnimal.focus() 
+       return 0; 
+    }
+    //Se valida que el peso sea numerico
+	Numer=parseInt(PesoAnimal);
+    if (isNaN(Numer)){
+            alert("El Peso ingresado no es válido, por que solo se permiten caracteres numericos.");
+			document.form1.PesoAnimal.focus();
+			return 0; 
+    }
+    //Se valida que el Edad sea numerico
+	Numer=parseInt(EdadAnimal);
+    if (isNaN(Numer)){
+            alert("La Edad ingresada no es válida, por que solo se permiten caracteres numericos.");
+			document.form1.EdadAnimal.focus();
+			return 0; 
+    }
+    
     document.form1.submit(); 
 } 
 
@@ -87,11 +184,6 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 	}
 	
 	</script>
-
-
-<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
-<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
-<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -142,8 +234,8 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 									echo "
 									<table width='auto' border='0'>
   									  <tr>
-										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'> Solo se permite archivos de imagenes como jpg png</font></td>
+										<td><img src='images/Advertencia.png' alt='' width='60' height='58' /></td>
+										<td align='center'><font color='red' size='5px'> No se ha podido hacer el registro por que solo se permite archivos de imagenes como jpg o png</font></td>
 									  </tr>
 									</table>";
 									break;
@@ -205,15 +297,12 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			                        
 			                        <?PHP
 					  
-									//////////////////////////////////////
-									///// AQUÍ////
-									//////////////////////////////////////
-								  if ($numfilas > 0) {  
-         							while ($rowEmp = mysql_fetch_assoc($resultado )) {  
-           								 echo " <option value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";  
-         							}
-      							  }
-								  ?>
+						if ($numfilas > 0) {  
+         						while ($rowEmp = mysql_fetch_assoc($resultado )) {  
+           							echo " <option value='".$rowEmp['idTipos_Animal']."'>".$rowEmp['Tipo']."</option>";  
+         						}
+      						}
+						?>
 		                          </select></td>
 		                        </tr>
 			                    <tr>
@@ -222,16 +311,13 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			                      <td>Estado Animal:</td>
 			                      <td align="left"><select name="EstadoAnimal" class="form" id="EstadoAnimal">
 			                        <?PHP
-                                                                       //////////////////////////////////////
-                                                                       /////CODIGO DE MODIFICAR SEDE AQUÍ////
-                                                                       //////////////////////////////////////
-                                                                 if ($numfilas1 > 0) {
-                                                               while ($rowEmp = mysql_fetch_assoc($resultado1)) {
-                                                                        echo " <option value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
-                                                               }
-                                                         }
+                                                if ($numfilas1 > 0) {
+                                                    while ($rowEmp = mysql_fetch_assoc($resultado1)) {
+                                                          echo " <option value='".$rowEmp['idEstado_Animal']."'>".$rowEmp['Estado']."</option>";
+                                                    }
+                                                }
 
-                                                                 ?>
+                                                ?>
 			                        </select></td>
 		                        </tr>
 			                    <tr>

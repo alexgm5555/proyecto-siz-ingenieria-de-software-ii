@@ -24,7 +24,7 @@ if(is_uploaded_file($FotoAnimal2)){
     if(($ExtFotoanimal['extension']=="jpg")||($ExtFotoanimal['extension']=="JPG")||($ExtFotoanimal['extension']=="PNG")||($ExtFotoanimal['extension']=="png")){
         
         
-    
+   
         #$FotoAnimal= "images/".$FotoAnimal1;/*le adiciona el nombre de la carpeta al nombre de la imagen*/
         #copy($FotoAnimal2,$FotoAnimal);/*codigo para copiar el archivo temporal al destino que tiene especifico*/
 
@@ -44,7 +44,7 @@ if(is_uploaded_file($FotoAnimal2)){
 
                 $query = ("insert into animal values (null, 'Particular','$Cedula','$TipoAnimal','En Adopcion','$NombreAnimal','$SexoAnimal','$RazaAnimal','$ColorAnimal','$TamañoAnimal','$EdadAnimal','$PesoAnimal','$FotoAnimal','','$HabilidadAnimal')");/*inserta los valores en la BD*/
 
-                mysql_query($query)or die(mysql_error());
+                mysql_query($query)or die('location:RegistrarMascota.php');
                 header ('location:MascotasRegistradas.php?Message=3');
                 }
 
@@ -52,6 +52,6 @@ if(is_uploaded_file($FotoAnimal2)){
 else{
     header ('location:RegistrarMascota.php?Message=1');
 }
-	}
-
+	}echo "pasa";
+  //header ('location:RegistrarMascota.php');
 ?>
