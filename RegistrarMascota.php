@@ -334,7 +334,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 		                        </tr>
 			                    <tr>
 			                      <td colspan="4" ><div align="center">
-			                        <input type="submit" name="fo" value="Registrar" class="inputButton" onclick="valida_envia()"/>
+			                        <input type="button" name="login" value="Registrar" class="inputButton"  onclick="valida_envia()"/>
 			                      </div></td>
 		                        </tr>
 		                      </table>

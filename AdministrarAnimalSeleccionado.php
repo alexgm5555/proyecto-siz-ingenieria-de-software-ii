@@ -37,7 +37,133 @@ id_Animal='".$idAnimal."'");
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-               <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--
+    Script que permite capturar la tecla enter y enviar el formulario
+    -->
+    <script language="javascript "type="text/javascript">
+		function stopRKey(evt) { 
+		var evt = (evt) ? evt : ((event) ? event : null);
+		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+		}
+		document.form1.onkeypress = stopRKey; 
+	</script>
+<script language="javascript">
+
+	function valida_envia(){ 
+	var NombreAnimal = document.form1.NombreAnimal.value;
+        var PesoAnimal = document.form1.PesoAnimal.value;
+        var RazaAnimal = document.form1.RazaAnimal.value;
+        var HabilidadAnimal = document.form1.HabilidadAnimal.value;
+        var EdadAnimal = document.form1.EdadAnimal.value;
+        var ColorAnimal = document.form1.ColorAnimal.value;
+        var TamañoAnimal = document.form1.TamañoAnimal.value;
+        var FotoAnimal = document.form1.FotoAnimal.value;
+	
+	var patron = /'/;
+	var patron2 = /"/;
+	var patron3 = /;/;
+	
+	
+	
+	// El Nombre de Animal no puede ser vacio:
+    if (NombreAnimal.length==0){ 
+       alert("Ingrese un nombre del Animal") 
+       document.form1.NombreAnimal.focus() 
+       return 0; 
+    } 
+    // La habilidad del Animal no puede ser vacio:
+    else if (HabilidadAnimal.length==0){ 
+       alert("Ingrese la habilidad o una descripción general del animal") 
+       document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    	// El Nombre de Animal no puede ser vacio:
+    else if (EdadAnimal.length==0){ 
+       alert("Ingrese la Edad del Animal") 
+       document.form1.EdadAnimal.focus() 
+       return 0; 
+    }
+    	// El Color del Animal no puede ser vacio:
+    else if (ColorAnimal.length==0){ 
+       alert("Ingrese un Color del Animal") 
+       document.form1.ColorAnimal.focus() 
+       return 0; 
+    }
+    
+    
+            
+	
+		
+	//El nombre no puede contener caracteres especiales
+	else if (NombreAnimal.search(patron) != -1 ||NombreAnimal.search(patron2) != -1 || NombreAnimal.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
+       document.form1.NombreAnimal.focus() 
+       return 0; 
+    } 
+        //El peso no puede contener caracteres especiales
+	else if (PesoAnimal.search(patron) != -1 ||PesoAnimal.search(patron2) != -1 || PesoAnimal.search(patron3) != -1){ 
+       alert("El Peso no puede llevar caracteres especiales.") 
+       document.form1.PesoAnimal.focus() 
+       return 0; 
+    }
+    //El Raza no puede contener caracteres especiales
+	else if (RazaAnimal.search(patron) != -1 ||RazaAnimal.search(patron2) != -1 || RazaAnimal.search(patron3) != -1){ 
+       alert("El Raza no puede llevar caracteres especiales.") 
+       document.form1.RazaAnimal.focus() 
+       return 0; 
+    }
+    //La habiliadad no puede contener caracteres especiales
+	else if (HabilidadAnimal.search(patron) != -1 ||HabilidadAnimal.search(patron2) != -1 || HabilidadAnimal.search(patron3) != -1){ 
+       alert("La Habilidad no puede llevar caracteres especiales.") 
+       document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    //La Edad no puede contener caracteres especiales
+    	else if (EdadAnimal.search(patron) != -1 ||EdadAnimal.search(patron2) != -1 || EdadAnimal.search(patron3) != -1){ 
+       alert("La Edad no puede llevar caracteres especiales.") 
+       document.form1.EdadAnimal.focus() 
+       return 0; 
+    }
+    //El Color no puede contener caracteres especiales
+	else if (ColorAnimal.search(patron) != -1 ||ColorAnimal.search(patron2) != -1 || ColorAnimal.search(patron3) != -1){ 
+       alert("El Color no puede llevar caracteres especiales.") 
+       document.form1.ColorAnimal.focus() 
+       return 0; 
+    }
+    	//El Tamaño no puede contener caracteres especiales
+	else if (TamañoAnimal.search(patron) != -1 ||TamañoAnimal.search(patron2) != -1 || TamañoAnimal.search(patron3) != -1){ 
+       alert("El Tamaño no puede llevar caracteres especiales.") 
+       document.form1.TamañoAnimal.focus() 
+       return 0; 
+    }
+    //Se valida que el peso sea numerico
+	Numer=parseInt(PesoAnimal);
+    if (isNaN(Numer)){
+            alert("El Peso ingresado no es válido, por que solo se permiten caracteres numericos.");
+			document.form1.PesoAnimal.focus();
+			return 0; 
+    }
+    //Se valida que el Edad sea numerico
+	Numer=parseInt(EdadAnimal);
+    if (isNaN(Numer)){
+            alert("La Edad ingresada no es válida, por que solo se permiten caracteres numericos.");
+			document.form1.EdadAnimal.focus();
+			return 0; 
+    }
+    
+    document.form1.submit(); 
+} 
+
+// Funcion que llama a la anterior si en alguno de los campos se presiona la tecla enter
+	function onEnter(ev) {  
+	if(ev==13)    { 
+	valida_envia();  
+	}  
+	}
+	
+	</script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
                <meta name="description" content="" />
                <meta name="keywords" content="" />
                <title>Zoonosis</title>
@@ -151,7 +277,7 @@ td {
                             <div class="AccordionPanelContent">
                                 <div align="center">
                                     <p>Solicitudes de Adopción:</p>
-                                    <form id="form1" method="post" action="">
+                                    <form id="form" method="post" action="">
                                         <?php
                                         #aca llama la funcion de lista de solicitantes
                                         ?>
@@ -214,7 +340,7 @@ td {
                             </div>
                             <div class="AccordionPanelContent">
                                 <p align="center">Por favor seleccione la sede que desea modificar:&nbsp;</p>
-                                <form action="ModificarAnimalApp.php" method="post" enctype="multipart/form-data" id="form2">
+                                <form name ="form1" action="ModificarAnimalApp.php" method="post" enctype="multipart/form-data" id="form1">
                                     <p align="center">
                                     <table width="658" border="0" align="center" >
                                         <tr>
@@ -317,7 +443,7 @@ td {
                                         <td colspan="7" >
                                             <div align="center">
                                                 <input name="idAnimal" type="hidden" value="<?php echo $f['idAnimal'];?>" />
-                                                <input type="submit" name="login" value="Modificar" class="inputButton" />
+                                                <input type="button" name="login" value="Modificar" class="inputButton"  onclick="valida_envia()"/>
                                             </div>
                                         </td>
                                     </tr>
