@@ -46,8 +46,8 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
         }
         
         else if (DocumentoUsuario.search(patron2) != -1 || DocumentoUsuario.search(patron3) != -1){ 
-        alert("El Documento no puede llevar caracteres especiales.") 
-        document.form1.DocumentoUsuario.focus() 
+        alert("El Documento no puede llevar caracteres especiales.")
+        document.form1.DocumentoUsuario.focus()
         return 0; 
         }
                 
