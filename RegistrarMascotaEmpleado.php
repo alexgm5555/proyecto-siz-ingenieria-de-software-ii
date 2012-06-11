@@ -87,7 +87,37 @@ body {
               
               
               
-              
+ 			<!--<?php
+			try {
+							
+							$mensaje = $_GET['Message']; 
+							switch ($mensaje) {								
+								case 1:
+									echo "<div id='box1'> 
+								<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Alguno de los archivos no corresponde a un archivo de imagen</font></td>
+									  </tr>
+									</table></div>";	
+									break;
+								case 2:
+									echo "<div id='box1'> 
+								<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>&nbsp;Fueron Registrados los Animales satisfactoriamente</font></td>
+									  </tr>
+									</table></div>";	
+									break;	
+							}				
+							
+							}  
+						catch (Exception $e)  
+						{  
+    						echo "Sucedió un error inesperado.".$e->getMessage();
+				}		
+			?>	-->             
               
               
               
@@ -115,7 +145,7 @@ body {
     }
 </style>  
               
-              
+               
               
               
               
@@ -139,6 +169,7 @@ body {
                   </tr>
                 </thead>
                 <tbody>
+                    
                   <tr style='height:16px;'>
                     <th style="height: 16px;" class="row-headers-background"><div class="row-header-wrapper" style="height: 16px;">1</div></th>
                     <td colspan="2" ice:editable="*"><label for="1_Aimage"></label>

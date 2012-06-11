@@ -52,14 +52,14 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 	function valida_envia(){ 
 	var NombreAnimal = document.form1.NombreAnimal.value;
 	
-	
+	var patron = /'/;
 	var patron2 = /"/;
 	var patron3 = /;/;
 	
 	//valido el usuario
 	
 	// El usuario no puede ser vacio:
-    if (NombresAnimal.length==0){ 
+    if (NombreAnimal.length==0){ 
        alert("Ingrese un nombre de Usuario") 
        document.form1.NombreAnimal.focus() 
        return 0; 
@@ -69,7 +69,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 	
 		
 	//El nombre no puede contener caracteres especiales
-	else if (NombreAnimal.search(patron2) != -1 || NombreAnimal.search(patron3) != -1){ 
+	else if (NombreAnimal.search(patron) != -1 ||NombreAnimal.search(patron2) != -1 || NombreAnimal.search(patron3) != -1){ 
        alert("El Nombre no puede llevar caracteres especiales.") 
        document.form1.NombreAnimal.focus() 
        return 0; 
@@ -138,12 +138,12 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 									break;
 								
 								
-								case 2:	
+								case 1:	
 									echo "
 									<table width='auto' border='0'>
   									  <tr>
 										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-										<td align='center'><font color='green' size='5px'> Ha sido  borrado el Registro $registro</font></td>
+										<td align='center'><font color='green' size='5px'> Solo se permite archivos de imagenes como jpg png</font></td>
 									  </tr>
 									</table>";
 									break;
