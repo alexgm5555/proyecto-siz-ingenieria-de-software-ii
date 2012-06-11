@@ -74,19 +74,20 @@ foreach ($array as $v) {
                             $query = ("insert into animal values ('','Zoonosis','0','$array[$tipo]','Perdido','','$array[$sexo]','$array[$raza]','$array[$color]','$array[$tamano]','$array[$edad]','$array[$peso]','$destino','','')");/*inserta los valores en la BD*/
                             
                             mysql_query($query)or die(mysql_error());
-                            echo "ok";
+                           
 
                     }
+                    else{
+                    
+                    header ('location:RegistrarMascotaEmpleado.php?Message=1');
                 }
-                else{
-                    echo "paila";
-                    //header ('location:MascotasRegistradasEmpleado.php?Message=1');
                 }
+                
                 
 	}
     $i++;
 }
-//header ('location:MascotasRegistradasEmpleado.php?Message=2');
+header ('location:RegistrarMascotaEmpleado.php?Message=2');
 	}
 
 ?>
