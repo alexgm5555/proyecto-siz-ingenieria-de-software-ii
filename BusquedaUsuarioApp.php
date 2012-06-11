@@ -27,7 +27,7 @@ session_start();
                   where (Cedula = $UsuarioModificar and TipoUsuario = 'Particular')";
             }
         
-        $consulta = mysql_query($query) or die(mysql_error());
+        $consulta = mysql_query($query) or die(header('Location: BusquedaUsuario.php'));
         $_SESSION['row'] = mysql_fetch_array($consulta);
         
         if($_SESSION['row'] != null)
@@ -36,7 +36,10 @@ session_start();
             }
         else
             {
-            echo "El usuario no se encuentra registrado en el sistema.";
+            echo "<script type=''>
+                    alert('El usuario no se encuentra registrado en el sistema.');
+                    </script>";  
+            header('Location: BusquedaUsuario.php');
             }
 
         }

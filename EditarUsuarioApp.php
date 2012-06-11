@@ -53,8 +53,8 @@ session_start();
                                                    Password = '$ContraseñadeUsuario'
                       where (Cedula = $Usuario[4])";
             }
-        
-        mysql_query($query) or die(mysql_error());
+
+        mysql_query($query) or die(header('Location: EditarUsuario.php'));
         
         header('Location: BusquedaUsuario.php');
       
