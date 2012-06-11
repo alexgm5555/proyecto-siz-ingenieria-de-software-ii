@@ -18,6 +18,115 @@ include ("conexionMySQL.php");
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+            
+            <!--
+    Script que permite capturar la tecla enter y enviar el formulario
+    -->
+    <script language="javascript "type="text/javascript">
+		function stopRKey(evt) { 
+		var evt = (evt) ? evt : ((event) ? event : null);
+		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
+		}
+		document.form1.onkeypress = stopRKey; 
+	</script>
+    
+    <script language="javascript">
+
+	function valida_envia(){ 
+	var nombreSede = document.form1.nombreSede.value;
+        var direccionSede = document.form1.direccionSede.value;
+	var emailSede = document.form1.emailSede.value;
+	var telefonoSede = document.form1.telefonoSede.value;
+	
+	var patron = /'/;
+	var patron2 = /"/;
+	var patron3 = /;/;
+	
+	//valido el usuario
+	
+	// El usuario no puede ser vacio:
+    if (nombreSede.length==0){ 
+       alert("Ingrese un nombre de la Sede") 
+       document.form1.nombreSede.focus() 
+       return 0; 
+    } 
+	
+	// El email no puede ser vacio:
+    else if (emailSede.length==0){ 
+       alert("El email no puede ser vacío.") 
+       document.form1.emailSede.focus() 
+       return 0; 
+    }
+	
+	// El telefono no puede ser vacio:
+    else if (telefonoSede.length==0){ 
+       alert("El teléfono no puede ser vacío.") 
+       document.form1.telefonoSede.focus() 
+       return 0; 
+    }
+    
+    // La direccion no puede ser vacia:
+    else if (direccionSede.length==0){ 
+       alert("La direccion no puede ser vacia.") 
+       document.form1.direccionSede.focus() 
+       return 0; 
+    }
+	
+	
+	//El nombre no puede contener caracteres especiales
+	else if (nombreSede.search(patron) != -1 || nombreSede.search(patron2) != -1 || nombreSede.search(patron3) != -1){ 
+       alert("El Nombre no puede llevar caracteres especiales.") 
+       document.form1.nombreSede.focus() 
+       return 0; 
+    } 
+	
+
+	//El email no puede contener caracteres especiales
+	else if (emailSede.search(patron) != -1 || emailSede.search(patron2) != -1 || emailSede.search(patron3) != -1){ 
+       alert("El Email no puede llevar caracteres especiales excepto @.") 
+       document.form1.emailSede.focus() 
+       return 0; 
+    }
+	
+	//El email no puede contener caracteres especiales
+	else if (telefonoSede.search(patron) != -1 || telefonoSede.search(patron2) != -1 || telefonoSede.search(patron3) != -1){ 
+       alert("El Teléfono no puede llevar caracteres especiales.") 
+       document.form1.telefonoSede.focus() 
+       return 0; 
+    }  
+
+	//Se valida que el telefono sea numerico
+	Numer=parseInt(telefonoSede);
+    if (isNaN(Numer)){
+            alert("El Teléfono ingresado no es válido.");
+			document.form1.telefonoSede.focus();
+			return 0; 
+    }
+	
+	//Se valida si el campo de email tiene el formato de email correcto
+	
+    re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
+    if(!re.exec(emailSede))    {
+        alert("El Email ingresado no tiene un formato correcto. Por favor ingrese un email con el siguiente formato: ejemplo@dominio.com.");
+		document.form1.emailSede.focus();
+		return 0; 
+    }
+
+	//el formulario se envia 
+   
+    document.form1.submit(); 
+} 
+
+// Funcion que llama a la anterior si en alguno de los campos se presiona la tecla enter
+	function onEnter(ev) {  
+	if(ev==13)    { 
+	valida_envia();  
+	}  
+	}
+	
+	</script>
+            
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -99,12 +208,12 @@ include ("conexionMySQL.php");
                             <div class="AccordionPanelContent">
                               <div align="center">
                                 <p>Por favor ingrese la información de la Nueva Sede:</p>
-                                <form id="form1" method="post" action="CrearSede.php">
+                                <form id="form1" name="form1" method="post" action="CrearSede.php">
                                 <table width="600" border="0">
                                 <tr>
                                   <td>Nombre:</td>
                                   <td><label for="nombreSede"></label>
-                                  <input name="nombreSede" type="text" id="nombreSede" size="45px" /></td>
+                                  <input name="nombreSede" type="text" id="nombreSede" size="45px" maxlength="40"/></td>
                                 </tr>
                                 <tr>
                                   <td>Ciudad:</td>
@@ -125,19 +234,19 @@ include ("conexionMySQL.php");
                                 </tr>
                                 <tr>
                                   <td>Dirección:</td>
-                                  <td><input name="direccionSede" type="text" id="direccionSede" size="45px" /></td>
+                                  <td><input name="direccionSede" type="text" id="direccionSede" size="45px" maxlength="40"/></td>
                                 </tr>
                                 <tr>
                                   <td>Teléfono:</td>
-                                  <td><input name="telefonoSede" type="text" id="telefonoSede" size="45px" /></td>
+                                  <td><input name="telefonoSede" type="text" id="telefonoSede" size="45px" maxlength="40"/></td>
                                 </tr>
                                 <tr>
                                   <td>E-mail:</td>
-                                  <td><input name="emailSEde" type="text" id="emailSEde" size="45px" /></td>
+                                  <td><input name="emailSEde" type="text" id="emailSede" size="45px" maxlength="40"/></td>
                                 </tr>
                                 <tr>
                                   <td colspan="2" ><div align="center">
-                                    <input type="submit" name="login" value="Crear Sede" class="inputButton" />
+                                    <input type="submit" name="login" value="Crear Sede" class="inputButton" onclick="valida_envia()"/>
                                   </div></td>
                                   </tr>
                               </table>
@@ -195,7 +304,7 @@ include ("conexionMySQL.php");
 			</div>
 		</div>
 		<div style="margin: 1em 0 3em 0; text-align: center;">
-        Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+        Este Sitio Web es desarrollado por estudiantes de la Universidad Nacional de Colombia
 			<br />Diseñado y Provisto por Zoonosis Team
 			<br />© 2012.</div>
     <script type="text/javascript">
