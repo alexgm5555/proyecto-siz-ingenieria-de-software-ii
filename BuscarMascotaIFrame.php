@@ -30,9 +30,7 @@ $numfilas = mysql_num_rows($resultado);
 <?
 #se envia BuscarMascotaIFrame.php?var=0 para que pueda acceder a las variables tipo sexo y ciudad
 ?>
-<head>
-    
-</head>
+
 <body>
     <form name="form1" method="post" action="BuscarMascotaIFrame.php?var=0">
         <p align="center">
@@ -85,7 +83,7 @@ $numfilas = mysql_num_rows($resultado);
                     <?php
                     #codigo en caso de que el usuario haga click en algun animal pues este lo saque del iframe y lo envie a enviar solicitud
                     if(($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/BuscarMascotaIFrame.php?var=0')&&($url_anterior != '/proyecto-siz-ingenieria-de-software-ii/BuscarMascotaIFrame.php?var=2')){
-                        echo $url_anterior;
+                        //echo $url_anterior;
 			$id = $_GET['idAnimal'];
                         echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/SolicitudAdopcion.php?idAnimal='.$id.'>" </script>';
 			}	

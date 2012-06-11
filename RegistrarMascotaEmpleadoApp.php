@@ -56,7 +56,7 @@ if($conexion){/*aca haria la conexion a la bas de datos*/
                     if(($ExtFotoanimal['extension']=="jpg")||($ExtFotoanimal['extension']=="JPG")||($ExtFotoanimal['extension']=="PNG")||($ExtFotoanimal['extension']=="png")){
                     }
                     else{
-                        
+                        echo "paso";
                         echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=1" </script>';
                     }
                 }
@@ -103,8 +103,8 @@ foreach ($array as $v) {
 	}
     $i++;
 }
-
-    echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=2" </script>';
+echo "paso1";
+    //echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=2" </script>';
     }
 
 ?>

@@ -1,5 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
+error_reporting("E_PARSE");
+?>
+    <?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
     session_start();
@@ -55,33 +58,32 @@
                                                     <div id="box1">
                                                             <h2>Administración de Usuarios</h2>
                                                             <p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar los usuarios de Zoonosis.</p>
-                                                            <?php
+                                        <?php		
                                         #el siguiente codigo try sirve para mostrar un mensaje de modificacion eliminacion O INSET de mascota
-                                                try {
+                    try {
                                                     $bandera=0;  
                                                     $mensaje = $_GET['Message']; 
-                                                     
-                                                    switch ($mensaje) {
-                                                        
+                      
+                   switch ($mensaje) {
+                            
                                                         #Manda este Mensajesi viene de AdministrarAnimalSeleccionado.php y selecciona Eliminar Registro
-							case 1:	
+			case 1:	
                                                             echo    "<table width='auto' border='0'>
-                                                                        <tr>
-                                                                            <td><img src='images/Advertencia.png' alt='' width='80' height='78' /></td>
-                                                                            <td align='center'><font color='red' size='5px'> Uno de los campos de imagen no corresponde a un archivo jpg o png </font></td>
-                                                                         </tr>
-                                                                     </table>";
-                                                            break;
-							#Manda este Mensaje si viene de AdministrarAnimalSeleccionado.php y selecciona Modificar Registro
-							case 2:
+  					<tr>
+                                            <td><img src='images/Advertencia.png' alt='' width='80' height='78' /></td>
+                                            <td align='center'><font color='red' size='5px'> Uno de los campos de imagen no corresponde a un archivo jpg o png </font></td>
+					</tr>
+                                    </table>";
+			break;
+                        case 2:	
                                                             echo    "<table width='auto' border='0'>
-                                                                        <tr>
-                                                                            <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
-                                                                            <td align='center'><font color='green' size='5px'> Han sido registrados todos los animales correctamente </font></td>
-                                                                        </tr>
-                                                                    </table>";
+  					<tr>
+                                            <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+                                            <td align='center'><font color='green' size='5px'> Han sido registrados todos los animales correctamente </font></td>
+					</tr>
+                                    </table>";
 									
-                                                            break;
+			break;
                                                         #Manda este Mensaje si viene de RegistrarMascota.php 
 							case 3:
                                                             echo "  <table width='auto' border='0'>
@@ -92,15 +94,15 @@
                                                                     </table>";
 									
                                                             break;
-                                                    }				
+                        }	                    				
 							
-						}  
+		}  
 						catch (Exception $e)  
 						{  
-    						echo "Sucedió un error PHP.";
+                    echo "Sucedió un error PHP.";
 						}
-	  
-                                        ?>
+                    
+            ?>    
                                                             <p>&nbsp;</p>
                                                     </div>
 			-->

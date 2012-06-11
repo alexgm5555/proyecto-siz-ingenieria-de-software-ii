@@ -80,12 +80,7 @@ window.status = err.message;
                     $mensaje = $_GET['Message']; 
                     switch ($mensaje) {
 			case 0:
-                            echo "<table width='auto' border='0'>
-  					<tr>
-                                            <td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
-                                            <td align='center'><font color='red' size='5px'>Tu solicitud ha sido enviada correctamente.</font></td>
-					</tr>
-                                    </table>";
+                            echo "";
 			break;
                         #es accionado el caso 1 cuando el usuario hace una solicitud osea llega a esta pag de Solicitud Adopcion con menssage=1
 			case 1:	
@@ -94,6 +89,16 @@ window.status = err.message;
   					<tr>
                                             <td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
                                             <td align='center'><font color='green' size='5px'>Tu solicitud ha sido enviada correctamente.</font></td>
+					</tr>
+                                    </table>";
+			break;
+                    #es accionado el caso 1 cuando ya tiene una solicitud llega a esta pag de Solicitud Adopcion con menssage=1
+			case 2:	
+                            echo "
+                                    <table width='auto' border='0'>
+  					<tr>
+                                            <td><img src='images/Advertencia.png' alt='' width='40' height='38' /></td>
+                                            <td align='center'><font color='red' size='5px'>Ya hay una solicitud pendiente de esta mascota</font></td>
 					</tr>
                                     </table>";
 			break;
