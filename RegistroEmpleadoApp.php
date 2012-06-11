@@ -28,7 +28,7 @@ Conectarse($conexion);
             if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
 		$query = "insert into zoonosis.usuarios(TipoUsuario, Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, Contrato, SedeLaboral, FechaInicio, SuelDevengado, UserName, Password)
                         values ( '$TipoEmpleado', '$NombreEmpleado', '$ApellidoEmpleado', '$DocumentoEmpleado', '$CiudadEmpleado' , '$CorreoEmpleado' , '$TelefonoEmpleado',  '$CelularEmpleado' , '$ContratoEmpleado', '$SedeEmpleado', '$InicioEmpleado', '$DevengadoEmpleado', '$NombredeUsuario' , '$ContraseñadeUsuario')";
-		mysql_query($query)or die(header ('location:AdministracionEmpleados.php')); 
+		mysql_query($query)or die(mysql_error()); 
             
 		header ('location:AdministracionEmpleados.php'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php
 		}
