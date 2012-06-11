@@ -155,6 +155,7 @@ ul h4 {
 
 #content h2, #content h3, #content h4 {
 	color: #0d0d0d;
+	text-align: center;
 }
 
 #copyright {

@@ -61,6 +61,18 @@ td {
 #outer #main #content #box1 h2 {
 	text-align: center;
 }
+#outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelOpen .AccordionPanelContent #form2 table tr td #EstadoAnimal {
+	font-size: 12pt;
+}
+#outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelOpen .AccordionPanelContent #form2 table tr td #EstadoAnimal {
+	font-size: 9pt;
+}
+#outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelOpen .AccordionPanelContent #form2 table tr td #EstadoAnimal {
+	font-size: xx-small;
+}
+#outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelOpen .AccordionPanelContent #form2 table tr td #EstadoAnimal {
+	font-size: 14pt;
+}
 </style>
 </head>
 <body>
@@ -95,18 +107,18 @@ td {
                     <div align="center"></div>
                         <table width="100%" height="244" align="right" cellpadding="1" cellspacing="0">
                             <tr>
-                                <th width="56%" scope="col">
+                                <th width="60%" scope="col">
                                     <h6 align="center">&nbsp;</h6>
                                     <h6 align="center">
                                         <?php
                                         #codigo para imprimir la foto
-                                        echo'<img src="'.$f['Foto'].'"width="220" heigth="220"/>';
+                                        echo'<img src="'.$f['Foto'].'"width="320" heigth="320"/>';
                                         ?>
                                     </h6>
                                     <h5 align="center">&nbsp;</h5>
                                 </th>
-                                <th width="44%" scope="col">
-                                    <table width="72%" height="190" border="0" >
+                                <th width="40%" scope="col">
+                                    <table width="72%" height="184" border="0" >
                                         <tr>
                                             <th scope="col">
                                                 <h5 align="left" class="login">Tipo de Animal:
@@ -117,12 +129,12 @@ td {
                                                 <h5 align="left">Sexo: <?php echo $f['Sexo'];?></h5>
                                                 <h5 align="left">Color: <?php echo $f['Color'];?></h5>
                                                 <h5 align="left">Edad: <?php echo $f['Edad'];?></h5>
-                                                <h5 align="left">Peso:<?php echo $f['Peso'];?></h5>
+                                                <h5 align="left">Peso: <?php echo $f['Peso'];?></h5>
                                                 <h5 align="left" class="login">Habilidad:
                                                   <?php
                             echo$f['Habilidad'];
                             ?>
-                                                </h5></th>
+                                          </h5></th>
                                         </tr>
                                     </table>
                                 </th>
@@ -135,7 +147,7 @@ td {
                 <div id="box2">
                     <div id="Accordion1" class="Accordion" tabindex="0">
                         <div class="AccordionPanel">
-                            <div class="AccordionPanelTab">Listado de Solicitudes de Adopción</div>
+                            <div class="AccordionPanelTab">Solicitudes de Adopción</div>
                             <div class="AccordionPanelContent">
                                 <div align="center">
                                     <p>Solicitudes de Adopción:</p>
@@ -204,31 +216,29 @@ td {
                                 <p align="center">Por favor seleccione la sede que desea modificar:&nbsp;</p>
                                 <form action="ModificarAnimalApp.php" method="post" enctype="multipart/form-data" id="form2">
                                     <p align="center">
-                                    <table width="610" border="0" align="center" >
+                                    <table width="658" border="0" align="center" >
                                         <tr>
-                                            <td width="30">&nbsp;</td>                                  
-                                            <td width="60">Nombre:</td>
-                                            <td width="181"><label for="nombreSede"></label>
+                                            <td width="9" height="30">&nbsp;</td>                                  
+                                            <td width="64">Nombre:</td>
+                                            <td width="178"><label for="nombreSede"></label>
                                                 <input name="NombreAnimal" type="text" id="NombreAninal" value="<?php echo $f['Nombre'];?>"size="30px" />
                                             </td>
-                                            <td width="14">&nbsp;</td>
-                                            <td width="115">Peso:</td>
+                                            <td width="4">&nbsp;</td>
+                                            <td width="124">Peso:</td>
                                             <td width="241">
                                                 <input name="PesoAnimal" type="text" id="PesoAnimal" value="<?php echo$f['Peso'];?>" size="30px" />
                                             </td>
-                                            <td width="19">&nbsp;</td>
+                                            <td width="8">&nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td>&nbsp;</td>
-                                            <td height="48">Raza:</td>
+                                            <td height="30">Raza:</td>
                                             <td>
                                                 <input name="RazaAnimal" type="text" id="RazaAninal" value="<?php echo $f['Raza'];?>" size="30px" />
                                             </td>
                                             <td>&nbsp;</td>
-                                            <td>Habilidad:</td>
-                                            <td>
-                                                <textarea name="HabilidadAnimal" cols="30px" id="HabilidadAnimal"><?php echo $f['Habilidad'];?></textarea>
-                                            </td>
+                                            <td>Estado Animal:</td>
+                                            <td>&nbsp;</td>
                                             <td>&nbsp;</td>
                                         </tr>
                                         <tr>
@@ -238,8 +248,8 @@ td {
                                                 <input name="SexoAnimal"type="text" id="SexoAnimal" value="<?php echo $f['Sexo'];?>" size="30px" />
                                             </td>
                                             <td>&nbsp;</td>
-                                            <td>Estado Animal:</td>
-                                            <td>
+                                            <td>&nbsp;</td>
+                                            <td width="241">
                                                 <select name="EstadoAnimal" class="form" id="EstadoAnimal">
                                                     <?PHP
                                                                        //////////////////////////////////////
@@ -251,8 +261,7 @@ td {
                                                             }
                                                          }
                                                     ?>
-                                                </select>
-                                            </td>
+                                                </select></td>
                                         <td>&nbsp;</td>
                                     </tr>
                                     <tr>
@@ -265,7 +274,7 @@ td {
                                         <td>Foto:</td>
                                         <td>
                                             <label for="FotoAnimal"></label>
-                                            <input type="file" name="FotoAnimal" id="FotoAnimal"  size="30px"/>
+                                            <input type="file" name="FotoAnimal" id="FotoAnimal"  size="25px"/>
                                         </td>
                                         <td>&nbsp;</td>
                                     </tr>
@@ -276,8 +285,8 @@ td {
                                         <input name="ColorAnimal"type="text" id="Color" value="<?php echo $f['Color'];?>" size="30px"/>
                                     </td>
                                     <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td  align "center">&nbsp;</td>
+                                    <td>Habilidad:</td>
+                                    <td  align "center"><textarea name="HabilidadAnimal" cols="30px" id="HabilidadAnimal"><?php echo $f['Habilidad'];?></textarea></td>
                                     <td  align "center">&nbsp;</td>
                                     <tr>
                                         <td>&nbsp;</td>
@@ -370,7 +379,7 @@ td {
         </div>
     </div>
     <div style="margin: 1em 0 3em 0; text-align: center;">
-       Este Sitio Web es desarrollado en la Universidad Nacional de Colombia
+       Este Sitio Web es desarrollado por estudiantes de la Universidad Nacional de Colombia
        <br />Diseñado y Provisto por Zoonosis Team
        <br />© 2012.
     </div>
