@@ -34,10 +34,10 @@ $datosUsuario=mysql_fetch_array($ret);
 		
 			 }
                   else {
-                      echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/BuscarMascota.php?Message=" </script>';
+                      echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/BuscarMascota.php?Message=2" </script>';
                   }       
   
-		header ('location:BuscarMascota.php?Message=2');
+		header ('location:BuscarMascota.php?Message=1');
         }
 		
 	else{echo  "Sucedió un error inesperado.".$e->getMessage();}

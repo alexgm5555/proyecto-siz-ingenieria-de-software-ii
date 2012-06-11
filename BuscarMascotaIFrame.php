@@ -30,7 +30,20 @@ $numfilas = mysql_num_rows($resultado);
 <?
 #se envia BuscarMascotaIFrame.php?var=0 para que pueda acceder a las variables tipo sexo y ciudad
 ?>
-
+<head>
+    <script language="javascript">
+        function valida_envia(contador){
+           
+                   
+            if(contador==1){
+                
+                alert("Ya fue relaizada la solicitud de esta mascota")
+                top.location="/proyecto-siz-ingenieria-de-software-ii/BuscarMascota.php";
+            }
+        }
+        
+</script>
+</head>
 <body>
     <form name="form1" method="post" action="BuscarMascotaIFrame.php?var=0">
         <p align="center">
@@ -148,11 +161,20 @@ $numfilas = mysql_num_rows($resultado);
                                         <th width="30%" align="center" scope="col">
                                             <?php
                                             $id= $f['idAnimal'];
+                                            $cedul=$datosUsuario['Cedula'];
+                                            $contador=1;
+                                            //echo $contador;
+                                            
+                                            $arregloSolicitudes=mysql_query("select * from solicitud_adopcion WHERE CC_Solicitante='".$cedul."'and id_Animal ='".$id."'");
+                                            $farreglosol=mysql_fetch_array($arregloSolicitudes);
+                                            // para saber si hay un registro similar en solicitud adopcion el contador queda en 0
+                                            if(!$farreglosol){
+                                                $contador=0;
+                                            }
                                             #codigo para enviar los valores del animal seleccionado
                                             // se envia asi mismo para que en el bloque de codigo de la line  171 se salga del iframe por completo y lo mande con el id del animal a solicitud de adopcion
                                             #Se manda una variable idAnimal con el valor de id que esta arriba, el cual contiene el id del animal que el usuario halla seleccionado.
-                                            echo "<a href=BuscarMascotaIFrame.php?idAnimal=$id>";
-                                            ?>
+                                            echo "<a href=BuscarMascotaIFrame.php?idAnimal=$id  onclick=valida_envia($contador)>";                                            ?>
                                             <?php
                                             #bloque de codigo para mostrar una imagen huella diferente dependiendo del sexo del animal
                                             if($f['Sexo']=='Macho'){
