@@ -56,7 +56,7 @@ window.status = err.message;
             </div>
             <div id="nav">
 	 	<ul>
-                    <li class="first active"><a href="ClasificadorRoles.php">Inicio</a></li>			
+                    <li class="first active"><a href="MascotasRegistradas.php">Inicio</a></li>			
                     <li><a href="#">Acerca de</a></li>
                     <li class="last"><a href="#">Contacto</a></li>
                     <li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
@@ -70,7 +70,7 @@ window.status = err.message;
         <div id="main">
             <div id="content">
                 <div id="box1">
-                    <h2>Busqueda de Mascotas</h2>
+                    <h2>Buscar Mascotas</h2>
 			<img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás encontrar todas las mascotas que se han registrado en el sitio.
                 </div>
 		<p>
@@ -125,7 +125,7 @@ window.status = err.message;
                       <li><a href="ClasificadorRoles.php">Mascotas Registradas</a></li>
                       <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                       <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                      <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
+                      <li><a href="EstadoSolicitudesEnviadas.php">Solicitudes de Adopción</li>
                     </ol>
                 </div>
 		<h3>Enlaces de Interés</h3>

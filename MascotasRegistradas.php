@@ -68,8 +68,8 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 	<div id="main">
             <div id="content">
 		<div id="box1">
-                    <h2>Mascotas Que Has Registrado</h2>
-                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás modificar, eliminar y ver las solicitudes que tiene cada mascota que has registrado en SIZ, dandole click a Administrar Datos.</div>
+                    <h2>Mascotas Registradas</h2>
+                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar datos y solicitudes de tus mascotas registradas.</div>
 					
                                         <?php
                                         #el siguiente codigo try sirve para mostrar un mensaje de modificacion eliminacion O INSET de mascota
@@ -123,10 +123,10 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
                                 <div id="box2" align="center"> 
                                     <div id="Accordion1" class="Accordion" tabindex="0">
                                         <div class="AccordionPanel">
-                                            <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
+                                            <div class="AccordionPanelTab">Mascotas registradas por <?php echo $_SESSION['usuario'];?>.</div>
 					    </div>
 					    <div class="AccordionPanel">
-                                                <p>Dando click en Modificar podras ver las solicitudes, eliminar o modificar el registro.</p>
+                                                <p></p>
                                                 <table width="60%" height="110" border="0">
                                                 </table>
                                                 <p align="center">
@@ -170,7 +170,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
                                         <li><a href="MascotasRegistradas.php">Mascotas Registradas</a></li>
                                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                                        <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
+                                        <li><a href="EstadoSolicitudesEnviadas.php">Solicitudes de Adopción</li>
                                     </ol>
                                 </div>
                                 <h3>Enlaces de Interés</h3>

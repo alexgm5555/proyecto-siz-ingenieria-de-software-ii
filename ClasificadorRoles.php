@@ -103,9 +103,6 @@ else{
 								//Caso en que sea Particular
 								case 2:
 								echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/MascotasRegistradas.php" </script>';
-								echo   "<li><a href='RegistrarMascota.php'>Registrar Animales</a></li>
-                                                                        <li><a href='BuscarMascota.php'>Búsqueda de Animales</a></li>
-									<li><a href='MascotasRegistradas.php'>Administrar Animales</a></li>";
 								break;
 							}
 					  ?>

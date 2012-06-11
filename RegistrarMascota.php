@@ -108,7 +108,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 <div id="nav">
 			  		
                     <ul>
-						<li class="first active"><a href="ClasificadorRoles">Inicio</a></li>			
+						<li class="first active"><a href="MascotasRegistradas.php">Inicio</a></li>			
 						<li><a href="#">Acerca de</a></li>
                        	<li class="last"><a href="#">Contacto</a></li>
 						<li class="last"><a href="Logout.php">Cerrar Sesión</a></li>							
@@ -124,8 +124,8 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			  <div id="content">
 				
 				<div id="box1">
-						<h2>Mascotas Que Has Registrado</h2>
-					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás insertar el registro de un animal.</div>
+						<h2>Registrar Mascotas</h2>
+					  <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás hacer el registro de una mascota.</div>
 					
 			    <?php		
 						try {
@@ -171,7 +171,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 			      <div id="box3" align="center">
 			        <div id="Accordion1" class="Accordion" tabindex="0">
 			          <div class="AccordionPanel">
-			            <div class="AccordionPanelTab">Mascotas registradas por: <?php echo $_SESSION['usuario'];?>.</div>
+			            <div class="AccordionPanelTab">Registro de Mascota <?php echo $_SESSION['usuario'];?>.</div>
 		              </div>
 			          <div class="AccordionPanel">
 			            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -276,7 +276,7 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
                         <li><a href="ClasificadorRoles.php">Mascotas Registradas</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
+                        <li><a href="EstadoSolicitudesEnviadas.php">Solicitudes de Adopción</li>
                       </ol>
                   </div>
 				  <h3>Enlaces de Interés</h3>

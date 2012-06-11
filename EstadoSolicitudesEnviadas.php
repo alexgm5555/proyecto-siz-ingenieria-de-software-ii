@@ -64,7 +64,7 @@ td {
             </div>
             <div id="nav">
                 <ul>
-                    <li class="first active"><a href="InicioUsuario.php">Inicio</a></li>
+                    <li class="first active"><a href="MascotasRegistradas.php">Inicio</a></li>
                     <li><a href="#">Acerca de</a></li>
                     <li class="last"><a href="#">Contacto</a></li>
                     <li class="last"><a href="Logout.php">Cerrar Sesión</a></li>
@@ -243,10 +243,10 @@ td {
                 <div class="form">
                     <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                     <ol>
-                        <li><a href="ClasificadorRoles.php">Pagina Inicio</a></li>
+                        <li><a href="ClasificadorRoles.php">Mascotas Registradas</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li><a href="MascotasRegistradas.php">Administrar Animales Registrados</a></li>
+                        <li><a href="MascotasRegistradas.php">Solicitudes de Adopción</a></li>
                     </ol>
               </div>
                 <h3>Enlaces de Interés</h3>

@@ -55,6 +55,12 @@ td {
 #outer #main #content #box2 #Accordion1 .AccordionPanel.AccordionPanelClosed .AccordionPanelContent #form2 table {
 	font-size: 12pt;
 }
+#outer #main #content #box1 h2 {
+	text-align: left;
+}
+#outer #main #content #box1 h2 {
+	text-align: center;
+}
 </style>
 </head>
 <body>
@@ -65,7 +71,7 @@ td {
             </div>
             <div id="nav">
                 <ul>
-                    <li class="first active"><a href="InicioUsuario.php">Inicio</a></li>
+                    <li class="first active"><a href="MascotasRegistradas.php">Inicio</a></li>
                     <li><a href="#">Acerca de</a></li>
                     <li class="last"><a href="#">Contacto</a></li>
                     <li class="last"><a href="Logout.php">Cerrar Sesión</a></li>
@@ -82,43 +88,27 @@ td {
         </div>
         <div id="main">
             <div id="content">
-                <div id="box1">
-                    <h2>Administración Mascotas Registradas</h2>
-                    <div align="center"></div>
-                        <table width="100%" height="244" cellpadding="1" cellspacing="0">
-                            <tr>
-                                <th width="19%" scope="col">&nbsp;</th>
-                                <th width="34%" scope="col">
-                                    <h6 align="center">
-                                        <span class="sectionList">
-                                            <?php
+              <div id="box1">
+                    <h2>  <?php
                                             echo $f['Nombre'];
-                                            ?>
-                                        </span> 
-                                    </h6>
+                                            ?></h2>
+                    <div align="center"></div>
+                        <table width="100%" height="244" align="right" cellpadding="1" cellspacing="0">
+                            <tr>
+                                <th width="56%" scope="col">
+                                    <h6 align="center">&nbsp;</h6>
                                     <h6 align="center">
                                         <?php
                                         #codigo para imprimir la foto
                                         echo'<img src="'.$f['Foto'].'"width="220" heigth="220"/>';
                                         ?>
                                     </h6>
-                                    <h6 align="center">
-                                        <span class="sectionList">
-                                            Codigo:
-                                            <?php
-                                            echo $f['idAnimal'];
-                                            ?> 
-                                        </span>
-                                    </h6>
                                     <h5 align="center">&nbsp;</h5>
                                 </th>
-                                <th width="39%" scope="col">
+                                <th width="44%" scope="col">
                                     <table width="72%" height="190" border="0" >
                                         <tr>
                                             <th scope="col">
-                                                <?php
-                                                #bloque de codigo para imprimir los datos del animal seleccionado, en mascotas registrada.php
-                                                ?>
                                                 <h5 align="left" class="login">Tipo de Animal:
                                                     <?php
                                                     echo $f['TipoAnimal'];
@@ -128,18 +118,17 @@ td {
                                                 <h5 align="left">Color: <?php echo $f['Color'];?></h5>
                                                 <h5 align="left">Edad: <?php echo $f['Edad'];?></h5>
                                                 <h5 align="left">Peso:<?php echo $f['Peso'];?></h5>
-                                                <h5 align="left" class="login">&nbsp;</h5></th>
+                                                <h5 align="left" class="login">Habilidad:
+                                                  <?php
+                            echo$f['Habilidad'];
+                            ?>
+                                                </h5></th>
                                         </tr>
                                     </table>
                                 </th>
                             </tr>
                         </table>
-                        <p align="center"><span class="login">Habilidad: 
-                            <?php
-                            echo$f['Habilidad'];
-                            ?>
-                            </span>
-                        </p>
+                        <p align="center">&nbsp;</p>
                         <p>
                         </p>
                 </div>
@@ -357,10 +346,10 @@ td {
                 <div class="form">
                     <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                     <ol>
-                        <li><a href="MascotasRegistradas.php">Pagina Inicio</a></li>
+                        <li><a href="MascotasRegistradas.php">Mascotas Registradas</a></li>
                         <li><a href="RegistrarMascota.php">Registrar Mascotas</a></li>
                         <li><a href="BuscarMascota.php">Buscar Mascotas</a></li>
-                        <li><a href="EstadoSolicitudesEnviadas.php">Estado de Mis Solicitudes</li>
+                        <li><a href="EstadoSolicitudesEnviadas.php">Solicitudes de Adopción</li>
                     </ol>
                  </div>
                 <h3>Enlaces de Interés</h3>
