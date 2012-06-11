@@ -47,7 +47,23 @@ if($conexion){/*aca haria la conexion a la bas de datos*/
 );
 	
 	$i = 0; /* sólo para efectos ilustrativos */
+        foreach ($array as $v) {
 	
+            if((($i%9)==0)&&($array[$i]!='')){
+                $ExtFotoanimal=pathinfo($array[$i]);
+                $ruta1=$i+1;/*guarda la ruta temporal donde quedo la imagen*/
+                if(is_uploaded_file($array[$ruta1])){
+                    if(($ExtFotoanimal['extension']=="jpg")||($ExtFotoanimal['extension']=="JPG")||($ExtFotoanimal['extension']=="PNG")||($ExtFotoanimal['extension']=="png")){
+                    }
+                    else{
+                        
+                        echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=1" </script>';
+                    }
+                }
+                
+            }$i++;
+        }
+        $i = 0;
 foreach ($array as $v) {
 	
 	if((($i%9)==0)&&($array[$i]!='')){
@@ -79,7 +95,7 @@ foreach ($array as $v) {
                     }
                     else{
                     
-                    header ('location:RegistrarMascotaEmpleado.php?Message=1');
+                    //header ('location:RegistrarMascotaEmpleado.php?Message=1');
                 }
                 }
                 
@@ -87,7 +103,8 @@ foreach ($array as $v) {
 	}
     $i++;
 }
-header ('location:RegistrarMascotaEmpleado.php?Message=2');
-	}
+
+    echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=2" </script>';
+    }
 
 ?>
