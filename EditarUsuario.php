@@ -337,7 +337,7 @@ echo '
                                         </tr>
                                         <tr>
                                             <td colspan="2" >
-                                            <input type="submit" name="login" value="Modificar Usuario" class="inputButton" onclick="valida_envia()"/>
+                                            <input type="button" name="login" value="Modificar Usuario" class="inputButton" onclick="valida_envia()"/>
                                             </td>
                                         </tr>                                  
                                         </table>
