@@ -53,10 +53,14 @@ session_start();
                                                    Password = '$ContraseñadeUsuario'
                       where (Cedula = $Usuario[4])";
             }
-
-        mysql_query($query) or die(header('Location: EditarUsuario.php'));
         
-        header('Location: BusquedaUsuario.php');
+            $ErrorBase = "<script> alert('Ha ocurrido algún error.')
+                                location.href='/proyecto-siz-ingenieria-de-software-ii/BusquedaUsuario.php';
+                                </script>
+                             ";
+
+        mysql_query($query) or die($ErrorBase);
+        
       
         }
     else{
