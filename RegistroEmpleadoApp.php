@@ -26,7 +26,7 @@ Conectarse($conexion);
 	if($conexion){
 		
             if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
-		$query = "insert into zoonosis.usuarios(TipoUsuario, Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, Contrato, SedeLaboral, FechaInicio, SuelDevengado, UserName, Password)
+		$query = "insert into usuarios(TipoUsuario, Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, Contrato, SedeLaboral, FechaInicio, SuelDevengado, UserName, Password)
                         values ( '$TipoEmpleado', '$NombreEmpleado', '$ApellidoEmpleado', '$DocumentoEmpleado', '$CiudadEmpleado' , '$CorreoEmpleado' , '$TelefonoEmpleado',  '$CelularEmpleado' , '$ContratoEmpleado', '$SedeEmpleado', '$InicioEmpleado', '$DevengadoEmpleado', '$NombredeUsuario' , '$ContraseñadeUsuario')";
 		
                 $ErrorBase = "<script> alert('El documento ya esta registrado.')

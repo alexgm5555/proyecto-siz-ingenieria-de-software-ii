@@ -203,7 +203,7 @@ include ("conexionMySQL.php");
 						<div id="Accordion1" class="Accordion" tabindex="0">
 <div class="AccordionPanel">
 <div class="AccordionPanelTab">Crear una Sede</div>
-                            <div class="AccordionPanelContent">
+                            <div class="AccordionPanelContent1">
                               <div align="center">
                                 <p>Por favor ingrese la información de la Nueva Sede:</p>
                                 <form id="form1" name="form1" method="post" action="CrearSede.php">
@@ -220,7 +220,7 @@ include ("conexionMySQL.php");
                                             $conexion = true;
                                             Conectarse($conexion);
                                             if($conexion){
-                                                $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                                $consulta = mysql_query("select * from ciudades order by Nombre_Ciudad ASC");
                                                 echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
                                                 while($fila = mysql_fetch_array($consulta)){
                                                     echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
@@ -259,7 +259,7 @@ include ("conexionMySQL.php");
 <div class="AccordionPanelTab">
   <div align="left">Configuración de Sedes</div>
 </div>
-                           <div class="AccordionPanelContent">
+                           <div class="AccordionPanelContent1">
                                <iframe src="BusquedaSedes.php" frameborder="0" width="100%" height="200">
                                </iframe> 
                            </div>

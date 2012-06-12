@@ -15,7 +15,7 @@ $telefonoSede = $_POST['telefonoSede'];
 $emailSEde = $_POST['emailSEde'];
 
 try{
-	$consulta = "INSERT INTO SEDES (Nombre, Ciudad, Direccion, Telefono, Email) VALUES('$nombreSede', '$ciudadSede', '$direccionSede', '$telefonoSede', '$emailSEde')";
+	$consulta = "INSERT INTO sedes (Nombre, Ciudad, Direccion, Telefono, Email) VALUES('$nombreSede', '$ciudadSede', '$direccionSede', '$telefonoSede', '$emailSEde')";
 	$ErrorBase = "<script> alert('Ha ocurrido algún error con los datos.')
                                 location.href='/proyecto-siz-ingenieria-de-software-ii/AdministracionSedes.php';
                                 </script>

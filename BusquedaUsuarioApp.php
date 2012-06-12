@@ -18,12 +18,12 @@ session_start();
         
         if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/AdministracionEmpleados.php')
             {
-            $query = "select *  from zoonosis.Usuarios 
+            $query = "select *  from usuarios 
                   where (Cedula = $UsuarioModificar and TipoUsuario = 'Empleado')";
             }
         else
             {
-            $query = "select *  from zoonosis.Usuarios 
+            $query = "select *  from usuarios 
                   where (Cedula = $UsuarioModificar and TipoUsuario = 'Particular')";
             }
         
