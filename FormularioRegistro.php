@@ -252,8 +252,11 @@ error_reporting("E_PARSE");
 			<div id="banner">
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
 			</div>
-			<div id="main">
+                    
+			<div id="main2">
+                            
                             <div id="content">
+                                
 				<div id="box2">
                                     <div>
                                         <p>Por favor diligencie el formulario de registro:</p>

@@ -113,7 +113,7 @@ $numfilas = mysql_num_rows($resultado);
                             echo $Sexo;
                             #Este codigo es para reemplazar el id que envian por el respectivo String de cada una de las tablas
                             $Tipo2	=	mysql_query("select * from tipos_animal  where idTipos_Animal='".$Tipo1."'");
-                            $Ciudad2=	mysql_query("select * from ciudades  where idCiudades='".$Ciudad1."'");
+                            $Ciudad2    =	mysql_query("select * from ciudades  where idCiudades='".$Ciudad1."'");
                             #Codigo para dejarlos datos en un array
                             $Tipo	=	mysql_fetch_array($Tipo2);
                             $Ciudad	=	mysql_fetch_array($Ciudad2);
