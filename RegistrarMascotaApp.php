@@ -42,7 +42,7 @@ if(is_uploaded_file($FotoAnimal2)){
                         $fatt=mysql_fetch_array($fat);
                         $TipoAnimal=$fatt['Tipo'];
 
-                $query = ("insert into animal values (null, 'Particular','$Cedula','$TipoAnimal','En Adopcion','$NombreAnimal','$SexoAnimal','$RazaAnimal','$ColorAnimal','$TamañoAnimal','$EdadAnimal','$PesoAnimal','$FotoAnimal','','$HabilidadAnimal')");/*inserta los valores en la BD*/
+                $query = sprintf("insert into animal values (null, 'Particular','".mysql_real_escape_string($Cedula)."','".mysql_real_escape_string($TipoAnimal)."','En Adopcion','".mysql_real_escape_string($NombreAnimal)."','".mysql_real_escape_string($SexoAnimal)."','".mysql_real_escape_string($RazaAnimal)."','".mysql_real_escape_string($ColorAnimal)."','".mysql_real_escape_string($TamañoAnimal)."','".mysql_real_escape_string($EdadAnimal)."','".mysql_real_escape_string($PesoAnimal)."','$FotoAnimal','','".mysql_real_escape_string($HabilidadAnimal)."')");/*inserta los valores en la BD*/
 
                 mysql_query($query)or die('location:RegistrarMascota.php');
                 header ('location:MascotasRegistradas.php?Message=3');
