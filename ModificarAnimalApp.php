@@ -32,7 +32,13 @@ if($conexion){
 		}
 		
 	# Raza = '$RazaAnimal',Sexo = '$SexoAnimal',,Color = '$ColorAnimal',Tamaño = '$TamañoAnimal',Peso = '$PesoAnimal'Habilidad = '$HabilidadAnimal',
-	mysql_query($query)or die(mysql_error());
+	
+        $ErrorBase = "<script> alert('Ha ocurrido un error durante la actualizacion, por favor revise los datos.')
+                                location.href='/proyecto-siz-ingenieria-de-software-ii/MascotasRegistradas.php';
+                                </script>
+                             ";
+                
+        mysql_query($query)or die($ErrorBase);
 	header ('location:MascotasRegistradas.php?Message=2');
 	}
 
