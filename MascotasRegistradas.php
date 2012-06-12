@@ -67,9 +67,7 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 	</div>
 	<div id="main">
             <div id="content">
-		<div id="box1">
-                    <h2>Mascotas Registradas</h2>
-                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar datos y solicitudes de tus mascotas registradas.</div>
+
 					
                                         <?php
                                         #el siguiente codigo try sirve para mostrar un mensaje de modificacion eliminacion O INSET de mascota
@@ -120,6 +118,9 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
                         <?php
                             if($f=mysql_fetch_array($ArregloAnimalesRegistradosUsuario)){
                         ?>      
+                		<div id="box1">
+                                    <h2>Mascotas Registradas</h2>
+                                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar datos y solicitudes de tus mascotas registradas.</div>                
                                 <div id="box2" align="center"> 
                                     <div id="Accordion1" class="Accordion" tabindex="0">
                                         <div class="AccordionPanel">
@@ -136,16 +137,17 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
                         <?php
                           	}
                             else{
+           
 			?>
+                                <div id="box1">
+                                    <h2>Buscar Mascotas</h2>
+                                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás buscar y ver información de las mascotas registradas.</div>                
                                 <div id="box2" align="center"> 
                                     <div id="Accordion1" class="Accordion" tabindex="0">
                                         <div class="AccordionPanel">
                                             <div class="AccordionPanelTab">Buscar Animales por: <?php echo $_SESSION['usuario'];?>.</div>
-					    </div>
-					    <div class="AccordionPanel">
-                                            <p><?php echo $_SESSION['usuario'];?> como no has registrado ningun animal te invitamos a buscarlos ca podras encontrara tu mascota si se perdio</p>
-					    <table width="60%" height="110" border="0">
-					    </table>
+                                            <table width="60%" height="110" border="0">
+                                                </table>
 					    <p align="center">
                                                 <?// este iframe envia a filtromascotas donde hace todo el Query parabuscar todas las mascotas  registradas en la base de datos
                                                   // tiene un if y otro codigo extra;o ese codigo sirve para que el tamanio del scrollbar se defina automaticamente dependiendo del contenido?>
