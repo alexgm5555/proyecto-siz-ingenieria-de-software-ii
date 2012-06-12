@@ -12,7 +12,7 @@ $sedeEliminar = $_SESSION['row'];
 
 
 try{
-	$consulta = "DELETE FROM SEDES WHERE Nombre = '$sedeEliminar[1]'";
+	$consulta = "DELETE FROM sedes WHERE Nombre = '$sedeEliminar[1]'";
 	$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
 	header ('location:BusquedaSedes.php'); 
 	}

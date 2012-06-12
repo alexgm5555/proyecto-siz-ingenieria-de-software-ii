@@ -14,7 +14,7 @@ Conectarse($conexion);
 
 if($conexion){
 
-    $query = "delete from Usuarios where (Cedula = $Cedula)";
+    $query = "delete from usuarios where (Cedula = $Cedula)";
 
     mysql_query($query) or die(mysql_error());
 

@@ -243,7 +243,7 @@ echo '
                                                 $conexion = true;
                                                 Conectarse($conexion);
                                                 if($conexion){
-                                                    $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                                    $consulta = mysql_query("select * from ciudades order by Nombre_Ciudad ASC");
                                                     echo "<select name = Ciudad id = Ciudad>";
                                                     while($fila = mysql_fetch_array($consulta)){
                                                         echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
@@ -277,7 +277,7 @@ echo '
                                             * de la tabla TiposUsuario de la Base de Datos
                                             */
                                             if($conexion){
-                                                    $consulta = mysql_query("select * from zoonosis.TiposUsuarios where TipoUser!='particular' order by TipoUser ASC");
+                                                    $consulta = mysql_query("select * from tiposusuarios where TipoUser!='particular' order by TipoUser ASC");
                                                     echo "<select name = 'TipoEmpleado' id = 'TipoEmpleado'>";
                                                     while($fila = mysql_fetch_array($consulta)){
                                                             echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
@@ -301,7 +301,7 @@ echo '
                                                                         */
                                                                     
                                                                         if($conexion){
-                                                                            $consulta = mysql_query("select * from zoonosis.Sedes where Nombre!='Particular' order by Nombre ASC");
+                                                                            $consulta = mysql_query("select * from sedes where Nombre!='Particular' order by Nombre ASC");
                                                                             echo "<select name = 'SedeEmpleado' id = 'SedeEmpleado'>";
                                                                             while($fila = mysql_fetch_array($consulta)){
                                                                                 echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";

@@ -16,7 +16,7 @@ session_start();
 
 $SedeModificar = $_POST['Sede'];
 
-$Query = "select *  from zoonosis.Sedes  where Nombre = '$SedeModificar'";
+$Query = "select *  from sedes  where Nombre = '$SedeModificar'";
 $Consulta = mysql_query($Query) or die(mysql_error());
 $_SESSION['row'] = mysql_fetch_array($Consulta);
 

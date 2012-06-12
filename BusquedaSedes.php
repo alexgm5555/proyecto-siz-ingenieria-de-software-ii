@@ -22,7 +22,7 @@
                                     
                                     include ("conexionMySQL.php");
                                     $conexion = Conectarse();
-                                    $consulta = "SELECT idSedes, Nombre FROM SEDES where Nombre != 'Particular' ";
+                                    $consulta = "SELECT idSedes, Nombre FROM sedes where Nombre != 'Particular' ";
                                     $resultado = mysql_query($consulta, $conexion) or die(mysql_error());
                                     $numfilas = mysql_num_rows($resultado);
                                     

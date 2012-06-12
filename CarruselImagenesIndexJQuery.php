@@ -7,8 +7,8 @@ include ("conexionMySQL.php");
 #hola
 $conexion = Conectarse();
 #
-$ArregloAnimalesRegistrados=mysql_query("select * from animal");
-
+$ArregloAnimalesRegistrados=mysql_query("select * from animal ORDER BY idAnimal DESC");
+$MaxImagenes=8;
 ?>
 <head>
 <title>jCoverflip Test</title>
@@ -257,21 +257,23 @@ $ArregloAnimalesRegistrados=mysql_query("select * from animal");
   </head>
 
   <body>
-
+Estos son los ultimos 8 registros, si desea ver mas lo invitamos a que se registre
     <div id="wrapper"  >
 
     <ul id="flip">
 		<?php
+                $contador =1;
 	 	#Se hace un mientras para colocar todas las mascotas que se han registrado, para enviarselas a flip que hace que se vea el carrusel en el index
 		#en el f queda un arreglo de los datos de cada animal registrado en la BD
-                while($f=mysql_fetch_array($ArregloAnimalesRegistrados)){
+                while(($f=mysql_fetch_array($ArregloAnimalesRegistrados))AND ($contador<=$MaxImagenes)){
 		?>
       		<li><span class="title">
 	  		<?php 
                         #codigo para colocar la Nombre de la mascota 
-	  		echo $f['Sexo'];?><br /><?php echo $f['Nombre'];?></span><?php
+	  		echo $f['Sexo'];?><br /><?php echo $f['idAnimal'];?></span><?php
 			#codigo para colocar la imagen de la mascota 
 			echo'<img src="'.$f['Foto'].'"width="500" heigth="450"/>';
+                        $contador++;
 			?></li>
                 <?php
 		}

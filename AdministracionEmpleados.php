@@ -305,7 +305,7 @@ error_reporting("E_PARSE");
                                             <div id="Accordion1" class="Accordion">
                                                 <div class="AccordionPanel">
                                                     <div class="AccordionPanelTab">Registrar un Empleado</div>
-                                                        <div class="AccordionPanelContent">
+                                                        <div class="AccordionPanelContent1">
                                                             <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
                                                                 <form id="form1" name="form1" method="post" action="RegistroEmpleadoApp.php">
@@ -331,7 +331,7 @@ error_reporting("E_PARSE");
                                                                        $conexion = true;
                                                                        Conectarse($conexion);
                                                                         if($conexion){
-                                                                            $consulta = mysql_query("select * from zoonosis.TiposUsuarios where TipoUser!='particular' order by TipoUser ASC");
+                                                                            $consulta = mysql_query("select * from tiposusuarios where TipoUser!='particular' order by TipoUser ASC");
                                                                             echo "<select name = 'TipoEmpleado' id = 'TipoEmpleado'>";
                                                                             while($fila = mysql_fetch_array($consulta)){
                                                                                 echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";
@@ -357,7 +357,7 @@ error_reporting("E_PARSE");
                                                                         $conexion = true;
                                                                         Conectarse($conexion);
                                                                         if($conexion){
-                                                                            $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                                                            $consulta = mysql_query("select * from ciudades order by Nombre_Ciudad ASC");
                                                                             echo "<select name = 'CiudadEmpleado' id = 'CiudadEmpleado'>";
                                                                             while($fila = mysql_fetch_array($consulta)){
                                                                                 echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
@@ -395,7 +395,7 @@ error_reporting("E_PARSE");
                                                                         $conexion = true;
                                                                         Conectarse($conexion);
                                                                         if($conexion){
-                                                                            $consulta = mysql_query("select * from zoonosis.Sedes where Nombre!='Particular' order by Nombre ASC");
+                                                                            $consulta = mysql_query("select * from sedes where Nombre!='Particular' order by Nombre ASC");
                                                                             echo "<select name = 'SedeEmpleado' id = 'SedeEmpleado'>";
                                                                             while($fila = mysql_fetch_array($consulta)){
                                                                                 echo "<option value='".$fila[1]."'>".utf8_encode($fila[1])."</option>";

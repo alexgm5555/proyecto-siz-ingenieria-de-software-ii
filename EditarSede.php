@@ -141,7 +141,7 @@ echo '
                                                 $conexion = true;
                                                 Conectarse($conexion);
                                                 if($conexion){
-                                                    $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                                    $consulta = mysql_query("select * from ciudades order by Nombre_Ciudad ASC");
                                                     echo "<select name = ciudadSede id = ciudadSede>";
                                                     while($fila = mysql_fetch_array($consulta)){
                                                         echo "<option value='".$fila[1]."'>".($fila[1])."</option>";

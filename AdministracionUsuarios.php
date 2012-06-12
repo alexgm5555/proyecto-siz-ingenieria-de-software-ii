@@ -306,7 +306,7 @@
                                             <div id="Accordion1" class="Accordion" tabindex="0">
                                                 <div class="AccordionPanel">
                                                     <div class="AccordionPanelTab">Registrar un Usuario</div>
-                                                        <div class="AccordionPanelContent">
+                                                        <div class="AccordionPanelContent1">
                                                             <div align="center">
                                                                 <p>Por favor diligencie el formulario de registro:</p>
                                                                 <form id="form1" name="form1" method="post" action="ResolverFormulario.php">
@@ -331,7 +331,7 @@
                                                                             $conexion = true;
                                                                             Conectarse($conexion);
                                                                             if($conexion){
-                                                                                $consulta = mysql_query("select * from zoonosis.ciudades order by Nombre_Ciudad ASC");
+                                                                                $consulta = mysql_query("select * from ciudades order by Nombre_Ciudad ASC");
                                                                                 echo "<select name = 'CiudadUsuario' id = 'CiudadUsuario'>";
                                                                                 while($fila = mysql_fetch_array($consulta)){
                                                                                     echo "<option value='".$fila[1]."'>".($fila[1])."</option>";
@@ -382,7 +382,8 @@
                                                 <div class="AccordionPanelTab">
                                                     <div align="left">Configuración de usuario</div>
                                                 </div>
-                                                    <div class="AccordionPanelContent">
+                                                <div class="AccordionPanelContent1">
+                                                        
                                                         <iframe src="BusquedaUsuario.php" frameborder="0" width="100%" height="200">
                                                         </iframe>                             
                                                     </div>
@@ -399,7 +400,7 @@
                                             <p><?php echo $_SESSION['usuario'];?>, puedes realizar las siguientes actividades</p>
                                             <ol>
                                                 <li><a href='AdministracionUsuarios.php'>Administracion de Usuarios</a></li>
-                                                <li><a href='#'>Administración de Animales</a></li>
+                                                <li><a href='AdministracionAnimales.php'>Administración de Animales</a></li>
                                                 <li><a href='AdministracionEmpleados.php'>Administración de Empleados</a></li>
                                                 <li><a href='AdministracionSedes.php'>Administración de Sedes</a></li>
                                                 <li><a href='Estadisticas.php'>Estadísticas</a></li>

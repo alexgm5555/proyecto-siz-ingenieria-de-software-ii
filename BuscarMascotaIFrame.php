@@ -102,7 +102,7 @@ $numfilas = mysql_num_rows($resultado);
 			}	
 			#codigo para guardar las variables que el usuario escoje, para filtrar la busqueda de animales
                     if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/BuscarMascotaIFrame.php?var=0'){
-			echo "/n",$url_anterior;
+			//echo "/n",$url_anterior;
 			$Tipo1	=	$_POST['Tipo'];
 			$Sexo	=	$_POST['Sexo'];
 			$Ciudad1	=	$_POST['Ciudad'];

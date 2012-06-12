@@ -53,6 +53,6 @@ else{
     header ('location:RegistrarMascota.php?Message=1');
 }
 	}
-        //echo "pasa";
-  header ('location:RegistrarMascota.php');
+        echo "pasa";
+  //header ('location:RegistrarMascota.php');
 ?>
