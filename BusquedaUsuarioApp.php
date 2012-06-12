@@ -36,7 +36,10 @@ session_start();
             }
         else
             {  
-            header('Location: BusquedaUsuario.php');
+            echo "<script> alert('El usuario no esta registrado.')
+                                location.href='/proyecto-siz-ingenieria-de-software-ii/BusquedaUsuario.php';
+                                </script>
+                             "; 
             }
 
         }

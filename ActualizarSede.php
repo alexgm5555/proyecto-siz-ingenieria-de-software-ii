@@ -18,8 +18,11 @@ if($conexion){
 
         try{
             $consulta = "UPDATE zoonosis.SEDES set Nombre = '$nombreSede', Ciudad = '$ciudadSede', Direccion = '$direccionSede', Telefono = '$telefonoSede', Email = '$emailSEde' where Nombre = '$sedeActualizar[1]'";
-            mysql_query($consulta) or die(mysql_error());
-            header ('location:BusquedaSedes.php'); 
+            $ErrorBase = "<script> alert('Ha ocurrido algún error con los datos.')
+                                location.href='/proyecto-siz-ingenieria-de-software-ii/BusquedaSedes.php';
+                                </script>
+                             ";
+            mysql_query($consulta) or die($ErrorBase);
            }
            catch(Exception $e){
                Echo "Sucedió un error inesperado.".$e->getMessage();
