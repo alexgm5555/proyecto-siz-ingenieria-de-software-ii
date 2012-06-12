@@ -40,7 +40,10 @@ Conectarse($conexion);
             if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
 		$query = ("insert into zoonosis.usuarios(Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
                         values ( '$NombreUsuario', '$ApellidoUsuario', $DocumentoUsuario, '$CiudadUsuario' , '$CorreoUsuario' , '$TelefonoUsuario',  '$CelularUsuario' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
-		mysql_query($query)or die(mysql_error()); 
+		$ErrorBase = "<script> alert('El documento ya esta registrado.')</script>
+                
+                             ";
+                mysql_query($query)or die($ErrorBase); 
                 
                 if($url_anterior == '/proyecto-siz-ingenieria-de-software-ii/AdministracionUsuarios.php'){
                     header ('location: AdministracionUsuarios.php');
