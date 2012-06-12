@@ -26,8 +26,8 @@ Conectarse($conexion);
 	if($conexion){
 		
             if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
-		$query = "insert into usuarios(TipoUsuario, Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, Contrato, SedeLaboral, FechaInicio, SuelDevengado, UserName, Password)
-                        values ( '$TipoEmpleado', '$NombreEmpleado', '$ApellidoEmpleado', '$DocumentoEmpleado', '$CiudadEmpleado' , '$CorreoEmpleado' , '$TelefonoEmpleado',  '$CelularEmpleado' , '$ContratoEmpleado', '$SedeEmpleado', '$InicioEmpleado', '$DevengadoEmpleado', '$NombredeUsuario' , '$ContraseñadeUsuario')";
+		$query = sprintf("insert into usuarios(TipoUsuario, Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, Contrato, SedeLaboral, FechaInicio, SuelDevengado, UserName, Password)
+                        values ( '".mysql_real_escape_string($TipoEmpleado)."', '".mysql_real_escape_string($NombreEmpleado)."', '".mysql_real_escape_string($ApellidoEmpleado)."', '".mysql_real_escape_string($DocumentoEmpleado)."', '".mysql_real_escape_string($CiudadEmpleado)."' , '".mysql_real_escape_string($CorreoEmpleado)."' , '".mysql_real_escape_string($TelefonoEmpleado)."',  '".mysql_real_escape_string($CelularEmpleado)."' , '".mysql_real_escape_string($ContratoEmpleado)."', '".mysql_real_escape_string($SedeEmpleado)."', '".mysql_real_escape_string($InicioEmpleado)."', '".mysql_real_escape_string($DevengadoEmpleado)."', '".mysql_real_escape_string($NombredeUsuario)."' , '".mysql_real_escape_string($ContraseñadeUsuario)."')");
 		
                 $ErrorBase = "<script> alert('El documento ya esta registrado.')
                                 location.href='/proyecto-siz-ingenieria-de-software-ii/AdministracionEmpleados.php';
