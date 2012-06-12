@@ -17,7 +17,7 @@ if($conexion){
         $emailSEde = $_POST['emailSEde'];
 
         try{
-            $consulta = "UPDATE zoonosis.SEDES set Nombre = '$nombreSede', Ciudad = '$ciudadSede', Direccion = '$direccionSede', Telefono = '$telefonoSede', Email = '$emailSEde' where Nombre = '$sedeActualizar[1]'";
+            $consulta = sprintf("UPDATE zoonosis.SEDES set Nombre = '".mysql_real_escape_string($nombreSede)."', Ciudad = '".mysql_real_escape_string($ciudadSede)."', Direccion = '".mysql_real_escape_string($direccionSede)."', Telefono = '".mysql_real_escape_string($telefonoSede)."', Email = '".mysql_real_escape_string($emailSEde)."' where Nombre = '".mysql_real_escape_string($sedeActualizar[1])."'");
             $ErrorBase = "<script> alert('Ha ocurrido algún error con los datos.')
                                 location.href='/proyecto-siz-ingenieria-de-software-ii/BusquedaSedes.php';
                                 </script>

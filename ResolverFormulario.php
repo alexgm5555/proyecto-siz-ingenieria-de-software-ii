@@ -38,8 +38,8 @@ Conectarse($conexion);
 	if($conexion){
 		
             if($ContraseñadeUsuario == $ConfContraseñadeUsuario){
-		$query = ("insert into zoonosis.usuarios(Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
-                        values ( '$NombreUsuario', '$ApellidoUsuario', $DocumentoUsuario, '$CiudadUsuario' , '$CorreoUsuario' , '$TelefonoUsuario',  '$CelularUsuario' , '$NombredeUsuario' , '$ContraseñadeUsuario')");
+		$query = sprintf("insert into zoonosis.usuarios(Nombres, Apellidos, Cedula, Ciudad, Email, Telefono_Fij, Telefono_Cel, UserName, Password) 
+                        values ( '".mysql_real_escape_string($NombreUsuario)."', '".mysql_real_escape_string($ApellidoUsuario)."', '".mysql_real_escape_string($DocumentoUsuario)."', '".mysql_real_escape_string($CiudadUsuario)."' , '".mysql_real_escape_string($CorreoUsuario)."' , '".mysql_real_escape_string($TelefonoUsuario)."',  '".mysql_real_escape_string($CelularUsuario)."' , '".mysql_real_escape_string($NombredeUsuario)."' , '".mysql_real_escape_string($ContraseñadeUsuario)."')");
 		$ErrorBase = "<script> alert('El documento ya esta registrado.')
                                 location.href='/proyecto-siz-ingenieria-de-software-ii/FormularioRegistro.php';
                                 </script>
