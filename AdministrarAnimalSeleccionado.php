@@ -50,7 +50,7 @@ id_Animal='".$idAnimal."'");
 	</script>
 <script language="javascript">
 
-	function valida_envia(){ 
+function valida_envia(){ 
 	var NombreAnimal = document.form1.NombreAnimal.value;
         var PesoAnimal = document.form1.PesoAnimal.value;
         var RazaAnimal = document.form1.RazaAnimal.value;
@@ -71,72 +71,29 @@ id_Animal='".$idAnimal."'");
        alert("Ingrese un nombre del Animal") 
        document.form1.NombreAnimal.focus() 
        return 0; 
-    } 
-    // La habilidad del Animal no puede ser vacio:
-    else if (HabilidadAnimal.length==0){ 
-       alert("Ingrese la habilidad o una descripción general del animal") 
-       document.form1.HabilidadAnimal.focus() 
-       return 0; 
-    }
-    	// El Nombre de Animal no puede ser vacio:
-    else if (EdadAnimal.length==0){ 
-       alert("Ingrese la Edad del Animal") 
-       document.form1.EdadAnimal.focus() 
-       return 0; 
-    }
-    	// El Color del Animal no puede ser vacio:
-    else if (ColorAnimal.length==0){ 
-       alert("Ingrese un Color del Animal") 
-       document.form1.ColorAnimal.focus() 
-       return 0; 
     }
     
-    
-            
-	
-		
-	//El nombre no puede contener caracteres especiales
+    //El nombre no puede contener caracteres especiales
 	else if (NombreAnimal.search(patron) != -1 ||NombreAnimal.search(patron2) != -1 || NombreAnimal.search(patron3) != -1){ 
        alert("El Nombre no puede llevar caracteres especiales.") 
        document.form1.NombreAnimal.focus() 
        return 0; 
-    } 
-        //El peso no puede contener caracteres especiales
+    }
+    
+    // El peso del Animal no puede ser vacio:
+    else if (PesoAnimal.length==0){ 
+       alert("Ingrese el peso del animal.") 
+       document.form1.PesoAnimal.focus() 
+       return 0; 
+    }
+    
+    //El peso no puede contener caracteres especiales
 	else if (PesoAnimal.search(patron) != -1 ||PesoAnimal.search(patron2) != -1 || PesoAnimal.search(patron3) != -1){ 
        alert("El Peso no puede llevar caracteres especiales.") 
        document.form1.PesoAnimal.focus() 
        return 0; 
     }
-    //El Raza no puede contener caracteres especiales
-	else if (RazaAnimal.search(patron) != -1 ||RazaAnimal.search(patron2) != -1 || RazaAnimal.search(patron3) != -1){ 
-       alert("El Raza no puede llevar caracteres especiales.") 
-       document.form1.RazaAnimal.focus() 
-       return 0; 
-    }
-    //La habiliadad no puede contener caracteres especiales
-	else if (HabilidadAnimal.search(patron) != -1 ||HabilidadAnimal.search(patron2) != -1 || HabilidadAnimal.search(patron3) != -1){ 
-       alert("La Habilidad no puede llevar caracteres especiales.") 
-       document.form1.HabilidadAnimal.focus() 
-       return 0; 
-    }
-    //La Edad no puede contener caracteres especiales
-    	else if (EdadAnimal.search(patron) != -1 ||EdadAnimal.search(patron2) != -1 || EdadAnimal.search(patron3) != -1){ 
-       alert("La Edad no puede llevar caracteres especiales.") 
-       document.form1.EdadAnimal.focus() 
-       return 0; 
-    }
-    //El Color no puede contener caracteres especiales
-	else if (ColorAnimal.search(patron) != -1 ||ColorAnimal.search(patron2) != -1 || ColorAnimal.search(patron3) != -1){ 
-       alert("El Color no puede llevar caracteres especiales.") 
-       document.form1.ColorAnimal.focus() 
-       return 0; 
-    }
-    	//El Tamaño no puede contener caracteres especiales
-	else if (TamañoAnimal.search(patron) != -1 ||TamañoAnimal.search(patron2) != -1 || TamañoAnimal.search(patron3) != -1){ 
-       alert("El Tamaño no puede llevar caracteres especiales.") 
-       document.form1.TamañoAnimal.focus() 
-       return 0; 
-    }
+    
     //Se valida que el peso sea numerico
 	Numer=parseInt(PesoAnimal);
     if (isNaN(Numer)){
@@ -144,12 +101,90 @@ id_Animal='".$idAnimal."'");
 			document.form1.PesoAnimal.focus();
 			return 0; 
     }
-    //Se valida que el Edad sea numerico
+    
+    // La habilidad del Animal no puede ser vacio:
+    else if (HabilidadAnimal.length==0){ 
+       alert("Ingrese la habilidad o una descripción general del animal") 
+       document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    
+    //La habiliadad no puede contener caracteres especiales
+	else if (HabilidadAnimal.search(patron) != -1 ||HabilidadAnimal.search(patron2) != -1 || HabilidadAnimal.search(patron3) != -1){ 
+       alert("La Habilidad no puede llevar caracteres especiales.") 
+       document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    
+    // La raza del Animal no puede ser vacio:
+    else if (RazaAnimal.length==0){ 
+       alert("Ingrese la raza del animal.") 
+       document.form1.RazaAnimal.focus() 
+       return 0; 
+    }
+    
+    //El Raza no puede contener caracteres especiales
+	else if (RazaAnimal.search(patron) != -1 ||RazaAnimal.search(patron2) != -1 || RazaAnimal.search(patron3) != -1){ 
+       alert("La Raza no puede llevar caracteres especiales.") 
+       document.form1.RazaAnimal.focus() 
+       return 0; 
+    }
+    
+    	// La edad del Animal no puede ser vacia:
+    else if (EdadAnimal.length==0){ 
+       alert("Ingrese la Edad del Animal") 
+       document.form1.EdadAnimal.focus() 
+       return 0; 
+    }
+    
+    //La Edad no puede contener caracteres especiales
+    	else if (EdadAnimal.search(patron) != -1 ||EdadAnimal.search(patron2) != -1 || EdadAnimal.search(patron3) != -1){ 
+       alert("La Edad no puede llevar caracteres especiales.") 
+       document.form1.EdadAnimal.focus() 
+       return 0; 
+    }
+    
+     //Se valida que el Edad sea numerico
 	Numer=parseInt(EdadAnimal);
     if (isNaN(Numer)){
             alert("La Edad ingresada no es válida, por que solo se permiten caracteres numericos.");
 			document.form1.EdadAnimal.focus();
 			return 0; 
+    }
+    
+    	// El Color del Animal no puede ser vacio:
+    else if (ColorAnimal.length==0){ 
+       alert("Ingrese un Color del Animal") 
+       document.form1.ColorAnimal.focus() 
+       return 0; 
+    }
+    
+    //El Color no puede contener caracteres especiales
+	else if (ColorAnimal.search(patron) != -1 ||ColorAnimal.search(patron2) != -1 || ColorAnimal.search(patron3) != -1){ 
+       alert("El Color no puede llevar caracteres especiales.") 
+       document.form1.ColorAnimal.focus() 
+       return 0; 
+    }
+    
+    // La Foto del Animal no puede ser vacio:
+    else if (FotoAnimal.length==0){ 
+       alert("Ingrese la Foto del animal") 
+       document.form1.FotoAnimal.focus() 
+       return 0; 
+    }
+    
+    // La Foto del Animal no puede ser vacio:
+    else if (TamañoAnimal.length==0){ 
+       alert("Ingrese el tamaño del animal.") 
+       document.form1.TamañoAnimal.focus() 
+       return 0; 
+    } 
+    
+    	//El Tamaño no puede contener caracteres especiales
+	else if (TamañoAnimal.search(patron) != -1 ||TamañoAnimal.search(patron2) != -1 || TamañoAnimal.search(patron3) != -1){ 
+       alert("El Tamaño no puede llevar caracteres especiales.") 
+       document.form1.TamañoAnimal.focus() 
+       return 0; 
     }
     
     document.form1.submit(); 
