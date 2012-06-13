@@ -2,6 +2,7 @@
 <?php
 //error_reporting("E_PARSE");
 //Validamos si la sesión ya fue creada:
+error_reporting("E_PARSE");
     session_start();
     if ( !isset( $_SESSION['usuario'])) {
         header ('location:index.php?LoginMesagge=2'); 
@@ -271,12 +272,14 @@
                                                             <p><img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás administrar los usuarios de Zoonosis.</p>
                                                             <p>&nbsp;</p>
                                                     </div>
-			<!--<?php/*
+			<?php
 			try {
 							
-							$mensaje = $_GET['Message']; 
+							$mensaje = $_GET['Message'];
+                                                        echo $mensaje;
 							switch ($mensaje) {								
 								case 1:
+                                                                    echo 80;
 									echo "<div id='box1'> 
 								<table width='auto' border='0'>
   									  <tr>
@@ -300,8 +303,8 @@
 						catch (Exception $e)  
 						{  
     						echo "Sucedió un error inesperado.".$e->getMessage();
-				}	*/	
-			?>	-->
+				}	
+			?>
 					<div id="box2">
                                             <div id="Accordion1" class="Accordion" tabindex="0">
                                                 <div class="AccordionPanel">
