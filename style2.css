@@ -1,0 +1,308 @@
+/* 
+    Document   : style2
+    Created on : 05-may-2012, 23:01:13
+    Author     : lleyzzon
+    Description:
+        Purpose of the stylesheet follows.
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: underline;
+	color: #234e00;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-size: 13pt;
+	line-height: 1.75em;
+        background: #FFF;
+	color: #657300;
+        overflow: auto;
+        text-align: center;
+}
+
+body,input {
+	font-family: "Trebuchet MS", sans-serif;
+}
+
+br.clear {
+	clear: both;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+#form1 {
+    
+}
+h1,h2,h3,h4 {
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h2,h3,h4 {
+	margin-bottom: 1em;
+	font-family: Cabin, sans-serif;
+	color: #fff;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+img.left {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+img.top {
+	margin: 5px 0 20px 0;
+}
+
+label.login {
+	display: block;
+	margin: 0 0 6px 0;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+ul h4 {
+	margin-bottom: 0.35em;
+}
+
+.form {
+	margin: 0 0 30px 0;
+}
+
+.inputBox {
+	padding: 8px;
+	width: 95%;
+	border-radius: 10px;
+	background: #d5fc94;
+	border: none;
+}
+
+.inputButton {
+	padding: 8px;
+	float: right;
+	background: #234e00;
+	border: none;
+	color: #FFF;
+	border-radius: 10px;
+        font-family: Sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+        
+}
+
+.button {
+        padding: 8px;
+        text-decoration: none;
+	/*float: right;*/
+	background: #234e00;
+	border: none;
+	color: #FFF;
+	border-radius: 10px;
+        font-family: Sans-serif;
+        font-size: 15px;
+        
+}
+
+.round {
+	border-radius: 10px;
+}
+
+#banner {
+	position: relative;
+	padding: 30px;
+	height: 240px;
+	width: 1120px;
+	margin: 0 0 0 0;
+	background: #fff;
+	border-radius: 10px;
+}
+
+#banner img{
+	border-radius: 10px;
+}
+
+#box1 {
+	margin: 0 0 20px 0;
+	overflow: hidden;
+}
+
+#box2 {
+	margin: 0 0 20px 0;
+	overflow: hidden;
+}
+
+#box3 {
+	overflow: hidden;
+}
+
+#content {
+	width: 740px;
+	float: left;
+	padding: 30px;
+	background: #fff;
+	color: #657300;
+	border-radius: 10px;
+}
+
+#content h2, #content h3, #content h4 {
+	color: #0d0d0d;
+}
+
+#copyright {
+	margin: 0 0 0 0;
+	padding: 50px 0 80px 0;
+	text-align: center;
+}
+
+#copyright a {
+	color: #deedcf;
+}
+
+#header {
+	position: relative;
+	padding: 30px;
+	height: 145px;
+	width: 1120px;
+}
+
+#logo {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	height: 137px;
+	line-height: 145px;
+	width: 591px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#logo h1 {
+	font-size: 2.5em;
+	font-family: Cabin, sans-serif;
+}
+
+#main {
+	position: relative;
+	padding: 0;
+	width: 1180px;
+	margin: 20px 0 20px 0;
+}
+
+#main .sectionList {
+	list-style: none;
+	padding-left: 0;
+}
+
+#main .sectionList li {
+	clear: both;
+	padding: 20px 0 20px 0;
+}
+
+#main ul {
+	list-style: none;
+}
+
+#nav {
+	position: absolute;
+	right: 3px;
+	height: 64px;
+	line-height: 64px;
+	top: 60px;
+	font-family: Cabin, sans-serif;
+	width: 424px;
+}
+
+#nav a {
+	text-decoration: none;
+	color: #ebf4e2;
+}
+
+#nav .active a {
+	background: #D5FC94;
+	padding: 8px;
+	color: #000;
+	border-radius: 10px;
+}
+
+#nav ul {
+	list-style: none;
+	padding: 0 15px 0 15px;
+}
+
+#nav ul li {
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+
+#outer {
+	position: relative;
+	width: 1180px;
+	margin: 0 auto 0 auto;
+}
+
+#search input.button {
+	margin-left: 1em;
+	border: 0;
+	color: #fff;
+	background: #7720d5;
+	padding: 5px;
+	font-family: Cabin, sans-serif;
+}
+
+#search button {
+        margin-left: 1em;
+	border: 0;
+	color: #fff;
+	background: #7720d5;
+	padding: 5px;
+	font-family: Cabin, sans-serif;
+}
+
+#search input.text {
+	border: dotted 1px #92c260;
+	padding: 5px;
+}
+
+#sidebar {
+	width: 300px;
+	margin: 0 0 0 820px;
+	padding: 30px;
+	background: #fff;
+	color: #292929;
+	border-radius: 10px;
+}
+
+#sidebar h2, #sidebar h3, #sidebar h4 {
+	color: #000;
+}
+
+
