@@ -15,7 +15,7 @@ $telefonoSede = $_POST['telefonoSede'];
 $emailSEde = $_POST['emailSEde'];
 
 try{
-	$consulta = "INSERT INTO sedes (Nombre, Ciudad, Direccion, Telefono, Email) VALUES('$nombreSede', '$ciudadSede', '$direccionSede', '$telefonoSede', '$emailSEde')";
+	$consulta = sprintf("INSERT INTO sedes (Nombre, Ciudad, Direccion, Telefono, Email) VALUES('".mysql_real_escape_string($nombreSede)."', '".mysql_real_escape_string($ciudadSede)."', '".mysql_real_escape_string($direccionSede)."', '".mysql_real_escape_string($telefonoSede)."', '".mysql_real_escape_string($emailSEde)."')");
 	$ErrorBase = "<script> alert('Ha ocurrido algún error con los datos.')
                                 location.href='/proyecto-siz-ingenieria-de-software-ii/AdministracionSedes.php';
                                 </script>

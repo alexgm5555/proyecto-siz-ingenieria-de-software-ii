@@ -211,14 +211,14 @@ error_reporting("E_PARSE");
 				  <h3>&nbsp;</h3>
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">
-					  <li class="first">
-							<a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
+                                                <li class="first">
+							<a href="http://www.bogota.gov.co/mad/info_sitio.php?id_sitio=14790">Zoonosis - Ficha Tecnica</a>
 						</li>
 						<li>
-							<a href="http://www.google.com.co">Google</a>
+							<a href="http://www.saludcapital.gov.co/Paginas/AdopcionCanina.aspx/">Centro de Zoonosis</a>
 						</li>
 						<li>
-							<a href="http://docs.google.com">Google Docs</a>
+							<a href="http://www.sirab.co/">SIRAB</a>
 						</li>
 					</ul>
 				  <p>&nbsp;</p>

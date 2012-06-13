@@ -257,7 +257,6 @@ $MaxImagenes=8;
   </head>
 
   <body>
-Estos son los ultimos 8 registros, si desea ver mas lo invitamos a que se registre
     <div id="wrapper"  >
 
     <ul id="flip">
