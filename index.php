@@ -185,6 +185,15 @@ error_reporting("E_PARSE");
 									  </tr>
 									</table>";
 									break;
+                                                                case 4:	
+									echo "
+									<table width='auto' border='0'>
+  									  <tr>
+										<td><img src='images/correcto.png' alt='' width='40' height='38' /></td>
+										<td align='center'><font color='green' size='5px'>Su registro ha sido exitoso.</font></td>
+									  </tr>
+									</table>";
+									break;
 							}				
 							
 							}  

@@ -141,11 +141,12 @@ $ArregloAnimalesRegistradosUsuario=mysql_query ("select * from animal Where CC_D
 			?>
                                 <div id="box1">
                                     <h2>Buscar Mascotas</h2>
-                                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />En esta página podrás buscar y ver información de las mascotas registradas.</div>                
+                                        <img class="left round" src="images/pic02.jpg" width="200" height="180" alt=""  />Debes registrar una masota. <br> 
+                                                                                                            En esta página podrás buscar y ver información de las mascotas registradas.</div>                
                                 <div id="box2" align="center"> 
                                     <div id="Accordion1" class="Accordion" tabindex="0">
                                         <div class="AccordionPanel">
-                                            <div class="AccordionPanelTab">Buscar Animales por: <?php echo $_SESSION['usuario'];?>.</div>
+                                            <div class="AccordionPanelTab">Buscar mascotas.</div>
                                             <table width="60%" height="110" border="0">
                                                 </table>
 					    <p align="center">
