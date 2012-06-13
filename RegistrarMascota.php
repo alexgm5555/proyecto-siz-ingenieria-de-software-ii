@@ -94,7 +94,29 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
        alert("El Nombre no puede llevar caracteres especiales.") 
        document.form1.NombreAnimal.focus() 
        return 0; 
-    } 
+    }
+    
+    // El peso del Animal no puede ser vacio:
+    else if (PesoAnimal.length==0){ 
+       alert("Ingrese el peso del animal.") 
+       document.form1.PesoAnimal.focus() 
+       return 0; 
+    }
+    
+    //El peso no puede contener caracteres especiales
+	else if (PesoAnimal.search(patron) != -1 ||PesoAnimal.search(patron2) != -1 || PesoAnimal.search(patron3) != -1){ 
+       alert("El Peso no puede llevar caracteres especiales.") 
+       document.form1.PesoAnimal.focus() 
+       return 0; 
+    }
+    
+    //Se valida que el peso sea numerico
+	Numer=parseInt(PesoAnimal);
+    if (isNaN(Numer)){
+            alert("El Peso ingresado no es válido, por que solo se permiten caracteres numericos.");
+			document.form1.PesoAnimal.focus();
+			return 0; 
+    }
     
     // La habilidad del Animal no puede ser vacio:
     else if (HabilidadAnimal.length==0){ 
@@ -107,6 +129,20 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 	else if (HabilidadAnimal.search(patron) != -1 ||HabilidadAnimal.search(patron2) != -1 || HabilidadAnimal.search(patron3) != -1){ 
        alert("La Habilidad no puede llevar caracteres especiales.") 
        document.form1.HabilidadAnimal.focus() 
+       return 0; 
+    }
+    
+    // La raza del Animal no puede ser vacio:
+    else if (RazaAnimal.length==0){ 
+       alert("Ingrese la raza del animal.") 
+       document.form1.RazaAnimal.focus() 
+       return 0; 
+    }
+    
+    //El Raza no puede contener caracteres especiales
+	else if (RazaAnimal.search(patron) != -1 ||RazaAnimal.search(patron2) != -1 || RazaAnimal.search(patron3) != -1){ 
+       alert("La Raza no puede llevar caracteres especiales.") 
+       document.form1.RazaAnimal.focus() 
        return 0; 
     }
     
@@ -151,31 +187,14 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
        alert("Ingrese la Foto del animal") 
        document.form1.FotoAnimal.focus() 
        return 0; 
-    }              	
-	
-        //El peso no puede contener caracteres especiales
-	else if (PesoAnimal.search(patron) != -1 ||PesoAnimal.search(patron2) != -1 || PesoAnimal.search(patron3) != -1){ 
-       alert("El Peso no puede llevar caracteres especiales.") 
-       document.form1.PesoAnimal.focus() 
+    }
+    
+    // La Foto del Animal no puede ser vacio:
+    else if (TamañoAnimal.length==0){ 
+       alert("Ingrese el tamaño del animal.") 
+       document.form1.TamañoAnimal.focus() 
        return 0; 
-    }
-    
-    //Se valida que el peso sea numerico
-	Numer=parseInt(PesoAnimal);
-    if (isNaN(Numer)){
-            alert("El Peso ingresado no es válido, por que solo se permiten caracteres numericos.");
-			document.form1.PesoAnimal.focus();
-			return 0; 
-    }
-    
-    //El Raza no puede contener caracteres especiales
-	else if (RazaAnimal.search(patron) != -1 ||RazaAnimal.search(patron2) != -1 || RazaAnimal.search(patron3) != -1){ 
-       alert("El Raza no puede llevar caracteres especiales.") 
-       document.form1.RazaAnimal.focus() 
-       return 0; 
-    }
-    
-    
+    } 
     
     	//El Tamaño no puede contener caracteres especiales
 	else if (TamañoAnimal.search(patron) != -1 ||TamañoAnimal.search(patron2) != -1 || TamañoAnimal.search(patron3) != -1){ 
@@ -379,13 +398,13 @@ $re=mysql_query ("select * from animal Where CC_Dueño='".$datosUsuario['Cedula'
 				  <h3>Enlaces de Interés</h3>
 					<ul class="linkedList">
 						<li class="first">
-							<a href="http://www.freewebtemplates.com/free-templates/">Templates Gratis</a>
+							<a href="http://www.bogota.gov.co/mad/info_sitio.php?id_sitio=14790">Zoonosis - Ficha Tecnica</a>
 						</li>
 						<li>
-							<a href="http://www.google.com.co">Google</a>
+							<a href="http://www.saludcapital.gov.co/Paginas/AdopcionCanina.aspx/">Centro de Zoonosis</a>
 						</li>
 						<li>
-							<a href="http://docs.google.com">Google Docs</a>
+							<a href="http://www.sirab.co/">SIRAB</a>
 						</li>
 					</ul>
 				  <p>&nbsp;</p>
