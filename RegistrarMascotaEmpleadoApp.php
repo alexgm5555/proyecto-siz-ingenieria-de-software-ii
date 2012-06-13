@@ -87,6 +87,27 @@ foreach ($array as $v) {
                             /*hacer un select de el idAnimal para guardar la imagen con ese nombre y de ese modo evitar que la bd no encuentre las imagenes*/
                             $destino= "images/".$array[$i];/*le adiciona el nombre de la carpeta al nombre de la imagen*/
                             copy($array[$ruta],$destino);/*codigo para copiar el archivo temporal al destino que tiene especifico*/
+                            
+                            
+                            //seccion para cambiar el tam de la imagen
+                            $FotoAnimal=$destino;
+                            $FotoAnimal2=$array[$ruta];
+                            $tamano = $_FILES["FotoAnimal"]['size'];
+                            $prefijo = substr(md5(uniqid(rand())),0,6);    /* Prefijo aleatorio */ 
+                            $Proporciones_Archivo = getimagesize($array[$ruta]);  /* Obtencion de las proporciones del archivo */    
+                            $Ancho = $Proporciones_Archivo[0];                                   /* Proporcion en Ancho */ 
+                            $Alto = $Proporciones_Archivo[1];
+                            echo "paso1";
+                            If($Alto>237){
+                                $Origen = imagecreatefromjpeg($FotoAnimal);
+
+                                move_uploaded_file($FotoAnimal2, $FotoAnimal);
+
+                                $Nueva_Imagen = imagecreatetruecolor(237, 237);
+                                imagecopyresized($Nueva_Imagen, $Origen, 0, 0, 0, 0, 237, 237, $Ancho, $Alto);
+                                imagejpeg($Nueva_Imagen, $FotoAnimal, 15); /* Remplaza la imagen */
+                            echo "pasa por aca";
+                        }
                             $query = ("insert into animal values (null,'Zoonosis','0','$array[$tipo]','Perdido','','$array[$sexo]','$array[$raza]','$array[$color]','$array[$tamano]','$array[$edad]','$array[$peso]','$destino',null,null)");/*inserta los valores en la BD*/
                             
                             mysql_query($query)or die(mysql_error());
@@ -103,8 +124,8 @@ foreach ($array as $v) {
 	}
     $i++;
 }
-echo "paso1";
-    //echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=2" </script>';
+
+    echo '<SCRIPT LANGUAGE="JavaScript">  top.location="/proyecto-siz-ingenieria-de-software-ii/AdministracionAnimales.php?Message=2" </script>';
     }
 
 ?>

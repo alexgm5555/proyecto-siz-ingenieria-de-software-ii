@@ -54,6 +54,17 @@ function EnviarDatos($animal,$usario) {
 -->
 </style>
 <head>
+    <script type="text/javascript">
+window.onload=function(){
+       Objeto=document.getElementsByTagName("a");
+       for(a=0;a<Objeto.length;a++){
+               Objeto[a].onclick=function(){
+                       location.replace(this.href);
+                       return false;
+               }
+       }
+}
+</script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
