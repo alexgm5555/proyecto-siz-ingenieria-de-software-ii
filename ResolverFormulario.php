@@ -50,7 +50,7 @@ Conectarse($conexion);
                     header ('location: AdministracionUsuarios.php');
                 }
                 else{
-                    header ('location:index.php?LoginMesagge=4'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php                   
+                    header ('location:index.php?LoginMesagge=4?Mesagge=1'); //Esta funcion hace que despues del registro se vuelva a la pagina index.php                   
                 }                
                 }
             else{
