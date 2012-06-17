@@ -33,7 +33,7 @@ echo '
                                                         
                                                 </p>
                                                 
-                                                <a href="EditarUsuario.php" class="button">Editar</a>
+                                                
                                                 <a href="EliminarUsuario.php" class="button">Eliminar</a>
             </div>
                                                 

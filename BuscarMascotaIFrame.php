@@ -117,7 +117,8 @@ $numfilas = mysql_num_rows($resultado);
                             #Codigo para dejarlos datos en un array
                             $Tipo	=	mysql_fetch_array($Tipo2);
                             $Ciudad	=	mysql_fetch_array($Ciudad2);
-                            $re=mysql_query("select * from animal where Sexo='".$Sexo."'or TipoAnimal='".$Tipo['Tipo']."'");
+                            $re=mysql_query("SELECT * FROM animal WHERE Sexo LIKE '%$Sexo%' or TipoAnimal LIKE '%$Tipo1%'");
+                            //$re=mysql_query("select * from animal where Sexo='".$Sexo."'or TipoAnimal='".$Tipo['Tipo']."'");
                             }
 			}
                     ?>
