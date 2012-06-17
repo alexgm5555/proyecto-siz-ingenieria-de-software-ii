@@ -1,4 +1,24 @@
 <?php include ("conexionMySQL.php")?>
+<head>
+    
+<script language="javascript">
+
+	function valida_envia(variable){ 
+	
+	
+	var patron = /'/;
+	var patron2 = /"/;
+	var patron3 = /;/; 
+        
+        //El nombre no puede contener caracteres especiales
+	if (variable.search(patron) != -1 ||variable.search(patron2) != -1 || variable.search(patron3) != -1){ 
+        alert("El Nombre no puede llevar caracteres especiales.") 
+         
+        return 0; 
+        }
+    } 
+</script>
+</head>
 <?PHP
 ini_set('display_errors', 'Off');
 ini_set('display_startup_errors', 'Off');
@@ -50,6 +70,7 @@ if($conexion){/*aca haria la conexion a la bas de datos*/
         foreach ($array as $v) {
 	
             if((($i%9)==0)&&($array[$i]!='')){
+            
                 $ExtFotoanimal=pathinfo($array[$i]);
                 $ruta1=$i+1;/*guarda la ruta temporal donde quedo la imagen*/
                 if(is_uploaded_file($array[$ruta1])){
