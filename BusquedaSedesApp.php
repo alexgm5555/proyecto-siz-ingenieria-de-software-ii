@@ -39,7 +39,7 @@ echo '<html>
                                                         
                                                 </p>
                                                 
-                                                <a href="EditarSede.php" class="button">Editar</a>
+                                                
                                                 <a href="EliminarSede.php" class="button">Eliminar</a>
             </div>
                                                 

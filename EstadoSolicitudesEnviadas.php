@@ -90,7 +90,7 @@ td {
                             <div class="AccordionPanelTab">Estado de las solicitudes enviadas por: <?php echo $_SESSION['usuario'];?></div>
                             <div class="AccordionPanelContent1">
                                 <div align="center">
-                                    <p>Por favor ingrese la información de la Nueva Sede:</p>
+                                    <p></p>
                                     <form id="form1" method="post" action="">
                                         <?php
                                         #aca llama la funcion de lista de solicitantes

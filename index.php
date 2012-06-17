@@ -106,22 +106,19 @@ error_reporting("E_PARSE");
 					<h1><img src="images/Logo2.png" alt="" width="500" height="200" /></h1>
 				</div>
 <div id="nav">
-			  <ul>
-						<li class="first active">
-							<a href="index.php">Inicio</a>
-						</li>
-						<li>
-							<a href="FormularioRegistro.php">Registro</a>
-						</li>
-						<li>
-							<a href="#">Acerca de</a>
-						</li>
-						<li class="last">
-							<a href="#">Contacto</a>
-						</li>
-					</ul>
-					<br class="clear" />
-				</div>
+			  <div align="right">
+			    <ul>
+			      <li class="first active">
+			        <a href="index.php"> Inicio</a>
+		          </li>
+			      <li>
+			        <a href="FormularioRegistro.php">Registro</a>
+		          </li>
+			      <li></li>
+		        </ul>
+			    <br class="clear" />
+      </div>
+</div>
 			</div>
 			<div id="banner">
 				<img src="images/pic01.jpg" width="1120" height="240" alt="" />
