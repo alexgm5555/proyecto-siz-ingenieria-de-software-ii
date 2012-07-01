@@ -183,7 +183,7 @@ error_reporting("E_PARSE");
 									</table>";
 									break;
                                                                 case 4:	
-                                                                    #muestra una imagen de correcto
+                                                                    #muestra una imagen de correctoc
 									echo "
 									<table width='auto' border='0'>
   									  <tr>
